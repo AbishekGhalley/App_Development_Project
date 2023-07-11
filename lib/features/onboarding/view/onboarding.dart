@@ -92,14 +92,6 @@ class _onboardingState extends State<onboarding> {
                         fontWeight: FontWeight.w500
                     ),),
                   onPressed: () {
-                    if (currentIndex == contents.length - 1) {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const LoginView(),
-                        ),
-                      );
-                    }
                     _controller.previousPage(
                       duration: const Duration(milliseconds: 300),
                       curve: Curves.easeIn,
