@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myekigai/features/auth/view/login_view.dart';
+import 'package:myekigai/features/onboarding/view/onboarding.dart';
 import 'package:myekigai/theme/theme.dart';
 
 void main() {
@@ -13,9 +14,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: AppTheme.theme,
-      home: const LoginView(),
+      home: onboarding(),
     );
   }
 }
