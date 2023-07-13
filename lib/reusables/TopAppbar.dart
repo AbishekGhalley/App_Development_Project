@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myekigai/theme/theme.dart';
 class TopAppbar extends StatelessWidget implements PreferredSizeWidget{
   final String toptitle;
   const TopAppbar({super.key,required this.toptitle});
@@ -9,6 +10,8 @@ Size get preferredSize => const Size.fromHeight(kToolbarHeight);
     return AppBar(  backgroundColor: Colors.white,
       titleSpacing: 0,
       centerTitle: false,
+      elevation: 4,
+      shadowColor: const Color.fromRGBO(171, 171, 171, 0.25),
       title: Text(
       toptitle,
         style: const TextStyle(
