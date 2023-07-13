@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myekigai/features/auth/view/login_view.dart';
+import 'package:myekigai/features/hamburger/view/ReferEarn.dart';
 import 'package:myekigai/features/onboarding/view/onboarding.dart';
 import 'package:myekigai/theme/theme.dart';
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: AppTheme.theme,
-      home: onboarding(),
+      home: const ReferEarn(),
     );
   }
 }
