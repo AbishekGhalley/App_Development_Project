@@ -18,7 +18,7 @@ class CustomButton extends StatelessWidget {
         style: ButtonStyle(
           splashFactory: NoSplash.splashFactory,
           padding: MaterialStateProperty.all<EdgeInsets>(
-              const EdgeInsets.symmetric(vertical: 10)),
+              const EdgeInsets.symmetric(vertical: 14)),
           backgroundColor: MaterialStateProperty.resolveWith<Color>(
               (Set<MaterialState> states) {
             if (states.contains(MaterialState.pressed)) {
@@ -31,8 +31,8 @@ class CustomButton extends StatelessWidget {
         onPressed: onPressed,
         child: Text(
           text,
-          style: GoogleFonts.montserrat(
-              fontSize: 21,
+          style: GoogleFonts.sen(
+              fontSize: 16,
               fontWeight: FontWeight.bold,
               color: Pallete.btnTextColor),
         ),

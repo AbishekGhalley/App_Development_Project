@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myekigai/features/auth/view/login_view.dart';
+import 'package:myekigai/features/onboarding/view/onboarding.dart';
 
 class LoginView1 extends StatefulWidget {
   static route() {
@@ -46,7 +46,7 @@ class _LoginView1State extends State<LoginView1> {
               padding: const EdgeInsets.all(16.0),
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.push(context, LoginView.route());
+                  Navigator.push(context, Onboarding.route());
                 },
                 child: const Text('Button'),
               ),
