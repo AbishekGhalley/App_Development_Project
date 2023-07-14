@@ -8,6 +8,11 @@ class AssetsConstants {
   static const String faq = "$_pngPath/Faq.png";
   static const String refersplash1 = "$_pngPath/Refersplash1.png";
   static const String refersplash2 = "$_pngPath/Refersplash2.png";
+  static const String bubblechat = "$_pngPath/Bubblechat.png";
+  static const String cashlesspayment = "$_pngPath/CashlessPayment.png";
+  static const String error = "$_pngPath/Error.png";
+  static const String private = "$_pngPath/Private.png";
+  static const String share = "$_pngPath/Share.png";
   static const String shareRide = "$_pngPath/ShareRide.png";
   static const String supercharge = "$_pngPath/Supercharge.png";
   static const String swapbattery = "$_pngPath/SwapBattery.png";
