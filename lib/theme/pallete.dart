@@ -6,5 +6,7 @@ class Pallete {
   static const Color partitionlineColor = Color.fromRGBO(230, 230, 230, 1);
   static const Color textColor = Color.fromRGBO(29, 29, 29, 1);
   static const Color btnTextColor = Colors.white;
+  static const Color btnDisabledColor =
+      Color.fromRGBO(7, 108, 224, 0.5); // By Imran
   static const Color geryColor = Color.fromRGBO(156, 156, 156, 1);
 }
