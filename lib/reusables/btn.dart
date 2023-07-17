@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:myekigai/theme/pallete.dart';
 
 class CustomButton extends StatelessWidget {
@@ -17,7 +16,7 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 16), // Set the horizontal margin
+      margin: const EdgeInsets.symmetric(horizontal: 16), // Set the horizontal margin
       width:
           double.infinity, // Set the width to occupy the full available space
       child: TextButton(
@@ -41,10 +40,11 @@ class CustomButton extends StatelessWidget {
             : onPressed, // Disable onPressed callback if disabled
         child: Text(
           text,
-          style: GoogleFonts.sen(
+          style: const TextStyle(
+            fontFamily: "Sen",
             fontSize: 16,
             fontWeight: FontWeight.bold,
-            color: disabled ? Pallete.btnTextColor : Pallete.btnDisabledColor,
+            color: Pallete.btnTextColor,
           ),
         ),
       ),

@@ -4,6 +4,7 @@ import 'package:myekigai/features/hamburger/view/ReferEarn.dart';
 import 'package:myekigai/features/hamburger/view/help.dart';
 import 'package:myekigai/features/onboarding/view/onboarding.dart';
 import 'package:myekigai/features/shareride/view/recentlocal.dart';
+import 'package:myekigai/features/shareride/view/shareridemap.dart';
 import 'package:myekigai/theme/theme.dart';
 
 void main() {
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: AppTheme.theme,
-      home: const recentlocal(),
+      home: const shareridemap(),
     );
   }
 }
