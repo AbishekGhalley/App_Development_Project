@@ -143,32 +143,7 @@ class _shareridemapState extends State<shareridemap> {
               ],
             ),
           ),
-          Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child: Container(
-              width: double.infinity,
-              color: Colors.white,
-              padding: const EdgeInsets.all(20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 16),
-                    child:Row(
-                    children: [
-                      Icon(Icons.info_outline_rounded),
-                      Spacer(),
-                      Text("Whom would you like to share your ride with?")
-                    ],
-                  ),),
-                const SizedBox(height: 15,),
-                CustomButton(text: "Continue", onPressed: (){})
-                ],
-              ),
-            )
-          )
+
         ],
       ),
     );
