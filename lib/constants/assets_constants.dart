@@ -12,6 +12,9 @@ class AssetsConstants {
   static const String cashlesspayment = "$_pngPath/CashlessPayment.png";
   static const String place = "$_pngPath/Place.png";
   static const String map = "$_pngPath/map.png";
+  static const String dummyimage = "$_pngPath/dummyimage.png";
+  static const String telephone = "$_pngPath/telephone.png";
+  static const String sos = "$_pngPath/sos.png";
   static const String ekizone = "$_pngPath/ekizone.png";
   static const String location = "$_pngPath/MyLocation.png";
   static const String error = "$_pngPath/Error.png";

@@ -3,13 +3,18 @@ import 'package:myekigai/constants/assets_constants.dart';
 import 'package:myekigai/reusables/btn.dart';
 
 class shareridemap extends StatefulWidget {
-  const shareridemap({super.key});
+  final double posbottom;
+  final double posright;
+  final bool isvisible;
+  const shareridemap({super.key,required this.posbottom,required this.posright,this.isvisible=false});
 
   @override
   State<shareridemap> createState() => _shareridemapState();
 }
 
 class _shareridemapState extends State<shareridemap> {
+
+
   String searchQuery = '';
   List<String> originalResults = [
     'Result 1',
@@ -124,8 +129,8 @@ class _shareridemapState extends State<shareridemap> {
             ),
           ),
           Positioned(
-            bottom: 180,
-            right: 16,
+            bottom: widget.posbottom,
+            right: widget.posright,
             child: Column(
               children: [
                 IconButton(
@@ -140,6 +145,14 @@ class _shareridemapState extends State<shareridemap> {
                     // Handle share icon press
                   },
                 ),
+               Visibility(
+                 visible: widget.isvisible,
+                   child:IgnorePointer(
+                       ignoring: !widget.isvisible,
+                       child:
+                   IconButton(onPressed: (){}, icon: Image.asset(AssetsConstants.sos)
+                   ))
+               )
               ],
             ),
           ),

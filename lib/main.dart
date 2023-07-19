@@ -4,8 +4,8 @@ import 'package:myekigai/features/hamburger/view/ReferEarn.dart';
 import 'package:myekigai/features/hamburger/view/help.dart';
 import 'package:myekigai/features/onboarding/view/onboarding.dart';
 import 'package:myekigai/features/shareride/view/recentlocal.dart';
+import 'package:myekigai/features/shareride/view/shareridedriverdetails.dart';
 import 'package:myekigai/features/shareride/view/sharerideview.dart';
-import 'package:myekigai/features/shareride/widget/shareridemap.dart';
 import 'package:myekigai/theme/theme.dart';
 
 void main() {
