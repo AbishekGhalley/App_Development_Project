@@ -3,7 +3,6 @@ import 'package:myekigai/features/hamburger/view/content_model_help.dart';
 import 'package:myekigai/features/hamburger/widgets/help_btn.dart';
 import 'package:myekigai/reusables/TopAppbar.dart';
 import 'package:myekigai/constants/constants.dart';
-import 'package:myekigai/theme/pallete.dart';
 
 class Help extends StatelessWidget {
   const Help({super.key});
