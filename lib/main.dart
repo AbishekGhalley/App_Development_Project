@@ -29,7 +29,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: AppTheme.theme,
-      home: const Navbar(),
+      home: Scaffold(
+        body: Builder(
+          builder: (context)=> Navbar(),
+        ),
+      ),
     );
   }
 }

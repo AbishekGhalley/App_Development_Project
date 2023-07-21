@@ -88,7 +88,7 @@ class Navbar extends StatelessWidget {
             ])),
         Expanded(
           child: ListView(
-            padding: EdgeInsets.zero,
+            padding: EdgeInsets.symmetric(horizontal: 20),
             children: [
               ListTile(
                 leading: Image.asset(AssetsConstants.card),
@@ -156,7 +156,7 @@ class Navbar extends StatelessWidget {
                             builder: (context) => const NotificationScreen()));
                   }),
               ListTile(
-                leading: Image.asset(AssetsConstants.goldenstar),
+                leading: Image.asset(AssetsConstants.star),
                 title: const Text(
                   'Rewards',
                   style: TextStyle(
