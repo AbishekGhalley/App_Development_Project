@@ -12,9 +12,9 @@ class FullWidthTextWidget extends StatelessWidget {
   const FullWidthTextWidget(
       {super.key,
       required this.text,
-      this.fontSize = 21,
+      this.fontSize = 18,
       this.textColor = Pallete.textColor,
-      this.fontWeight = FontWeight.w500,
+      this.fontWeight = FontWeight.w600,
       this.horizontalPadding = 20,
       this.textAlign = TextAlign.center});
 
