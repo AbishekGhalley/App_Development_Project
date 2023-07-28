@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myekigai/features/auth/view/login_view.dart';
+import 'package:myekigai/features/homescreen/view/home_view.dart';
 import 'content_model.dart';
 import 'package:myekigai/theme/pallete.dart';
 
@@ -133,7 +134,7 @@ class _OnboardingState extends State<Onboarding> {
                     ),
                     onPressed: () {
                       if (currentIndex == contents.length - 1) {
-                        Navigator.push(context, LoginView.route());
+                        Navigator.push(context, HomeScreen.route());
                       } else {
                         _controller.nextPage(
                           duration: const Duration(milliseconds: 300),

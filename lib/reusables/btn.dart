@@ -5,8 +5,14 @@ import 'package:myekigai/theme/pallete.dart';
 class CustomButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
+  final bool disabled; // New property to indicate button state
 
-  const CustomButton({super.key, required this.text, required this.onPressed});
+  const CustomButton({
+    Key? key,
+    required this.text,
+    required this.onPressed,
+    this.disabled = false, // Default is not disabled
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,20 +27,25 @@ class CustomButton extends StatelessWidget {
               const EdgeInsets.symmetric(vertical: 14)),
           backgroundColor: MaterialStateProperty.resolveWith<Color>(
               (Set<MaterialState> states) {
-            if (states.contains(MaterialState.pressed)) {
-              return const Color.fromRGBO(242, 242, 242, 1);
+            if (disabled) {
+              return Pallete.btnDisabledColor;
+            } else if (states.contains(MaterialState.pressed)) {
+              return Pallete.btnTextColor;
             } else {
               return Pallete.primaryColor;
             }
           }),
         ),
-        onPressed: onPressed,
+        onPressed: disabled
+            ? null
+            : onPressed, // Disable onPressed callback if disabled
         child: Text(
           text,
           style: GoogleFonts.sen(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-              color: Pallete.btnTextColor),
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+            color: disabled ? Pallete.btnTextColor : Pallete.btnTextColor,
+          ),
         ),
       ),
     );
