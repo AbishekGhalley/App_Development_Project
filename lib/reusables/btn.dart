@@ -40,11 +40,10 @@ class CustomButton extends StatelessWidget {
             : onPressed, // Disable onPressed callback if disabled
         child: Text(
           text,
-          style: const TextStyle(
-            fontFamily: "Sen",
+          style: GoogleFonts.sen(
             fontSize: 16,
             fontWeight: FontWeight.bold,
-            color: Pallete.btnTextColor,
+            color: disabled ? Pallete.btnTextColor : Pallete.btnTextColor,
           ),
         ),
       ),

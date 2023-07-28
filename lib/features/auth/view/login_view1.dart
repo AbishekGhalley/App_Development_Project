@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:myekigai/features/onboarding/view/onboarding.dart';
+import 'package:myekigai/features/auth/view/login_view2.dart';
+import 'package:myekigai/features/auth/widgets/auth_field.dart';
+import 'package:myekigai/reusables/full_width_text.dart';
+import 'package:myekigai/reusables/btn.dart';
+import 'package:myekigai/theme/pallete.dart';
 
 class LoginView1 extends StatefulWidget {
   static route() {
@@ -25,35 +29,68 @@ class LoginView1 extends StatefulWidget {
 }
 
 class _LoginView1State extends State<LoginView1> {
+  final phoneNumber = TextEditingController();
+
   @override
+  void dispose() {
+    super.dispose();
+    phoneNumber.dispose();
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          const Column(
-            children: [
-              // Top text widgets
-              Text('Text Widget 1'),
-              Text('Text Widget 2'),
-              // Add more text widgets as needed
-            ],
-          ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(context, Onboarding.route());
-                },
-                child: const Text('Button'),
+      body: SizedBox(
+        height: double.infinity,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            const SizedBox(height: 80),
+            const FullWidthTextWidget(
+              text: "Enter Phone Number for Verification",
+              fontSize: 20,
+              textAlign: TextAlign.left,
+              horizontalPadding: 30,
+            ),
+            const SizedBox(height: 10),
+            const FullWidthTextWidget(
+              text:
+                  "This number will be used for all ride related communication. You shall receive an sms with code for verification.",
+              fontSize: 15,
+              fontWeight: FontWeight.w500,
+              textAlign: TextAlign.left,
+              textColor: Pallete.geryColor,
+              horizontalPadding: 30,
+            ),
+            const SizedBox(height: 40),
+            Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: Column(
+                  children: [
+                    AuthField(
+                        controller: phoneNumber,
+                        hintText: '+91 | Enter your Phone Number'),
+                    const SizedBox(
+                      height: 20,
+                    )
+                  ],
+                )),
+            Expanded(
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: CustomButton(
+                  text: "Sent OTP",
+                  onPressed: () {
+                    Navigator.push(context, LoginView2.route());
+                  },
+                ),
               ),
             ),
-          ),
-        ],
+            const SizedBox(height: 20),
+          ],
+        ),
       ),
+
+      // Other Scaffold properties and widgets
     );
   }
 }

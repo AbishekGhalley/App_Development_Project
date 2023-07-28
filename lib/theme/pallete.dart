@@ -8,4 +8,6 @@ class Pallete {
   static const Color btnTextColor = Colors.white;
   static const Color btnDisabledColor =  Color.fromRGBO(7, 108, 224, 0.5);
   static const Color geryColor = Color.fromRGBO(156, 156, 156, 1);
+  static const Color btnDisabledColor =
+      Color.fromRGBO(7, 108, 224, 0.5); // By Imran
 }
