@@ -28,7 +28,8 @@ class _BottomWidgetState extends State<BottomWidget> {
           Positioned(
             bottom: 0,
             child: Container(
-                constraints: const BoxConstraints(maxWidth: 360),
+                width: MediaQuery.of(context).size.width,
+                constraints: const BoxConstraints(maxWidth: double.infinity),
                 padding: const EdgeInsets.all(10),
                 decoration: const BoxDecoration(color: Colors.white),
                 child: Column(
@@ -88,7 +89,8 @@ class BottomWidget1 extends StatelessWidget {
         Positioned(
             bottom: 0,
             child: Container(
-                constraints: const BoxConstraints(maxWidth: 360),
+                width: MediaQuery.of(context).size.width,
+                constraints: const BoxConstraints(maxWidth: double.infinity),
                 padding: const EdgeInsets.all(10),
                 decoration: const BoxDecoration(color: Colors.white),
                 child: Column(
