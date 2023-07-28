@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myekigai/constants/constants.dart';
 import 'package:myekigai/features/SwapBatteries/view/swapBatteries.dart';
+import 'package:myekigai/features/hamburger/view/Navbar.dart';
 import 'package:myekigai/features/reservevehicle/View/reserve_vehicle_view.dart';
+import 'package:myekigai/reusables/key_navbar.dart';
 import 'package:myekigai/reusables/searchbar.dart';
-
 import '../../../theme/pallete.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -31,9 +32,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: global_navbar.scaffoldKey,
+      drawer: Navbar(scaffoldKey: global_navbar.scaffoldKey,),
       backgroundColor: Colors.black,
       body: Align(
         alignment: Alignment.topCenter,
@@ -51,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 top: MediaQuery.of(context).padding.top + 8,
                 left: 20,
                 right: 20,
-                child: const CustomSearchBar(),
+                child: CustomSearchBar(scaffoldKey: global_navbar.scaffoldKey,),
               ),
               Positioned(
                 bottom: 240,

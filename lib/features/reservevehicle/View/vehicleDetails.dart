@@ -4,6 +4,7 @@ import 'package:myekigai/constants/assets_constants.dart';
 import 'package:myekigai/features/reservevehicle/View/lastReserveVehicle.dart';
 import 'package:myekigai/features/reservevehicle/widgets/popupWidget.dart';
 import 'package:myekigai/features/reservevehicle/widgets/vehicleInfoBox.dart';
+import 'package:myekigai/reusables/TopAppbar.dart';
 import 'package:myekigai/reusables/btn.dart';
 import 'package:myekigai/theme/theme.dart';
 
@@ -17,27 +18,7 @@ class VehicleDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     bool isVisible = true;
     return Scaffold(
-      appBar: AppBar(
-        elevation: 4,
-        centerTitle: false,
-        backgroundColor: Colors.white,
-        titleSpacing: 0,
-        title: Text(
-          'Vehicle details',
-          style: GoogleFonts.sen(
-            color: Pallete.textColor,
-            fontSize: 21,
-            fontWeight: FontWeight.w400,
-          ),
-        ),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new_sharp,
-              color: Color(0xFF1C1C1C)),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-      ),
+      appBar: TopAppbar(toptitle: "Vehicle Details"),
       body: Column(children: [
         const VehicleCardWithLargeImage(
           brand: 'Solaire',

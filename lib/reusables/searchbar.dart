@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myekigai/features/hamburger/view/Navbar.dart';
+import 'package:myekigai/reusables/key_navbar.dart';
 
 import '../theme/pallete.dart';
 
 class CustomSearchBar extends StatelessWidget {
-  const CustomSearchBar({super.key});
+  final GlobalKey<ScaffoldState> scaffoldKey;
+  const CustomSearchBar({super.key,required this.scaffoldKey});
 
   @override
   Widget build(BuildContext context) {
@@ -42,8 +44,7 @@ class CustomSearchBar extends StatelessWidget {
               icon: const Icon(Icons.menu_rounded, size: 32),
               onPressed: () {
                 // Handle hamburger menu button press
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Navbar()));
+                global_navbar.scaffoldKey.currentState?.openDrawer();
               },
             ),
             Expanded(

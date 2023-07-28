@@ -10,18 +10,19 @@ import 'package:myekigai/features/hamburger/view/Wallet.dart';
 import 'package:myekigai/features/hamburger/view/help.dart';
 
 class Navbar extends StatelessWidget {
-  const Navbar({Key? key}) : super(key: key);
+  final GlobalKey<ScaffoldState> scaffoldKey;
+  const Navbar({Key? key,required this.scaffoldKey}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
+    return Drawer(
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
               width: double.infinity,
               height: 260,
-              color: Colors.white,
+
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [

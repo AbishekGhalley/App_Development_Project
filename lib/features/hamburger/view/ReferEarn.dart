@@ -59,6 +59,9 @@ class ReferEarn extends StatelessWidget {
                         ),
                       )),
                   SizedBox(
+                    height: 25,
+                  ),
+                  SizedBox(
                       width: double.infinity,
                       height: 240,
                       child: Container(
@@ -113,6 +116,7 @@ class ReferEarn extends StatelessWidget {
                               ),
                               Expanded(
                                   child: ListView.builder(
+                                physics: NeverScrollableScrollPhysics(),
                                 itemCount: questions.length,
                                 itemBuilder: (BuildContext context, int index) {
                                   int x = index + 1;
@@ -180,50 +184,58 @@ class ReferEarn extends StatelessWidget {
                           ),
                         ),
                       )),
+                  SizedBox(
+                    height: 25,
+                  ),
                   Expanded(
                       child: ListView.builder(
                     itemCount: askedquestions.length,
                     itemBuilder: (BuildContext context, int index) {
-                      return Container(
-                        width: double.infinity,
-                        height: 70,
-                        decoration: const BoxDecoration(boxShadow: [
-                          BoxShadow(
-                            color: Color.fromRGBO(171, 171, 171, 0.25),
-                            offset: Offset(0, 0),
-                            spreadRadius: 0,
-                            blurRadius: 1,
-                          ),
-                          BoxShadow(
-                            color: Color.fromRGBO(255, 255, 255, 1),
-                            offset: Offset(0, 0),
-                            spreadRadius: 0,
-                            blurRadius: 0,
-                          ),
-                        ]),
-                        child: Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 12, vertical: 8),
-                            child: Row(children: [
-                              Image.asset(AssetsConstants.faq),
-                              const SizedBox(
-                                width: 20,
-                              ),
-                              Text(
-                                askedquestions[index].question,
-                                style: const TextStyle(
-                                    fontSize: 13,
-                                    fontWeight: FontWeight.w500,
-                                    fontFamily: "Montserrat"),
-                              ),
-                              const Spacer(),
-                              IconButton(
-                                icon:
-                                    const Icon(Icons.keyboard_arrow_down_sharp),
-                                onPressed: () {},
-                              ),
-                            ])),
-                      );
+                      return Column(children: [
+                        Container(
+                          width: double.infinity,
+                          height: 70,
+                          decoration: const BoxDecoration(boxShadow: [
+                            BoxShadow(
+                              color: Color.fromRGBO(171, 171, 171, 0.25),
+                              offset: Offset(0, 0),
+                              spreadRadius: 0,
+                              blurRadius: 1,
+                            ),
+                            BoxShadow(
+                              color: Color.fromRGBO(255, 255, 255, 1),
+                              offset: Offset(0, 0),
+                              spreadRadius: 0,
+                              blurRadius: 0,
+                            ),
+                          ]),
+                          child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 12, vertical: 8),
+                              child: Row(children: [
+                                Image.asset(AssetsConstants.faq),
+                                const SizedBox(
+                                  width: 20,
+                                ),
+                                Text(
+                                  askedquestions[index].question,
+                                  style: const TextStyle(
+                                      fontSize: 13,
+                                      fontWeight: FontWeight.w500,
+                                      fontFamily: "Montserrat"),
+                                ),
+                                const Spacer(),
+                                IconButton(
+                                  icon: const Icon(
+                                      Icons.keyboard_arrow_down_sharp),
+                                  onPressed: () {},
+                                ),
+                              ])),
+                        ),
+                        SizedBox(
+                          height: 15,
+                        )
+                      ]);
                     },
                   ))
                 ],

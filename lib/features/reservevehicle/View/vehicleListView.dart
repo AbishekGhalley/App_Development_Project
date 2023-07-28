@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myekigai/constants/constants.dart';
 import 'package:myekigai/features/reservevehicle/View/vehicleDetails.dart';
+import 'package:myekigai/reusables/TopAppbar.dart';
 import 'package:myekigai/reusables/vehicleCard.dart';
 import 'package:myekigai/reusables/btn.dart';
 import 'package:myekigai/theme/pallete.dart';
@@ -14,22 +15,7 @@ class VehicleListView extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Choose Vehicle',
-          style: GoogleFonts.sen(
-              color: Pallete.textColor, fontWeight: FontWeight.w400),
-        ),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new_sharp,
-              color: Color(0xFF1C1C1C)),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-        elevation: 4,
-        centerTitle: false,
-      ),
+      appBar: TopAppbar(toptitle: "Choose Vehicles"),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

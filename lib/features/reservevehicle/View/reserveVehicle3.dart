@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myekigai/constants/assets_constants.dart';
+import 'package:myekigai/reusables/TopAppbar.dart';
 
 class choose_vehicles extends StatelessWidget {
   const choose_vehicles({Key? key}) : super(key: key);
@@ -7,18 +8,7 @@ class choose_vehicles extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: const BackButton(
-          color: Colors.black,
-        ),
-        backgroundColor: Colors.white,
-        title: const Text('Choose Vehicles',
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 20,
-              fontFamily: 'Montserrat',
-            )),
-      ),
+      appBar: TopAppbar(toptitle: "Vehicle Details"),
       body: Container(
         child: ListView(
           children: [
