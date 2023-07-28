@@ -13,7 +13,7 @@ List<Deployment> contents = [
       title: 'Scan & Go',
       image: AssetsConstants.scango,
       description: "Easy and accessible rentals at your fingertips."
-          "\nJust Scan the QR on vehicle and you are ready to hit the road !"),
+          " Just Scan the QR on vehicle and you are ready to hit the road !"),
   Deployment(
       title: 'Reserve Vehicle',
       image: AssetsConstants.reserveVehicle,

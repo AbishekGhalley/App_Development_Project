@@ -3,6 +3,7 @@ import 'package:myekigai/constants/assets_constants.dart';
 import 'package:myekigai/features/hamburger/view/Myvehicles.dart';
 import 'package:myekigai/features/hamburger/view/Notification.dart';
 import 'package:myekigai/features/hamburger/view/Profile.dart';
+import 'package:myekigai/features/hamburger/view/ReferEarn.dart';
 import 'package:myekigai/features/hamburger/view/RideHistory.dart';
 import 'package:myekigai/features/hamburger/view/Settings.dart';
 import 'package:myekigai/features/hamburger/view/Wallet.dart';
@@ -169,7 +170,12 @@ class Navbar extends StatelessWidget {
                       fontFamily: 'Montserrat',
                     ),
                   ),
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ReferEarn()));
+                  },
                 ),
                 ListTile(
                   leading: Image.asset(AssetsConstants.heart),

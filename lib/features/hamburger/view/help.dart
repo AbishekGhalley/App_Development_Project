@@ -3,6 +3,7 @@ import 'package:myekigai/features/hamburger/view/content_model_help.dart';
 import 'package:myekigai/features/hamburger/widgets/help_btn.dart';
 import 'package:myekigai/reusables/TopAppbar.dart';
 import 'package:myekigai/constants/constants.dart';
+import 'package:myekigai/theme/theme.dart';
 
 class Help extends StatelessWidget {
   const Help({super.key});
@@ -107,7 +108,9 @@ class Help extends StatelessWidget {
                         shrinkWrap: true,
                         itemCount: faqs.length,
                         itemBuilder: (BuildContext context, int index) {
-                          return ListTile(
+                          return Column(
+                              children:[
+                                ListTile(
                               contentPadding: EdgeInsets.zero,
                               title: Text(
                                 faqs[index].questions,
@@ -119,7 +122,11 @@ class Help extends StatelessWidget {
                               trailing: IconButton(
                                   onPressed: () {},
                                   icon: const Icon(
-                                      Icons.keyboard_arrow_down_sharp)));
+                                      Icons.keyboard_arrow_down_sharp))),
+                                SizedBox(height: 15,),
+                                Divider(height: 1,thickness: 1,color: Pallete.partitionlineColor,),
+                                SizedBox(height: 15,)
+                              ]);
                         })
                   ],
                 )

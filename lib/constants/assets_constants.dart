@@ -43,8 +43,8 @@ class AssetsConstants {
   static const String cashlesspayment = "$_pngPath/CashlessPayment.png";
   static const String place = "$_pngPath/Place.png";
   static const String error = "$_pngPath/Error.png";
-  static const String private = "$_pngPath/Private.png";
-  static const String share = "$_pngPath/Share.png";
+  static const String private = "$_pngPath/Private_help.png";
+  static const String share = "$_pngPath/share_help.png";
   static const String card = "$_pngPath/card.png";
   static const String checkmark = "$_pngPath/Checkmark.png";
   static const String db = "$_pngPath/Db.png";
@@ -65,9 +65,9 @@ class AssetsConstants {
   static const String lock = "$_pngPath/Lock.png";
   static const String manstandingup = "$_pngPath/ManStandingUp.png";
   static const String piechart = "$_pngPath/Piechart.png";
-  static const String information = "$_pngPath/Information.png";
-  static const String hammer = "$_pngPath/Legalhammersymbol.png";
-  static const String language = "$_pngPath/Language.png";
+  static const String information = "$_pngPath/Information_settings.png";
+  static const String hammer = "$_pngPath/Legalhammersymbol_settings.png";
+  static const String language = "$_pngPath/Language_settings.png";
   static const String brightness = "$_pngPath/Brightness.png";
   static const String blizz = "$_pngPath/blizz.png";
   static const String dbg = "$_pngPath/dbg.png";
