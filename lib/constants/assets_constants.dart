@@ -78,6 +78,11 @@ class AssetsConstants {
   static const String andummyimage = "$_pngPath/An_dummyimage.png";
   static const String anmap = "$_pngPath/map.png";
   static const String ansos = "$_pngPath/An_sos.png";
+  static const String anquestion = "$_pngPath/An_question.png";
+  static const String ancreditcard = "$_pngPath/An_creditcard.png";
+  static const String angooglepay = "$_pngPath/An_googlepay.png";
+  static const String anphonepay = "$_pngPath/An_phonepe.png";
+  static const String anupi = "$_pngPath/An_upi.png";
 
   //markers
   static const String imlocatorPin = "$_pngPath/locator_pin.png"; //by imran

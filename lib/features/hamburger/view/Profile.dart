@@ -32,7 +32,7 @@ class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const TopAppbar(toptitle: "Profile"),
+      appBar: TopAppbar(toptitle: "Profile"),
       body: SingleChildScrollView(
           physics: const ScrollPhysics(),
           child: Column(

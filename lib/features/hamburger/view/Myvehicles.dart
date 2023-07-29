@@ -10,7 +10,7 @@ class MyVehicles extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const TopAppbar(toptitle: "My Vehicles"),
+      appBar: TopAppbar(toptitle: "My Vehicles"),
       body: Column(
         children: [
           Padding(

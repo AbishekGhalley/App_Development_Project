@@ -11,7 +11,7 @@ class ReferEarn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: const TopAppbar(toptitle: "Refer & Earn"),
+        appBar: TopAppbar(toptitle: "Refer & Earn"),
         body: SizedBox(
             height: double.infinity,
             child: Padding(

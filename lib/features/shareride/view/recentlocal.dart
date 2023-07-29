@@ -10,7 +10,7 @@ class recentlocal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const TopAppbar(toptitle: "Share Ride"),
+      appBar: TopAppbar(toptitle: "Share Ride"),
       body: Column(
         children: [
           Padding(

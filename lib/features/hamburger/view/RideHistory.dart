@@ -10,7 +10,7 @@ class RideHistory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:const TopAppbar(toptitle: "Ride History"),
+      appBar:TopAppbar(toptitle: "Ride History"),
       body: ListView(
         padding: const EdgeInsets.all(20.0),
         children: [

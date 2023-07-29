@@ -11,7 +11,7 @@ class Help extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const TopAppbar(toptitle: "Help"),
+      appBar: TopAppbar(toptitle: "Help"),
       body: SingleChildScrollView(
           physics: const ScrollPhysics(),
           child: Padding(

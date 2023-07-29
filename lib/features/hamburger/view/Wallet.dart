@@ -10,7 +10,7 @@ class Wallet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const TopAppbar(toptitle: "Wallet"),
+      appBar: TopAppbar(toptitle: "Wallet"),
       body:  Column(
         children: [
           Container(

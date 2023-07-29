@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:myekigai/features/auth/view/login_view.dart';
 import 'package:myekigai/features/homescreen/view/home_view.dart';
 import 'package:myekigai/features/onboarding/view/onboarding.dart';
+import 'package:myekigai/features/supercharge/view/supercharge_payment.dart';
+import 'package:myekigai/features/supercharge/view/vehicledetailssupercharge.dart';
 import 'package:myekigai/theme/theme.dart';
 
 void main() {
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: AppTheme.theme,
-      home: const HomeScreen(),
+      home: PaymentScreen(),
     );
   }
 }
