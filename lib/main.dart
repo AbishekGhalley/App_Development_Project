@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:myekigai/features/auth/view/login_view.dart';
 import 'package:myekigai/features/homescreen/view/home_view.dart';
 import 'package:myekigai/features/onboarding/view/onboarding.dart';
-import 'package:myekigai/features/shareride/view/recentlocal.dart';
-import 'package:myekigai/features/shareride/view/shareridedriverdetails.dart';
-import 'package:myekigai/features/shareride/view/sharerideview.dart';
 import 'package:myekigai/theme/theme.dart';
 
 void main() {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:myekigai/theme/pallete.dart';
 
 class CustomButton extends StatelessWidget {
@@ -16,7 +17,7 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 16), // Set the horizontal margin
+      margin: EdgeInsets.symmetric(horizontal: 16), // Set the horizontal margin
       width:
           double.infinity, // Set the width to occupy the full available space
       child: TextButton(

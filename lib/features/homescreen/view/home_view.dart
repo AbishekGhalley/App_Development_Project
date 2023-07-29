@@ -4,6 +4,7 @@ import 'package:myekigai/constants/constants.dart';
 import 'package:myekigai/features/SwapBatteries/view/swapBatteries.dart';
 import 'package:myekigai/features/hamburger/view/Navbar.dart';
 import 'package:myekigai/features/reservevehicle/View/reserve_vehicle_view.dart';
+import 'package:myekigai/features/shareride/view/shareridemap.dart';
 import 'package:myekigai/reusables/key_navbar.dart';
 import 'package:myekigai/reusables/searchbar.dart';
 import '../../../theme/pallete.dart';
@@ -323,6 +324,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                               ),
                                               onPressed: () {
                                                 // Handle button 3 press
+                                                Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            shareridemap()));
                                               },
                                               child: Column(
                                                 children: [

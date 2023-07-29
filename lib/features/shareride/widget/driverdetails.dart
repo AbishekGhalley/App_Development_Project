@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myekigai/constants/assets_constants.dart';
-import 'package:myekigai/features/shareride/view/sharerideview.dart';
+import 'package:myekigai/features/shareride/view/shareridemap.dart';
 import 'package:myekigai/theme/pallete.dart';
 
 class driverdetails extends StatefulWidget {
@@ -73,7 +73,7 @@ class _driverdetailsState extends State<driverdetails> {
                         decoration: const BoxDecoration(
                             shape: BoxShape.circle,
                             image: DecorationImage(
-                              image: AssetImage(AssetsConstants.dummyimage),
+                              image: AssetImage(AssetsConstants.andummyimage),
                               fit: BoxFit.cover,
                             )),
                       ),
@@ -195,7 +195,7 @@ class _driverdetailsState extends State<driverdetails> {
                       width: 28,
                       decoration: const BoxDecoration(
                           image: DecorationImage(
-                              image: AssetImage(AssetsConstants.telephone))),
+                              image: AssetImage(AssetsConstants.antelephone))),
                     )
                   ]),
                   const SizedBox(
@@ -328,7 +328,7 @@ class _driverdetailsState extends State<driverdetails> {
                       style: const ButtonStyle(
                           splashFactory: NoSplash.splashFactory),
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>const sharerideview()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>shareridemap()));
                       },
                       child: const Text("Cancle",
                           style: TextStyle(

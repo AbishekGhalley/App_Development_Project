@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:myekigai/features/shareride/view/shareridedriverdetails.dart';
-import 'package:myekigai/features/shareride/widget/driverdetails.dart';
 import 'package:myekigai/reusables/btn.dart';
 import 'package:myekigai/theme/pallete.dart';
 
 class bottommodalsheet extends StatelessWidget {
-  const bottommodalsheet({super.key});
+  final Function(bool) updateisdetails;
+  bottommodalsheet(this.updateisdetails);
 
   @override
   Widget build(BuildContext context) {
@@ -33,10 +32,8 @@ class bottommodalsheet extends StatelessWidget {
           CustomButton(
               text: "Confirm",
               onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const shareridedriverdetails()));
+                updateisdetails(true);
+                Navigator.pop(context);
               }),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 16),
