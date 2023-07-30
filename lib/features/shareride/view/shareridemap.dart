@@ -87,7 +87,7 @@ class _shareridemapState extends State<shareridemap> {
                 right: 0,
                 child: Container(
                     width: double.infinity,
-                    height: 140,
+                    height: 130,
                     padding: EdgeInsets.symmetric(vertical: 18),
                     decoration: BoxDecoration(
                       color: Colors.white,
