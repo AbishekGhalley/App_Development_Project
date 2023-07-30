@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:myekigai/features/auth/view/login_view.dart';
 import 'package:myekigai/features/hamburger/view/Navbar.dart';
 import 'package:myekigai/features/homescreen/view/home_view.dart';
@@ -60,32 +61,12 @@ class _OnboardingState extends State<Onboarding> {
               },
               itemBuilder: (_, i) {
                 return Padding(
-                  padding: const EdgeInsets.all(25),
+                  padding: const EdgeInsets.all(20),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Expanded(
-                        child: Image.asset(contents[i].image),
-                      ),
-                      Text(
-                        contents[i].title,
-                        style: const TextStyle(
-                          fontSize: 27,
-                          fontFamily: "Sen",
-                          fontWeight: FontWeight.w700,
-                          color: Pallete.textColor,
-                        ),
-                      ),
-                      const SizedBox(height: 20),
-                      Text(
-                        contents[i].description,
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontFamily: "Montserrat",
-                          color: Pallete.textColor,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      )
+                        child:SvgPicture.asset(contents[i].image),)
                     ],
                   ),
                 );
