@@ -3,12 +3,13 @@ import 'package:myekigai/constants/assets_constants.dart';
 import 'package:myekigai/features/hamburger/view/Navbar.dart';
 import 'package:myekigai/features/shareride/widget/bottommodalsheet.dart';
 import 'package:myekigai/features/shareride/widget/driverdetails.dart';
+import 'package:myekigai/features/shareride/widget/searchbar.dart';
 import 'package:myekigai/reusables/btn.dart';
 import 'package:myekigai/reusables/key_navbar.dart';
-import 'package:myekigai/reusables/searchbar.dart';
 import 'package:myekigai/theme/pallete.dart';
 
 class shareridemap extends StatefulWidget {
+
   const shareridemap({super.key});
 
   @override
@@ -34,8 +35,8 @@ class _shareridemapState extends State<shareridemap> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Navbar(scaffoldKey: global_navbar.scaffoldKey),
-      key: global_navbar.scaffoldKey,
+      drawer: Navbar(scaffoldKey: global_navbar.sharescaffoldKey),
+      key: global_navbar.sharescaffoldKey,
       body: Stack(
         children: [
           Center(
@@ -50,7 +51,7 @@ class _shareridemapState extends State<shareridemap> {
             top: MediaQuery.of(context).padding.top + 15,
             left: 20,
             right: 20,
-            child: CustomSearchBar(scaffoldKey: global_navbar.scaffoldKey),
+            child:CustomSearchBar(scaffoldKey: global_navbar.sharescaffoldKey) ,
           ),
           Positioned(
             bottom: posbottom,

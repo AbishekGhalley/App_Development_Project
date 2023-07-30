@@ -81,11 +81,13 @@ class _PaymentScreenState extends State<PaymentScreen> {
                         height: 25,
                       ),
                       SizedBox(width: 10),
-                      Text('Google Play',style: TextStyle(
-                        fontFamily: "Montserrat",
-                        fontWeight: FontWeight.w500,
-                        fontSize: 21
-                      ),),
+                      Text(
+                        'Google Play',
+                        style: TextStyle(
+                            fontFamily: "Montserrat",
+                            fontWeight: FontWeight.w500,
+                            fontSize: 21),
+                      ),
                     ],
                   ),
                 )),
@@ -110,11 +112,11 @@ class _PaymentScreenState extends State<PaymentScreen> {
                         height: 25,
                       ),
                       SizedBox(width: 10),
-                      Text('Phone Pe',style: TextStyle(
-                          fontFamily: "Montserrat",
-                          fontWeight: FontWeight.w500,
-                          fontSize: 21
-                      )),
+                      Text('Phone Pe',
+                          style: TextStyle(
+                              fontFamily: "Montserrat",
+                              fontWeight: FontWeight.w500,
+                              fontSize: 21)),
                     ],
                   ),
                 )),
@@ -139,88 +141,91 @@ class _PaymentScreenState extends State<PaymentScreen> {
                         height: 25,
                       ),
                       SizedBox(width: 10),
-                      Text('UPI',style: TextStyle(
-                          fontFamily: "Montserrat",
-                          fontWeight: FontWeight.w500,
-                          fontSize: 21
-                      )),
+                      Text('UPI',
+                          style: TextStyle(
+                              fontFamily: "Montserrat",
+                              fontWeight: FontWeight.w500,
+                              fontSize: 21)),
                     ],
                   ),
                 )),
             Spacer(),
             Container(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Container(
-                    child: const ListTile(
-                      title: Text(
-                        'Swapping Charges',
-                        style: TextStyle(
-                          fontFamily: "Montserrat",
-                          color: Pallete.geryColor,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 16
-                        ),
-                      ),
-                      trailing: Text(
-                        '\₹10.00',    style: TextStyle(
-                          fontFamily: "Sen",
-                          color:Color(0xFF494949),
-                          fontWeight: FontWeight.w400,
-                          fontSize: 16
-                      ),
-                      ),
-                      // contentPadding: EdgeInsets.symmetric(vertical: -14.0),
-                    ),
-                  ),
-                  Container(
-                    child: const ListTile(
-                      title: Text(
-                        'Taxes',
-                        style: TextStyle(
-                          fontFamily: "Montserrat",
-                          color: Pallete.geryColor,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      trailing: Text(
-                        '\₹1.00',style: TextStyle(
-                          fontFamily: "Sen",
-                          color:Color(0xFF494949),
-                          fontWeight: FontWeight.w400,
-                          fontSize: 16
-                      ),
-                      ),
-                      // contentPadding: EdgeInsets.symmetric(vertical: 4.0),
-                    ),
-                  ),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 15),
-                    child: Divider(
-                      height: 1,
-                      thickness: 1,
-                      color: Pallete.partitionlineColor,
-                    ),
-                  ),
-                  const ListTile(
-                    title: Text(
-                      'Total',
-                      style: TextStyle(
-                          fontFamily: "Montserrat",
-                          color: Pallete.geryColor,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 20),
-                    ),
-                    trailing: Text('\₹11.00',
-                      style: TextStyle(
-                          fontFamily: "Sen",
-                          color: Pallete.textColor,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 21
-                      ),
-                    ),
-                  ),
+                      padding: EdgeInsets.symmetric(horizontal: 16),
+                      child: Column(children: [
+                        Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Swapping Charges',
+                                style: TextStyle(
+                                    fontFamily: "Montserrat",
+                                    color: Pallete.geryColor,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 16),
+                              ),
+                              Text(
+                                '\₹10.00',
+                                style: TextStyle(
+                                    fontFamily: "Sen",
+                                    color: Color(0xFF494949),
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 16),
+                              )
+                            ]),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Taxes',
+                              style: TextStyle(
+                                fontFamily: "Montserrat",
+                                color: Pallete.geryColor,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            Text(
+                              '\₹1.00',
+                              style: TextStyle(
+                                  fontFamily: "Sen",
+                                  color: Color(0xFF494949),
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 16),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 10.0),
+                        Divider(
+                          height: 1,
+                          thickness: 1,
+                          color: Pallete.partitionlineColor,
+                        ),
+                        SizedBox(height: 10.0),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Total',
+                              style: TextStyle(
+                                  fontFamily: "Montserrat",
+                                  color: Pallete.geryColor,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 20),
+                            ),
+                            Text(
+                              '\₹11.00',
+                              style: TextStyle(
+                                  fontFamily: "Sen",
+                                  color: Pallete.textColor,
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 21),
+                            ),
+                          ],
+                        )
+                      ])),
                   SizedBox(height: 10.0),
                   CustomButton(
                     text: "Continue",

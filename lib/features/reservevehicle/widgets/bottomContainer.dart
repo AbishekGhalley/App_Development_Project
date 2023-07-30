@@ -2,15 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myekigai/constants/assets_constants.dart';
+import 'package:myekigai/features/hamburger/view/Navbar.dart';
 import 'package:myekigai/features/reservevehicle/View/reserveVehicle2.dart';
 
 import 'package:myekigai/features/reservevehicle/View/vehicleListView.dart';
 import 'package:myekigai/features/reservevehicle/widgets/rowitem.dart';
 import 'package:myekigai/reusables/btn.dart';
+import 'package:myekigai/reusables/key_navbar.dart';
 
 import '../../../theme/pallete.dart';
 
 class BottomWidget extends StatefulWidget {
+
   const BottomWidget({super.key});
 
   @override
@@ -22,6 +25,7 @@ class _BottomWidgetState extends State<BottomWidget> {
 
   @override
   Widget build(BuildContext context) {
+
     return Stack(
       children: [
         if (!isButtonPressed) // Show BottomWidget initially
@@ -80,6 +84,7 @@ class _BottomWidgetState extends State<BottomWidget> {
 }
 
 class BottomWidget1 extends StatelessWidget {
+
   const BottomWidget1({super.key});
 
   @override
@@ -121,7 +126,7 @@ class BottomWidget1 extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const ReserveVehicle2()));
+                                builder: (context) =>  ReserveVehicle2()));
                       },
                     ),
                     // ignore: prefer_const_constructors

@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myekigai/features/hamburger/view/Navbar.dart';
 import 'package:myekigai/reusables/key_navbar.dart';
+import 'package:myekigai/theme/pallete.dart';
 
-import '../theme/pallete.dart';
+
 
 class CustomSearchBar extends StatelessWidget {
   final GlobalKey<ScaffoldState> scaffoldKey;
@@ -44,7 +45,7 @@ class CustomSearchBar extends StatelessWidget {
               icon: const Icon(Icons.menu_rounded, size: 32),
               onPressed: () {
                 // Handle hamburger menu button press
-                global_navbar.scaffoldKey.currentState?.openDrawer();
+                global_navbar.homescaffoldKey.currentState?.openDrawer();
               },
             ),
             Expanded(

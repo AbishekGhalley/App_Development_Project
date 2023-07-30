@@ -4,10 +4,12 @@ import 'package:myekigai/features/hamburger/view/Navbar.dart';
 import 'package:myekigai/features/reservevehicle/widgets/bottomContainer.dart';
 import 'package:myekigai/features/reservevehicle/widgets/largeLocator.dart';
 import 'package:myekigai/features/reservevehicle/widgets/locator.dart';
+import 'package:myekigai/features/reservevehicle/widgets/searchbar.dart';
 import 'package:myekigai/reusables/key_navbar.dart';
-import 'package:myekigai/reusables/searchbar.dart';
+
 
 class ReserveVehicle extends StatefulWidget {
+
   const ReserveVehicle({super.key});
 
   @override
@@ -28,8 +30,8 @@ class _ReserveVehicleState extends State<ReserveVehicle> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      key: global_navbar.scaffoldKey,
-      drawer: Navbar(scaffoldKey: global_navbar.scaffoldKey,),
+      key: global_navbar.reservescaffoldKey,
+      drawer: Navbar(scaffoldKey: global_navbar.reservescaffoldKey),
       body: Align(
         alignment: Alignment.topCenter,
         child: Container(
@@ -46,7 +48,7 @@ class _ReserveVehicleState extends State<ReserveVehicle> {
                 top: MediaQuery.of(context).padding.top + 8,
                 left: 20,
                 right: 20,
-                child: CustomSearchBar(scaffoldKey: global_navbar.scaffoldKey,),
+                child: CustomSearchBar(scaffoldKey: global_navbar.reservescaffoldKey)
               ),
               Positioned(
                 bottom: locatehieght,
@@ -125,7 +127,7 @@ class _ReserveVehicleState extends State<ReserveVehicle> {
                         });
                       },
                     )),
-              const BottomWidget()
+              BottomWidget()
             ],
           ),
         ),
