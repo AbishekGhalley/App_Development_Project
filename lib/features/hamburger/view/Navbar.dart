@@ -91,7 +91,6 @@ class Navbar extends StatelessWidget {
                   ])),
           Expanded(
             child: ListView(
-              padding: EdgeInsets.symmetric(horizontal: 20),
               children: [
                 ListTile(
                   leading: Image.asset(AssetsConstants.card),
