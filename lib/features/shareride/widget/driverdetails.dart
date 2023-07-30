@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myekigai/constants/assets_constants.dart';
 import 'package:myekigai/features/hamburger/view/Navbar.dart';
+import 'package:myekigai/features/homescreen/view/home_view.dart';
 import 'package:myekigai/features/shareride/view/shareridemap.dart';
 import 'package:myekigai/theme/pallete.dart';
 
@@ -331,7 +332,7 @@ class _driverdetailsState extends State<driverdetails> {
                       style: const ButtonStyle(
                           splashFactory: NoSplash.splashFactory),
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>shareridemap()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
                       },
                       child: const Text("Cancle",
                           style: TextStyle(
