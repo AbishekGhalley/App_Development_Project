@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:myekigai/constants/assets_constants.dart';
 import 'package:myekigai/reusables/Navbar.dart';
 import 'package:myekigai/features/shareride/widget/bottommodalsheet.dart';
@@ -76,7 +77,7 @@ class _shareridemapState extends State<shareridemap> {
                         ignoring: !isvisible,
                         child: IconButton(
                             onPressed: () {},
-                            icon: Image.asset(AssetsConstants.ansos))))
+                            icon:SvgPicture.asset(AssetsConstants.ansos))))
               ],
             ),
           ),

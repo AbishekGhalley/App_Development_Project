@@ -12,35 +12,32 @@ class OtpField extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             SizedBox(
-              height: 68,
-              width: 64,
+              height: 50,
+              width: 50,
               child: TextFormField(
+
                 decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(11),
-                        borderSide: const BorderSide(
-                          color: Pallete.primaryColor,
-                          width: 3,
-                        )
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(11),
-                        borderSide: const BorderSide(
-                          color: Pallete.primaryColor,
-                          width: 1,
-                        )
-                    ),
-                    contentPadding: const EdgeInsets.all(22),
-                    hintStyle: const TextStyle(
-                      fontSize: 16,
-                    )
+                  focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(11),
+                      borderSide: const BorderSide(
+                        color: Pallete.primaryColor,
+                        width: 3,
+                      )
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(11),
+                      borderSide: const BorderSide(
+                        color: Pallete.primaryColor,
+                        width: 1,
+                      )
+                  ),
                 ),
                 onChanged: (value) {
                   if (value.length == 1) {
                     FocusScope.of(context).nextFocus();
                   }
                 },
-                style: Theme.of(context).textTheme.headline6,
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(fontSize: 20),
                 keyboardType: TextInputType.number,
                 textAlign: TextAlign.center,
                 inputFormatters: [
@@ -49,33 +46,33 @@ class OtpField extends StatelessWidget {
                 ],
               ),
             ),
-
             SizedBox(
-              height: 68,
-              width: 64,
+              height: 50,
+              width: 50,
               child: TextFormField(
+
                 decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(11),
-                        borderSide: const BorderSide(
-                          color: Pallete.primaryColor,
-                          width: 3,
-                        )
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(11),
-                        borderSide: const BorderSide(
-                          color: Pallete.primaryColor,
-                          width: 1,
-                        )
-                    ),
+                  focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(11),
+                      borderSide: const BorderSide(
+                        color: Pallete.primaryColor,
+                        width: 3,
+                      )
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(11),
+                      borderSide: const BorderSide(
+                        color: Pallete.primaryColor,
+                        width: 1,
+                      )
+                  ),
                 ),
                 onChanged: (value) {
                   if (value.length == 1) {
                     FocusScope.of(context).nextFocus();
                   }
                 },
-                style: Theme.of(context).textTheme.headline6,
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(fontSize: 20),
                 keyboardType: TextInputType.number,
                 textAlign: TextAlign.center,
                 inputFormatters: [
@@ -84,33 +81,33 @@ class OtpField extends StatelessWidget {
                 ],
               ),
             ),
-
             SizedBox(
-              height: 68,
-              width: 64,
+              height: 50,
+              width: 50,
               child: TextFormField(
+
                 decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(11),
-                        borderSide: const BorderSide(
-                          color: Pallete.primaryColor,
-                          width: 3,
-                        )
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(11),
-                        borderSide: const BorderSide(
-                          color: Pallete.primaryColor,
-                          width: 1,
-                        )
-                    ),
+                  focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(11),
+                      borderSide: const BorderSide(
+                        color: Pallete.primaryColor,
+                        width: 3,
+                      )
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(11),
+                      borderSide: const BorderSide(
+                        color: Pallete.primaryColor,
+                        width: 1,
+                      )
+                  ),
                 ),
                 onChanged: (value) {
                   if (value.length == 1) {
                     FocusScope.of(context).nextFocus();
                   }
                 },
-                style: Theme.of(context).textTheme.headline6,
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(fontSize: 20),
                 keyboardType: TextInputType.number,
                 textAlign: TextAlign.center,
                 inputFormatters: [
@@ -119,33 +116,33 @@ class OtpField extends StatelessWidget {
                 ],
               ),
             ),
-
             SizedBox(
-              height: 68,
-              width: 64,
+              height: 50,
+              width: 50,
               child: TextFormField(
+
                 decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(11),
-                        borderSide: const BorderSide(
-                          color: Pallete.primaryColor,
-                          width: 3,
-                        )
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(11),
-                        borderSide: const BorderSide(
-                          color: Pallete.primaryColor,
-                          width: 1,
-                        )
-                    ),
+                  focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(11),
+                      borderSide: const BorderSide(
+                        color: Pallete.primaryColor,
+                        width: 3,
+                      )
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(11),
+                      borderSide: const BorderSide(
+                        color: Pallete.primaryColor,
+                        width: 1,
+                      )
+                  ),
                 ),
                 onChanged: (value) {
                   if (value.length == 1) {
                     FocusScope.of(context).nextFocus();
                   }
                 },
-                style: Theme.of(context).textTheme.headline6,
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(fontSize: 20),
                 keyboardType: TextInputType.number,
                 textAlign: TextAlign.center,
                 inputFormatters: [
@@ -153,7 +150,77 @@ class OtpField extends StatelessWidget {
                   FilteringTextInputFormatter.digitsOnly,
                 ],
               ),
-            )
+            ),
+            SizedBox(
+              height: 50,
+              width: 50,
+              child: TextFormField(
+
+                decoration: InputDecoration(
+                  focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(11),
+                      borderSide: const BorderSide(
+                        color: Pallete.primaryColor,
+                        width: 3,
+                      )
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(11),
+                      borderSide: const BorderSide(
+                        color: Pallete.primaryColor,
+                        width: 1,
+                      )
+                  ),
+                ),
+                onChanged: (value) {
+                  if (value.length == 1) {
+                    FocusScope.of(context).nextFocus();
+                  }
+                },
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(fontSize: 20),
+                keyboardType: TextInputType.number,
+                textAlign: TextAlign.center,
+                inputFormatters: [
+                  LengthLimitingTextInputFormatter(1),
+                  FilteringTextInputFormatter.digitsOnly,
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 50,
+              width: 50,
+              child: TextFormField(
+
+                decoration: InputDecoration(
+                  focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(11),
+                      borderSide: const BorderSide(
+                        color: Pallete.primaryColor,
+                        width: 3,
+                      )
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(11),
+                      borderSide: const BorderSide(
+                        color: Pallete.primaryColor,
+                        width: 1,
+                      )
+                  ),
+                ),
+                onChanged: (value) {
+                  if (value.length == 1) {
+                    FocusScope.of(context).nextFocus();
+                  }
+                },
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(fontSize: 20),
+                keyboardType: TextInputType.number,
+                textAlign: TextAlign.center,
+                inputFormatters: [
+                  LengthLimitingTextInputFormatter(1),
+                  FilteringTextInputFormatter.digitsOnly,
+                ],
+              ),
+            ),
           ],
         ),
     );

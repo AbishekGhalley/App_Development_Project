@@ -52,7 +52,7 @@ class _LoginView2State extends State<LoginView2> {
               horizontalPadding: 30,
             ),
             const FullWidthTextWidget(
-              text: "We are auto verifying the OTP sent to +918209532107.",
+              text: "We are auto verifying the OTP sent to your number.",
               fontSize: 19,
               textAlign: TextAlign.left,
               horizontalPadding: 30,
