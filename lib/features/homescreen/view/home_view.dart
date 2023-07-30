@@ -1,19 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myekigai/constants/constants.dart';
 import 'package:myekigai/features/SwapBatteries/view/swapBatteries.dart';
-import 'package:myekigai/features/hamburger/view/Navbar.dart';
-import 'package:myekigai/features/homescreen/widget/searchbar.dart';
+import 'package:myekigai/features/homescreen/widget/ServiceIconWithText.dart';
 import 'package:myekigai/features/reservevehicle/View/reserve_vehicle_view.dart';
+import 'package:myekigai/features/scanandgo/view/ScanQR.dart';
 import 'package:myekigai/features/shareride/view/shareridemap.dart';
+import 'package:myekigai/features/supercharge/view/vehicledetailssupercharge.dart';
+import 'package:myekigai/reusables/Navbar.dart';
+import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:myekigai/reusables/key_navbar.dart';
 import '../../../theme/pallete.dart';
+import '../widget/searchbar.dart';
+
 
 class HomeScreen extends StatefulWidget {
   static route() {
     return PageRouteBuilder(
       pageBuilder: (context, animation, secondaryAnimation) =>
-          const HomeScreen(),
+      const HomeScreen(),
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         return SlideTransition(
           position: Tween<Offset>(
@@ -26,6 +32,8 @@ class HomeScreen extends StatefulWidget {
     );
   }
 
+
+
   const HomeScreen({super.key});
 
   @override
@@ -33,9 +41,9 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   @override
   Widget build(BuildContext context) {
+    double screenHight = MediaQuery.of(context).size.height;
     return Scaffold(
       key: global_navbar.homescaffoldKey,
       drawer: Navbar(scaffoldKey: global_navbar.homescaffoldKey,),
@@ -47,6 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Stack(
             children: [
               Image.asset(
+                // Map must be added here
                 'assets/pngs/map.png',
                 width: double.infinity,
                 height: 800,
@@ -56,319 +65,157 @@ class _HomeScreenState extends State<HomeScreen> {
                 top: MediaQuery.of(context).padding.top + 8,
                 left: 20,
                 right: 20,
-                child:CustomSearchBar(scaffoldKey: global_navbar.homescaffoldKey, ) ,
+                child: CustomSearchBar(scaffoldKey: global_navbar.homescaffoldKey, ),
               ),
               Positioned(
-                bottom: 240,
-                right: 16,
+                bottom: 0,
+                right: 0,
+                left: 0,
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    IconButton(
-                      icon: Image.asset(AssetsConstants.locate),
-                      onPressed: () {
-                        // Handle favorite icon press
-                      },
-                    ),
-                    IconButton(
-                      icon: Image.asset(AssetsConstants.ekizone),
-                      onPressed: () {
-                        // Handle share icon press
-                      },
-                    ),
-                  ],
-                ),
-              ),
-              DraggableScrollableSheet(
-                initialChildSize: 0.3, // Initial size of the sheet
-                minChildSize: 0.22, // Minimum size of the sheet
-                maxChildSize: 0.30, // Maximum size of the sheet
-                builder:
-                    (BuildContext context, ScrollController scrollController) {
-                  return Container(
-                    decoration: const BoxDecoration(
-                      color: Colors.white,
-                      borderRadius:
-                          BorderRadius.vertical(top: Radius.circular(16.0)),
-                    ),
-                    child: Column(
-                      children: <Widget>[
-                        Container(
-                          height: 3.0,
-                          width: 66,
-                          margin: const EdgeInsets.only(top: 16, bottom: 0),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(1.5),
-                            color: Colors.black,
-                          ),
-                        ),
-                        Expanded(
-                          child: GestureDetector(
-                            onVerticalDragUpdate: (details) {
-                              if (details.delta.dy < 0) {
-                                // Swiping up
-                                if (scrollController.position.extentBefore ==
-                                    0.0) {
-                                  scrollController.animateTo(
-                                    scrollController.position.maxScrollExtent,
-                                    duration: const Duration(milliseconds: 300),
-                                    curve: Curves.easeInOut,
-                                  );
-                                }
-                              } else if (details.delta.dy > 0) {
-                                // Swiping down
-                                if (scrollController.position.extentBefore >
-                                    MediaQuery.of(context).size.height * 0.2) {
-                                  scrollController.animateTo(
-                                    0,
-                                    duration: const Duration(milliseconds: 300),
-                                    curve: Curves.easeInOut,
-                                  );
-                                }
-                              }
+                    Padding(
+                      padding: EdgeInsets.only(
+                          right: 16, bottom: screenHight * 0.032),
+                      child: Column(
+                        children: [
+                          IconButton(
+                            icon: Image.asset(AssetsConstants.locate),
+                            onPressed: () {
+                              // Handle favorite icon press
                             },
-                            child: ListView.builder(
-                              controller: scrollController,
-                              itemBuilder: (context, index) {
-                                if (index == 0) {
-                                  return ListTile(
-                                    title: Column(
-                                      children: [
-                                        Container(
-                                          padding: const EdgeInsets.only(
-                                              top: 0, left: 6, bottom: 6),
-                                          alignment: Alignment.topLeft,
-                                          child: Text(
-                                            'Services',
-                                            style: GoogleFonts.sen(
-                                              color: Pallete.textColor,
-                                              fontWeight: FontWeight.w400,
-                                              fontSize: 21,
-                                            ),
-                                          ),
-                                        ),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceEvenly,
-                                          children: [
-                                            ElevatedButton(
-                                              style: ElevatedButton.styleFrom(
-                                                backgroundColor:
-                                                    Colors.transparent,
-                                                elevation:
-                                                    0, // Remove box shadow
-                                              ),
-                                              onPressed: () {
-                                                // Handle button 1 press
-                                              },
-                                              child: Column(
-                                                children: [
-                                                  Image.asset(
-                                                    AssetsConstants
-                                                        .imhomescango,
-                                                    height: 60,
-                                                    width: 70,
-                                                  ),
-                                                  Text(
-                                                    'Scan & Go',
-                                                    textAlign: TextAlign.center,
-                                                    style: GoogleFonts.sen(
-                                                      color: Pallete.textColor,
-                                                      fontWeight:
-                                                          FontWeight.w400,
-                                                      fontSize: 16,
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                            ElevatedButton(
-                                              style: ElevatedButton.styleFrom(
-                                                backgroundColor:
-                                                    Colors.transparent,
-                                                elevation:
-                                                    0, // Remove box shadow
-                                              ),
-                                              onPressed: () {
-                                                Navigator.push(
-                                                    context,
-                                                    MaterialPageRoute(
-                                                        builder: (context) =>
-                                                            ReserveVehicle()));
-                                              },
-                                              child: Column(
-                                                children: [
-                                                  Image.asset(
-                                                    AssetsConstants
-                                                        .imreserveVehicle,
-                                                    height: 60,
-                                                    width: 60,
-                                                  ),
-                                                  Text(
-                                                    'Reservation',
-                                                    textAlign: TextAlign.center,
-                                                    style: GoogleFonts.sen(
-                                                      color: Pallete.textColor,
-                                                      fontWeight:
-                                                          FontWeight.w400,
-                                                      fontSize: 16,
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                            ElevatedButton(
-                                              style: ElevatedButton.styleFrom(
-                                                backgroundColor:
-                                                    Colors.transparent,
-                                                elevation:
-                                                    0, // Remove box shadow
-                                              ),
-                                              onPressed: () {
-                                                // Handle button 3 press
-                                              },
-                                              child: Column(
-                                                children: [
-                                                  Image.asset(
-                                                    AssetsConstants.imbuddy,
-                                                    height: 60,
-                                                    width: 80,
-                                                  ),
-                                                  Text(
-                                                    'Get Buddy',
-                                                    textAlign: TextAlign.center,
-                                                    style: GoogleFonts.sen(
-                                                      color: Pallete.textColor,
-                                                      fontWeight:
-                                                          FontWeight.w400,
-                                                      fontSize: 16,
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceEvenly,
-                                          children: [
-                                            ElevatedButton(
-                                              style: ElevatedButton.styleFrom(
-                                                backgroundColor:
-                                                    Colors.transparent,
-                                                elevation:
-                                                    0, // Remove box shadow
-                                              ),
-                                              onPressed: () {
-                                                Navigator.push(
-                                                    context, MyScreen.route());
-                                              },
-                                              child: Column(
-                                                children: [
-                                                  Image.asset(
-                                                    AssetsConstants
-                                                        .imswapbattery,
-                                                    height: 60,
-                                                    width: 60,
-                                                  ),
-                                                  Text(
-                                                    'Swap',
-                                                    textAlign: TextAlign.center,
-                                                    style: GoogleFonts.sen(
-                                                      color: Pallete.textColor,
-                                                      fontWeight:
-                                                          FontWeight.w400,
-                                                      fontSize: 16,
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                            ElevatedButton(
-                                              style: ElevatedButton.styleFrom(
-                                                backgroundColor:
-                                                    Colors.transparent,
-                                                elevation:
-                                                    0, // Remove box shadow
-                                              ),
-                                              onPressed: () {
-                                                // do something
-                                              },
-                                              child: Column(
-                                                children: [
-                                                  Image.asset(
-                                                    AssetsConstants
-                                                        .imsupercharge,
-                                                    height: 60,
-                                                    width: 80,
-                                                  ),
-                                                  Text(
-                                                    'Supercharge',
-                                                    textAlign: TextAlign.center,
-                                                    style: GoogleFonts.sen(
-                                                      color: Pallete.textColor,
-                                                      fontWeight:
-                                                          FontWeight.w400,
-                                                      fontSize: 16,
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                            ElevatedButton(
-                                              style: ElevatedButton.styleFrom(
-                                                backgroundColor:
-                                                    Colors.transparent,
-                                                elevation:
-                                                    0, // Remove box shadow
-                                              ),
-                                              onPressed: () {
-                                                // Handle button 3 press
-                                                Navigator.push(
-                                                    context,
-                                                    MaterialPageRoute(
-                                                        builder: (context) =>
-                                                            shareridemap()));
-                                              },
-                                              child: Column(
-                                                children: [
-                                                  Image.asset(
-                                                    AssetsConstants.imshareRide,
-                                                    height: 60,
-                                                    width: 60,
-                                                  ),
-                                                  Text(
-                                                    'Share Ride',
-                                                    textAlign: TextAlign.center,
-                                                    style: GoogleFonts.sen(
-                                                      color: Pallete.textColor,
-                                                      fontWeight:
-                                                          FontWeight.w400,
-                                                      fontSize: 16,
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ],
+                          ),
+                          SvgPicture.asset(
+                            AssetsConstants
+                                .imekizone, // Replace with your SVG asset path
+                            height: 36, // Set the height of the SVG
+                            width: 36, // Set the width of the SVG
+                          ),
+                        ],
+                      ),
+                    ),
+                    SlidingUpPanel(
+                        borderRadius: const BorderRadius.only(
+                            topLeft: Radius.circular(16),
+                            topRight: Radius.circular(16)),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            blurRadius: 3.0,
+                            spreadRadius: 2.0,
+                            offset: const Offset(
+                                0, 2), // Defines the position of the shadow
+                          ),
+                        ],
+                        minHeight: MediaQuery.of(context).size.height * 0.18,
+                        maxHeight: screenHight * 0.31,
+                        panel: Container(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 20),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Center(
+                                  child: Container(
+                                    margin: EdgeInsets.only(
+                                      top: screenHight * 0.012,
                                     ),
-                                  );
-                                }
-                                // final result = filteredResults[index - 1];
-                                // return ListTile(
-                                //   title: Text(result),
-                                // );
-                              },
+                                    height: screenHight * 0.0035,
+                                    width: 66,
+                                    decoration: const BoxDecoration(
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(3)),
+                                      color: Pallete.textColor,
+                                    ),
+                                  ),
+                                ),
+                                Spacer(),
+                                Text(
+                                  'Services',
+                                  style: GoogleFonts.sen(
+                                    color: Pallete.textColor,
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                                Spacer(),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    ServiceIconWithText(
+                                        onPressed: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      ScanQR()));
+                                        },
+                                        icon: AssetsConstants.imhomescango,
+                                        text: 'Scan & Go'),
+                                    ServiceIconWithText(
+                                        onPressed: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      const ReserveVehicle()));
+                                        },
+                                        icon: AssetsConstants.imreserveVehicle,
+                                        text: 'Reservation'),
+                                    ServiceIconWithText(
+                                        onPressed: () {},
+                                        icon: AssetsConstants.imbuddy,
+                                        text: 'Get a Buddy')
+                                  ],
+                                ),
+                                Spacer(),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    ServiceIconWithText(
+                                        onPressed: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      swapbatteries()));
+                                        },
+                                        icon: AssetsConstants.imswapbattery,
+                                        text: 'Swap Battery'),
+                                    ServiceIconWithText(
+                                        onPressed: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      details_supercharge()));
+                                        },
+                                        icon: AssetsConstants.imsupercharge,
+                                        text: 'Supercharge'),
+                                    ServiceIconWithText(
+                                        onPressed: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      shareridemap()));
+                                        },
+                                        icon: AssetsConstants.imshareRide,
+                                        text: 'Share Ride')
+                                  ],
+                                ),
+                                Spacer(),
+                                Spacer(),
+                              ],
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                  );
-                },
-              ),
+                        )),
+                  ],
+                ),
+              )
             ],
           ),
         ),

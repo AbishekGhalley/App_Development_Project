@@ -8,7 +8,7 @@ class choose_vehicles extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: TopAppbar(toptitle: "Vehicle Details"),
+      appBar: TopAppbar(toptitle: "Choose Vehicle"),
       body: Container(
         child: ListView(
           children: [

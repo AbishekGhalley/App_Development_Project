@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:myekigai/constants/constants.dart';
-import 'package:myekigai/features/hamburger/view/Navbar.dart';
+import 'package:myekigai/features/homescreen/widget/searchbar.dart';
 import 'package:myekigai/features/reservevehicle/widgets/bottomContainer.dart';
 import 'package:myekigai/features/reservevehicle/widgets/locator.dart';
-import 'package:myekigai/features/reservevehicle/widgets/searchbar2.dart';
+import 'package:myekigai/reusables/Navbar.dart';
 import 'package:myekigai/reusables/key_navbar.dart';
 
 class ReserveVehicle2 extends StatefulWidget {
-
-  const ReserveVehicle2({super.key,});
+  const ReserveVehicle2({super.key});
 
   @override
   State<ReserveVehicle2> createState() => _ReserveVehicle2State();
@@ -18,9 +17,9 @@ class _ReserveVehicle2State extends State<ReserveVehicle2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       key: global_navbar.reservescaffoldKey2,
       drawer:Navbar(scaffoldKey: global_navbar.reservescaffoldKey2),
-      backgroundColor: Colors.black,
       body: Align(
         alignment: Alignment.topCenter,
         child: Container(
@@ -37,7 +36,7 @@ class _ReserveVehicle2State extends State<ReserveVehicle2> {
                 top: MediaQuery.of(context).padding.top + 8,
                 left: 20,
                 right: 20,
-                child: CustomSearchBar(scaffoldKey: global_navbar.reservescaffoldKey2)
+                child: CustomSearchBar(scaffoldKey: global_navbar.reservescaffoldKey),
               ),
               Positioned(
                 bottom: 140,

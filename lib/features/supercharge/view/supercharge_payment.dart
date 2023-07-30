@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myekigai/constants/constants.dart';
+import 'package:myekigai/features/homescreen/view/home_view.dart';
 import 'package:myekigai/reusables/TopAppbar.dart';
 import 'package:myekigai/reusables/btn.dart';
 import 'package:myekigai/theme/pallete.dart';
@@ -229,7 +230,9 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   SizedBox(height: 10.0),
                   CustomButton(
                     text: "Continue",
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+                    },
                   ),
                   SizedBox(height: 16.0),
                 ],
@@ -240,6 +243,4 @@ class _PaymentScreenState extends State<PaymentScreen> {
   }
 }
 
-void main() {
-  runApp(MaterialApp(home: PaymentScreen()));
-}
+

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:myekigai/features/hamburger/view/Navbar.dart';
+import 'package:myekigai/reusables/Navbar.dart';
 import 'package:myekigai/reusables/key_navbar.dart';
 import 'package:myekigai/theme/pallete.dart';
 

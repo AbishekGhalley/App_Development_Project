@@ -1,21 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:myekigai/constants/assets_constants.dart';
+import 'package:myekigai/features/homescreen/view/home_view.dart';
+import 'package:myekigai/reusables/TopAppbar.dart';
+import 'package:myekigai/reusables/btn.dart';
+import 'package:myekigai/theme/pallete.dart';
+
 
 class PaymentScreen extends StatefulWidget {
-  static route() {
-    return PageRouteBuilder(
-      pageBuilder: (context, animation, secondaryAnimation) => PaymentScreen(),
-      transitionsBuilder: (context, animation, secondaryAnimation, child) {
-        return SlideTransition(
-          position: Tween<Offset>(
-            begin: const Offset(1.0, 0.0),
-            end: Offset.zero,
-          ).animate(animation),
-          child: child,
-        );
-      },
-    );
-  }
-
   @override
   _PaymentScreenState createState() => _PaymentScreenState();
 }
@@ -26,193 +17,229 @@ class _PaymentScreenState extends State<PaymentScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.lightGreen,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: () => Navigator.of(context).pop(),
+        appBar: TopAppbar(
+          toptitle: "Payment",
+          bgcolor: Color.fromRGBO(235, 254, 230, 1),
         ),
-        title: Text('Payment'),
-      ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.0),
-        child: Column(
+        body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 16),
-            Text(
-              'Select Payment Option',
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.grey,
-              ),
-            ),
-            SizedBox(height: 16),
-            Row(
-              children: [
-                Icon(Icons.credit_card, color: Colors.grey),
-                SizedBox(width: 8),
-                Text(
-                  'eKI - Wallet',
+            const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: Text(
+                  'Choose the mode of payment.',
                   style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                    fontFamily: "Montserrat",
+                    color: Pallete.geryColor,
                   ),
-                ),
-              ],
+                )),
+            SizedBox(height: 16),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
+                children: [
+                  Image.asset(AssetsConstants.ancreditcard),
+                  SizedBox(width: 8),
+                  Text(
+                    'eKI - wallet',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500,
+                      fontFamily: "Montserrat",
+                    ),
+                  ),
+                ],
+              ),
             ),
             SizedBox(height: 16),
-            Container(
-              width: double.infinity,
-              height: 1,
-              color: Colors.grey[300],
-            ),
-            ListTile(
-              contentPadding: EdgeInsets.zero,
-              leading: Radio<int>(
-                value: 0,
-                groupValue: _selectedPaymentOption,
-                onChanged: (int? value) {
-                  setState(() {
-                    _selectedPaymentOption = value!;
-                  });
-                },
-              ),
-              title: Row(
-                children: [
-                  Icon(Icons.play_circle_filled, color: Colors.green),
-                  SizedBox(width: 8),
-                  Text('Google Play'),
-                ],
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Divider(
+                height: 1,
+                thickness: 1,
+                color: Pallete.partitionlineColor,
               ),
             ),
-            ListTile(
-              contentPadding: EdgeInsets.zero,
-              leading: Radio<int>(
-                value: 1,
-                groupValue: _selectedPaymentOption,
-                onChanged: (int? value) {
-                  setState(() {
-                    _selectedPaymentOption = value!;
-                  });
-                },
-              ),
-              title: Row(
-                children: [
-                  Icon(Icons.phone_android, color: Colors.blue),
-                  SizedBox(width: 8),
-                  Text('Phone Pe'),
-                ],
-              ),
-            ),
-            ListTile(
-              contentPadding: EdgeInsets.zero,
-              leading: Radio<int>(
-                value: 2,
-                groupValue: _selectedPaymentOption,
-                onChanged: (int? value) {
-                  setState(() {
-                    _selectedPaymentOption = value!;
-                  });
-                },
-              ),
-              title: Row(
-                children: [
-                  Icon(Icons.account_balance, color: Colors.orange),
-                  SizedBox(width: 8),
-                  Text('UPI'),
-                ],
-              ),
-            ),
+            Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                child: ListTile(
+                  contentPadding: EdgeInsets.zero,
+                  leading: Radio<int>(
+                    value: 0,
+                    groupValue: _selectedPaymentOption,
+                    onChanged: (int? value) {
+                      setState(() {
+                        _selectedPaymentOption = value!;
+                      });
+                    },
+                  ),
+                  title: Row(
+                    children: [
+                      Image.asset(
+                        AssetsConstants.angooglepay,
+                        width: 25,
+                        height: 25,
+                      ),
+                      SizedBox(width: 10),
+                      Text(
+                        'Google Play',
+                        style: TextStyle(
+                            fontFamily: "Montserrat",
+                            fontWeight: FontWeight.w500,
+                            fontSize: 21),
+                      ),
+                    ],
+                  ),
+                )),
+            Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                child: ListTile(
+                  contentPadding: EdgeInsets.zero,
+                  leading: Radio<int>(
+                    value: 1,
+                    groupValue: _selectedPaymentOption,
+                    onChanged: (int? value) {
+                      setState(() {
+                        _selectedPaymentOption = value!;
+                      });
+                    },
+                  ),
+                  title: Row(
+                    children: [
+                      Image.asset(
+                        AssetsConstants.anphonepay,
+                        width: 25,
+                        height: 25,
+                      ),
+                      SizedBox(width: 10),
+                      Text('Phone Pe',
+                          style: TextStyle(
+                              fontFamily: "Montserrat",
+                              fontWeight: FontWeight.w500,
+                              fontSize: 21)),
+                    ],
+                  ),
+                )),
+            Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                child: ListTile(
+                  contentPadding: EdgeInsets.zero,
+                  leading: Radio<int>(
+                    value: 2,
+                    groupValue: _selectedPaymentOption,
+                    onChanged: (int? value) {
+                      setState(() {
+                        _selectedPaymentOption = value!;
+                      });
+                    },
+                  ),
+                  title: Row(
+                    children: [
+                      Image.asset(
+                        AssetsConstants.anupi,
+                        width: 25,
+                        height: 25,
+                      ),
+                      SizedBox(width: 10),
+                      Text('UPI',
+                          style: TextStyle(
+                              fontFamily: "Montserrat",
+                              fontWeight: FontWeight.w500,
+                              fontSize: 21)),
+                    ],
+                  ),
+                )),
             Spacer(),
             Container(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  ListTile(
-                    title: Text('Swapping Charges'),
-                    trailing: Text('\₹10.00'),
-                  ),
-                  ListTile(
-                    title: Text('Taxes'),
-                    trailing: Text('\₹1.00'),
-                  ),
-                  Container(
-                    width: 800,
-                    height: 1,
-                    color: Colors.grey[300],
-                  ),
-                  ListTile(
-                    title: Text(
-                      'Total',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    trailing: Text('\₹11.00',
-                        style: TextStyle(fontWeight: FontWeight.bold)),
-                  ),
+                  Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16),
+                      child: Column(children: [
+                        Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Swapping Charges',
+                                style: TextStyle(
+                                    fontFamily: "Montserrat",
+                                    color: Pallete.geryColor,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 16),
+                              ),
+                              Text(
+                                '\₹10.00',
+                                style: TextStyle(
+                                    fontFamily: "Sen",
+                                    color: Color(0xFF494949),
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 16),
+                              )
+                            ]),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Taxes',
+                              style: TextStyle(
+                                fontFamily: "Montserrat",
+                                color: Pallete.geryColor,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            Text(
+                              '\₹1.00',
+                              style: TextStyle(
+                                  fontFamily: "Sen",
+                                  color: Color(0xFF494949),
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 16),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 10.0),
+                        Divider(
+                          height: 1,
+                          thickness: 1,
+                          color: Pallete.partitionlineColor,
+                        ),
+                        SizedBox(height: 10.0),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Total',
+                              style: TextStyle(
+                                  fontFamily: "Montserrat",
+                                  color: Pallete.geryColor,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 20),
+                            ),
+                            Text(
+                              '\₹11.00',
+                              style: TextStyle(
+                                  fontFamily: "Sen",
+                                  color: Pallete.textColor,
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 21),
+                            ),
+                          ],
+                        )
+                      ])),
                   SizedBox(height: 10.0),
-                  ElevatedButton(
+                  CustomButton(
+                    text: "Continue",
                     onPressed: () {
-                      // TODO
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
                     },
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 12.0, horizontal: 32.0),
-                      child: Text('Continue'),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      minimumSize:
-                          Size(MediaQuery.of(context).size.width * 0.6, 50.0),
-                    ),
                   ),
                   SizedBox(height: 16.0),
                 ],
               ),
             ),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-// import 'package:flutter/material.dart';
-
-class MyScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('My Screen'),
-      ),
-      body: Column(
-        children: [
-          // Add your widgets here
-          Spacer(),
-          Container(
-            width: double.infinity,
-            margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-            child: ElevatedButton(
-              onPressed: () {
-                // Add your button on pressed code here
-              },
-              child: Text('Continue'),
-            ),
-          ),
-        ],
-      ),
-      bottomNavigationBar: BottomAppBar(
-        child: Container(
-          height: 50.0,
-          margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-          child: ElevatedButton(
-            onPressed: () {
-              // Add your button on pressed code here
-            },
-            child: Text('Continue'),
-          ),
-        ),
-      ),
-    );
+        ));
   }
 }

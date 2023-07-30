@@ -1,83 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myekigai/constants/assets_constants.dart';
-import 'package:myekigai/features/homescreen/view/home_view.dart';
-import 'package:myekigai/features/reservevehicle/widgets/timerBox.dart';
+import 'package:myekigai/features/reservevehicle/View/lastReserveVehicle.dart';
+import 'package:myekigai/reusables/popupWidget.dart';
 import 'package:myekigai/reusables/vehicleInfoBox.dart';
+import 'package:myekigai/reusables/btn.dart';
 import 'package:myekigai/theme/theme.dart';
+
 import '../../../reusables/VehicleCardWithLargeImage.dart';
 import '../../../reusables/textWithIcon.dart';
+import 'showDriversLicense.dart';
 
-class LastReserveVehicle extends StatefulWidget {
-  const LastReserveVehicle({super.key});
-
-  @override
-  _LastReserveVehicleState createState() => _LastReserveVehicleState();
-}
-
-class _LastReserveVehicleState extends State<LastReserveVehicle> {
-  // Flag to track if the popup should be dismissed or not
-  bool _shouldDismissPopup = false;
-
-  void _showPopupMessage(BuildContext context) {
-    showDialog(
-      context: context,
-      barrierDismissible: false, // Prevent dismissing by tapping outside
-      builder: (BuildContext context) {
-        // Duration for how long the popup should be shown (in seconds)
-        const popupDuration = 3;
-
-        // Dismiss the popup after the specified duration
-        Future.delayed(const Duration(seconds: popupDuration), () {
-          if (!_shouldDismissPopup) {
-            Navigator.of(context).pop();
-          }
-        });
-
-        return WillPopScope(
-          onWillPop: () async {
-            // Disable the back button while the popup is showing
-            return false;
-          },
-          child: AlertDialog(
-            contentPadding: const EdgeInsets.all(16),
-            content: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  "Your ride is reserved for 1 hour.",
-                  style: GoogleFonts.sen(
-                      fontSize: 18, fontWeight: FontWeight.w400),
-                ),
-                const SizedBox(height: 16),
-                Image.asset(
-                  AssetsConstants
-                      .imLock, // Replace this with the path to your image
-                  // width: 69 + 11,
-                  // height: 69 + 11,
-                ),
-              ],
-            ),
-          ),
-        );
-      },
-    );
-  }
-
-  @override
-  void dispose() {
-    // Set the flag to true when the widget is disposed
-    _shouldDismissPopup = true;
-    super.dispose();
-  }
+class ScanGoVehicleDetails extends StatelessWidget {
+  const ScanGoVehicleDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Show the center popup message when the page is shown
-    WidgetsBinding.instance?.addPostFrameCallback((_) {
-      _showPopupMessage(context);
-    });
-
+    bool isVisible = true;
     return Scaffold(
       appBar: AppBar(
         elevation: 4,
@@ -220,62 +159,75 @@ class _LastReserveVehicleState extends State<LastReserveVehicle> {
           height: MediaQuery.of(context).size.height * 0.02,
         ),
         Container(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          color: Colors.white,
-          width: double.infinity,
-          height: MediaQuery.of(context).size.height * 0.11,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 0),
-                // child: Row(
-                //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                //     children: [
-                //       Text("Rate",
-                //           style: GoogleFonts.montserrat(
-                //             color: Pallete.geryColor,
-                //             fontSize: 21,
-                //             fontWeight: FontWeight.w500,
-                //           )),
-                //       Text("₹70/hour",
-                //           style: GoogleFonts.sen(
-                //             color: Pallete.textColor,
-                //             fontSize: 20,
-                //             fontWeight: FontWeight.w400,
-                //           )),
-                //     ]),
-              ),
-              Text(
-                'Your vehicle is reserved!',
-                style: GoogleFonts.sen(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                  color: Pallete.textColor,
-                ),
-              ),
-              const SizedBox(height: 16),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            color: Colors.white,
+            width: double.infinity,
+            height: MediaQuery.of(context).size.height * 0.11,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'Your ride is reserved for',
-                    style: GoogleFonts.sen(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w400,
-                      color: Pallete.textColor,
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    // child: Row(
+                    //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    //     children: [
+                    //       Text("Rate",
+                    //           style: GoogleFonts.montserrat(
+                    //             color: Pallete.geryColor,
+                    //             fontSize: 21,
+                    //             fontWeight: FontWeight.w500,
+                    //           )),
+                    //       Text("₹70/hour",
+                    //           style: GoogleFonts.sen(
+                    //             color: Pallete.textColor,
+                    //             fontSize: 20,
+                    //             fontWeight: FontWeight.w400,
+                    //           )),
+                    //     ]),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Text(
+                      'Your vehicle will be reserved for one hour.',
+                      style: GoogleFonts.sen(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                        color: Pallete.textColor,
+                      ),
+                      textAlign: TextAlign.left,
                     ),
                   ),
-                  const TimerBox(
-                    min: '59',
-                    sec: '59',
-                  )
+                  const SizedBox(height: 8),
+                  if (isVisible)
+                    CustomButton(
+                        text: 'Start Ride',
+                        onPressed: () {
+                          showModalBottomSheet(
+                            shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.vertical(
+                                top: Radius.circular(16.0),
+                              ),
+                            ),
+                            context: context,
+                            builder: (BuildContext context) => PopupWidget(
+                              onReturnTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const ShowDriverLicense()));
+                              },
+                              btnText: 'Confirm',
+                              returnText: 'No, Return',
+                              titleText: 'Ready to begin?',
+                            ),
+                          );
+                        })
                 ],
               ),
-            ],
-          ),
-        )
+            ))
       ]),
     );
   }

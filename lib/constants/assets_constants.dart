@@ -1,13 +1,15 @@
 class AssetsConstants {
-  // svgs
+  // file variable
   static const String _pngPath = "assets/pngs";
   static const String _svgPath = "assets/svgs";
+  // Svgs
   static const String imsignUpHome = "$_svgPath/scanAndGo.svg";
   static const String logo = "$_svgPath/logo.svg";
   static const String imavlRed = "$_svgPath/avlRed.svg";
   static const String imavlYellow = "$_svgPath/avlYellow.svg";
   static const String imavlGreen = "$_svgPath/avlGreen.svg";
   static const String imheart = "$_svgPath/heart.svg";
+  static const String imekizone = "$_svgPath/imekizone.svg";
   static const String imbackbutton = "$_svgPath/backbutton.svg";
   static const String imshareInReserveVehicle =
       "$_svgPath/shareInReserveVehicle.svg";
@@ -26,6 +28,8 @@ class AssetsConstants {
   static const String iicon = "$_pngPath/iicon.png"; //by imran
   static const String stationImage = "$_pngPath/stationimage.png"; //by imran
   static const String bike = "$_pngPath/bike.png"; //by imran
+  static const String imLock = "$_pngPath/imLock.png";
+  static const String imshuttle = "$_pngPath/imshuttle.png"; //by imran
 
 //Anirudh
   static const String ev1 = "$_pngPath/Ev1.png";

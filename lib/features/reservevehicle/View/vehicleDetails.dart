@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myekigai/constants/assets_constants.dart';
 import 'package:myekigai/features/reservevehicle/View/lastReserveVehicle.dart';
-import 'package:myekigai/features/reservevehicle/widgets/popupWidget.dart';
-import 'package:myekigai/features/reservevehicle/widgets/vehicleInfoBox.dart';
 import 'package:myekigai/reusables/TopAppbar.dart';
+import 'package:myekigai/reusables/popupWidget.dart';
+import 'package:myekigai/reusables/vehicleInfoBox.dart';
 import 'package:myekigai/reusables/btn.dart';
 import 'package:myekigai/theme/theme.dart';
 
-import '../widgets/VehicleCardWithLargeImage.dart';
-import '../widgets/textWithIcon.dart';
+import '../../../reusables/VehicleCardWithLargeImage.dart';
+import '../../../reusables/textWithIcon.dart';
 
 class VehicleDetails extends StatelessWidget {
   const VehicleDetails({super.key});
@@ -145,6 +145,8 @@ class VehicleDetails extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 0),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 20),
@@ -165,14 +167,18 @@ class VehicleDetails extends StatelessWidget {
                     //           )),
                     //     ]),
                   ),
-                  Text(
-                    'Your vehicle will be reserved for one hour.',
-                    style: GoogleFonts.sen(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w400,
-                      color: Pallete.textColor,
+                  Spacer(),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Text(
+                      'Your vehicle will be reserved for one hour.',
+                      style: GoogleFonts.sen(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                        color: Pallete.textColor,
+                      ),
+                      textAlign: TextAlign.left,
                     ),
-                    textAlign: TextAlign.left,
                   ),
                   const SizedBox(height: 8),
                   if (isVisible)
@@ -188,6 +194,8 @@ class VehicleDetails extends StatelessWidget {
                             context: context,
                             builder: (BuildContext context) => PopupWidget(
                               onReturnTap: () {
+                                Navigator.popUntil(
+                                    context, (route) => route.isFirst);
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:myekigai/constants/constants.dart';
-import 'package:myekigai/features/hamburger/view/Navbar.dart';
 import 'package:myekigai/features/reservevehicle/widgets/bottomContainer.dart';
 import 'package:myekigai/features/reservevehicle/widgets/largeLocator.dart';
 import 'package:myekigai/features/reservevehicle/widgets/locator.dart';
-import 'package:myekigai/features/reservevehicle/widgets/searchbar.dart';
+import 'package:myekigai/reusables/Navbar.dart';
 import 'package:myekigai/reusables/key_navbar.dart';
+import '../widgets/searchbar.dart';
 
 
 class ReserveVehicle extends StatefulWidget {
-
   const ReserveVehicle({super.key});
 
   @override
@@ -18,7 +18,7 @@ class ReserveVehicle extends StatefulWidget {
 
 class _ReserveVehicleState extends State<ReserveVehicle> {
   bool isVisible = true;
-  double locatehieght = 140;
+  double locatehieght = 160;
 
   void _toggleWidgetVisibility() {
     setState(() {
@@ -41,14 +41,14 @@ class _ReserveVehicleState extends State<ReserveVehicle> {
               Image.asset(
                 'assets/pngs/map.png',
                 width: double.infinity,
-                height: 800,
+                height: double.infinity,
                 fit: BoxFit.cover,
               ),
               Positioned(
                 top: MediaQuery.of(context).padding.top + 8,
                 left: 20,
                 right: 20,
-                child: CustomSearchBar(scaffoldKey: global_navbar.reservescaffoldKey)
+                child: CustomSearchBar(scaffoldKey: global_navbar.reservescaffoldKey),
               ),
               Positioned(
                 bottom: locatehieght,
@@ -61,11 +61,11 @@ class _ReserveVehicleState extends State<ReserveVehicle> {
                         // Handle favorite icon press
                       },
                     ),
-                    IconButton(
-                      icon: Image.asset(AssetsConstants.ekizone),
-                      onPressed: () {
-                        // Handle share icon press
-                      },
+                    SvgPicture.asset(
+                      AssetsConstants
+                          .imekizone, // Replace with your SVG asset path
+                      height: 36, // Set the height of the SVG
+                      width: 36, // Set the width of the SVG
                     ),
                   ],
                 ),
@@ -123,11 +123,11 @@ class _ReserveVehicleState extends State<ReserveVehicle> {
                       onPressed: () {
                         setState(() {
                           isVisible = !isVisible;
-                          locatehieght = 140; // Toggle the boolean variable
+                          locatehieght = 160; // Toggle the boolean variable
                         });
                       },
                     )),
-              BottomWidget()
+              const BottomWidget()
             ],
           ),
         ),

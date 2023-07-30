@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myekigai/constants/assets_constants.dart';
-import 'package:myekigai/features/hamburger/view/Navbar.dart';
+import 'package:myekigai/reusables/Navbar.dart';
 import 'package:myekigai/features/homescreen/view/home_view.dart';
 import 'package:myekigai/features/shareride/view/shareridemap.dart';
 import 'package:myekigai/theme/pallete.dart';

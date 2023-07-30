@@ -49,7 +49,7 @@ class LargeLocator extends StatelessWidget {
             style: GoogleFonts.montserrat(
               color: Pallete.textColor,
               fontWeight: FontWeight.w500,
-              fontSize: 16,
+              fontSize: 13,
             ),
           )),
         ),

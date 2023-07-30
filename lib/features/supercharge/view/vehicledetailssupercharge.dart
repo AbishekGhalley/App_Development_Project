@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:myekigai/constants/assets_constants.dart';
+import 'package:myekigai/features/supercharge/view/supercharge_payment.dart';
 import 'package:myekigai/reusables/TopAppbar.dart';
 import 'package:myekigai/reusables/btn.dart';
 import 'package:myekigai/theme/pallete.dart';
@@ -186,6 +187,7 @@ class _details_superchargeState extends State<details_supercharge> {
                                 height: 20,
                               ),
                               CustomButton(text: "Continue", onPressed: () {
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>PaymentScreen()));
                               })
                             ],
                           )),

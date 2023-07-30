@@ -22,7 +22,6 @@ class Navbar extends StatelessWidget {
           Container(
               width: double.infinity,
               height: 260,
-
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
@@ -89,8 +88,9 @@ class Navbar extends StatelessWidget {
                       thickness: 1,
                     ),
                   ])),
-          Expanded(
-            child: ListView(
+         Expanded(
+            child:Column(
+              mainAxisSize: MainAxisSize.min,
               children: [
                 ListTile(
                   leading: Image.asset(AssetsConstants.card),
@@ -221,7 +221,7 @@ class Navbar extends StatelessWidget {
                           MaterialPageRoute(
                               builder: (context) => const Settings()));
                     }),
-                const Divider(color: Color(0xFFE6E6E6), thickness: 2),
+                const Divider(color: Color(0xFFE6E6E6), thickness: 1),
                 ListTile(
                   leading: Image.asset(AssetsConstants.steeringwheel),
                   title: const Text(

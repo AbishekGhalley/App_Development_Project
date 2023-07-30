@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myekigai/constants/assets_constants.dart';
-import 'package:myekigai/features/hamburger/view/Navbar.dart';
+import 'package:myekigai/reusables/Navbar.dart';
 import 'package:myekigai/features/shareride/widget/bottommodalsheet.dart';
 import 'package:myekigai/features/shareride/widget/driverdetails.dart';
 import 'package:myekigai/features/shareride/widget/searchbar.dart';
