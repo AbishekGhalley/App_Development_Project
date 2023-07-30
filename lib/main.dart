@@ -1,14 +1,11 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:myekigai/features/auth/view/login_view.dart';
-import 'package:myekigai/features/hamburger/view/Navbar.dart';
 import 'package:myekigai/features/homescreen/view/home_view.dart';
-import 'package:myekigai/features/onboarding/view/onboarding.dart';
-import 'package:myekigai/features/supercharge/view/supercharge_payment.dart';
-import 'package:myekigai/features/supercharge/view/vehicledetailssupercharge.dart';
-import 'package:myekigai/reusables/key_navbar.dart';
+import 'package:myekigai/firebase_options.dart';
 import 'package:myekigai/theme/theme.dart';
 
 void main() {
+  _initializefirebase();
   runApp(const MyApp());
 }
 
@@ -25,4 +22,9 @@ class MyApp extends StatelessWidget {
       home: HomeScreen(),
     );
   }
+}
+_initializefirebase()async{
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 }
