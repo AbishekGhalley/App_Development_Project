@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:myekigai/features/auth/view/login_view2.dart';
 import 'package:myekigai/features/auth/widgets/auth_field.dart';
@@ -36,6 +37,49 @@ class _LoginView1State extends State<LoginView1> {
     super.dispose();
     phoneNumber.dispose();
   }
+  Future<void> _verifyPhoneNumber(BuildContext context) async {
+    final FirebaseAuth auth = FirebaseAuth.instance;
+    final String phoneNo = phoneNumber.text.trim();
+
+    try {
+      await auth.verifyPhoneNumber(
+        phoneNumber: phoneNo,
+        verificationCompleted: (PhoneAuthCredential credential) async {
+          // This callback is triggered when the phone number is already verified on the device.
+          // You can sign in the user here using the `credential`.
+          // (Android only - for iOS, you should use codeSent callback instead)
+          await auth.signInWithCredential(credential);
+        },
+        verificationFailed: (FirebaseAuthException e) {
+          if (e.code == 'invalid-phone-number') {
+            print('The provided phone number is not valid.');
+          }
+          // Handle other errors here.
+        },
+        codeSent: (String verificationId, int? resendToken) {
+          // This callback is triggered when the verification code is sent to the user's phone.
+          // You can navigate to the next screen where the user can enter the OTP for verification.
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => LoginView2(verificationId: verificationId,),
+            ),
+          );
+        },
+        codeAutoRetrievalTimeout: (String verificationId) {
+          // This callback is triggered when auto-retrieval of verification code times out.
+          // Handle the situation when auto-retrieval of the code didn't happen or was delayed.
+        },
+        timeout: const Duration(seconds: 60), // Adjust the timeout as needed
+      );
+    } catch (e) {
+      print('Error occurred during phone number verification: ${e.toString()}');
+      // Handle the error and show an error message to the user if needed.
+    }
+  }
+
+
+
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,7 +124,7 @@ class _LoginView1State extends State<LoginView1> {
                 child: CustomButton(
                   text: "Sent OTP",
                   onPressed: () {
-                    Navigator.push(context, LoginView2.route());
+                    _verifyPhoneNumber(context);
                   },
                 ),
               ),

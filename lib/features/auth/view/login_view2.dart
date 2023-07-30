@@ -6,10 +6,10 @@ import 'package:myekigai/features/auth/widgets/otp_field.dart';
 import 'package:myekigai/theme/pallete.dart';
 
 class LoginView2 extends StatefulWidget {
-  static route() {
+  static Route<dynamic> route({required String verificationId}) {
     return PageRouteBuilder(
       pageBuilder: (context, animation, secondaryAnimation) =>
-          const LoginView2(),
+          LoginView2(verificationId: verificationId),
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         return SlideTransition(
           position: Tween<Offset>(
@@ -21,8 +21,8 @@ class LoginView2 extends StatefulWidget {
       },
     );
   }
-
-  const LoginView2({Key? key}) : super(key: key);
+  final String verificationId;
+  const LoginView2({Key? key,required this.verificationId}) : super(key: key);
 
   @override
   State<LoginView2> createState() => _LoginView2State();

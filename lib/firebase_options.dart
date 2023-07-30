@@ -67,6 +67,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '194226012572',
     projectId: 'myekigai-da9c7',
     storageBucket: 'myekigai-da9c7.appspot.com',
+    androidClientId: '194226012572-6p759qh5q997te99jkffd8ggchn1s2vv.apps.googleusercontent.com',
     iosClientId: '194226012572-qh9hmin0as55qgs6lhlr56psej3l2jpm.apps.googleusercontent.com',
     iosBundleId: 'com.example.myekigai',
   );
@@ -77,6 +78,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '194226012572',
     projectId: 'myekigai-da9c7',
     storageBucket: 'myekigai-da9c7.appspot.com',
+    androidClientId: '194226012572-6p759qh5q997te99jkffd8ggchn1s2vv.apps.googleusercontent.com',
     iosClientId: '194226012572-cq03tn7117lb0ibsvh9e95ao6lierlne.apps.googleusercontent.com',
     iosBundleId: 'com.example.myekigai.RunnerTests',
   );

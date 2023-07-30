@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:myekigai/features/auth/view/login_view.dart';
 import 'package:myekigai/features/homescreen/view/home_view.dart';
 import 'package:myekigai/firebase_options.dart';
 import 'package:myekigai/theme/theme.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: AppTheme.theme,
-      home: HomeScreen(),
+      home: LoginView(),
     );
   }
 }
