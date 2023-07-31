@@ -1,20 +1,20 @@
 {
   "project_info": {
-    "project_number": "194226012572",
-    "project_id": "myekigai-da9c7",
-    "storage_bucket": "myekigai-da9c7.appspot.com"
+    "project_number": "556681422189",
+    "project_id": "myekigai-47a59",
+    "storage_bucket": "myekigai-47a59.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:194226012572:android:dd3851109257255b5b8859",
+        "mobilesdk_app_id": "1:556681422189:android:2395a0f5f12a9218082664",
         "android_client_info": {
           "package_name": "com.example.myekigai"
         }
       },
       "oauth_client": [
         {
-          "client_id": "194226012572-6p759qh5q997te99jkffd8ggchn1s2vv.apps.googleusercontent.com",
+          "client_id": "556681422189-mttumjph391pkurelmu964srtboj487b.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.myekigai",
@@ -22,24 +22,24 @@
           }
         },
         {
-          "client_id": "194226012572-4g7fl1ougci41p293p68s05p3jd88pdm.apps.googleusercontent.com",
+          "client_id": "556681422189-036qcv4ep49ka7nbb3rrib18lt5thkd1.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCz-f0wdw9MKfWZhlZCYz2oIKpwjKcxb6g"
+          "current_key": "AIzaSyA3zLbMXCczEG4Bms0JBntpMXoUqEYnAYo"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "194226012572-4g7fl1ougci41p293p68s05p3jd88pdm.apps.googleusercontent.com",
+              "client_id": "556681422189-036qcv4ep49ka7nbb3rrib18lt5thkd1.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "194226012572-cq03tn7117lb0ibsvh9e95ao6lierlne.apps.googleusercontent.com",
+              "client_id": "556681422189-2pk5uhno1qbnefotnu15t1fiagbvnrod.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
                 "bundle_id": "com.example.myekigai.RunnerTests"
