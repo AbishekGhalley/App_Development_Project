@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
+import 'package:get/get.dart';
+import 'package:myekigai/features/auth/controller/OtpController.dart';
 import 'package:myekigai/features/auth/view/login_view3.dart';
 import 'package:myekigai/reusables/full_width_text.dart';
 import 'package:myekigai/reusables/btn.dart';
@@ -6,10 +9,10 @@ import 'package:myekigai/features/auth/widgets/otp_field.dart';
 import 'package:myekigai/theme/pallete.dart';
 
 class LoginView2 extends StatefulWidget {
-  static Route<dynamic> route({required String verificationId}) {
+  static route() {
     return PageRouteBuilder(
       pageBuilder: (context, animation, secondaryAnimation) =>
-          LoginView2(verificationId: verificationId),
+          const LoginView2(),
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         return SlideTransition(
           position: Tween<Offset>(
@@ -21,23 +24,17 @@ class LoginView2 extends StatefulWidget {
       },
     );
   }
-  final String verificationId;
-  const LoginView2({Key? key,required this.verificationId}) : super(key: key);
+
+  const LoginView2({Key? key}) : super(key: key);
 
   @override
   State<LoginView2> createState() => _LoginView2State();
 }
 
 class _LoginView2State extends State<LoginView2> {
-  final phoneNumber = TextEditingController();
-
-  @override
-  void dispose() {
-    super.dispose();
-    phoneNumber.dispose();
-  }
-
+  final OtpController otpController= Get.put(OtpController());
   Widget build(BuildContext context) {
+    var otp;
     return Scaffold(
       body: SizedBox(
         height: double.infinity,
@@ -58,9 +55,24 @@ class _LoginView2State extends State<LoginView2> {
               horizontalPadding: 30,
             ),
             const SizedBox(height: 20),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 30),
-              child: OtpField(),
+            OtpTextField(
+              numberOfFields: 6,
+              margin: EdgeInsets.only(right: 10),
+              textStyle: TextStyle(
+                  fontSize: 20,
+                  fontFamily: "Montserrat",
+                  color: Pallete.textColor),
+              disabledBorderColor: Pallete.primaryColor,
+              enabledBorderColor: Pallete.primaryColor,
+              fieldWidth: 45,
+              filled: true,
+              borderRadius: BorderRadius.circular(6),
+              borderWidth: 1,
+              showFieldAsBox: true,
+              onSubmit: (code) {
+                otp = code;
+                OtpController.instance.verifyOtp(otp);
+              },
             ),
             const SizedBox(height: 20),
             Padding(
@@ -92,7 +104,7 @@ class _LoginView2State extends State<LoginView2> {
                 child: CustomButton(
                   text: "Verify",
                   onPressed: () {
-                    Navigator.push(context, LoginView3.route());
+                    OtpController.instance.verifyOtp(otp);
                   },
                 ),
               ),

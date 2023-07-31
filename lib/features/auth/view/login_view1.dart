@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:myekigai/features/auth/controller/SignUpController.dart';
 import 'package:myekigai/features/auth/view/login_view2.dart';
 import 'package:myekigai/features/auth/widgets/auth_field.dart';
 import 'package:myekigai/reusables/full_width_text.dart';
@@ -30,62 +32,20 @@ class LoginView1 extends StatefulWidget {
 }
 
 class _LoginView1State extends State<LoginView1> {
-  final phoneNumber = TextEditingController();
+  final controller=Get.put(SignUpController());
+  final _formKey = GlobalKey<FormState>();
 
-  @override
-  void dispose() {
-    super.dispose();
-    phoneNumber.dispose();
-  }
-  Future<void> _verifyPhoneNumber(BuildContext context) async {
-    final FirebaseAuth auth = FirebaseAuth.instance;
-    final String phoneNo = phoneNumber.text.trim();
-
-    try {
-      await auth.verifyPhoneNumber(
-        phoneNumber: phoneNo,
-        verificationCompleted: (PhoneAuthCredential credential) async {
-          // This callback is triggered when the phone number is already verified on the device.
-          // You can sign in the user here using the `credential`.
-          // (Android only - for iOS, you should use codeSent callback instead)
-          await auth.signInWithCredential(credential);
-        },
-        verificationFailed: (FirebaseAuthException e) {
-          if (e.code == 'invalid-phone-number') {
-            print('The provided phone number is not valid.');
-          }
-          // Handle other errors here.
-        },
-        codeSent: (String verificationId, int? resendToken) {
-          // This callback is triggered when the verification code is sent to the user's phone.
-          // You can navigate to the next screen where the user can enter the OTP for verification.
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => LoginView2(verificationId: verificationId,),
-            ),
-          );
-        },
-        codeAutoRetrievalTimeout: (String verificationId) {
-          // This callback is triggered when auto-retrieval of verification code times out.
-          // Handle the situation when auto-retrieval of the code didn't happen or was delayed.
-        },
-        timeout: const Duration(seconds: 60), // Adjust the timeout as needed
-      );
-    } catch (e) {
-      print('Error occurred during phone number verification: ${e.toString()}');
-      // Handle the error and show an error message to the user if needed.
-    }
-  }
-
-
-
-
+ @override
   Widget build(BuildContext context) {
+
+
+
     return Scaffold(
       body: SizedBox(
         height: double.infinity,
-        child: Column(
+        child:Form(
+            key: _formKey,
+            child:Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             const SizedBox(height: 80),
@@ -111,27 +71,23 @@ class _LoginView1State extends State<LoginView1> {
                 child: Column(
                   children: [
                     AuthField(
-                        controller: phoneNumber,
+                        controller: controller.phoneNumber,
                         hintText: '+91 | Enter your Phone Number'),
-                    const SizedBox(
-                      height: 20,
-                    )
                   ],
                 )),
-            Expanded(
-              child: Align(
-                alignment: Alignment.bottomCenter,
-                child: CustomButton(
-                  text: "Sent OTP",
-                  onPressed: () {
-                    _verifyPhoneNumber(context);
-                  },
-                ),
-              ),
+            Spacer(),
+            CustomButton(
+              text: "Sent OTP",
+              onPressed: () {
+                if(_formKey.currentState!.validate()){
+                  SignUpController.instance.phoneAuthentication(controller.phoneNumber.text.trim());
+                  Get.to(()=>LoginView2());
+                }
+              },
             ),
             const SizedBox(height: 20),
           ],
-        ),
+        )),
       ),
 
       // Other Scaffold properties and widgets
