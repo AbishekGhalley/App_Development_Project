@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myekigai/Authentication_repo/authentication.dart';
 import 'package:myekigai/constants/assets_constants.dart';
 import 'package:myekigai/features/hamburger/view/Myvehicles.dart';
 import 'package:myekigai/features/hamburger/view/Notification.dart';
@@ -234,6 +235,21 @@ class Navbar extends StatelessWidget {
                     ),
                   ),
                   onTap: () {},
+                ),
+                ListTile(
+                  leading: Image.asset(AssetsConstants.steeringwheel),
+                  title: const Text(
+                    'Sign Out',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16,
+                      fontFamily: 'Montserrat',
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  onTap: () {
+                    Authentication.instance.logout();
+                  },
                 ),
               ],
             ),

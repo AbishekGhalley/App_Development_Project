@@ -72,7 +72,7 @@ class _LoginView1State extends State<LoginView1> {
                   children: [
                     AuthField(
                         controller: controller.phoneNumber,
-                        hintText: '+91 | Enter your Phone Number'),
+                    ),
                   ],
                 )),
             Spacer(),
@@ -80,7 +80,7 @@ class _LoginView1State extends State<LoginView1> {
               text: "Sent OTP",
               onPressed: () {
                 if(_formKey.currentState!.validate()){
-                  SignUpController.instance.phoneAuthentication(controller.phoneNumber.text.trim());
+                  SignUpController.instance.phoneAuthentication("+91"+controller.phoneNumber.text.trim());
                   Get.to(()=>LoginView2());
                 }
               },
