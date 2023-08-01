@@ -90,8 +90,7 @@ class Navbar extends StatelessWidget {
                     ),
                   ])),
          Expanded(
-            child:Column(
-              mainAxisSize: MainAxisSize.min,
+            child:ListView(
               children: [
                 ListTile(
                   leading: Image.asset(AssetsConstants.card),
