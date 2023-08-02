@@ -44,7 +44,7 @@ class _LoginViewState extends State<LoginView> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SvgPicture.asset(
-                AssetsConstants.logo,
+                AuthAssets.logo,
                 width: 30,
                 height: 30,
               ),
@@ -78,7 +78,7 @@ class _LoginViewState extends State<LoginView> {
                   ),
                 ),
                 child: SvgPicture.asset(
-                  AssetsConstants.signUpHome,
+                  AuthAssets.signUpHome,
                   // fit: BoxFit.cover,
                 ),
               ),
