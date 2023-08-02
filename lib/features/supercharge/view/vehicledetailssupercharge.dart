@@ -1,6 +1,5 @@
-
 import 'package:flutter/material.dart';
-import 'package:myekigai/constants/assets_constants.dart';
+import 'package:myekigai/constants/constants.dart';
 import 'package:myekigai/features/supercharge/view/supercharge_payment.dart';
 import 'package:myekigai/reusables/TopAppbar.dart';
 import 'package:myekigai/reusables/btn.dart';
@@ -23,7 +22,6 @@ class _details_superchargeState extends State<details_supercharge> {
     'MYeKIGAI current ride'
   ];
   double? _slidervalue;
-
 
   @override
   void initState() {
@@ -56,54 +54,10 @@ class _details_superchargeState extends State<details_supercharge> {
               key: _formKey,
               child: Expanded(
                   child: Column(
-                    children: [
-                      Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 20),
-                          child: Container(
-                            padding: EdgeInsets.all(10),
-                            decoration: const BoxDecoration(boxShadow: [
-                              BoxShadow(
-                                color: Color.fromRGBO(171, 171, 171, 0.25),
-                                offset: Offset(0, 0),
-                                spreadRadius: 0,
-                                blurRadius: 1,
-                              ),
-                              BoxShadow(
-                                color: Color.fromRGBO(255, 255, 255, 1),
-                                offset: Offset(0, 0),
-                                spreadRadius: 0,
-                                blurRadius: 0,
-                              ),
-                            ]),
-                            width: double.infinity,
-                            child: DropdownButtonFormField<String>(
-                              decoration: InputDecoration(
-                                  hintText: "Choose Vehicle",
-                                  hintStyle: TextStyle(
-                                      fontFamily: "Montserrat",
-                                      fontSize: 16,
-                                      color: Pallete.geryColor,
-                                      fontWeight: FontWeight.w500),
-                                  border: InputBorder.none),
-                              value: _selectedvehicle,
-                              onChanged: (String? newValue) {
-                                setState(() {
-                                  _selectedvehicle = newValue;
-                                });
-                              },
-                              items: vehicleoptions
-                                  .map<DropdownMenuItem<String>>((
-                                  String value) {
-                                return DropdownMenuItem<String>(
-                                  value: value,
-                                  child: Text(value),
-                                );
-                              }).toList(),
-                            ),
-                          )),
-                      SizedBox(height: 20,),
-                      Padding(padding: EdgeInsets.symmetric(horizontal: 16),
-                      child:Container(
+                children: [
+                  Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      child: Container(
                         padding: EdgeInsets.all(10),
                         decoration: const BoxDecoration(boxShadow: [
                           BoxShadow(
@@ -119,84 +73,135 @@ class _details_superchargeState extends State<details_supercharge> {
                             blurRadius: 0,
                           ),
                         ]),
-                        child: DropdownButtonFormField<double>(
+                        width: double.infinity,
+                        child: DropdownButtonFormField<String>(
                           decoration: InputDecoration(
-                              hintText: "Current Charging %",
+                              hintText: "Choose Vehicle",
                               hintStyle: TextStyle(
                                   fontFamily: "Montserrat",
                                   fontSize: 16,
                                   color: Pallete.geryColor,
                                   fontWeight: FontWeight.w500),
                               border: InputBorder.none),
-                          value: _slidervalue,
-                          onChanged: (double? newvalue){
+                          value: _selectedvehicle,
+                          onChanged: (String? newValue) {
                             setState(() {
-                              _slidervalue=newvalue!;
+                              _selectedvehicle = newValue;
                             });
                           },
-                          items: List.generate(101, (index) {
-                            double value=index.toDouble();
-                            return DropdownMenuItem<double>(
+                          items: vehicleoptions
+                              .map<DropdownMenuItem<String>>((String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(value),
+                            );
+                          }).toList(),
+                        ),
+                      )),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16),
+                      child: Container(
+                          padding: EdgeInsets.all(10),
+                          decoration: const BoxDecoration(boxShadow: [
+                            BoxShadow(
+                              color: Color.fromRGBO(171, 171, 171, 0.25),
+                              offset: Offset(0, 0),
+                              spreadRadius: 0,
+                              blurRadius: 1,
+                            ),
+                            BoxShadow(
+                              color: Color.fromRGBO(255, 255, 255, 1),
+                              offset: Offset(0, 0),
+                              spreadRadius: 0,
+                              blurRadius: 0,
+                            ),
+                          ]),
+                          child: DropdownButtonFormField<double>(
+                            decoration: InputDecoration(
+                                hintText: "Current Charging %",
+                                hintStyle: TextStyle(
+                                    fontFamily: "Montserrat",
+                                    fontSize: 16,
+                                    color: Pallete.geryColor,
+                                    fontWeight: FontWeight.w500),
+                                border: InputBorder.none),
+                            value: _slidervalue,
+                            onChanged: (double? newvalue) {
+                              setState(() {
+                                _slidervalue = newvalue!;
+                              });
+                            },
+                            items: List.generate(101, (index) {
+                              double value = index.toDouble();
+                              return DropdownMenuItem<double>(
                                 value: value,
                                 child: Text(value.toStringAsFixed(0)),
-                            );
-                          }),
-                        )
-                      )
-                      ),
-                      const Spacer(),
-                      Padding(
-                          padding: EdgeInsets.symmetric(vertical: 20),
-                          child: Column(
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 16),
-                                child: Row(
-                                  children: [
-                                    Image(
-                                        width: 16,
-                                        height: 16,
-                                        image:
-                                        AssetImage(AssetsConstants.anquestion)),
-                                    const SizedBox(
-                                      width: 10,
-                                    ),
-                                    Text(
-                                      "Can’t find your vehicle?",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 16,
-                                          fontFamily: "Montserrat",
-                                          color: Pallete.geryColor),
-                                    ),
-                                    const SizedBox(width: 3,),
-                                    GestureDetector(
-                                      onTap: () {},
-                                      child: Text("Add Here", style: TextStyle(
-                                          fontSize: 16,
-                                          fontFamily: "Montserrat",
-                                          fontWeight: FontWeight.w500,
-                                          color: Pallete.primaryColor,
-                                          decoration: TextDecoration.underline
-                                      ),),
-                                    )
-                                  ],
+                              );
+                            }),
+                          ))),
+                  const Spacer(),
+                  Padding(
+                      padding: EdgeInsets.symmetric(vertical: 20),
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 16),
+                            child: Row(
+                              children: [
+                                Image(
+                                    width: 16,
+                                    height: 16,
+                                    image: AssetImage(
+                                        SuperChargeAssets.anquestion)),
+                                const SizedBox(
+                                  width: 10,
                                 ),
-                              ),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              CustomButton(text: "Continue", onPressed: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (context)=>PaymentScreen()));
+                                Text(
+                                  "Can’t find your vehicle?",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 16,
+                                      fontFamily: "Montserrat",
+                                      color: Pallete.geryColor),
+                                ),
+                                const SizedBox(
+                                  width: 3,
+                                ),
+                                GestureDetector(
+                                  onTap: () {},
+                                  child: Text(
+                                    "Add Here",
+                                    style: TextStyle(
+                                        fontSize: 16,
+                                        fontFamily: "Montserrat",
+                                        fontWeight: FontWeight.w500,
+                                        color: Pallete.primaryColor,
+                                        decoration: TextDecoration.underline),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          CustomButton(
+                              text: "Continue",
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => PaymentScreen()));
                               })
-                            ],
-                          )),
-
-                    ],
-                  )))
+                        ],
+                      )),
+                ],
+              )))
         ],
       ),
     );
   }
-
 }

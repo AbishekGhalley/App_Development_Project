@@ -39,7 +39,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: Row(
                 children: [
-                  Image.asset(AssetsConstants.ancreditcard),
+                  Image.asset(GlobalAssets.ancreditcard),
                   SizedBox(width: 8),
                   Text(
                     'eKI - wallet',
@@ -77,7 +77,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   title: Row(
                     children: [
                       Image.asset(
-                        AssetsConstants.angooglepay,
+                        GlobalAssets.angooglepay,
                         width: 25,
                         height: 25,
                       ),
@@ -108,7 +108,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   title: Row(
                     children: [
                       Image.asset(
-                        AssetsConstants.anphonepay,
+                        GlobalAssets.anphonepay,
                         width: 25,
                         height: 25,
                       ),
@@ -137,7 +137,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   title: Row(
                     children: [
                       Image.asset(
-                        AssetsConstants.anupi,
+                        GlobalAssets.anupi,
                         width: 25,
                         height: 25,
                       ),
@@ -231,7 +231,10 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   CustomButton(
                     text: "Continue",
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => HomeScreen()));
                     },
                   ),
                   SizedBox(height: 16.0),
@@ -242,5 +245,3 @@ class _PaymentScreenState extends State<PaymentScreen> {
         ));
   }
 }
-
-

@@ -7,3 +7,4 @@ export './AllAssets/reservevehicle_assets.dart';
 export './AllAssets/global_assets.dart';
 export './AllAssets/scanandgo_assets.dart';
 export './AllAssets/shareride_assets.dart';
+export './AllAssets/supercharge_assets.dart';

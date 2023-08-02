@@ -3,7 +3,7 @@ class GlobalAssets {
   static const String _GlobalPngPath = "assets/global/pngs";
   static const String _GlobalSvgPath = "assets/global/svgs";
 
-  //variables for auth assets
+  //variables for assets
   //Svgs
   static const String imekizone = "$_GlobalSvgPath/imekizone.svg";
   static const String logo = "$_GlobalSvgPath/logo.svg";
@@ -23,4 +23,8 @@ class GlobalAssets {
   static const String blutooth = "$_GlobalPngPath/Bluetooth.png";
   static const String manual = "$_GlobalPngPath/Manual.png";
   static const String ansos = "$_GlobalPngPath/An_sos.png";
+  static const String angooglepay = "$_GlobalPngPath/An_googlepay.png";
+  static const String anphonepay = "$_GlobalPngPath/An_phonepe.png";
+  static const String anupi = "$_GlobalPngPath/An_upi.png";
+  static const String ancreditcard = "$_GlobalPngPath/An_creditcard.png";
 }
