@@ -4,7 +4,6 @@ class AssetsConstants {
   static const String _svgPath = "assets/svgs";
   // Svgs
   static const String imsignUpHome = "$_svgPath/scanAndGo.svg";
-  static const String logo = "$_svgPath/logo.svg";
   static const String imavlRed = "$_svgPath/avlRed.svg";
   static const String imavlYellow = "$_svgPath/avlYellow.svg";
   static const String imavlGreen = "$_svgPath/avlGreen.svg";
@@ -21,7 +20,7 @@ class AssetsConstants {
   static const String shareRide = "$_pngPath/shareride.png";
   static const String supercharge = "$_pngPath/supercharge.png";
   static const String swapbattery = "$_pngPath/swapbattery.png";
-  static const String signUpHome = "$_svgPath/scanAndGo.svg";
+
   static const String permission = "$_svgPath/permission.svg";
   static const String locate = "$_pngPath/locate.png"; //by imran
   static const String ekizone = "$_pngPath/ekizone.png"; //by imran
@@ -94,8 +93,6 @@ class AssetsConstants {
   static const String onshareride = "$_svgPath/An_on_shareride.svg";
   static const String onsupercharge = "$_svgPath/An_on_supercharge.svg";
   static const String onswapbattery = "$_svgPath/An_on_swapbattery.svg";
-
-
 
   //markers
   static const String imlocatorPin = "$_pngPath/locator_pin.png"; //by imran
