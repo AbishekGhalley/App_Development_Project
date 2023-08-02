@@ -18,7 +18,7 @@ class GlobalAssets {
   static const String range = "$_GlobalPngPath/Mountainrange.png";
   static const String passengers = "$_GlobalPngPath/Passenger.png";
   static const String wheels = "$_GlobalPngPath/Carrepair.png";
-  static const String snowtires = "$_GlobalPngPath/Snowflakes.png";
+  static const String snowtires = "$_GlobalPngPath/Snowflake.png";
   static const String gps = "$_GlobalPngPath/mapicon.png";
   static const String blutooth = "$_GlobalPngPath/Bluetooth.png";
   static const String manual = "$_GlobalPngPath/Manual.png";

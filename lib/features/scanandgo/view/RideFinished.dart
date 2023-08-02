@@ -21,7 +21,7 @@ class RideFinished extends StatelessWidget {
             children: [
               Image.asset(
                 // Map must be added here
-                'assets/pngs/map.png',
+                GlobalAssets.imMap,
                 width: double.infinity,
                 height: 800,
                 fit: BoxFit.cover,
