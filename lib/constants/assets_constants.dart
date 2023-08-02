@@ -31,26 +31,18 @@ class AssetsConstants {
   static const String imshuttle = "$_pngPath/imshuttle.png"; //by imran
 
 //Anirudh
-  static const String ev1 = "$_pngPath/Ev1.png";
+
   static const String ev2 = "$_pngPath/Ev2.png";
   static const String ev3 = "$_pngPath/Ev3.png";
   static const String ev4 = "$_pngPath/Ev4.png";
   static const String ev5 = "$_pngPath/Ev5.png";
   static const String ev6 = "$_pngPath/Ev6.png";
   static const String ev7 = "$_pngPath/Ev7.png";
-  static const String notifpic = "$_pngPath/notifpic.png";
-  static const String wallet = "$_pngPath/Wallet.png";
-  static const String refersplash1 = "$_pngPath/Refersplash1.png";
-  static const String refersplash2 = "$_pngPath/Refersplash2.png";
-  static const String bubblechat = "$_pngPath/Bubblechat.png";
-  static const String cashlesspayment = "$_pngPath/CashlessPayment.png";
+
   static const String place = "$_pngPath/Place.png";
-  static const String error = "$_pngPath/Error.png";
-  static const String private = "$_pngPath/Private_help.png";
-  static const String share = "$_pngPath/share_help.png";
+
   static const String card = "$_pngPath/card.png";
-  static const String checkmark = "$_pngPath/Checkmark.png";
-  static const String db = "$_pngPath/Db.png";
+
   static const String history = "$_pngPath/History.png";
   static const String star = "$_pngPath/Star.png";
   static const String notification = "$_pngPath/Notification.png";
@@ -59,24 +51,12 @@ class AssetsConstants {
   static const String motorbike = "$_pngPath/motorbike.png";
   static const String heart = "$_pngPath/Heart.png";
   static const String help = "$_pngPath/Help.png";
-  static const String driverlicense = "$_pngPath/driverlicense.png";
-  static const String homebutton = "$_pngPath/Homebutton.png";
-  static const String portfolio = "$_pngPath/Portfolio.png";
-  static const String giftcard = "$_pngPath/Giftcard.png";
-  static const String faq = "$_pngPath/Faq.png";
-  static const String pasted = "$_pngPath/Pasted.png";
-  static const String lock = "$_pngPath/Lock.png";
-  static const String manstandingup = "$_pngPath/ManStandingUp.png";
-  static const String piechart = "$_pngPath/Piechart.png";
-  static const String information = "$_pngPath/Information_settings.png";
-  static const String hammer = "$_pngPath/Legalhammersymbol_settings.png";
-  static const String language = "$_pngPath/Language_settings.png";
-  static const String brightness = "$_pngPath/Brightness.png";
+
   static const String blizz = "$_pngPath/blizz.png";
   static const String dbg = "$_pngPath/dbg.png";
-  static const String flash = "$_pngPath/flash.png";
+
   static const String goldenstar = "$_pngPath/goldenstar.png";
-  static const String transaction = "$_pngPath/Transaction.png";
+
   static const String antelephone = "$_pngPath/An_telephone.png";
   static const String andummyimage = "$_pngPath/An_dummyimage.png";
   static const String anmap = "$_pngPath/map.png";
