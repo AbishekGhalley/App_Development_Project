@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myekigai/theme/pallete.dart';
 
-import '../../../constants/assets_constants.dart';
+import '../../../constants/constants.dart';
 
 class LargeLocator extends StatelessWidget {
   final VoidCallback onPressed;
@@ -22,7 +22,7 @@ class LargeLocator extends StatelessWidget {
               onPressed: onPressed,
               icon: Container(
                 child: Image.asset(
-                  AssetsConstants
+                  ReserveVehicleAssets
                       .imlargelocator, // Replace with your custom image path
                   width:
                       48, // You can also set width directly on the Image widget

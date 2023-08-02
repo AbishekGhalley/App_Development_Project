@@ -4,11 +4,9 @@ import 'package:myekigai/reusables/Navbar.dart';
 import 'package:myekigai/reusables/key_navbar.dart';
 import 'package:myekigai/theme/pallete.dart';
 
-
-
 class CustomSearchBar extends StatelessWidget {
   final GlobalKey<ScaffoldState> scaffoldKey;
-  const CustomSearchBar({super.key,required this.scaffoldKey});
+  const CustomSearchBar({super.key, required this.scaffoldKey});
 
   @override
   Widget build(BuildContext context) {

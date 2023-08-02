@@ -55,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               Image.asset(
                 // Map must be added here
-                HomeAssets.imMap,
+                GlobalAssets.imMap,
                 width: double.infinity,
                 height: 800,
                 fit: BoxFit.cover,
@@ -81,13 +81,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Column(
                         children: [
                           IconButton(
-                            icon: Image.asset(HomeAssets.locate),
+                            icon: Image.asset(GlobalAssets.locate),
                             onPressed: () {
                               // Handle favorite icon press
                             },
                           ),
                           SvgPicture.asset(
-                            HomeAssets
+                            GlobalAssets
                                 .imekizone, // Replace with your SVG asset path
                             height: 36, // Set the height of the SVG
                             width: 36, // Set the width of the SVG

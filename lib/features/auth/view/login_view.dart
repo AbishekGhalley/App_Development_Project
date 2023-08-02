@@ -44,7 +44,7 @@ class _LoginViewState extends State<LoginView> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SvgPicture.asset(
-                AuthAssets.logo,
+                GlobalAssets.logo,
                 width: 30,
                 height: 30,
               ),

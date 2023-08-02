@@ -3,15 +3,9 @@ class AssetsConstants {
   static const String _pngPath = "assets/pngs";
   static const String _svgPath = "assets/svgs";
   // Svgs
-  static const String imsignUpHome = "$_svgPath/scanAndGo.svg";
-  static const String imavlRed = "$_svgPath/avlRed.svg";
-  static const String imavlYellow = "$_svgPath/avlYellow.svg";
-  static const String imavlGreen = "$_svgPath/avlGreen.svg";
-  static const String imheart = "$_svgPath/heart.svg";
 
   static const String imbackbutton = "$_svgPath/backbutton.svg";
-  static const String imshareInReserveVehicle =
-      "$_svgPath/shareInReserveVehicle.svg";
+
   // pngs
   static const String bird = "$_pngPath/bird.png";
   static const String buddy = "$_pngPath/buddy.png";
@@ -24,10 +18,9 @@ class AssetsConstants {
   static const String permission = "$_svgPath/permission.svg";
 
   static const String ekizone = "$_pngPath/ekizone.png"; //by imran
-  static const String iicon = "$_pngPath/iicon.png"; //by imran
-  static const String stationImage = "$_pngPath/stationimage.png"; //by imran
+
   static const String bike = "$_pngPath/bike.png"; //by imran
-  static const String imLock = "$_pngPath/imLock.png";
+
   static const String imshuttle = "$_pngPath/imshuttle.png"; //by imran
 
 //Anirudh
@@ -69,16 +62,6 @@ class AssetsConstants {
   // Anirudh onboarding svgs
 
   //markers
-  static const String imlocatorPin = "$_pngPath/locator_pin.png"; //by imran
-  static const String imgreenAvl = "$_pngPath/greenAvl.png"; //by imran
-  static const String imredAvl = "$_pngPath/redAvl.png"; //by imran
-  static const String imyellowAvl = "$_pngPath/yellowAvl.png"; //by imran
-  static const String imlargelocator = "$_pngPath/largelocator.png"; //by imran
 
   //vehicle pngs small
-  static const String imvoltix = "$_pngPath/image219.png"; //by imran
-  static const String imblizz = "$_pngPath/image221.png"; //by imran
-  static const String imsrix = "$_pngPath/image219.png"; //by imran
-  static const String imunzart = "$_pngPath/image221.png"; //by imran
-  static const String imhelix = "$_pngPath/image219.png"; //by imran
 }

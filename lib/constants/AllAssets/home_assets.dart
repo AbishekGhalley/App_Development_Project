@@ -5,10 +5,9 @@ class HomeAssets {
 
   //variables for auth assets
   //Svgs
-  static const String imekizone = "$_HomeSvgPath/imekizone.svg";
 
   //Pngs
-  static const String locate = "$_HomePngPath/locate.png"; //by imran
+
   static const String imhomescango = "$_HomePngPath/imscango.png"; //by imran
   static const String imreserveVehicle =
       "$_HomePngPath/reservation.png"; //by imran
@@ -17,5 +16,4 @@ class HomeAssets {
   static const String imsupercharge =
       "$_HomePngPath/imsupercharge.png"; //by imran
   static const String imshareRide = "$_HomePngPath/imshareride.png"; //by imran
-  static const String imMap = "$_HomePngPath/map.png"; //by imran
 }
