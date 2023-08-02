@@ -41,7 +41,7 @@ class _LoginView4State extends State<LoginView4> {
           children: [
             Expanded(
               child: SvgPicture.asset(
-                AssetsConstants.permission,
+                AuthAssets.permission,
                 width: double.infinity,
                 fit: BoxFit.cover,
               ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:myekigai/constants/assets_constants.dart';
+import 'package:myekigai/constants/constants.dart';
 import 'package:myekigai/features/hamburger/view/content_model_profile.dart';
 import 'package:myekigai/features/hamburger/widgets/Add_btn.dart';
 import 'package:myekigai/reusables/TopAppbar.dart';
@@ -97,7 +97,7 @@ class _ProfileState extends State<Profile> {
                             padding: const EdgeInsets.all(20.0),
                             child: const CircleAvatar(
                               radius: 50.0,
-                              backgroundImage: AssetImage(AssetsConstants.db),
+                              backgroundImage: AssetImage(HamAssets.db),
                             ),
                           ),
                         ],
@@ -178,7 +178,7 @@ class _ProfileState extends State<Profile> {
                     ),
                   ]),
                   child: ListTile(
-                      leading: Image.asset(AssetsConstants.driverlicense),
+                      leading: Image.asset(HamAssets.driverlicense),
                       title: const Text(
                         'Driving License',
                         style: TextStyle(
@@ -234,7 +234,7 @@ class _ProfileState extends State<Profile> {
                     children: [
                       Row(
                         children: [
-                          Image.asset(AssetsConstants.homebutton),
+                          Image.asset(HamAssets.homebutton),
                           const SizedBox(
                             width: 8,
                           ),
@@ -306,7 +306,7 @@ class _ProfileState extends State<Profile> {
                       ),
                     ]),
                     child: ListTile(
-                      leading: Image.asset(AssetsConstants.portfolio),
+                      leading: Image.asset(HamAssets.portfolio),
                       title: const Text(
                         'Work',
                         style: TextStyle(

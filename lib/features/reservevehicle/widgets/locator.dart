@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:myekigai/constants/assets_constants.dart';
+import 'package:myekigai/constants/constants.dart';
 
 class Locator extends StatelessWidget {
   final String avalaibility;
@@ -20,7 +20,7 @@ class Locator extends StatelessWidget {
         ),
         IconButton(
             onPressed: onPressed,
-            icon: Image.asset(AssetsConstants.imlocatorPin))
+            icon: Image.asset(ReserveVehicleAssets.imlocatorPin))
       ],
     );
   }

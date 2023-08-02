@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:myekigai/constants/assets_constants.dart';
+import 'package:myekigai/constants/constants.dart';
 import 'package:myekigai/reusables/Navbar.dart';
 import 'package:myekigai/features/homescreen/view/home_view.dart';
 import 'package:myekigai/features/shareride/view/shareridemap.dart';
 import 'package:myekigai/theme/pallete.dart';
 
-
 class driverdetails extends StatefulWidget {
-
   const driverdetails({super.key});
 
   @override
@@ -33,29 +31,27 @@ class _driverdetailsState extends State<driverdetails> {
                 controller: scrollController,
                 children: [
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children:[
-                      Container(
-                        height: 3.0,
-                        width: 1,
-                        color: Colors.white,
-                      ),
-                      Container(
-                    height: 3.0,
-                    width: 66,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(1.5),
-                      color: const Color.fromRGBO(225, 225, 225, 1),
-                    ),
-                  ),
-                      Container(
-                        height: 3.0,
-                        width: 1,
-                        color:  Colors.white,
-
-                      ),
-                    ]
-                  ),
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          height: 3.0,
+                          width: 1,
+                          color: Colors.white,
+                        ),
+                        Container(
+                          height: 3.0,
+                          width: 66,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(1.5),
+                            color: const Color.fromRGBO(225, 225, 225, 1),
+                          ),
+                        ),
+                        Container(
+                          height: 3.0,
+                          width: 1,
+                          color: Colors.white,
+                        ),
+                      ]),
                   const SizedBox(
                     height: 15,
                   ),
@@ -77,7 +73,7 @@ class _driverdetailsState extends State<driverdetails> {
                         decoration: const BoxDecoration(
                             shape: BoxShape.circle,
                             image: DecorationImage(
-                              image: AssetImage(AssetsConstants.andummyimage),
+                              image: AssetImage(ShareRideAssets.andummyimage),
                               fit: BoxFit.cover,
                             )),
                       ),
@@ -199,7 +195,7 @@ class _driverdetailsState extends State<driverdetails> {
                       width: 28,
                       decoration: const BoxDecoration(
                           image: DecorationImage(
-                              image: AssetImage(AssetsConstants.antelephone))),
+                              image: AssetImage(ShareRideAssets.antelephone))),
                     )
                   ]),
                   const SizedBox(
@@ -320,7 +316,9 @@ class _driverdetailsState extends State<driverdetails> {
                           ))
                     ],
                   ),
-                  const SizedBox(height: 25,),
+                  const SizedBox(
+                    height: 25,
+                  ),
                   Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
@@ -332,7 +330,10 @@ class _driverdetailsState extends State<driverdetails> {
                       style: const ButtonStyle(
                           splashFactory: NoSplash.splashFactory),
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomeScreen()));
                       },
                       child: const Text("Cancle",
                           style: TextStyle(

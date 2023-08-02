@@ -8,7 +8,6 @@ import 'package:myekigai/reusables/Navbar.dart';
 import 'package:myekigai/reusables/key_navbar.dart';
 import '../widgets/searchbar.dart';
 
-
 class ReserveVehicle extends StatefulWidget {
   const ReserveVehicle({super.key});
 
@@ -39,7 +38,7 @@ class _ReserveVehicleState extends State<ReserveVehicle> {
           child: Stack(
             children: [
               Image.asset(
-                'assets/pngs/map.png',
+                GlobalAssets.imMap,
                 width: double.infinity,
                 height: double.infinity,
                 fit: BoxFit.cover,
@@ -48,7 +47,8 @@ class _ReserveVehicleState extends State<ReserveVehicle> {
                 top: MediaQuery.of(context).padding.top + 8,
                 left: 20,
                 right: 20,
-                child: CustomSearchBar(scaffoldKey: global_navbar.reservescaffoldKey),
+                child: CustomSearchBar(
+                    scaffoldKey: global_navbar.reservescaffoldKey),
               ),
               Positioned(
                 bottom: locatehieght,
@@ -56,13 +56,13 @@ class _ReserveVehicleState extends State<ReserveVehicle> {
                 child: Column(
                   children: [
                     IconButton(
-                      icon: Image.asset(AssetsConstants.locate),
+                      icon: Image.asset(GlobalAssets.locate),
                       onPressed: () {
                         // Handle favorite icon press
                       },
                     ),
                     SvgPicture.asset(
-                      AssetsConstants
+                      GlobalAssets
                           .imekizone, // Replace with your SVG asset path
                       height: 36, // Set the height of the SVG
                       width: 36, // Set the width of the SVG
@@ -75,7 +75,7 @@ class _ReserveVehicleState extends State<ReserveVehicle> {
                     bottom: 300,
                     right: 20,
                     child: Locator(
-                      avalaibility: AssetsConstants.imavlRed,
+                      avalaibility: ReserveVehicleAssets.imavlRed,
                       onPressed: null,
                     )),
               if (isVisible)
@@ -83,7 +83,7 @@ class _ReserveVehicleState extends State<ReserveVehicle> {
                     top: 200,
                     right: 50,
                     child: Locator(
-                      avalaibility: AssetsConstants.imavlYellow,
+                      avalaibility: ReserveVehicleAssets.imavlYellow,
                       onPressed: null,
                     )),
               if (isVisible)
@@ -91,7 +91,7 @@ class _ReserveVehicleState extends State<ReserveVehicle> {
                     bottom: 400,
                     left: 20,
                     child: Locator(
-                      avalaibility: AssetsConstants.imavlGreen,
+                      avalaibility: ReserveVehicleAssets.imavlGreen,
                       onPressed: null,
                     )),
               if (isVisible)
@@ -99,7 +99,7 @@ class _ReserveVehicleState extends State<ReserveVehicle> {
                     bottom: 200,
                     left: 70,
                     child: Locator(
-                      avalaibility: AssetsConstants.imavlYellow,
+                      avalaibility: ReserveVehicleAssets.imavlYellow,
                       onPressed: null,
                     )),
               if (isVisible)
@@ -107,7 +107,7 @@ class _ReserveVehicleState extends State<ReserveVehicle> {
                     top: 160,
                     left: 110,
                     child: Locator(
-                      avalaibility: AssetsConstants.imavlGreen,
+                      avalaibility: ReserveVehicleAssets.imavlGreen,
                       onPressed: () {
                         setState(() {
                           isVisible = !isVisible;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:myekigai/constants/assets_constants.dart';
+import 'package:myekigai/constants/constants.dart';
 import 'package:myekigai/features/scanandgo/view/ScanGoVehicleDetails.dart';
 import 'package:myekigai/theme/pallete.dart';
 
@@ -38,7 +38,7 @@ class ScanQR extends StatelessWidget {
               height: 20,
               decoration: const BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage(AssetsConstants.iicon),
+                  image: AssetImage(ScanGoAssets.question),
                   fit: BoxFit.fill,
                 ),
               ),

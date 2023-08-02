@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:myekigai/constants/assets_constants.dart';
+import 'package:myekigai/constants/constants.dart';
 import 'package:myekigai/reusables/Navbar.dart';
 import 'package:myekigai/features/shareride/widget/bottommodalsheet.dart';
 import 'package:myekigai/features/shareride/widget/driverdetails.dart';
@@ -10,7 +10,6 @@ import 'package:myekigai/reusables/key_navbar.dart';
 import 'package:myekigai/theme/pallete.dart';
 
 class shareridemap extends StatefulWidget {
-
   const shareridemap({super.key});
 
   @override
@@ -44,7 +43,7 @@ class _shareridemapState extends State<shareridemap> {
             child: Image.asset(
               width: double.infinity,
               height: MediaQuery.of(context).size.height,
-              AssetsConstants.anmap,
+              GlobalAssets.imMap,
               fit: BoxFit.cover,
             ),
           ),
@@ -52,7 +51,7 @@ class _shareridemapState extends State<shareridemap> {
             top: MediaQuery.of(context).padding.top + 15,
             left: 20,
             right: 20,
-            child:CustomSearchBar(scaffoldKey: global_navbar.sharescaffoldKey) ,
+            child: CustomSearchBar(scaffoldKey: global_navbar.sharescaffoldKey),
           ),
           Positioned(
             bottom: posbottom,
@@ -60,13 +59,13 @@ class _shareridemapState extends State<shareridemap> {
             child: Column(
               children: [
                 IconButton(
-                  icon: Image.asset(AssetsConstants.locate),
+                  icon: Image.asset(GlobalAssets.locate),
                   onPressed: () {
                     // Handle favorite icon press
                   },
                 ),
                 IconButton(
-                  icon: Image.asset(AssetsConstants.ekizone),
+                  icon: Image.asset(GlobalAssets.ekizone),
                   onPressed: () {
                     // Handle share icon press
                   },
@@ -77,7 +76,7 @@ class _shareridemapState extends State<shareridemap> {
                         ignoring: !isvisible,
                         child: IconButton(
                             onPressed: () {},
-                            icon:SvgPicture.asset(AssetsConstants.ansos))))
+                            icon: SvgPicture.asset(GlobalAssets.ansos))))
               ],
             ),
           ),

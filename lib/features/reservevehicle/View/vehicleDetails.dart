@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:myekigai/constants/assets_constants.dart';
+import 'package:myekigai/constants/constants.dart';
 import 'package:myekigai/features/reservevehicle/View/lastReserveVehicle.dart';
 import 'package:myekigai/reusables/TopAppbar.dart';
 import 'package:myekigai/reusables/popupWidget.dart';
@@ -22,7 +22,7 @@ class VehicleDetails extends StatelessWidget {
       body: Column(children: [
         const VehicleCardWithLargeImage(
           brand: 'Solaire',
-          image: AssetsConstants.bike,
+          image: GlobalAssets.bike,
           name: 'Voltix',
           stars: '4.3 ⭐',
         ),
@@ -49,15 +49,15 @@ class VehicleDetails extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       VehicleInfoBox(
-                          icon: AssetsConstants.ekizone,
+                          icon: GlobalAssets.charging,
                           midText: 'Charging',
                           bottomText: '90%'),
                       VehicleInfoBox(
-                          icon: AssetsConstants.ekizone,
+                          icon: GlobalAssets.maxspeed,
                           midText: 'Max Speed',
                           bottomText: '110 kmph'),
                       VehicleInfoBox(
-                          icon: AssetsConstants.ekizone,
+                          icon: GlobalAssets.range,
                           midText: 'Range',
                           bottomText: '120km'),
                     ],
@@ -95,38 +95,35 @@ class VehicleDetails extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           TextWithIcon(
-                            icon: AssetsConstants.ekizone,
+                            icon: GlobalAssets.passengers,
                             text: '2 Passengers',
                           ),
                           SizedBox(
                             height: 14,
                           ),
                           TextWithIcon(
-                              icon: AssetsConstants.ekizone,
-                              text: 'Snow Tires'),
+                              icon: GlobalAssets.snowtires, text: 'Snow Tires'),
                           SizedBox(
                             height: 14,
                           ),
                           TextWithIcon(
-                              icon: AssetsConstants.ekizone, text: 'Blutooth')
+                              icon: GlobalAssets.blutooth, text: 'Blutooth')
                         ],
                       ),
                       Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             TextWithIcon(
-                                icon: AssetsConstants.ekizone,
-                                text: '2 Wheels'),
+                                icon: GlobalAssets.wheels, text: '2 Wheels'),
+                            SizedBox(
+                              height: 14,
+                            ),
+                            TextWithIcon(icon: GlobalAssets.gps, text: 'GPS'),
                             SizedBox(
                               height: 14,
                             ),
                             TextWithIcon(
-                                icon: AssetsConstants.ekizone, text: 'GPS'),
-                            SizedBox(
-                              height: 14,
-                            ),
-                            TextWithIcon(
-                                icon: AssetsConstants.ekizone, text: 'Manual'),
+                                icon: GlobalAssets.manual, text: 'Manual'),
                           ])
                     ],
                   ),

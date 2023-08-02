@@ -41,7 +41,7 @@ class ReferEarn extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Image.asset(AssetsConstants.giftcard),
+                            Image.asset(HamAssets.giftcard),
                             const Text("Invite Friends to MYeKIGAI",
                                 style: TextStyle(
                                     fontSize: 16,
@@ -213,7 +213,7 @@ class ReferEarn extends StatelessWidget {
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 12, vertical: 8),
                               child: Row(children: [
-                                Image.asset(AssetsConstants.faq),
+                                Image.asset(HamAssets.faq),
                                 const SizedBox(
                                   width: 20,
                                 ),
