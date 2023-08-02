@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myekigai/Authentication_repo/authentication.dart';
-import 'package:myekigai/constants/assets_constants.dart';
+import 'package:myekigai/constants/constants.dart';
 import 'package:myekigai/features/hamburger/view/Myvehicles.dart';
 import 'package:myekigai/features/hamburger/view/Notification.dart';
 import 'package:myekigai/features/hamburger/view/Profile.dart';
@@ -12,7 +12,7 @@ import 'package:myekigai/features/hamburger/view/help.dart';
 
 class Navbar extends StatelessWidget {
   final GlobalKey<ScaffoldState> scaffoldKey;
-  const Navbar({Key? key,required this.scaffoldKey}) : super(key: key);
+  const Navbar({Key? key, required this.scaffoldKey}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class Navbar extends StatelessWidget {
                       decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
-                          image: AssetImage(AssetsConstants.db),
+                          image: AssetImage(HamAssets.db),
                         ),
                       ),
                     ),
@@ -89,11 +89,11 @@ class Navbar extends StatelessWidget {
                       thickness: 1,
                     ),
                   ])),
-         Expanded(
-            child:ListView(
+          Expanded(
+            child: ListView(
               children: [
                 ListTile(
-                  leading: Image.asset(AssetsConstants.card),
+                  leading: Image.asset(GlobalAssets.card),
                   title: const Text(
                     'Wallets',
                     style: TextStyle(
@@ -110,7 +110,7 @@ class Navbar extends StatelessWidget {
                   },
                 ),
                 ListTile(
-                  leading: Image.asset(AssetsConstants.motorbike),
+                  leading: Image.asset(GlobalAssets.motorbike),
                   title: const Text(
                     'My Vehicles',
                     style: TextStyle(
@@ -127,7 +127,7 @@ class Navbar extends StatelessWidget {
                   },
                 ),
                 ListTile(
-                  leading: Image.asset(AssetsConstants.history),
+                  leading: Image.asset(GlobalAssets.history),
                   title: const Text(
                     'Ride History',
                     style: TextStyle(
@@ -144,7 +144,7 @@ class Navbar extends StatelessWidget {
                   },
                 ),
                 ListTile(
-                    leading: Image.asset(AssetsConstants.notification),
+                    leading: Image.asset(GlobalAssets.notification),
                     title: const Text(
                       'Notifications',
                       style: TextStyle(
@@ -161,7 +161,7 @@ class Navbar extends StatelessWidget {
                                   const NotificationScreen()));
                     }),
                 ListTile(
-                  leading: Image.asset(AssetsConstants.star),
+                  leading: Image.asset(GlobalAssets.star),
                   title: const Text(
                     'Rewards',
                     style: TextStyle(
@@ -178,7 +178,7 @@ class Navbar extends StatelessWidget {
                   },
                 ),
                 ListTile(
-                  leading: Image.asset(AssetsConstants.heart),
+                  leading: Image.asset(GlobalAssets.heart),
                   title: const Text(
                     'Favourite',
                     style: TextStyle(
@@ -190,7 +190,7 @@ class Navbar extends StatelessWidget {
                   onTap: () {},
                 ),
                 ListTile(
-                    leading: Image.asset(AssetsConstants.help),
+                    leading: Image.asset(GlobalAssets.help),
                     title: const Text(
                       'Help',
                       style: TextStyle(
@@ -206,7 +206,7 @@ class Navbar extends StatelessWidget {
                               builder: (context) => const Help()));
                     }),
                 ListTile(
-                    leading: Image.asset(AssetsConstants.setting),
+                    leading: Image.asset(GlobalAssets.setting),
                     title: const Text(
                       'Settings',
                       style: TextStyle(
@@ -223,7 +223,7 @@ class Navbar extends StatelessWidget {
                     }),
                 const Divider(color: Color(0xFFE6E6E6), thickness: 1),
                 ListTile(
-                  leading: Image.asset(AssetsConstants.steeringwheel),
+                  leading: Image.asset(GlobalAssets.steeringwheel),
                   title: const Text(
                     'Be a Buddy',
                     style: TextStyle(
@@ -236,7 +236,7 @@ class Navbar extends StatelessWidget {
                   onTap: () {},
                 ),
                 ListTile(
-                  leading: Image.asset(AssetsConstants.steeringwheel),
+                  leading: Image.asset(GlobalAssets.steeringwheel),
                   title: const Text(
                     'Sign Out',
                     style: TextStyle(

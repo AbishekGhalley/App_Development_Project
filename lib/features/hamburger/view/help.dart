@@ -41,7 +41,7 @@ class Help extends StatelessWidget {
                           vertical: 17, horizontal: 12),
                       child: Row(
                         children: [
-                          Image.asset(AssetsConstants.bubblechat),
+                          Image.asset(HamAssets.bubblechat),
                           const SizedBox(
                             width: 16,
                           ),
@@ -68,11 +68,10 @@ class Help extends StatelessWidget {
                 const Row(
                   children: [
                     Helpbtn(
-                        btnimage: AssetsConstants.cashlesspayment,
+                        btnimage: HamAssets.cashlesspayment,
                         btntext: "Payment"),
                     Spacer(),
-                    Helpbtn(
-                        btnimage: AssetsConstants.share, btntext: "Services")
+                    Helpbtn(btnimage: HamAssets.share, btntext: "Services")
                   ],
                 ),
                 const SizedBox(
@@ -80,11 +79,9 @@ class Help extends StatelessWidget {
                 ),
                 const Row(
                   children: [
-                    Helpbtn(
-                        btnimage: AssetsConstants.error, btntext: "Technical"),
+                    Helpbtn(btnimage: HamAssets.error, btntext: "Technical"),
                     Spacer(),
-                    Helpbtn(
-                        btnimage: AssetsConstants.private, btntext: "Privacy")
+                    Helpbtn(btnimage: HamAssets.private, btntext: "Privacy")
                   ],
                 ),
                 const SizedBox(
@@ -108,25 +105,32 @@ class Help extends StatelessWidget {
                         shrinkWrap: true,
                         itemCount: faqs.length,
                         itemBuilder: (BuildContext context, int index) {
-                          return Column(
-                              children:[
-                                ListTile(
-                              contentPadding: EdgeInsets.zero,
-                              title: Text(
-                                faqs[index].questions,
-                                style: const TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w500,
-                                    fontFamily: "Montserrat"),
-                              ),
-                              trailing: IconButton(
-                                  onPressed: () {},
-                                  icon: const Icon(
-                                      Icons.keyboard_arrow_down_sharp))),
-                                SizedBox(height: 15,),
-                                Divider(height: 1,thickness: 1,color: Pallete.partitionlineColor,),
-                                SizedBox(height: 15,)
-                              ]);
+                          return Column(children: [
+                            ListTile(
+                                contentPadding: EdgeInsets.zero,
+                                title: Text(
+                                  faqs[index].questions,
+                                  style: const TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w500,
+                                      fontFamily: "Montserrat"),
+                                ),
+                                trailing: IconButton(
+                                    onPressed: () {},
+                                    icon: const Icon(
+                                        Icons.keyboard_arrow_down_sharp))),
+                            SizedBox(
+                              height: 15,
+                            ),
+                            Divider(
+                              height: 1,
+                              thickness: 1,
+                              color: Pallete.partitionlineColor,
+                            ),
+                            SizedBox(
+                              height: 15,
+                            )
+                          ]);
                         })
                   ],
                 )

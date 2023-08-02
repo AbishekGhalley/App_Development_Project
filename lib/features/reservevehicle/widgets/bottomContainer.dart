@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:myekigai/constants/assets_constants.dart';
-import 'package:myekigai/features/reservevehicle/View/reserveVehicle2.dart';
-
+import 'package:myekigai/constants/constants.dart';
 import 'package:myekigai/features/reservevehicle/View/vehicleListView.dart';
 import 'package:myekigai/features/reservevehicle/widgets/rowitem.dart';
 import 'package:myekigai/reusables/btn.dart';
@@ -40,7 +38,7 @@ class _BottomWidgetState extends State<BottomWidget> {
                         Expanded(
                           child: RowItem(
                             // refer Rowitem in widgets
-                            imagePath: AssetsConstants.iicon,
+                            imagePath: ReserveVehicleAssets.iicon,
                             text:
                                 'Choose the preferred eKI-zone to reserve your vehicle.',
                             onPressed: () {
@@ -73,61 +71,6 @@ class _BottomWidgetState extends State<BottomWidget> {
           const Positioned(
             child: BottomWidget2(),
           ),
-      ],
-    );
-  }
-}
-
-class BottomWidget1 extends StatelessWidget {
-  const BottomWidget1({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Positioned(
-            bottom: 0,
-            child: Container(
-                constraints: const BoxConstraints(maxWidth: 360),
-                padding: const EdgeInsets.all(10),
-                decoration: const BoxDecoration(color: Colors.white),
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        // First element: Icon with text
-                        Expanded(
-                          child: RowItem(
-                            // refer Rowitem in widgets
-                            imagePath: AssetsConstants.iicon,
-                            text:
-                                'Choose the preferred eKI-zone to reserve your vehicle.',
-                            onPressed: () {
-                              // Implement your onPressed action here
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 6,
-                    ),
-                    CustomButton(
-                      text: "Continue",
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const ReserveVehicle2()));
-                      },
-                    ),
-                    // ignore: prefer_const_constructors
-                    SizedBox(
-                      height: 16,
-                    )
-                  ],
-                ))),
       ],
     );
   }
@@ -179,7 +122,7 @@ class BottomWidget2 extends StatelessWidget {
                           )),
                       IconButton(
                           onPressed: () {},
-                          icon: Image.asset(AssetsConstants.iicon))
+                          icon: Image.asset(ReserveVehicleAssets.iicon))
                     ],
                   ),
                   Row(
@@ -189,7 +132,7 @@ class BottomWidget2 extends StatelessWidget {
                         width: 20,
                       ),
                       const Image(
-                          image: AssetImage(AssetsConstants.stationImage)),
+                          image: AssetImage(ReserveVehicleAssets.stationImage)),
                       const SizedBox(
                         width: 20,
                       ),
@@ -238,7 +181,7 @@ class BottomWidget2 extends StatelessWidget {
                                     height: 4,
                                   ),
                                   SvgPicture.asset(
-                                    AssetsConstants
+                                    ReserveVehicleAssets
                                         .imheart, // Replace with your SVG asset path
                                     height: 22, // Set the height of the SVG
                                     // Set the width of the SVG
@@ -249,7 +192,7 @@ class BottomWidget2 extends StatelessWidget {
                                 width: 10,
                               ),
                               SvgPicture.asset(
-                                AssetsConstants
+                                ReserveVehicleAssets
                                     .imshareInReserveVehicle, // Replace with your SVG asset path
                                 height: 24, // Set the height of the SVG
                                 // Set the width of the SVG

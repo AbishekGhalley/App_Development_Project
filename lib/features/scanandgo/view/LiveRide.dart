@@ -67,13 +67,13 @@ class _LiveRideState extends State<LiveRide> {
                       child: Column(
                         children: [
                           IconButton(
-                            icon: Image.asset(AssetsConstants.locate),
+                            icon: Image.asset(GlobalAssets.locate),
                             onPressed: () {
                               // Handle favorite icon press
                             },
                           ),
                           SvgPicture.asset(
-                            AssetsConstants
+                            GlobalAssets
                                 .imekizone, // Replace with your SVG asset path
                             height: 36, // Set the height of the SVG
                             width: 36, // Set the width of the SVG
@@ -170,7 +170,7 @@ class _LiveRideState extends State<LiveRide> {
                               });
                             },
                             child: SvgPicture.asset(
-                              AssetsConstants
+                              GlobalAssets
                                   .imekizone, // Replace with your SVG asset path
                               height: 36, // Set the height of the SVG
                               width: 36, // Set the width of the SVG

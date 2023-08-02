@@ -1,4 +1,4 @@
-import 'package:myekigai/constants/assets_constants.dart';
+import 'package:myekigai/constants/constants.dart';
 
 class notifs {
   String title;
@@ -17,20 +17,20 @@ List<notifs> info = [
       title: "Want to split the bill?",
       description:
           "MYeKIGAI does it for you. Click Split the bill when your ride is over",
-      imagepath: AssetsConstants.notifpic),
+      imagepath: HamAssets.notifpic),
   notifs(
       title: 'Account Alert',
       subdescription: 'Add payment info to finish setting up your account',
       description: "Let's set up your account",
-      imagepath: AssetsConstants.wallet),
+      imagepath: HamAssets.wallet),
   notifs(
       title: "Want to split the bill?",
       description:
           "MYeKIGAI does it for you. Click Split the bill when your ride is over",
-      imagepath: AssetsConstants.notifpic),
+      imagepath: HamAssets.notifpic),
   notifs(
       title: 'Account Alert',
       subdescription: 'Add payment info to finish setting up your account',
       description: "Let's set up your account",
-      imagepath: AssetsConstants.wallet),
+      imagepath: HamAssets.wallet),
 ];

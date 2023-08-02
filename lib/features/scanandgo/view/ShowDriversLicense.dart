@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:myekigai/constants/assets_constants.dart';
+import 'package:myekigai/constants/constants.dart';
 import 'package:myekigai/reusables/btn.dart';
 import 'package:myekigai/theme/pallete.dart';
 
@@ -49,7 +49,7 @@ class _ShowDriverLicenseState extends State<ShowDriverLicense> {
                 ),
                 const SizedBox(height: 26),
                 Image.asset(
-                  AssetsConstants
+                  ScanGoAssets
                       .imshuttle, // Replace this with the path to your image
                   // width: 69 + 11,
                   // height: 69 + 11,

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:myekigai/constants/assets_constants.dart';
+import 'package:myekigai/constants/constants.dart';
 import 'package:myekigai/features/homescreen/view/home_view.dart';
 import 'package:myekigai/reusables/TopAppbar.dart';
 import 'package:myekigai/reusables/btn.dart';
 import 'package:myekigai/theme/pallete.dart';
-
 
 class PaymentScreen extends StatefulWidget {
   @override
@@ -40,7 +39,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: Row(
                 children: [
-                  Image.asset(AssetsConstants.ancreditcard),
+                  Image.asset(GlobalAssets.ancreditcard),
                   SizedBox(width: 8),
                   Text(
                     'eKI - wallet',
@@ -78,7 +77,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   title: Row(
                     children: [
                       Image.asset(
-                        AssetsConstants.angooglepay,
+                        GlobalAssets.angooglepay,
                         width: 25,
                         height: 25,
                       ),
@@ -109,7 +108,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   title: Row(
                     children: [
                       Image.asset(
-                        AssetsConstants.anphonepay,
+                        GlobalAssets.anphonepay,
                         width: 25,
                         height: 25,
                       ),
@@ -138,7 +137,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   title: Row(
                     children: [
                       Image.asset(
-                        AssetsConstants.anupi,
+                        GlobalAssets.anupi,
                         width: 25,
                         height: 25,
                       ),
@@ -232,7 +231,10 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   CustomButton(
                     text: "Continue",
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => HomeScreen()));
                     },
                   ),
                   SizedBox(height: 16.0),
