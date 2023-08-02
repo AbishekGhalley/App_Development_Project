@@ -105,7 +105,7 @@ class _shareridemapState extends State<shareridemap> {
                                   width: 7,
                                 ),
                                 Text(
-                                  "Whom would you like to share your \n ride with?",
+                                  "Whom would you like to share your ride with?",
                                   style: TextStyle(
                                       fontFamily: "Sen",
                                       color: Pallete.geryColor,
