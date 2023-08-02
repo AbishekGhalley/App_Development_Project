@@ -131,15 +131,15 @@ class _LastReserveVehicleState extends State<LastReserveVehicle> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       VehicleInfoBox(
-                          icon: AssetsConstants.ekizone,
+                          icon: GlobalAssets.charging,
                           midText: 'Charging',
                           bottomText: '90%'),
                       VehicleInfoBox(
-                          icon: AssetsConstants.ekizone,
+                          icon: GlobalAssets.maxspeed,
                           midText: 'Max Speed',
                           bottomText: '110 kmph'),
                       VehicleInfoBox(
-                          icon: AssetsConstants.ekizone,
+                          icon: GlobalAssets.range,
                           midText: 'Range',
                           bottomText: '120km'),
                     ],

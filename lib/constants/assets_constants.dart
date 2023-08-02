@@ -17,11 +17,7 @@ class AssetsConstants {
 
   static const String permission = "$_svgPath/permission.svg";
 
-  static const String ekizone = "$_pngPath/ekizone.png"; //by imran
-
   static const String bike = "$_pngPath/bike.png"; //by imran
-
-  static const String imshuttle = "$_pngPath/imshuttle.png"; //by imran
 
 //Anirudh
   static const String locate = "$_pngPath/locate.png";
@@ -50,10 +46,8 @@ class AssetsConstants {
 
   static const String goldenstar = "$_pngPath/goldenstar.png";
 
-  static const String antelephone = "$_pngPath/An_telephone.png";
-  static const String andummyimage = "$_pngPath/An_dummyimage.png";
   static const String anmap = "$_pngPath/map.png";
-  static const String ansos = "$_pngPath/An_sos.png";
+
   static const String anquestion = "$_pngPath/An_question.png";
   static const String ancreditcard = "$_pngPath/An_creditcard.png";
   static const String angooglepay = "$_pngPath/An_googlepay.png";

@@ -6,3 +6,4 @@ export './AllAssets/onboarding_assets.dart';
 export './AllAssets/reservevehicle_assets.dart';
 export './AllAssets/global_assets.dart';
 export './AllAssets/scanandgo_assets.dart';
+export './AllAssets/shareride_assets.dart';

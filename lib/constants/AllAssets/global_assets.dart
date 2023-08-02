@@ -10,6 +10,7 @@ class GlobalAssets {
 
   //Pngs
   static const String locate = "$_GlobalPngPath/locate.png"; //by imran
+  static const String ekizone = "$_GlobalPngPath/ekizone.png"; //by imran
   static const String imMap = "$_GlobalPngPath/map.png"; //by imran
   static const String bike = "$_GlobalPngPath/bike.png";
   static const String charging = "$_GlobalPngPath/battery.png";
@@ -21,4 +22,5 @@ class GlobalAssets {
   static const String gps = "$_GlobalPngPath/mapicon.png";
   static const String blutooth = "$_GlobalPngPath/Bluetooth.png";
   static const String manual = "$_GlobalPngPath/Manual.png";
+  static const String ansos = "$_GlobalPngPath/An_sos.png";
 }
