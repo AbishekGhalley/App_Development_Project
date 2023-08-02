@@ -317,8 +317,9 @@ class _driverdetailsState extends State<driverdetails> {
                     ],
                   ),
                   const SizedBox(
-                    height: 25,
+                    height: 15,
                   ),
+                  const Spacer(),
                   Container(
                     width: double.infinity,
                     decoration: BoxDecoration(

@@ -9,7 +9,7 @@ class Helpbtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 165,
+      width: MediaQuery.of(context).size.width*0.430,
       height: 110,
         alignment: Alignment.center,
         decoration: const BoxDecoration(boxShadow: [
