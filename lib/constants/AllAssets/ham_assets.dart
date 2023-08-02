@@ -1,9 +1,9 @@
 class HamAssets {
-  //path for Auth assets
+  //path for assets
   static const String _HamPngPath = "assets/hamburger/pngs";
   static const String _HamSvgPath = "assets/hamburger/svgs";
 
-  //variables for auth assets
+  //variables for assets
   //Svgs
 
   //Pngs

@@ -1,4 +1,3 @@
-import 'package:myekigai/constants/assets_constants.dart';
 import 'package:myekigai/constants/constants.dart';
 
 class Deployment {

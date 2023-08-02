@@ -1,9 +1,9 @@
 class ReserveVehicleAssets {
-  //path for Auth assets
+  //path for assets
   static const String _ReserveVehiclePngPath = "assets/reserve/pngs";
   static const String _ReserveVehicleSvgPath = "assets/reserve/svgs";
 
-  //variables for auth assets
+  //variables for assets
   //Svgs
   static const String imavlRed = "$_ReserveVehicleSvgPath/avlRed.svg";
   static const String imavlYellow = "$_ReserveVehicleSvgPath/avlYellow.svg";

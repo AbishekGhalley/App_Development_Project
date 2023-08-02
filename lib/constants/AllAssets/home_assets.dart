@@ -1,9 +1,9 @@
 class HomeAssets {
-  //path for Auth assets
+  //path for assets
   static const String _HomePngPath = "assets/home/pngs";
   static const String _HomeSvgPath = "assets/home/svgs";
 
-  //variables for auth assets
+  //variables for assets
   //Svgs
 
   //Pngs

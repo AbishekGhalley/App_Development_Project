@@ -1,9 +1,9 @@
 class ScanGoAssets {
-  //path for Auth assets
+  //path for assets
   static const String _ScanGoPngPath = "assets/scanandgo/pngs";
   static const String _ScanGoSvgPath = "assets/scanandgo/svgs";
 
-  //variables for auth assets
+  //variables for assets
   //Svgs
 
   //Pngs

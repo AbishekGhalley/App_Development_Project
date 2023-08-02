@@ -1,9 +1,9 @@
 class OnBoardingAssets {
-  //path for Auth assets
+  //path for assets
   static const String _OnBoardingPngPath = "assets/onboarding/pngs";
   static const String _OnBoardingSvgPath = "assets/onboarding/svgs";
 
-  //variables for auth assets
+  //variables for assets
   //Svgs
   static const String onbuddy = "$_OnBoardingSvgPath/An_on_buddy.svg";
   static const String onreserevehicle =

@@ -1,9 +1,9 @@
 class ShareRideAssets {
-  //path for Auth assets
+  //path for assets
   static const String _ShareRidePngPath = "assets/shareride/pngs";
   static const String ShareRideSvgPath = "assets/shareride/svgs";
 
-  //variables for auth assets
+  //variables for assets
   //Svgs
 
   //Pngs

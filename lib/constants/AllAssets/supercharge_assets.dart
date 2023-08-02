@@ -1,5 +1,5 @@
 class SuperChargeAssets {
-  //path for Auth assets
+  //path for assets
   static const String _SuperChargePngPath = "assets/supercharge/pngs";
   static const String _SuperChargeSvgPath = "assets/supercharge/svgs";
 

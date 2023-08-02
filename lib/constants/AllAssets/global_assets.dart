@@ -1,5 +1,5 @@
 class GlobalAssets {
-  //path for Auth assets
+  //path for assets
   static const String _GlobalPngPath = "assets/global/pngs";
   static const String _GlobalSvgPath = "assets/global/svgs";
 
@@ -27,4 +27,15 @@ class GlobalAssets {
   static const String anphonepay = "$_GlobalPngPath/An_phonepe.png";
   static const String anupi = "$_GlobalPngPath/An_upi.png";
   static const String ancreditcard = "$_GlobalPngPath/An_creditcard.png";
+
+  //navbar pngs
+  static const String history = "$_GlobalPngPath/History.png";
+  static const String star = "$_GlobalPngPath/Star.png";
+  static const String notification = "$_GlobalPngPath/Notification.png";
+  static const String setting = "$_GlobalPngPath/Setting.png";
+  static const String steeringwheel = "$_GlobalPngPath/Steeringwheel.png";
+  static const String motorbike = "$_GlobalPngPath/motorbike.png";
+  static const String heart = "$_GlobalPngPath/Heart.png";
+  static const String help = "$_GlobalPngPath/Help.png";
+  static const String card = "$_GlobalPngPath/card.png";
 }
