@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:myekigai/constants/assets_constants.dart';
+import 'package:myekigai/constants/constants.dart';
 import 'package:myekigai/theme/pallete.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
@@ -57,13 +57,13 @@ class RideFinished extends StatelessWidget {
                       child: Column(
                         children: [
                           IconButton(
-                            icon: Image.asset(AssetsConstants.locate),
+                            icon: Image.asset(GlobalAssets.locate),
                             onPressed: () {
                               // Handle favorite icon press
                             },
                           ),
                           SvgPicture.asset(
-                            AssetsConstants
+                            GlobalAssets
                                 .imekizone, // Replace with your SVG asset path
                             height: 36, // Set the height of the SVG
                             width: 36, // Set the width of the SVG
