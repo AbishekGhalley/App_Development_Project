@@ -8,7 +8,7 @@ class AssetsConstants {
   static const String imavlYellow = "$_svgPath/avlYellow.svg";
   static const String imavlGreen = "$_svgPath/avlGreen.svg";
   static const String imheart = "$_svgPath/heart.svg";
-  static const String imekizone = "$_svgPath/imekizone.svg";
+
   static const String imbackbutton = "$_svgPath/backbutton.svg";
   static const String imshareInReserveVehicle =
       "$_svgPath/shareInReserveVehicle.svg";
@@ -22,7 +22,7 @@ class AssetsConstants {
   static const String swapbattery = "$_pngPath/swapbattery.png";
 
   static const String permission = "$_svgPath/permission.svg";
-  static const String locate = "$_pngPath/locate.png"; //by imran
+
   static const String ekizone = "$_pngPath/ekizone.png"; //by imran
   static const String iicon = "$_pngPath/iicon.png"; //by imran
   static const String stationImage = "$_pngPath/stationimage.png"; //by imran
@@ -31,7 +31,7 @@ class AssetsConstants {
   static const String imshuttle = "$_pngPath/imshuttle.png"; //by imran
 
 //Anirudh
-
+  static const String locate = "$_pngPath/locate.png";
   static const String ev2 = "$_pngPath/Ev2.png";
   static const String ev3 = "$_pngPath/Ev3.png";
   static const String ev4 = "$_pngPath/Ev4.png";
@@ -80,12 +80,7 @@ class AssetsConstants {
   static const String imredAvl = "$_pngPath/redAvl.png"; //by imran
   static const String imyellowAvl = "$_pngPath/yellowAvl.png"; //by imran
   static const String imlargelocator = "$_pngPath/largelocator.png"; //by imran
-  static const String imhomescango = "$_pngPath/imscango.png"; //by imran
-  static const String imreserveVehicle = "$_pngPath/reservation.png"; //by imran
-  static const String imbuddy = "$_pngPath/imbuddy.png"; //by imran
-  static const String imswapbattery = "$_pngPath/imswap.png"; //by imran
-  static const String imsupercharge = "$_pngPath/imsupercharge.png"; //by imran
-  static const String imshareRide = "$_pngPath/imshareride.png"; //by imran
+
   //vehicle pngs small
   static const String imvoltix = "$_pngPath/image219.png"; //by imran
   static const String imblizz = "$_pngPath/image221.png"; //by imran

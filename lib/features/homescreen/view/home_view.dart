@@ -14,12 +14,11 @@ import 'package:myekigai/reusables/key_navbar.dart';
 import '../../../theme/pallete.dart';
 import '../widget/searchbar.dart';
 
-
 class HomeScreen extends StatefulWidget {
   static route() {
     return PageRouteBuilder(
       pageBuilder: (context, animation, secondaryAnimation) =>
-      const HomeScreen(),
+          const HomeScreen(),
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         return SlideTransition(
           position: Tween<Offset>(
@@ -31,8 +30,6 @@ class HomeScreen extends StatefulWidget {
       },
     );
   }
-
-
 
   const HomeScreen({super.key});
 
@@ -46,7 +43,9 @@ class _HomeScreenState extends State<HomeScreen> {
     double screenHight = MediaQuery.of(context).size.height;
     return Scaffold(
       key: global_navbar.homescaffoldKey,
-      drawer: Navbar(scaffoldKey: global_navbar.homescaffoldKey,),
+      drawer: Navbar(
+        scaffoldKey: global_navbar.homescaffoldKey,
+      ),
       backgroundColor: Colors.black,
       body: Align(
         alignment: Alignment.topCenter,
@@ -56,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               Image.asset(
                 // Map must be added here
-                'assets/pngs/map.png',
+                HomeAssets.imMap,
                 width: double.infinity,
                 height: 800,
                 fit: BoxFit.cover,
@@ -65,7 +64,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 top: MediaQuery.of(context).padding.top + 8,
                 left: 20,
                 right: 20,
-                child: CustomSearchBar(scaffoldKey: global_navbar.homescaffoldKey, ),
+                child: CustomSearchBar(
+                  scaffoldKey: global_navbar.homescaffoldKey,
+                ),
               ),
               Positioned(
                 bottom: 0,
@@ -80,13 +81,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Column(
                         children: [
                           IconButton(
-                            icon: Image.asset(AssetsConstants.locate),
+                            icon: Image.asset(HomeAssets.locate),
                             onPressed: () {
                               // Handle favorite icon press
                             },
                           ),
                           SvgPicture.asset(
-                            AssetsConstants
+                            HomeAssets
                                 .imekizone, // Replace with your SVG asset path
                             height: 36, // Set the height of the SVG
                             width: 36, // Set the width of the SVG
@@ -152,7 +153,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   builder: (context) =>
                                                       ScanQR()));
                                         },
-                                        icon: AssetsConstants.imhomescango,
+                                        icon: HomeAssets.imhomescango,
                                         text: 'Scan & Go'),
                                     ServiceIconWithText(
                                         onPressed: () {
@@ -162,11 +163,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   builder: (context) =>
                                                       const ReserveVehicle()));
                                         },
-                                        icon: AssetsConstants.imreserveVehicle,
+                                        icon: HomeAssets.imreserveVehicle,
                                         text: 'Reservation'),
                                     ServiceIconWithText(
                                         onPressed: () {},
-                                        icon: AssetsConstants.imbuddy,
+                                        icon: HomeAssets.imbuddy,
                                         text: 'Get a Buddy')
                                   ],
                                 ),
@@ -183,7 +184,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   builder: (context) =>
                                                       swapbatteries()));
                                         },
-                                        icon: AssetsConstants.imswapbattery,
+                                        icon: HomeAssets.imswapbattery,
                                         text: 'Swap Battery'),
                                     ServiceIconWithText(
                                         onPressed: () {
@@ -193,7 +194,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   builder: (context) =>
                                                       details_supercharge()));
                                         },
-                                        icon: AssetsConstants.imsupercharge,
+                                        icon: HomeAssets.imsupercharge,
                                         text: 'Supercharge'),
                                     ServiceIconWithText(
                                         onPressed: () {
@@ -203,7 +204,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   builder: (context) =>
                                                       shareridemap()));
                                         },
-                                        icon: AssetsConstants.imshareRide,
+                                        icon: HomeAssets.imshareRide,
                                         text: 'Share Ride')
                                   ],
                                 ),

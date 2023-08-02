@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myekigai/Authentication_repo/authentication.dart';
 import 'package:myekigai/constants/assets_constants.dart';
+import 'package:myekigai/constants/constants.dart';
 import 'package:myekigai/features/hamburger/view/Myvehicles.dart';
 import 'package:myekigai/features/hamburger/view/Notification.dart';
 import 'package:myekigai/features/hamburger/view/Profile.dart';
@@ -12,7 +13,7 @@ import 'package:myekigai/features/hamburger/view/help.dart';
 
 class Navbar extends StatelessWidget {
   final GlobalKey<ScaffoldState> scaffoldKey;
-  const Navbar({Key? key,required this.scaffoldKey}) : super(key: key);
+  const Navbar({Key? key, required this.scaffoldKey}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +34,7 @@ class Navbar extends StatelessWidget {
                       decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
-                          image: AssetImage(AssetsConstants.db),
+                          image: AssetImage(HamAssets.db),
                         ),
                       ),
                     ),
@@ -89,8 +90,8 @@ class Navbar extends StatelessWidget {
                       thickness: 1,
                     ),
                   ])),
-         Expanded(
-            child:ListView(
+          Expanded(
+            child: ListView(
               children: [
                 ListTile(
                   leading: Image.asset(AssetsConstants.card),
