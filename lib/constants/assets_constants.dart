@@ -67,12 +67,6 @@ class AssetsConstants {
   static const String anphonepay = "$_pngPath/An_phonepe.png";
   static const String anupi = "$_pngPath/An_upi.png";
   // Anirudh onboarding svgs
-  static const String onbuddy = "$_svgPath/An_on_buddy.svg";
-  static const String onreserevehicle = "$_svgPath/An_on_reservevehicle.svg";
-  static const String onscango = "$_svgPath/An_on_scango.svg";
-  static const String onshareride = "$_svgPath/An_on_shareride.svg";
-  static const String onsupercharge = "$_svgPath/An_on_supercharge.svg";
-  static const String onswapbattery = "$_svgPath/An_on_swapbattery.svg";
 
   //markers
   static const String imlocatorPin = "$_pngPath/locator_pin.png"; //by imran
