@@ -16,7 +16,7 @@ class Help extends StatelessWidget {
           physics: const ScrollPhysics(),
           child: Padding(
             padding:
-                const EdgeInsets.only(left: 25, right: 25, top: 25, bottom: 25),
+                const EdgeInsets.only(left: 20, right: 20, top: 25, bottom: 25),
             child: Column(
               children: [
                 Container(
