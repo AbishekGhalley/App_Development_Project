@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:myekigai/features/auth/view/login_view.dart';
 import 'package:myekigai/reusables/Navbar.dart';
@@ -47,92 +48,103 @@ class _OnboardingState extends State<Onboarding> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          Expanded(
-            child: PageView.builder(
-              controller: _controller,
-              itemCount: contents.length,
-              onPageChanged: (int index) {
-                setState(() {
-                  currentIndex = index;
-                });
-              },
-              itemBuilder: (_, i) {
-                return Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Expanded(
-                        child:SvgPicture.asset(contents[i].image),)
-                    ],
-                  ),
-                );
-              },
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Container(
-              height: 80,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  if (currentIndex >= 0)
-                    TextButton(
-                      child: const Text(
-                        "Prev",
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontFamily: "Montserrat",
-                          color: Pallete.textColor,
-                          fontWeight: FontWeight.w500,
+    return ScreenUtilInit(
+        designSize: Size(420, 910),
+        builder: (context, child) {
+          return Scaffold(
+            body: Column(
+              children: [
+                Expanded(
+                  child: PageView.builder(
+                    controller: _controller,
+                    itemCount: contents.length,
+                    onPageChanged: (int index) {
+                      setState(() {
+                        currentIndex = index;
+                      });
+                    },
+                    itemBuilder: (_, i) {
+                      return Padding(
+                        padding: EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(20),vertical: ScreenUtil().setHeight(20)),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Expanded(
+                              child: SvgPicture.asset(
+                                contents[i].image,
+                                width: ScreenUtil().setWidth(380),
+                                height: ScreenUtil().setWidth(380),
+                              ),
+                            )
+                          ],
                         ),
-                      ),
-                      onPressed: () {
-                        _controller.previousPage(
-                          duration: const Duration(milliseconds: 300),
-                          curve: Curves.easeIn,
-                        );
-                      },
-                    ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: List.generate(
-                      contents.length,
-                      (index) => buildDot(index),
-                    ),
-                  ),
-                  TextButton(
-                    child: Text(
-                      currentIndex == contents.length - 1 ? "Done" : "Next",
-                      style: const TextStyle(
-                        fontSize: 16,
-                        fontFamily: "Montserrat",
-                        color: Pallete.textColor,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                    onPressed: () {
-                      if (currentIndex == contents.length - 1) {
-                        Navigator.push(context, HomeScreen.route());
-                      } else {
-                        _controller.nextPage(
-                          duration: const Duration(milliseconds: 300),
-                          curve: Curves.easeIn,
-                        );
-                      }
+                      );
                     },
                   ),
-                ],
-              ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(ScreenUtil().setWidth(16)),
+                  child: Container(
+                    height: ScreenUtil().setHeight(80),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        if (currentIndex >= 0)
+                          TextButton(
+                            child:  Text(
+                              "Prev",
+                              style: TextStyle(
+                                 fontSize: ScreenUtil().setSp(16),
+                                fontFamily: "Montserrat",
+                                color: Pallete.textColor,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            onPressed: () {
+                              _controller.previousPage(
+                                duration: const Duration(milliseconds: 300),
+                                curve: Curves.easeIn,
+                              );
+                            },
+                          ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: List.generate(
+                            contents.length,
+                            (index) => buildDot(index),
+                          ),
+                        ),
+                        TextButton(
+                          child: Text(
+                            currentIndex == contents.length - 1
+                                ? "Done"
+                                : "Next",
+                            style:  TextStyle(
+                               fontSize: ScreenUtil().setSp(16),
+                              fontFamily: "Montserrat",
+                              color: Pallete.textColor,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          onPressed: () {
+                            if (currentIndex == contents.length - 1) {
+                              Navigator.push(context, HomeScreen.route());
+                            } else {
+                              _controller.nextPage(
+                                duration: const Duration(milliseconds: 300),
+                                curve: Curves.easeIn,
+                              );
+                            }
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ),
-        ],
-      ),
-    );
+          );
+        });
   }
 
   Container buildDot(int index) {

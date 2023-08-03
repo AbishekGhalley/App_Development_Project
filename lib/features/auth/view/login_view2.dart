@@ -6,7 +6,6 @@ import 'package:myekigai/features/auth/controller/OtpController.dart';
 import 'package:myekigai/features/auth/view/login_view3.dart';
 import 'package:myekigai/reusables/full_width_text.dart';
 import 'package:myekigai/reusables/btn.dart';
-import 'package:myekigai/features/auth/widgets/otp_field.dart';
 import 'package:myekigai/theme/pallete.dart';
 
 class LoginView2 extends StatefulWidget {

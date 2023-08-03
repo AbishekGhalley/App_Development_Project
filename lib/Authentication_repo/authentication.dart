@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:myekigai/features/auth/view/login_view.dart';
 import 'package:myekigai/features/auth/view/login_view3.dart';
 import 'package:myekigai/features/auth/view/login_view4.dart';
+import 'package:myekigai/features/onboarding/view/onboarding.dart';
 
 class Authentication extends GetxController {
   static Authentication get instance => Get.find();
@@ -21,7 +22,7 @@ class Authentication extends GetxController {
   _setInitialScreen(User? user) {
     user == null
         ? Get.offAll(() => LoginView())
-        : Get.offAll(() => LoginView4());
+        : Get.offAll(() => Onboarding());
   }
 
   void phoneAuthentication(String phoneNo) async {
