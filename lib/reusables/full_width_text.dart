@@ -23,7 +23,7 @@ class FullWidthTextWidget extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
       width:
-          double.infinity, // Set the width to occupy the full available space
+          MediaQuery.of(context).size.width, // Set the width to occupy the full available space
       child: Text(
         text,
         style: GoogleFonts.montserrat(

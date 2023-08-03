@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myekigai/Authentication_repo/authentication.dart';
 import 'package:myekigai/constants/constants.dart';
 import 'package:myekigai/features/hamburger/view/Myvehicles.dart';
@@ -22,14 +23,14 @@ class Navbar extends StatelessWidget {
         children: [
           Container(
               width: double.infinity,
-              height: 260,
+              height: ScreenUtil().setHeight(260),
+              padding: EdgeInsets.only(top: ScreenUtil().setHeight(50) ),
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const SizedBox(height: 50),
                     Container(
                       margin: const EdgeInsets.only(bottom: 10),
-                      height: 95,
+                      height: ScreenUtil().setHeight(95),
                       decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
@@ -37,25 +38,25 @@ class Navbar extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const Text(
+                    Text(
                       "Devesh",
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: 27,
+                        fontSize: ScreenUtil().setSp(27),
                         fontFamily: 'Montserrat',
                       ),
                     ),
-                    const SizedBox(height: 10),
+                    SizedBox(height: ScreenUtil().setHeight(10)),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         GestureDetector(
-                          child: const Text(
+                          child:  Text(
                             "View Profile   ",
                             style: TextStyle(
                               decoration: TextDecoration.underline,
                               color: Colors.lightBlue,
-                              fontSize: 16,
+                              fontSize:ScreenUtil().setSp(16),
                               fontFamily: 'Montserrat',
                             ),
                           ),
@@ -67,26 +68,27 @@ class Navbar extends StatelessWidget {
                           },
                         ),
                         Container(
-                            height: 29,
-                            width: 45,
+                            height: ScreenUtil().setHeight(30),
+                            width: ScreenUtil().setWidth(45),
                             decoration: BoxDecoration(
                                 color: Colors.black,
                                 borderRadius: BorderRadius.circular(5)),
-                            child: const Padding(
+                            child:  Padding(
                               padding: EdgeInsets.all(7.0),
                               child: Text('New',
                                   style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 12,
+                                    fontSize: ScreenUtil().setSp(12),
                                     fontFamily: 'Montserrat',
                                   )),
                             )),
                       ],
                     ),
-                    const SizedBox(height: 11),
+                    SizedBox(height: ScreenUtil().setHeight(11)),
                     const Divider(
                       color: Color(0xFFE6E6E6),
                       thickness: 1,
+                      height: 1,
                     ),
                   ])),
           Expanded(
@@ -95,11 +97,11 @@ class Navbar extends StatelessWidget {
               children: [
                 ListTile(
                   leading: Image.asset(GlobalAssets.card),
-                  title: const Text(
+                  title: Text(
                     'Wallets',
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 21,
+                      fontSize: ScreenUtil().setSp(21),
                       fontFamily: 'Montserrat',
                     ),
                   ),
@@ -112,11 +114,11 @@ class Navbar extends StatelessWidget {
                 ),
                 ListTile(
                   leading: Image.asset(GlobalAssets.motorbike),
-                  title: const Text(
+                  title: Text(
                     'My Vehicles',
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 21,
+                      fontSize: ScreenUtil().setSp(21),
                       fontFamily: 'Montserrat',
                     ),
                   ),
@@ -129,11 +131,11 @@ class Navbar extends StatelessWidget {
                 ),
                 ListTile(
                   leading: Image.asset(GlobalAssets.history),
-                  title: const Text(
+                  title: Text(
                     'Ride History',
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 21,
+                      fontSize: ScreenUtil().setSp(21),
                       fontFamily: 'Montserrat',
                     ),
                   ),
@@ -146,11 +148,11 @@ class Navbar extends StatelessWidget {
                 ),
                 ListTile(
                     leading: Image.asset(GlobalAssets.notification),
-                    title: const Text(
+                    title: Text(
                       'Notifications',
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: 21,
+                        fontSize: ScreenUtil().setSp(21),
                         fontFamily: 'Montserrat',
                       ),
                     ),
@@ -163,11 +165,11 @@ class Navbar extends StatelessWidget {
                     }),
                 ListTile(
                   leading: Image.asset(GlobalAssets.star),
-                  title: const Text(
+                  title: Text(
                     'Rewards',
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 21,
+                      fontSize: ScreenUtil().setSp(21),
                       fontFamily: 'Montserrat',
                     ),
                   ),
@@ -180,11 +182,11 @@ class Navbar extends StatelessWidget {
                 ),
                 ListTile(
                   leading: Image.asset(GlobalAssets.heart),
-                  title: const Text(
+                  title: Text(
                     'Favourite',
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 21,
+                      fontSize: ScreenUtil().setSp(21),
                       fontFamily: 'Montserrat',
                     ),
                   ),
@@ -192,11 +194,11 @@ class Navbar extends StatelessWidget {
                 ),
                 ListTile(
                     leading: Image.asset(GlobalAssets.help),
-                    title: const Text(
+                    title: Text(
                       'Help',
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: 21,
+                        fontSize: ScreenUtil().setSp(21),
                         fontFamily: 'Montserrat',
                       ),
                     ),
@@ -208,11 +210,11 @@ class Navbar extends StatelessWidget {
                     }),
                 ListTile(
                     leading: Image.asset(GlobalAssets.setting),
-                    title: const Text(
+                    title: Text(
                       'Settings',
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: 21,
+                        fontSize: ScreenUtil().setSp(21),
                         fontFamily: 'Montserrat',
                       ),
                     ),
@@ -225,11 +227,11 @@ class Navbar extends StatelessWidget {
                 const Divider(color: Color(0xFFE6E6E6), thickness: 1),
                 ListTile(
                   leading: Image.asset(GlobalAssets.steeringwheel),
-                  title: const Text(
+                  title: Text(
                     'Be a Buddy',
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 16,
+                      fontSize: ScreenUtil().setSp(16),
                       fontFamily: 'Montserrat',
                       fontWeight: FontWeight.w500,
                     ),
@@ -238,11 +240,11 @@ class Navbar extends StatelessWidget {
                 ),
                 ListTile(
                   leading: Image.asset(GlobalAssets.steeringwheel),
-                  title: const Text(
+                  title: Text(
                     'Sign Out',
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 16,
+                      fontSize: ScreenUtil().setSp(16),
                       fontFamily: 'Montserrat',
                       fontWeight: FontWeight.w500,
                     ),

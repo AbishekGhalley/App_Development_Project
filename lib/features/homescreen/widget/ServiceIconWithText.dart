@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myekigai/theme/pallete.dart';
 
@@ -21,15 +22,15 @@ class ServiceIconWithText extends StatelessWidget {
         children: [
           Image(
             image: AssetImage(icon),
-            width: 90,
-            height: 50,
+            width: ScreenUtil().setWidth(100),
+            height: ScreenUtil().setHeight(60),
           ),
           Text(
             text,
             style: GoogleFonts.sen(
               color: Pallete.textColor,
               fontWeight: FontWeight.w400,
-              fontSize: 15,
+              fontSize: ScreenUtil().setSp(17),
             ),
           )
         ],

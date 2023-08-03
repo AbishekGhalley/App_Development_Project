@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myekigai/constants/constants.dart';
@@ -40,187 +41,195 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    double screenHight = MediaQuery.of(context).size.height;
-    return Scaffold(
-      key: global_navbar.homescaffoldKey,
-      drawer: Navbar(
-        scaffoldKey: global_navbar.homescaffoldKey,
-      ),
-      backgroundColor: Colors.black,
-      body: Align(
-        alignment: Alignment.topCenter,
-        child: Container(
-          height: MediaQuery.of(context).size.height,
-          child: Stack(
-            children: [
-              Image.asset(
-                // Map must be added here
-                GlobalAssets.imMap,
-                width: double.infinity,
-                height: 800,
-                fit: BoxFit.cover,
-              ),
-              Positioned(
-                top: MediaQuery.of(context).padding.top + 8,
-                left: 20,
-                right: 20,
-                child: CustomSearchBar(
-                  scaffoldKey: global_navbar.homescaffoldKey,
-                ),
-              ),
-              Positioned(
-                bottom: 0,
-                right: 0,
-                left: 0,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
+    return ScreenUtilInit(
+        designSize: Size(420, 910),
+        builder: (context, child) {
+          return Scaffold(
+            key: global_navbar.homescaffoldKey,
+            drawer: Navbar(
+              scaffoldKey: global_navbar.homescaffoldKey,
+            ),
+            backgroundColor: Colors.black,
+            body: Align(
+              alignment: Alignment.topCenter,
+              child: Container(
+                height: MediaQuery.of(context).size.height,
+                child: Stack(
                   children: [
-                    Padding(
-                      padding: EdgeInsets.only(
-                          right: 16, bottom: screenHight * 0.032),
-                      child: Column(
-                        children: [
-                          IconButton(
-                            icon: Image.asset(GlobalAssets.locate),
-                            onPressed: () {
-                              // Handle favorite icon press
-                            },
-                          ),
-                          SvgPicture.asset(
-                            GlobalAssets
-                                .imekizone, // Replace with your SVG asset path
-                            height: 36, // Set the height of the SVG
-                            width: 36, // Set the width of the SVG
-                          ),
-                        ],
+                    Image.asset(
+                      // Map must be added here
+                      GlobalAssets.imMap,
+                      width: double.infinity,
+                      height: double.infinity,
+                      fit: BoxFit.cover,
+                    ),
+                    Positioned(
+                      top: MediaQuery.of(context).padding.top +
+                          ScreenUtil().setHeight(10),
+                      left: ScreenUtil().setWidth(20),
+                      right: ScreenUtil().setWidth(20),
+                      child: CustomSearchBar(
+                        scaffoldKey: global_navbar.homescaffoldKey,
                       ),
                     ),
-                    SlidingUpPanel(
-                        borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(16),
-                            topRight: Radius.circular(16)),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.5),
-                            blurRadius: 3.0,
-                            spreadRadius: 2.0,
-                            offset: const Offset(
-                                0, 2), // Defines the position of the shadow
-                          ),
-                        ],
-                        minHeight: MediaQuery.of(context).size.height * 0.18,
-                        maxHeight: screenHight * 0.31,
-                        panel: Container(
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 20),
+                    Positioned(
+                      bottom: 0,
+                      right: 0,
+                      left: 0,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.only(
+                                right: ScreenUtil().setWidth(16),
+                                bottom: ScreenUtil().setHeight(30)),
                             child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Center(
-                                  child: Container(
-                                    margin: EdgeInsets.only(
-                                      top: screenHight * 0.012,
-                                    ),
-                                    height: screenHight * 0.0035,
-                                    width: 66,
-                                    decoration: const BoxDecoration(
-                                      borderRadius:
-                                          BorderRadius.all(Radius.circular(3)),
-                                      color: Pallete.textColor,
-                                    ),
-                                  ),
+                                IconButton(
+                                  icon: Image.asset(GlobalAssets.locate),
+                                  onPressed: () {
+                                    // Handle favorite icon press
+                                  },
                                 ),
-                                Spacer(),
-                                Text(
-                                  'Services',
-                                  style: GoogleFonts.sen(
-                                    color: Pallete.textColor,
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 20,
-                                  ),
+                                SvgPicture.asset(
+                                  GlobalAssets.imekizone,
+                                  // Replace with your SVG asset path
+                                  height: ScreenUtil().setWidth(
+                                      36), // Set the height of the SVG
+                                  width: ScreenUtil()
+                                      .setWidth(36), // Set the width of the SVG
                                 ),
-                                Spacer(),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    ServiceIconWithText(
-                                        onPressed: () {
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      ScanQR()));
-                                        },
-                                        icon: HomeAssets.imhomescango,
-                                        text: 'Scan & Go'),
-                                    ServiceIconWithText(
-                                        onPressed: () {
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      const ReserveVehicle()));
-                                        },
-                                        icon: HomeAssets.imreserveVehicle,
-                                        text: 'Reservation'),
-                                    ServiceIconWithText(
-                                        onPressed: () {},
-                                        icon: HomeAssets.imbuddy,
-                                        text: 'Get a Buddy')
-                                  ],
-                                ),
-                                Spacer(),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    ServiceIconWithText(
-                                        onPressed: () {
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      swapbatteries()));
-                                        },
-                                        icon: HomeAssets.imswapbattery,
-                                        text: 'Swap Battery'),
-                                    ServiceIconWithText(
-                                        onPressed: () {
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      details_supercharge()));
-                                        },
-                                        icon: HomeAssets.imsupercharge,
-                                        text: 'Supercharge'),
-                                    ServiceIconWithText(
-                                        onPressed: () {
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      shareridemap()));
-                                        },
-                                        icon: HomeAssets.imshareRide,
-                                        text: 'Share Ride')
-                                  ],
-                                ),
-                                Spacer(),
-                                Spacer(),
                               ],
                             ),
                           ),
-                        )),
+                          SlidingUpPanel(
+                              borderRadius: const BorderRadius.only(
+                                  topLeft: Radius.circular(16),
+                                  topRight: Radius.circular(16)),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  blurRadius: 3.0,
+                                  spreadRadius: 2.0,
+                                  offset: const Offset(0,
+                                      2), // Defines the position of the shadow
+                                ),
+                              ],
+                              minHeight: ScreenUtil().setHeight(180),
+                              maxHeight: ScreenUtil().setHeight(300),
+                              panel: Container(
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: ScreenUtil().setWidth(20)),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Center(
+                                        child: Container(
+                                          margin: EdgeInsets.only(
+                                            top: ScreenUtil().setHeight(12),
+                                          ),
+                                          height: ScreenUtil().setHeight(4),
+                                          width: 66,
+                                          decoration: const BoxDecoration(
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(3)),
+                                            color: Pallete.textColor,
+                                          ),
+                                        ),
+                                      ),
+                                      Spacer(),
+                                      Text(
+                                        'Services',
+                                        style: GoogleFonts.sen(
+                                          color: Pallete.textColor,
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: ScreenUtil().setSp(23),
+                                        ),
+                                      ),
+                                      Spacer(),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          ServiceIconWithText(
+                                              onPressed: () {
+                                                Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            ScanQR()));
+                                              },
+                                              icon: HomeAssets.imhomescango,
+                                              text: 'Scan & Go'),
+                                          ServiceIconWithText(
+                                              onPressed: () {
+                                                Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            const ReserveVehicle()));
+                                              },
+                                              icon: HomeAssets.imreserveVehicle,
+                                              text: 'Reservation'),
+                                          ServiceIconWithText(
+                                              onPressed: () {},
+                                              icon: HomeAssets.imbuddy,
+                                              text: 'Get a Buddy')
+                                        ],
+                                      ),
+                                      Spacer(),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          ServiceIconWithText(
+                                              onPressed: () {
+                                                Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            swapbatteries()));
+                                              },
+                                              icon: HomeAssets.imswapbattery,
+                                              text: 'Swap Battery'),
+                                          ServiceIconWithText(
+                                              onPressed: () {
+                                                Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            details_supercharge()));
+                                              },
+                                              icon: HomeAssets.imsupercharge,
+                                              text: 'Supercharge'),
+                                          ServiceIconWithText(
+                                              onPressed: () {
+                                                Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            shareridemap()));
+                                              },
+                                              icon: HomeAssets.imshareRide,
+                                              text: 'Share Ride')
+                                        ],
+                                      ),
+                                      Spacer(),
+                                    ],
+                                  ),
+                                ),
+                              )),
+                        ],
+                      ),
+                    )
                   ],
                 ),
-              )
-            ],
-          ),
-        ),
-      ),
-    );
+              ),
+            ),
+          );
+        });
   }
 }
