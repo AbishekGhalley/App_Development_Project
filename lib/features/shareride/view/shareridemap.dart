@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:myekigai/constants/constants.dart';
 import 'package:myekigai/reusables/Navbar.dart';
@@ -34,105 +35,112 @@ class _shareridemapState extends State<shareridemap> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: Navbar(scaffoldKey: global_navbar.sharescaffoldKey),
-      key: global_navbar.sharescaffoldKey,
-      body: Stack(
-        children: [
-          Center(
-            child: Image.asset(
-              width: double.infinity,
-              height: MediaQuery.of(context).size.height,
-              GlobalAssets.imMap,
-              fit: BoxFit.cover,
-            ),
-          ),
-          Positioned(
-            top: MediaQuery.of(context).padding.top + 15,
-            left: 20,
-            right: 20,
-            child: CustomSearchBar(scaffoldKey: global_navbar.sharescaffoldKey),
-          ),
-          Positioned(
-            bottom: posbottom,
-            right: 16,
-            child: Column(
+    return ScreenUtilInit(
+        designSize: Size(420, 910),
+        builder: (context, child) {
+          return Scaffold(
+            drawer: Navbar(scaffoldKey: global_navbar.sharescaffoldKey),
+            key: global_navbar.sharescaffoldKey,
+            body: Stack(
               children: [
-                IconButton(
-                  icon: Image.asset(GlobalAssets.locate),
-                  onPressed: () {
-                    // Handle favorite icon press
-                  },
+                Center(
+                  child: Image.asset(
+                    width: double.infinity,
+                    height: MediaQuery.of(context).size.height,
+                    GlobalAssets.imMap,
+                    fit: BoxFit.cover,
+                  ),
                 ),
-                IconButton(
-                  icon: Image.asset(GlobalAssets.ekizone),
-                  onPressed: () {
-                    // Handle share icon press
-                  },
+                Positioned(
+                  top: MediaQuery.of(context).padding.top + 15,
+                  left: 20,
+                  right: 20,
+                  child: CustomSearchBar(
+                      scaffoldKey: global_navbar.sharescaffoldKey),
                 ),
-                Visibility(
-                    visible: isvisible,
-                    child: IgnorePointer(
-                        ignoring: !isvisible,
-                        child: IconButton(
-                            onPressed: () {},
-                            icon: SvgPicture.asset(GlobalAssets.ansos))))
+                Positioned(
+                  bottom: posbottom,
+                  right: 16,
+                  child: Column(
+                    children: [
+                      IconButton(
+                        icon: Image.asset(GlobalAssets.locate),
+                        onPressed: () {
+                          // Handle favorite icon press
+                        },
+                      ),
+                      IconButton(
+                        icon: Image.asset(GlobalAssets.ekizone),
+                        onPressed: () {
+                          // Handle share icon press
+                        },
+                      ),
+                      Visibility(
+                          visible: isvisible,
+                          child: IgnorePointer(
+                              ignoring: !isvisible,
+                              child: IconButton(
+                                  onPressed: () {},
+                                  icon: SvgPicture.asset(GlobalAssets.ansos))))
+                    ],
+                  ),
+                ),
+                if (!isdetails)
+                  Positioned(
+                      left: 0,
+                      bottom: 0,
+                      right: 0,
+                      child: Container(
+                          width: double.infinity,
+                          height: 130,
+                          padding: EdgeInsets.symmetric(vertical: 18),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                          ),
+                          child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 16),
+                                  child: Row(
+                                    children: [
+                                      Icon(Icons.info_outline_rounded),
+                                      SizedBox(
+                                        width: 7,
+                                      ),
+                                      Text(
+                                        "Whom would you like to share your ride with?",
+                                        style: TextStyle(
+                                            fontFamily: "Sen",
+                                            color: Pallete.geryColor,
+                                            fontSize: ScreenUtil().setSp(14),
+                                            fontWeight: FontWeight.w400),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 15,
+                                ),
+                                CustomButton(
+                                    text: "Continue",
+                                    onPressed: () {
+                                      showModalBottomSheet(
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(16)),
+                                        context: context,
+                                        builder: (BuildContext context) {
+                                          return bottommodalsheet(
+                                              updateisdetails);
+                                        },
+                                      );
+                                    })
+                              ]))),
+                if (isdetails) driverdetails()
               ],
             ),
-          ),
-          if (!isdetails)
-            Positioned(
-                left: 0,
-                bottom: 0,
-                right: 0,
-                child: Container(
-                    width: double.infinity,
-                    height: 130,
-                    padding: EdgeInsets.symmetric(vertical: 18),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                    ),
-                    child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          const Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 16),
-                            child: Row(
-                              children: [
-                                Icon(Icons.info_outline_rounded),
-                                SizedBox(
-                                  width: 7,
-                                ),
-                                Text(
-                                  "Whom would you like to share your ride with?",
-                                  style: TextStyle(
-                                      fontFamily: "Sen",
-                                      color: Pallete.geryColor,
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w400),
-                                )
-                              ],
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          CustomButton(
-                              text: "Continue",
-                              onPressed: () {
-                                showModalBottomSheet(
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(16)),
-                                  context: context,
-                                  builder: (BuildContext context) {
-                                    return bottommodalsheet(updateisdetails);
-                                  },
-                                );
-                              })
-                        ]))),
-          if (isdetails) driverdetails()
-        ],
-      ),
-    );
+          );
+        });
   }
 }

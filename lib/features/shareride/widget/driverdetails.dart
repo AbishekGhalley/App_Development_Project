@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myekigai/constants/constants.dart';
 import 'package:myekigai/reusables/Navbar.dart';
 import 'package:myekigai/features/homescreen/view/home_view.dart';
@@ -26,9 +27,9 @@ class _driverdetailsState extends State<driverdetails> {
                 color: Colors.white,
               ),
               width: double.infinity,
-              child: ListView(
-                padding: const EdgeInsets.all(30),
-                controller: scrollController,
+              padding: const EdgeInsets.all(30),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -55,21 +56,21 @@ class _driverdetailsState extends State<driverdetails> {
                   const SizedBox(
                     height: 15,
                   ),
-                  const Text(
+                  Text(
                     'Driver Details',
                     style: TextStyle(
-                        fontSize: 21,
+                        fontSize: ScreenUtil().setSp(21),
                         fontFamily: "Sen",
                         fontWeight: FontWeight.w400),
                   ),
-                  const SizedBox(
-                    height: 5,
+                  SizedBox(
+                    height:ScreenUtil().setWidth(8),
                   ),
                   Row(
                     children: [
                       Container(
-                        width: 90,
-                        height: 90,
+                        width: ScreenUtil().setWidth(90),
+                        height: ScreenUtil().setWidth(90),
                         decoration: const BoxDecoration(
                             shape: BoxShape.circle,
                             image: DecorationImage(
@@ -80,13 +81,13 @@ class _driverdetailsState extends State<driverdetails> {
                       const SizedBox(
                         width: 15,
                       ),
-                      const Column(
+                     Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
                             "Manish Bara",
                             style: TextStyle(
-                                fontSize: 21,
+                                fontSize: ScreenUtil().setSp(21),
                                 fontFamily: "Montserrat",
                                 fontWeight: FontWeight.w500),
                           ),
@@ -94,7 +95,7 @@ class _driverdetailsState extends State<driverdetails> {
                             "UP-06-JS-82093",
                             style: TextStyle(
                                 color: Pallete.geryColor,
-                                fontSize: 16,
+                                fontSize: ScreenUtil().setSp(16),
                                 fontFamily: "Montserrat",
                                 fontWeight: FontWeight.w500),
                           ),
@@ -102,7 +103,7 @@ class _driverdetailsState extends State<driverdetails> {
                             "Ather 450X",
                             style: TextStyle(
                                 color: Pallete.primaryColor,
-                                fontSize: 16,
+                                fontSize: ScreenUtil().setSp(16),
                                 fontFamily: "Montserrat",
                                 fontWeight: FontWeight.w500),
                           )
@@ -114,8 +115,8 @@ class _driverdetailsState extends State<driverdetails> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Container(
-                            width: 65,
-                            height: 65,
+                            width: ScreenUtil().setWidth(65),
+                            height: ScreenUtil().setWidth(65),
                             decoration: const BoxDecoration(boxShadow: [
                               BoxShadow(
                                 color: Color.fromRGBO(171, 171, 171, 0.25),
@@ -131,39 +132,39 @@ class _driverdetailsState extends State<driverdetails> {
                               ),
                             ]),
                             alignment: Alignment.center,
-                            child: const Column(
+                            child:  Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
                                     "09",
                                     style: TextStyle(
-                                        fontSize: 21,
+                                        fontSize: ScreenUtil().setSp(21),
                                         fontWeight: FontWeight.w500,
                                         fontFamily: "Montserrat"),
                                   ),
                                   Text("min",
                                       style: TextStyle(
-                                          fontSize: 12,
+                                         fontSize: ScreenUtil().setSp(12),
                                           fontWeight: FontWeight.w500,
                                           fontFamily: "Montserrat"))
                                 ]),
                           ),
-                          const Text("Pick-up",
+                         Text("Pick-up",
                               style: TextStyle(
-                                  fontSize: 12,
+                                 fontSize: ScreenUtil().setSp(12),
                                   fontWeight: FontWeight.w500,
                                   fontFamily: "Montserrat"))
                         ],
                       )
                     ],
                   ),
-                  const SizedBox(
-                    height: 20,
+                  SizedBox(
+                    height: ScreenUtil().setHeight(20),
                   ),
                   Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
                     Container(
-                        height: 50,
-                        width: 300,
+                        height: ScreenUtil().setHeight(50),
+                        width: ScreenUtil().setWidth(300),
                         padding: const EdgeInsets.symmetric(horizontal: 16),
                         decoration: const BoxDecoration(boxShadow: [
                           BoxShadow(
@@ -180,33 +181,33 @@ class _driverdetailsState extends State<driverdetails> {
                           ),
                         ]),
                         alignment: Alignment.center,
-                        child: const TextField(
+                        child: TextField(
                           decoration: InputDecoration(
                               border: InputBorder.none,
                               hintText: "Write a message",
                               hintStyle: TextStyle(
                                   fontFamily: "Montserrat",
                                   fontWeight: FontWeight.w500,
-                                  fontSize: 12)),
+                                 fontSize: ScreenUtil().setSp(12))),
                         )),
                     const Spacer(),
                     Container(
-                      height: 28,
-                      width: 28,
+                      height: ScreenUtil().setWidth(28),
+                      width: ScreenUtil().setWidth(28),
                       decoration: const BoxDecoration(
                           image: DecorationImage(
                               image: AssetImage(ShareRideAssets.antelephone))),
                     )
                   ]),
-                  const SizedBox(
-                    height: 15,
+                   SizedBox(
+                    height: ScreenUtil().setHeight(12),
                   ),
-                  const Row(
+                   Row(
                     children: [
                       Text(
                         "Pick-up time",
                         style: TextStyle(
-                            fontSize: 16,
+                            fontSize: ScreenUtil().setSp(16),
                             fontFamily: "Montserrat",
                             fontWeight: FontWeight.w500),
                       ),
@@ -214,18 +215,18 @@ class _driverdetailsState extends State<driverdetails> {
                       Text(
                         "11:05 am",
                         style: TextStyle(
-                            fontSize: 16,
+                            fontSize: ScreenUtil().setSp(16),
                             fontFamily: "Montserrat",
                             fontWeight: FontWeight.w500),
                       )
                     ],
                   ),
-                  const Row(
+                  Row(
                     children: [
                       Text(
                         "Expected drop-off time",
                         style: TextStyle(
-                            fontSize: 16,
+                            fontSize: ScreenUtil().setSp(16),
                             fontFamily: "Montserrat",
                             fontWeight: FontWeight.w500),
                       ),
@@ -233,29 +234,29 @@ class _driverdetailsState extends State<driverdetails> {
                       Text(
                         "11:45 am",
                         style: TextStyle(
-                            fontSize: 16,
+                            fontSize: ScreenUtil().setSp(16),
                             fontFamily: "Montserrat",
                             fontWeight: FontWeight.w500),
                       )
                     ],
                   ),
-                  const SizedBox(
-                    height: 15,
+                 SizedBox(
+                    height:  ScreenUtil().setHeight(12),
                   ),
                   const Divider(
                     color: Pallete.partitionlineColor,
                     thickness: 1,
                     height: 1,
                   ),
-                  const SizedBox(
-                    height: 15,
+                  SizedBox(
+                    height: ScreenUtil().setHeight(15),
                   ),
-                  const Row(
+                 Row(
                     children: [
                       Text(
                         "Destination",
                         style: TextStyle(
-                            fontSize: 16,
+                            fontSize: ScreenUtil().setSp(16),
                             fontFamily: "Montserrat",
                             fontWeight: FontWeight.w500),
                       ),
@@ -263,21 +264,21 @@ class _driverdetailsState extends State<driverdetails> {
                       Text(
                         "IIF,DTU",
                         style: TextStyle(
-                            fontSize: 16,
+                            fontSize: ScreenUtil().setSp(16),
                             fontFamily: "Montserrat",
                             fontWeight: FontWeight.w500),
                       )
                     ],
                   ),
-                  const SizedBox(
-                    height: 15,
+                  SizedBox(
+                    height: ScreenUtil().setHeight(15),
                   ),
-                  const Row(
+                  Row(
                     children: [
                       Text(
                         "Total Fare",
                         style: TextStyle(
-                            fontSize: 16,
+                            fontSize: ScreenUtil().setSp(16),
                             fontFamily: "Montserrat",
                             fontWeight: FontWeight.w500),
                       ),
@@ -285,39 +286,39 @@ class _driverdetailsState extends State<driverdetails> {
                       Text(
                         "₹ 140",
                         style: TextStyle(
-                            fontSize: 16,
+                            fontSize: ScreenUtil().setSp(16),
                             fontFamily: "Montserrat",
                             fontWeight: FontWeight.w500),
                       )
                     ],
                   ),
-                  const SizedBox(
-                    height: 15,
+                  SizedBox(
+                    height:ScreenUtil().setHeight(15),
                   ),
                   Row(
                     children: [
-                      const Text(
+                       Text(
                         "Share Trip Status",
                         style: TextStyle(
-                            fontSize: 16,
+                            fontSize: ScreenUtil().setSp(16),
                             fontFamily: "Montserrat",
                             fontWeight: FontWeight.w500),
                       ),
                       const Spacer(),
                       TextButton(
                           onPressed: () {},
-                          child: const Text(
+                          child:  Text(
                             "Share",
                             style: TextStyle(
                                 color: Pallete.primaryColor,
-                                fontSize: 16,
+                                fontSize: ScreenUtil().setSp(16),
                                 fontFamily: "Montserrat",
                                 fontWeight: FontWeight.w500),
                           ))
                     ],
                   ),
-                  const SizedBox(
-                    height: 15,
+                  SizedBox(
+                    height: ScreenUtil().setHeight(15),
                   ),
                   const Spacer(),
                   Container(
@@ -336,10 +337,10 @@ class _driverdetailsState extends State<driverdetails> {
                             MaterialPageRoute(
                                 builder: (context) => HomeScreen()));
                       },
-                      child: const Text("Cancle",
+                      child: Text("Cancle",
                           style: TextStyle(
                               color: Color.fromRGBO(229, 33, 68, 1),
-                              fontSize: 21,
+                              fontSize: ScreenUtil().setSp(21),
                               fontWeight: FontWeight.w700,
                               fontFamily: "Sen")),
                     ),
