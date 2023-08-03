@@ -31,8 +31,7 @@ class _driverdetailsState extends State<driverdetails> {
               width: double.infinity,
               height: double.infinity,
               padding: EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(30),vertical:  ScreenUtil().setHeight(15)),
-              child: Expanded(
-                  child:ListView(
+              child:ListView(
                 padding: EdgeInsets.all(0),
                 controller:scrollController,
                 children: [
@@ -352,7 +351,9 @@ class _driverdetailsState extends State<driverdetails> {
                     ),
                   )
                 ],
-              ))));
+              )
+              )
+          );
         });
   }
 }
