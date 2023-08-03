@@ -325,7 +325,6 @@ class _driverdetailsState extends State<driverdetails> {
                   SizedBox(
                     height: ScreenUtil().setHeight(25),
                   ),
-                  const Spacer(),
                   Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
