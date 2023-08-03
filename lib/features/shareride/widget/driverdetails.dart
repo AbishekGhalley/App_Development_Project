@@ -17,30 +17,36 @@ class _driverdetailsState extends State<driverdetails> {
   @override
   Widget build(BuildContext context) {
     return DraggableScrollableSheet(
-        initialChildSize: 0.66,
-        maxChildSize: 0.66,
-        minChildSize: 0.365,
+        initialChildSize: 0.68,
+        maxChildSize:  0.68,
+        minChildSize:  0.385,
         builder: (BuildContext context, ScrollController scrollController) {
-          return Container(
+          return Align(
+              alignment: Alignment.topCenter,
+              child:Container(
               decoration: const BoxDecoration(
                 borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
                 color: Colors.white,
               ),
               width: double.infinity,
-              padding: const EdgeInsets.all(30),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              height: double.infinity,
+              padding: EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(30),vertical:  ScreenUtil().setHeight(15)),
+              child: Expanded(
+                  child:ListView(
+                padding: EdgeInsets.all(0),
+                controller:scrollController,
                 children: [
                   Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Container(
-                          height: 3.0,
+                          height: ScreenUtil().setHeight(3),
                           width: 1,
                           color: Colors.white,
                         ),
                         Container(
-                          height: 3.0,
+                          height: ScreenUtil().setHeight(3),
                           width: 66,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(1.5),
@@ -48,13 +54,13 @@ class _driverdetailsState extends State<driverdetails> {
                           ),
                         ),
                         Container(
-                          height: 3.0,
+                          height: ScreenUtil().setHeight(3),
                           width: 1,
                           color: Colors.white,
                         ),
                       ]),
-                  const SizedBox(
-                    height: 15,
+                  SizedBox(
+                    height:  ScreenUtil().setHeight(25),
                   ),
                   Text(
                     'Driver Details',
@@ -318,7 +324,7 @@ class _driverdetailsState extends State<driverdetails> {
                     ],
                   ),
                   SizedBox(
-                    height: ScreenUtil().setHeight(15),
+                    height: ScreenUtil().setHeight(25),
                   ),
                   const Spacer(),
                   Container(
@@ -346,7 +352,7 @@ class _driverdetailsState extends State<driverdetails> {
                     ),
                   )
                 ],
-              ));
+              ))));
         });
   }
 }

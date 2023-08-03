@@ -113,7 +113,7 @@ class _shareridemapState extends State<shareridemap> {
                                         style: TextStyle(
                                             fontFamily: "Sen",
                                             color: Pallete.geryColor,
-                                            fontSize: ScreenUtil().setSp(14),
+                                            fontSize: ScreenUtil().setSp(15),
                                             fontWeight: FontWeight.w400),
                                       )
                                     ],
