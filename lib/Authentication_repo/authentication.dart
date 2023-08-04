@@ -1,10 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
-
 import 'package:get/get.dart';
 import 'package:myekigai/features/auth/view/login_view.dart';
-import 'package:myekigai/features/auth/view/login_view3.dart';
-import 'package:myekigai/features/auth/view/login_view4.dart';
-import 'package:myekigai/features/onboarding/view/onboarding.dart';
+import 'package:myekigai/features/homescreen/view/home_view.dart';
+
 
 class Authentication extends GetxController {
   static Authentication get instance => Get.find();
@@ -22,7 +20,7 @@ class Authentication extends GetxController {
   _setInitialScreen(User? user) {
     user == null
         ? Get.offAll(() => LoginView())
-        : Get.offAll(() => Onboarding());
+        : Get.offAll(() => HomeScreen());
   }
 
   void phoneAuthentication(String phoneNo) async {

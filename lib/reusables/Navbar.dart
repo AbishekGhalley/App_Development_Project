@@ -236,7 +236,6 @@ class Navbar extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  onTap: () {},
                 ),
                 ListTile(
                   leading: Image.asset(GlobalAssets.steeringwheel),

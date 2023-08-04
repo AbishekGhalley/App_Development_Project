@@ -65,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     Positioned(
                       top: MediaQuery.of(context).padding.top +
-                          ScreenUtil().setHeight(10),
+                          ScreenUtil().setHeight(15),
                       left: ScreenUtil().setWidth(20),
                       right: ScreenUtil().setWidth(20),
                       child: CustomSearchBar(

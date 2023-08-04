@@ -52,15 +52,15 @@ class _shareridemapState extends State<shareridemap> {
                   ),
                 ),
                 Positioned(
-                  top: MediaQuery.of(context).padding.top + 15,
-                  left: 20,
-                  right: 20,
+                  top: MediaQuery.of(context).padding.top + ScreenUtil().setHeight(15),
+                  left: ScreenUtil().setWidth(20),
+                  right: ScreenUtil().setWidth(20),
                   child: CustomSearchBar(
                       scaffoldKey: global_navbar.sharescaffoldKey),
                 ),
                 Positioned(
-                  bottom: posbottom,
-                  right: 16,
+                  bottom: ScreenUtil().setHeight(posbottom),
+                  right: ScreenUtil().setWidth(16),
                   child: Column(
                     children: [
                       IconButton(
@@ -92,21 +92,23 @@ class _shareridemapState extends State<shareridemap> {
                       right: 0,
                       child: Container(
                           width: double.infinity,
-                          height: 130,
-                          padding: EdgeInsets.symmetric(vertical: 18),
+                          height: ScreenUtil().setHeight(165),
+                          padding: EdgeInsets.symmetric(vertical: ScreenUtil().setHeight(18),),
                           decoration: BoxDecoration(
                             color: Colors.white,
                           ),
                           child: Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
+
                                 Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 16),
+                                  padding: EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(16),),
                                   child: Row(
                                     children: [
                                       Icon(Icons.info_outline_rounded),
                                       SizedBox(
-                                        width: 7,
+                                        width: ScreenUtil().setWidth(6),
                                       ),
                                       Text(
                                         "Whom would you like to share your ride with?",
@@ -119,9 +121,10 @@ class _shareridemapState extends State<shareridemap> {
                                     ],
                                   ),
                                 ),
-                                const SizedBox(
-                                  height: 15,
+                                 SizedBox(
+                                  height:  ScreenUtil().setHeight(15),
                                 ),
+
                                 CustomButton(
                                     text: "Continue",
                                     onPressed: () {
