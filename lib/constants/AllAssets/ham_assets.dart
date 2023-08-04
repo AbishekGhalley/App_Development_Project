@@ -15,7 +15,7 @@ class HamAssets {
   static const String bubblechat = "$_HamPngPath/Bubblechat.png";
   static const String cashlesspayment = "$_HamPngPath/CashlessPayment.png";
   static const String error = "$_HamPngPath/Error.png";
-  static const String private = "$_HamPngPath/Private_help.png";
+  static const String private = "$_HamPngPath/Private.png";
   static const String share = "$_HamPngPath/share_help.png";
   static const String db = "$_HamPngPath/Db.png";
   static const String driverlicense = "$_HamPngPath/driverlicense.png";

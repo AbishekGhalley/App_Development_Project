@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myekigai/constants/constants.dart';
 import 'package:myekigai/reusables/TopAppbar.dart';
 
@@ -13,25 +14,27 @@ class Settings extends StatelessWidget {
       body: ListView(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8),
+            padding: EdgeInsets.symmetric(
+                horizontal: ScreenUtil().setWidth(20),
+                vertical: ScreenUtil().setHeight(8)),
             child: SizedBox(
-              height: 60,
+              height: ScreenUtil().setHeight(60),
               child: ListTile(
                 leading: Image.asset(HamAssets.language),
-                title: const Text(
+                title: Text(
                   'Language',
                   style: TextStyle(
                     color: Color(0xFF1C1C1C),
-                    fontSize: 21,
+                    fontSize: ScreenUtil().setSp(21),
                     fontFamily: 'Sen',
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-                subtitle: const Text(
+                subtitle: Text(
                   'English',
                   style: TextStyle(
                     color: Color(0xFF9C9C9C),
-                    fontSize: 16,
+                    fontSize: ScreenUtil().setSp(16),
                     fontFamily: 'Montserrat',
                     fontWeight: FontWeight.w500,
                   ),
@@ -40,16 +43,18 @@ class Settings extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8),
+            padding: EdgeInsets.symmetric(
+                horizontal: ScreenUtil().setWidth(20),
+                vertical: ScreenUtil().setHeight(8)),
             child: SizedBox(
-              height: 50,
+              height:  ScreenUtil().setHeight(60),
               child: ListTile(
                 leading: Image.asset(HamAssets.lock),
-                title: const Text(
+                title: Text(
                   'Security',
                   style: TextStyle(
                     color: Color(0xFF1C1C1C),
-                    fontSize: 21,
+                    fontSize: ScreenUtil().setSp(21),
                     fontFamily: 'Sen',
                     fontWeight: FontWeight.w400,
                   ),
@@ -58,16 +63,18 @@ class Settings extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8),
+            padding: EdgeInsets.symmetric(
+                horizontal: ScreenUtil().setWidth(20),
+                vertical: ScreenUtil().setHeight(8)),
             child: SizedBox(
-              height: 50,
+              height:  ScreenUtil().setHeight(60),
               child: ListTile(
                 leading: Image.asset(HamAssets.manstandingup),
-                title: const Text(
+                title: Text(
                   'Accessibility',
                   style: TextStyle(
                     color: Color(0xFF1C1C1C),
-                    fontSize: 21,
+                    fontSize: ScreenUtil().setSp(21),
                     fontFamily: 'Sen',
                     fontWeight: FontWeight.w400,
                   ),
@@ -76,25 +83,27 @@ class Settings extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8),
+            padding: EdgeInsets.symmetric(
+                horizontal: ScreenUtil().setWidth(20),
+                vertical: ScreenUtil().setHeight(8)),
             child: SizedBox(
-              height: 60,
+              height: ScreenUtil().setHeight(60),
               child: ListTile(
                 leading: Image.asset(HamAssets.brightness),
-                title: const Text(
+                title: Text(
                   'Display',
                   style: TextStyle(
                     color: Color(0xFF1C1C1C),
-                    fontSize: 21,
+                    fontSize: ScreenUtil().setSp(21),
                     fontFamily: 'Sen',
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-                subtitle: const Text(
+                subtitle: Text(
                   'Dark map',
                   style: TextStyle(
                     color: Color(0xFF9C9C9C),
-                    fontSize: 16,
+                    fontSize:  ScreenUtil().setSp(16),
                     fontFamily: 'Montserrat',
                     fontWeight: FontWeight.w500,
                   ),
@@ -102,19 +111,21 @@ class Settings extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8),
+            Padding(
+            padding: EdgeInsets.symmetric(
+                horizontal: ScreenUtil().setWidth(20),
+                vertical: ScreenUtil().setHeight(8)),
             child: SizedBox(
-              height: 50,
+                height:  ScreenUtil().setHeight(60),
               child: ListTile(
                 leading: Image.asset(HamAssets.piechart),
-                title: const Row(
+                title: Row(
                   children: [
                     Text(
                       'Share Ride  ',
                       style: TextStyle(
                         color: Color(0xFF1C1C1C),
-                        fontSize: 21,
+                        fontSize: ScreenUtil().setSp(21),
                         fontFamily: 'Sen',
                         fontWeight: FontWeight.w400,
                       ),
@@ -122,7 +133,7 @@ class Settings extends StatelessWidget {
                     Icon(
                       Icons.info_outline,
                       color: Colors.grey,
-                      size: 20,
+                      size:  ScreenUtil().setWidth(20),
                     ),
                   ],
                 ),
@@ -138,18 +149,19 @@ class Settings extends StatelessWidget {
               ),
             ),
           ),
-          const Divider(height: 7.0, color: Colors.black),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8),
+            Padding(
+            padding: EdgeInsets.symmetric(
+                horizontal: ScreenUtil().setWidth(20),
+                vertical: ScreenUtil().setHeight(8)),
             child: SizedBox(
-              height: 50,
+                height:  ScreenUtil().setHeight(60),
               child: ListTile(
                 leading: Image.asset(HamAssets.checkmark),
-                title: const Text(
+                title: Text(
                   'Privacy',
                   style: TextStyle(
                     color: Color(0xFF1C1C1C),
-                    fontSize: 21,
+                    fontSize: ScreenUtil().setSp(21),
                     fontFamily: 'Sen',
                     fontWeight: FontWeight.w400,
                   ),
@@ -157,17 +169,19 @@ class Settings extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8),
+            Padding(
+            padding: EdgeInsets.symmetric(
+                horizontal: ScreenUtil().setWidth(20),
+                vertical: ScreenUtil().setHeight(8)),
             child: SizedBox(
-              height: 50,
+                height:  ScreenUtil().setHeight(60),
               child: ListTile(
                 leading: Image.asset(HamAssets.information),
-                title: const Text(
+                title: Text(
                   'About',
                   style: TextStyle(
                     color: Color(0xFF1C1C1C),
-                    fontSize: 21,
+                    fontSize: ScreenUtil().setSp(21),
                     fontFamily: 'Sen',
                     fontWeight: FontWeight.w400,
                   ),
@@ -175,17 +189,19 @@ class Settings extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8),
+            Padding(
+            padding: EdgeInsets.symmetric(
+                horizontal: ScreenUtil().setWidth(20),
+                vertical: ScreenUtil().setHeight(8)),
             child: SizedBox(
-              height: 50,
+                height:  ScreenUtil().setHeight(60),
               child: ListTile(
                 leading: Image.asset(HamAssets.hammer),
-                title: const Text(
+                title: Text(
                   'Legal',
                   style: TextStyle(
                     color: Color(0xFF1C1C1C),
-                    fontSize: 21,
+                    fontSize: ScreenUtil().setSp(21),
                     fontFamily: 'Sen',
                     fontWeight: FontWeight.w400,
                   ),

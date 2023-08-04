@@ -45,7 +45,7 @@ class CustomSearchBar extends StatelessWidget {
               icon: const Icon(Icons.menu_rounded, size: 32),
               onPressed: () {
                 // Handle hamburger menu button press
-                global_navbar.homescaffoldKey.currentState?.openDrawer();
+                global_navbar.scaffoldKey.currentState?.openDrawer();
               },
             ),
             Expanded(

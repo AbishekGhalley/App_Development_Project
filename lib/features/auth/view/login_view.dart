@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:myekigai/constants/constants.dart';
 import 'package:myekigai/features/auth/view/login_view1.dart';
@@ -36,17 +37,17 @@ class _LoginViewState extends State<LoginView> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(242, 242, 242, 1),
-        toolbarHeight: 70,
+        toolbarHeight: ScreenUtil().setHeight(75),
         centerTitle: true,
         title: Container(
-          padding: EdgeInsets.only(top: 40),
+          padding: EdgeInsets.only(top: ScreenUtil().setHeight(40)),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SvgPicture.asset(
                 GlobalAssets.logo,
-                width: 30,
-                height: 30,
+                width: ScreenUtil().setWidth(30),
+                height: ScreenUtil().setWidth(30),
               ),
               const SizedBox(width: 8),
               Text(
@@ -55,7 +56,7 @@ class _LoginViewState extends State<LoginView> {
                 style: GoogleFonts.quantico(
                   color: Pallete.textColor,
                   fontWeight: FontWeight.bold,
-                  fontSize: 24,
+                  fontSize: ScreenUtil().setSp(24),
                 ),
               ),
             ],
@@ -69,8 +70,9 @@ class _LoginViewState extends State<LoginView> {
           children: [
             Expanded(
               child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 80)
-                    .copyWith(bottom: 40),
+                padding:
+                    EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(80))
+                        .copyWith(bottom: ScreenUtil().setHeight(40)),
                 decoration: const BoxDecoration(
                   color: Color.fromRGBO(242, 242, 242, 1),
                   borderRadius: BorderRadius.only(
@@ -83,27 +85,27 @@ class _LoginViewState extends State<LoginView> {
                 ),
               ),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: ScreenUtil().setHeight(20)),
             const FullWidthTextWidget(
               text: "Experience the power of EV now at affordable cost",
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: ScreenUtil().setHeight(20)),
             CustomButton(
               text: "Continue with Phone number",
               onPressed: () {
                 Navigator.push(context, LoginView1.route());
               },
             ),
-            const SizedBox(height: 20),
-            const FullWidthTextWidget(
+            SizedBox(height: ScreenUtil().setHeight(20)),
+            FullWidthTextWidget(
               text:
                   "By continuing you agree that you have read and accept our T&Cs and Privacy Policy.",
-              fontSize: 16,
+              fontSize: ScreenUtil().setSp(16),
               fontWeight: FontWeight.w500,
               textColor: Pallete.geryColor,
               horizontalPadding: 40,
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: ScreenUtil().setHeight(20)),
           ],
         ),
       ),

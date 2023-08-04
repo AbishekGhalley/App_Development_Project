@@ -39,6 +39,7 @@ dependencies:
   draggable_bottom_sheet: ^1.0.2
   sliding_up_panel: ^2.0.0+1
   flutter_otp_text_field: ^1.1.1
+  flutter_screenutil: ^5.8.4
   get: ^4.6.5
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

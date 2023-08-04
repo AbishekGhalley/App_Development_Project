@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myekigai/constants/constants.dart';
 import 'package:myekigai/features/SwapBatteries/view/swapBatteries.dart';
@@ -40,12 +42,11 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    double screenHight = MediaQuery.of(context).size.height;
     return Scaffold(
-      key: global_navbar.homescaffoldKey,
       drawer: Navbar(
-        scaffoldKey: global_navbar.homescaffoldKey,
+        scaffoldKey: global_navbar.scaffoldKey,
       ),
+      key: global_navbar.scaffoldKey,
       backgroundColor: Colors.black,
       body: Align(
         alignment: Alignment.topCenter,
@@ -57,15 +58,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 // Map must be added here
                 GlobalAssets.imMap,
                 width: double.infinity,
-                height: 800,
+                height: double.infinity,
                 fit: BoxFit.cover,
               ),
               Positioned(
-                top: MediaQuery.of(context).padding.top + 8,
-                left: 20,
-                right: 20,
+                top: MediaQuery.of(context).padding.top +
+                    ScreenUtil().setHeight(15),
+                left: ScreenUtil().setWidth(20),
+                right: ScreenUtil().setWidth(20),
                 child: CustomSearchBar(
-                  scaffoldKey: global_navbar.homescaffoldKey,
+                  scaffoldKey: global_navbar.scaffoldKey,
                 ),
               ),
               Positioned(
@@ -77,7 +79,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     Padding(
                       padding: EdgeInsets.only(
-                          right: 16, bottom: screenHight * 0.032),
+                          right: ScreenUtil().setWidth(16),
+                          bottom: ScreenUtil().setHeight(30)),
                       child: Column(
                         children: [
                           IconButton(
@@ -87,10 +90,12 @@ class _HomeScreenState extends State<HomeScreen> {
                             },
                           ),
                           SvgPicture.asset(
-                            GlobalAssets
-                                .imekizone, // Replace with your SVG asset path
-                            height: 36, // Set the height of the SVG
-                            width: 36, // Set the width of the SVG
+                            GlobalAssets.imekizone,
+                            // Replace with your SVG asset path
+                            height: ScreenUtil()
+                                .setWidth(36), // Set the height of the SVG
+                            width: ScreenUtil()
+                                .setWidth(36), // Set the width of the SVG
                           ),
                         ],
                       ),
@@ -108,11 +113,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                 0, 2), // Defines the position of the shadow
                           ),
                         ],
-                        minHeight: MediaQuery.of(context).size.height * 0.18,
-                        maxHeight: screenHight * 0.31,
+                        minHeight: ScreenUtil().setHeight(180),
+                        maxHeight: ScreenUtil().setHeight(300),
                         panel: Container(
                           child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 20),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: ScreenUtil().setWidth(20)),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -120,9 +126,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Center(
                                   child: Container(
                                     margin: EdgeInsets.only(
-                                      top: screenHight * 0.012,
+                                      top: ScreenUtil().setHeight(12),
                                     ),
-                                    height: screenHight * 0.0035,
+                                    height: ScreenUtil().setHeight(4),
                                     width: 66,
                                     decoration: const BoxDecoration(
                                       borderRadius:
@@ -137,7 +143,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   style: GoogleFonts.sen(
                                     color: Pallete.textColor,
                                     fontWeight: FontWeight.w400,
-                                    fontSize: 20,
+                                    fontSize: ScreenUtil().setSp(23),
                                   ),
                                 ),
                                 Spacer(),
@@ -147,21 +153,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                   children: [
                                     ServiceIconWithText(
                                         onPressed: () {
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      ScanQR()));
+                                          Get.to(() => ScanQR());
                                         },
                                         icon: HomeAssets.imhomescango,
                                         text: 'Scan & Go'),
                                     ServiceIconWithText(
                                         onPressed: () {
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      const ReserveVehicle()));
+                                          Get.to(() => ReserveVehicle());
                                         },
                                         icon: HomeAssets.imreserveVehicle,
                                         text: 'Reservation'),
@@ -178,37 +176,24 @@ class _HomeScreenState extends State<HomeScreen> {
                                   children: [
                                     ServiceIconWithText(
                                         onPressed: () {
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      swapbatteries()));
+                                          Get.to(() => swapbatteries());
                                         },
                                         icon: HomeAssets.imswapbattery,
                                         text: 'Swap Battery'),
                                     ServiceIconWithText(
                                         onPressed: () {
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      details_supercharge()));
+                                          Get.to(() => details_supercharge());
                                         },
                                         icon: HomeAssets.imsupercharge,
                                         text: 'Supercharge'),
                                     ServiceIconWithText(
                                         onPressed: () {
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      shareridemap()));
+                                          Get.to(() => shareridemap());
                                         },
                                         icon: HomeAssets.imshareRide,
                                         text: 'Share Ride')
                                   ],
                                 ),
-                                Spacer(),
                                 Spacer(),
                               ],
                             ),

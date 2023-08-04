@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:myekigai/features/auth/controller/OtpController.dart';
 import 'package:myekigai/features/auth/view/login_view3.dart';
 import 'package:myekigai/reusables/full_width_text.dart';
 import 'package:myekigai/reusables/btn.dart';
-import 'package:myekigai/features/auth/widgets/otp_field.dart';
 import 'package:myekigai/theme/pallete.dart';
 
 class LoginView2 extends StatefulWidget {
@@ -32,39 +32,42 @@ class LoginView2 extends StatefulWidget {
 }
 
 class _LoginView2State extends State<LoginView2> {
-  final OtpController otpController= Get.put(OtpController());
+  final OtpController otpController = Get.put(OtpController());
   Widget build(BuildContext context) {
     var otp;
+
     return Scaffold(
       body: SizedBox(
         height: double.infinity,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const SizedBox(height: 80),
-            const FullWidthTextWidget(
+            SizedBox(height: ScreenUtil().setHeight(80)),
+            FullWidthTextWidget(
               text: "Please wait...",
-              fontSize: 19,
+              fontSize: ScreenUtil().setSp(18),
               textAlign: TextAlign.left,
-              horizontalPadding: 30,
+              horizontalPadding: ScreenUtil().setWidth(30),
             ),
-            const FullWidthTextWidget(
+            FullWidthTextWidget(
               text: "We are auto verifying the OTP sent to your number.",
-              fontSize: 19,
+              fontSize: ScreenUtil().setSp(19),
               textAlign: TextAlign.left,
-              horizontalPadding: 30,
+              horizontalPadding: ScreenUtil().setWidth(30),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: ScreenUtil().setHeight(20)),
             OtpTextField(
               numberOfFields: 6,
-              margin: EdgeInsets.only(right: 10),
+              margin: EdgeInsets.only(
+                right: ScreenUtil().setWidth(10),
+              ),
               textStyle: TextStyle(
-                  fontSize: 20,
+                  fontSize: ScreenUtil().setSp(20),
                   fontFamily: "Montserrat",
                   color: Pallete.textColor),
               disabledBorderColor: Pallete.primaryColor,
               enabledBorderColor: Pallete.primaryColor,
-              fieldWidth: 45,
+              fieldWidth: ScreenUtil().setWidth(50),
               filled: true,
               borderRadius: BorderRadius.circular(6),
               borderWidth: 1,
@@ -74,29 +77,27 @@ class _LoginView2State extends State<LoginView2> {
                 OtpController.instance.verifyOtp(otp);
               },
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: ScreenUtil().setHeight(20)),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: Column(
-                children: [
-                  RichText(
-                    text: const TextSpan(
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Pallete.geryColor,
-                      ),
-                      text: "Auto-verifying in 00:16",
-                      children: [
-                        TextSpan(
-                          text: '                              Resend',
-                          style: TextStyle(
-                              fontSize: 16, color: Pallete.primaryColor),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+              padding: EdgeInsets.symmetric(
+                horizontal: ScreenUtil().setWidth(30),
               ),
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                        style: TextStyle(
+                          fontSize: ScreenUtil().setSp(16),
+                          color: Pallete.geryColor,
+                        ),
+                        "Auto-verifying in 00:16"),
+                    Text(
+                      'Resend',
+                      style: TextStyle(
+                          fontSize: ScreenUtil().setSp(16),
+                          color: Pallete.primaryColor),
+                    )
+                  ]),
             ),
             Expanded(
               child: Align(
@@ -109,7 +110,7 @@ class _LoginView2State extends State<LoginView2> {
                 ),
               ),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: ScreenUtil().setHeight(20)),
           ],
         ),
       ),

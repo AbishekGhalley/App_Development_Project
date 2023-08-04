@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myekigai/constants/constants.dart';
 import 'package:myekigai/features/hamburger/view/content_model_profile.dart';
 import 'package:myekigai/features/hamburger/widgets/Add_btn.dart';
@@ -38,7 +39,9 @@ class _ProfileState extends State<Profile> {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.all(20),
+                padding: EdgeInsets.symmetric(
+                    horizontal: ScreenUtil().setWidth(20),
+                    vertical: ScreenUtil().setHeight(20)),
                 child: Container(
                   decoration: const BoxDecoration(boxShadow: [
                     BoxShadow(
@@ -54,7 +57,8 @@ class _ProfileState extends State<Profile> {
                       blurRadius: 0,
                     ),
                   ]),
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: ScreenUtil().setWidth(20)),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -62,7 +66,7 @@ class _ProfileState extends State<Profile> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           SizedBox(
-                            width: 180,
+                            width: ScreenUtil().setWidth(180),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -75,7 +79,7 @@ class _ProfileState extends State<Profile> {
                                     ),
                                   ),
                                 ),
-                                const SizedBox(height: 8.0),
+                                SizedBox(height: ScreenUtil().setHeight(8)),
                                 SizedBox(
                                   width: double.infinity,
                                   child: TextField(
@@ -94,7 +98,7 @@ class _ProfileState extends State<Profile> {
                           ),
                           const Spacer(),
                           Container(
-                            padding: const EdgeInsets.all(20.0),
+                            padding: EdgeInsets.all(ScreenUtil().setWidth(20)),
                             child: const CircleAvatar(
                               radius: 50.0,
                               backgroundImage: AssetImage(HamAssets.db),
@@ -152,16 +156,17 @@ class _ProfileState extends State<Profile> {
                           ),
                         ),
                       ),
-                      const SizedBox(width: 16.0),
+                      SizedBox(width: ScreenUtil().setWidth(16)),
                     ],
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 10,
+              SizedBox(
+                height: ScreenUtil().setHeight(10),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding:
+                    EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(20)),
                 child: Container(
                   decoration: const BoxDecoration(boxShadow: [
                     BoxShadow(
@@ -179,11 +184,11 @@ class _ProfileState extends State<Profile> {
                   ]),
                   child: ListTile(
                       leading: Image.asset(HamAssets.driverlicense),
-                      title: const Text(
+                      title: Text(
                         'Driving License',
                         style: TextStyle(
                           color: Color(0xFF1C1C1C),
-                          fontSize: 16,
+                          fontSize: ScreenUtil().setSp(16),
                           fontFamily: 'Sen',
                           fontWeight: FontWeight.w400,
                         ),
@@ -191,30 +196,35 @@ class _ProfileState extends State<Profile> {
                       trailing: const Addbtn()),
                 ),
               ),
-              const SizedBox(
-                height: 10,
+              SizedBox(
+                height: ScreenUtil().setHeight(10),
               ),
               Container(
                 width: double.infinity,
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: const Text(
+                padding:
+                    EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(20)),
+                child: Text(
                   'Saved Locations',
                   style: TextStyle(
                     color: Color(0xFF1C1C1C),
-                    fontSize: 21,
+                    fontSize: ScreenUtil().setSp(21),
                     fontFamily: 'Sen',
                     fontWeight: FontWeight.w400,
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 15,
+              SizedBox(
+                height: ScreenUtil().setHeight(15),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding:
+                    EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(20)),
                 child: Container(
-                  padding: const EdgeInsets.only(
-                      left: 16, right: 20, top: 10, bottom: 16),
+                  padding: EdgeInsets.only(
+                      left: ScreenUtil().setWidth(16),
+                      right: ScreenUtil().setWidth(20),
+                      top: ScreenUtil().setHeight(10),
+                      bottom: ScreenUtil().setHeight(16)),
                   decoration: const BoxDecoration(boxShadow: [
                     BoxShadow(
                       color: Color.fromRGBO(171, 171, 171, 0.25),
@@ -235,14 +245,14 @@ class _ProfileState extends State<Profile> {
                       Row(
                         children: [
                           Image.asset(HamAssets.homebutton),
-                          const SizedBox(
-                            width: 8,
+                          SizedBox(
+                            width: ScreenUtil().setWidth(10),
                           ),
-                          const Text(
+                          Text(
                             'Home',
                             style: TextStyle(
                               color: Color(0xFF1C1C1C),
-                              fontSize: 21,
+                              fontSize: ScreenUtil().setSp(21),
                               fontFamily: 'Sen',
                               fontWeight: FontWeight.w400,
                             ),
@@ -253,7 +263,7 @@ class _ProfileState extends State<Profile> {
                       ),
                       SizedBox(
                           width: double.infinity,
-                          height: 160,
+                          height: ScreenUtil().setHeight(160),
                           child: ListView.builder(
                               itemCount: locals.length,
                               shrinkWrap: true,
@@ -262,23 +272,23 @@ class _ProfileState extends State<Profile> {
                                   children: [
                                     Text(
                                       locals[i].address,
-                                      style: const TextStyle(
+                                      style: TextStyle(
                                         color: Pallete.textColor,
-                                        fontSize: 16,
+                                        fontSize: ScreenUtil().setSp(16),
                                         fontFamily: 'Montserrat',
                                         fontWeight: FontWeight.w500,
                                       ),
                                     ),
-                                    const SizedBox(
-                                      height: 10,
+                                    SizedBox(
+                                      height: ScreenUtil().setHeight(10),
                                     ),
                                     const Divider(
                                       height: 1,
                                       thickness: 1,
                                       color: Pallete.partitionlineColor,
                                     ),
-                                    const SizedBox(
-                                      height: 10,
+                                    SizedBox(
+                                      height: ScreenUtil().setHeight(10),
                                     ),
                                   ],
                                 );
@@ -288,8 +298,9 @@ class _ProfileState extends State<Profile> {
                 ),
               ),
               Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                padding: EdgeInsets.symmetric(
+                    horizontal: ScreenUtil().setWidth(20),
+                    vertical: ScreenUtil().setHeight(20)),
                 child: Container(
                     decoration: const BoxDecoration(boxShadow: [
                       BoxShadow(
@@ -307,11 +318,11 @@ class _ProfileState extends State<Profile> {
                     ]),
                     child: ListTile(
                       leading: Image.asset(HamAssets.portfolio),
-                      title: const Text(
+                      title: Text(
                         'Work',
                         style: TextStyle(
                           color: Color(0xFF1C1C1C),
-                          fontSize: 16,
+                          fontSize: ScreenUtil().setSp(16),
                           fontFamily: 'Sen',
                           fontWeight: FontWeight.w400,
                         ),
