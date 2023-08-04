@@ -1,5 +1,6 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myekigai/features/hamburger/view/content_model_referearn.dart';
 import 'package:myekigai/reusables/TopAppbar.dart';
 import 'package:myekigai/constants/constants.dart';
@@ -15,12 +16,15 @@ class ReferEarn extends StatelessWidget {
         body: SizedBox(
             height: double.infinity,
             child: Padding(
-              padding: const EdgeInsets.only(left: 25, right: 25, top: 25),
+              padding: EdgeInsets.only(
+                  left: ScreenUtil().setWidth(25),
+                  right: ScreenUtil().setWidth(25),
+                  top: ScreenUtil().setHeight(25)),
               child: Column(
                 children: [
                   Container(
                       width: double.infinity,
-                      height: 70,
+                      height: ScreenUtil().setHeight(70),
                       decoration: const BoxDecoration(boxShadow: [
                         BoxShadow(
                           color: Color.fromRGBO(171, 171, 171, 0.25),
@@ -36,34 +40,35 @@ class ReferEarn extends StatelessWidget {
                         ),
                       ]),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 17, horizontal: 12),
+                        padding: EdgeInsets.symmetric(
+                            vertical: ScreenUtil().setHeight(17),
+                            horizontal: ScreenUtil().setWidth(13)),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Image.asset(HamAssets.giftcard),
-                            const Text("Invite Friends to MYeKIGAI",
+                            Text("Invite Friends to MYeKIGAI",
                                 style: TextStyle(
-                                    fontSize: 16,
+                                    fontSize: ScreenUtil().setSp(16),
                                     fontWeight: FontWeight.w500,
                                     fontFamily: "Sen")),
-                            TextButton(
-                                onPressed: () {},
-                                child: const Text("Invite",
+                            GestureDetector(
+                                onTap: () {},
+                                child: Text("Invite",
                                     style: TextStyle(
                                         color: Pallete.primaryColor,
-                                        fontSize: 16,
+                                        fontSize: ScreenUtil().setSp(16),
                                         fontWeight: FontWeight.w400,
                                         fontFamily: "Sen")))
                           ],
                         ),
                       )),
                   SizedBox(
-                    height: 25,
+                    height: ScreenUtil().setHeight(25),
                   ),
                   SizedBox(
                       width: double.infinity,
-                      height: 240,
+                      height: ScreenUtil().setHeight(270),
                       child: Container(
                         decoration: const BoxDecoration(boxShadow: [
                           BoxShadow(
@@ -80,28 +85,29 @@ class ReferEarn extends StatelessWidget {
                           ),
                         ]),
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 17, horizontal: 12),
+                          padding: EdgeInsets.only(
+                              left: ScreenUtil().setWidth(12),  right: ScreenUtil().setWidth(12),bottom: ScreenUtil().setHeight(15),
+                          ),
                           child: Column(
                             children: [
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  const Text(
+                                  Text(
                                     "How it works?",
                                     style: TextStyle(
-                                        fontSize: 16,
+                                        fontSize: ScreenUtil().setSp(16),
                                         fontWeight: FontWeight.w500,
                                         fontFamily: "Montserrat"),
                                   ),
                                   TextButton(
                                       onPressed: () {},
-                                      child: const Text(
+                                      child: Text(
                                         "T&Cs",
                                         style: TextStyle(
                                             color: Pallete.primaryColor,
-                                            fontSize: 16,
+                                            fontSize: ScreenUtil().setSp(16),
                                             fontWeight: FontWeight.w400,
                                             fontFamily: "Montserrat"),
                                       ))
@@ -111,8 +117,8 @@ class ReferEarn extends StatelessWidget {
                                 color: Pallete.partitionlineColor,
                                 height: 1,
                               ),
-                              const SizedBox(
-                                height: 15,
+                              SizedBox(
+                                height: ScreenUtil().setHeight(17),
                               ),
                               Expanded(
                                   child: ListView.builder(
@@ -127,18 +133,19 @@ class ReferEarn extends StatelessWidget {
                                         strokeWidth: 1,
                                         child: Container(
                                             alignment: Alignment.center,
-                                            width: 37,
-                                            height: 37,
+                                            width: ScreenUtil().setWidth(37),
+                                            height: ScreenUtil().setWidth(37),
                                             child: Text(
                                               "$x",
-                                              style: const TextStyle(
-                                                  fontSize: 27,
+                                              style: TextStyle(
+                                                  fontSize:
+                                                      ScreenUtil().setSp(27),
                                                   fontWeight: FontWeight.w400,
                                                   fontFamily: "Sen"),
                                             )),
                                       ),
-                                      const SizedBox(
-                                        width: 22,
+                                      SizedBox(
+                                        width: ScreenUtil().setWidth(22),
                                       ),
                                       SizedBox(
                                         child: Column(
@@ -147,16 +154,18 @@ class ReferEarn extends StatelessWidget {
                                             children: [
                                               Text(
                                                 questions[index].text,
-                                                style: const TextStyle(
-                                                    fontSize: 15,
+                                                style: TextStyle(
+                                                    fontSize:
+                                                        ScreenUtil().setSp(15),
                                                     fontWeight: FontWeight.w600,
                                                     fontFamily: "Montserrat"),
                                               ),
                                               Text(
                                                 questions[index].smalltext,
-                                                style: const TextStyle(
+                                                style: TextStyle(
                                                     color: Pallete.geryColor,
-                                                    fontSize: 12,
+                                                    fontSize:
+                                                        ScreenUtil().setSp(12),
                                                     fontWeight: FontWeight.w500,
                                                     fontFamily: "Montserrat"),
                                               )
@@ -164,8 +173,8 @@ class ReferEarn extends StatelessWidget {
                                       ),
                                       const Spacer(),
                                       Container(
-                                        width: 68,
-                                        height: 50,
+                                        width: ScreenUtil().setWidth(68),
+                                        height: ScreenUtil().setHeight(50),
                                         alignment: Alignment.center,
                                         decoration: BoxDecoration(
                                             image: DecorationImage(
@@ -174,8 +183,8 @@ class ReferEarn extends StatelessWidget {
                                                 fit: BoxFit.cover)),
                                       ),
                                     ]),
-                                    const SizedBox(
-                                      height: 20,
+                                    SizedBox(
+                                      height: ScreenUtil().setHeight(20),
                                     )
                                   ]);
                                 },
@@ -185,7 +194,7 @@ class ReferEarn extends StatelessWidget {
                         ),
                       )),
                   SizedBox(
-                    height: 25,
+                    height: ScreenUtil().setHeight(25),
                   ),
                   Expanded(
                       child: ListView.builder(
@@ -194,7 +203,7 @@ class ReferEarn extends StatelessWidget {
                       return Column(children: [
                         Container(
                           width: double.infinity,
-                          height: 70,
+                          height: ScreenUtil().setHeight(70),
                           decoration: const BoxDecoration(boxShadow: [
                             BoxShadow(
                               color: Color.fromRGBO(171, 171, 171, 0.25),
@@ -210,17 +219,19 @@ class ReferEarn extends StatelessWidget {
                             ),
                           ]),
                           child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 12, vertical: 8),
-                              child: Row(children: [
+                              padding: EdgeInsets.symmetric(
+                                  horizontal:  ScreenUtil().setWidth(12), vertical:  ScreenUtil().setHeight(10)),
+                              child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
                                 Image.asset(HamAssets.faq),
-                                const SizedBox(
-                                  width: 20,
+                                SizedBox(
+                                  width: ScreenUtil().setWidth(20),
                                 ),
                                 Text(
                                   askedquestions[index].question,
-                                  style: const TextStyle(
-                                      fontSize: 13,
+                                  style: TextStyle(
+                                      fontSize: ScreenUtil().setSp(14),
                                       fontWeight: FontWeight.w500,
                                       fontFamily: "Montserrat"),
                                 ),
@@ -233,7 +244,7 @@ class ReferEarn extends StatelessWidget {
                               ])),
                         ),
                         SizedBox(
-                          height: 15,
+                          height: ScreenUtil().setHeight(15),
                         )
                       ]);
                     },

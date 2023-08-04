@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:myekigai/Authentication_repo/authentication.dart';
 import 'package:myekigai/constants/constants.dart';
 import 'package:myekigai/features/hamburger/view/Myvehicles.dart';
@@ -13,7 +14,7 @@ import 'package:myekigai/features/hamburger/view/help.dart';
 
 class Navbar extends StatelessWidget {
   final GlobalKey<ScaffoldState> scaffoldKey;
-  const Navbar({Key? key, required this.scaffoldKey}) : super(key: key);
+  const Navbar({Key? key,required this.scaffoldKey}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -61,10 +62,7 @@ class Navbar extends StatelessWidget {
                             ),
                           ),
                           onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const Profile()));
+                         Get.to(()=>Profile());
                           },
                         ),
                         Container(
@@ -73,12 +71,13 @@ class Navbar extends StatelessWidget {
                             decoration: BoxDecoration(
                                 color: Colors.black,
                                 borderRadius: BorderRadius.circular(5)),
-                            child:  Padding(
-                              padding: EdgeInsets.all(7.0),
+                            child:  Align(
+                              alignment: Alignment.center,
                               child: Text('New',
                                   style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: ScreenUtil().setSp(12),
+                                    fontSize: ScreenUtil().setSp(13),
+                                    fontWeight: FontWeight.w700,
                                     fontFamily: 'Montserrat',
                                   )),
                             )),
@@ -106,10 +105,7 @@ class Navbar extends StatelessWidget {
                     ),
                   ),
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const Wallet()));
+                    Get.to(()=>Wallet());
                   },
                 ),
                 ListTile(
@@ -123,10 +119,7 @@ class Navbar extends StatelessWidget {
                     ),
                   ),
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const MyVehicles()));
+                    Get.to(()=>MyVehicles());
                   },
                 ),
                 ListTile(
@@ -140,10 +133,7 @@ class Navbar extends StatelessWidget {
                     ),
                   ),
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const RideHistory()));
+                    Get.to(()=>RideHistory());
                   },
                 ),
                 ListTile(
@@ -157,11 +147,7 @@ class Navbar extends StatelessWidget {
                       ),
                     ),
                     onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  const NotificationScreen()));
+                      Get.to(()=>NotificationScreen());
                     }),
                 ListTile(
                   leading: Image.asset(GlobalAssets.star),
@@ -174,10 +160,7 @@ class Navbar extends StatelessWidget {
                     ),
                   ),
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const ReferEarn()));
+                    Get.to(()=>ReferEarn());
                   },
                 ),
                 ListTile(
@@ -203,10 +186,7 @@ class Navbar extends StatelessWidget {
                       ),
                     ),
                     onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const Help()));
+                      Get.to(()=>Help());
                     }),
                 ListTile(
                     leading: Image.asset(GlobalAssets.setting),
@@ -219,10 +199,7 @@ class Navbar extends StatelessWidget {
                       ),
                     ),
                     onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const Settings()));
+                      Get.to(()=>Settings());
                     }),
                 const Divider(color: Color(0xFFE6E6E6), thickness: 1),
                 ListTile(
@@ -231,7 +208,7 @@ class Navbar extends StatelessWidget {
                     'Be a Buddy',
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: ScreenUtil().setSp(16),
+                      fontSize: ScreenUtil().setSp(21),
                       fontFamily: 'Montserrat',
                       fontWeight: FontWeight.w500,
                     ),
@@ -243,7 +220,7 @@ class Navbar extends StatelessWidget {
                     'Sign Out',
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: ScreenUtil().setSp(16),
+                      fontSize: ScreenUtil().setSp(21),
                       fontFamily: 'Montserrat',
                       fontWeight: FontWeight.w500,
                     ),

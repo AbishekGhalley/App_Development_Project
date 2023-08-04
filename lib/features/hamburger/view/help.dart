@@ -11,9 +11,7 @@ class Help extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   return ScreenUtilInit(
-     designSize: Size(420,910),
-   builder: (context,child){
+
       return Scaffold(
         appBar: TopAppbar(toptitle: "Help"),
         body: SingleChildScrollView(
@@ -142,6 +140,6 @@ class Help extends StatelessWidget {
               ),
             )),
       );
-    });
+
   }
 }

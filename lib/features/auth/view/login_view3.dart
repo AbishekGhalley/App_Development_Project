@@ -41,152 +41,143 @@ class _LoginView3State extends State<LoginView3> {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-        designSize: Size(420, 910),
-        builder: (context, child) {
-          return Scaffold(
-              body:  Column(
-                mainAxisSize: MainAxisSize.max,
-                  children:[
-                   Expanded(
-                       child:ListView(
-              children: [
-                SizedBox(height: ScreenUtil().setHeight(80)),
-                FullWidthTextWidget(
-                  text: "Let’s know you...",
-                  fontSize: ScreenUtil().setSp(20),
-                  textAlign: TextAlign.left,
-                  horizontalPadding: ScreenUtil().setWidth(30),
+    return Scaffold(
+      body: Column(mainAxisSize: MainAxisSize.max, children: [
+        Expanded(
+            child: ListView(
+          children: [
+            SizedBox(height: ScreenUtil().setHeight(80)),
+            FullWidthTextWidget(
+              text: "Let’s know you...",
+              fontSize: ScreenUtil().setSp(20),
+              textAlign: TextAlign.left,
+              horizontalPadding: ScreenUtil().setWidth(30),
+            ),
+            SizedBox(height: ScreenUtil().setHeight(10)),
+            FullWidthTextWidget(
+              text:
+                  "Fill in your personal details to help us connect to you better",
+              fontSize: ScreenUtil().setSp(15),
+              fontWeight: FontWeight.w500,
+              textAlign: TextAlign.left,
+              textColor: Pallete.geryColor,
+              horizontalPadding: ScreenUtil().setWidth(30),
+            ),
+            SizedBox(height: ScreenUtil().setHeight(40)),
+            FullWidthTextWidget(
+              text: "Name*",
+              fontSize: ScreenUtil().setSp(15),
+              fontWeight: FontWeight.w500,
+              textAlign: TextAlign.left,
+              textColor: Pallete.geryColor,
+              horizontalPadding: ScreenUtil().setWidth(35),
+            ),
+            SizedBox(height: ScreenUtil().setHeight(10)),
+            Container(
+                padding:
+                    EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(30)),
+                child: Column(
+                  children: [
+                    AuthField(
+                        controller: phoneNumber,
+                        hintText: 'ex - Kshitij Singh'),
+                    SizedBox(
+                      height: ScreenUtil().setHeight(10),
+                    )
+                  ],
+                )),
+            FullWidthTextWidget(
+              text: "Gender*",
+              fontSize: ScreenUtil().setSp(15),
+              fontWeight: FontWeight.w500,
+              textAlign: TextAlign.left,
+              textColor: Pallete.geryColor,
+              horizontalPadding: ScreenUtil().setWidth(35),
+            ),
+            SizedBox(height: ScreenUtil().setHeight(10)),
+            Container(
+              padding:
+                  EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(30)),
+              child: DropdownButtonFormField(
+                decoration: InputDecoration(
+                  focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(7),
+                      borderSide: const BorderSide(
+                        color: Pallete.primaryColor,
+                        width: 3,
+                      )),
+                  enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(7),
+                      borderSide: const BorderSide(
+                        color: Pallete.primaryColor,
+                        width: 1,
+                      )),
+                  contentPadding: EdgeInsets.symmetric(
+                      horizontal: ScreenUtil().setWidth(15),
+                      vertical: ScreenUtil().setHeight(15)),
                 ),
-                SizedBox(height: ScreenUtil().setHeight(10)),
-                FullWidthTextWidget(
-                  text:
-                      "Fill in your personal details to help us connect to you better",
-                  fontSize: ScreenUtil().setSp(15),
-                  fontWeight: FontWeight.w500,
-                  textAlign: TextAlign.left,
-                  textColor: Pallete.geryColor,
-                  horizontalPadding: ScreenUtil().setWidth(30),
-                ),
-                SizedBox(height: ScreenUtil().setHeight(40)),
-                FullWidthTextWidget(
-                  text: "Name*",
-                  fontSize: ScreenUtil().setSp(15),
-                  fontWeight: FontWeight.w500,
-                  textAlign: TextAlign.left,
-                  textColor: Pallete.geryColor,
-                  horizontalPadding: ScreenUtil().setWidth(35),
-                ),
-                SizedBox(height: ScreenUtil().setHeight(10)),
-                Container(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: ScreenUtil().setWidth(30)),
-                    child: Column(
-                      children: [
-                        AuthField(
-                            controller: phoneNumber,
-                            hintText: 'ex - Kshitij Singh'),
-                        SizedBox(
-                          height: ScreenUtil().setHeight(10),
-                        )
-                      ],
-                    )),
-                FullWidthTextWidget(
-                  text: "Gender*",
-                  fontSize: ScreenUtil().setSp(15),
-                  fontWeight: FontWeight.w500,
-                  textAlign: TextAlign.left,
-                  textColor: Pallete.geryColor,
-                  horizontalPadding: ScreenUtil().setWidth(35),
-                ),
-                SizedBox(height: ScreenUtil().setHeight(10)),
-                Container(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: ScreenUtil().setWidth(30)),
-                  child: DropdownButtonFormField(
-                    decoration: InputDecoration(
-                      focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(7),
-                          borderSide: const BorderSide(
-                            color: Pallete.primaryColor,
-                            width: 3,
-                          )),
-                      enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(7),
-                          borderSide: const BorderSide(
-                            color: Pallete.primaryColor,
-                            width: 1,
-                          )),
-                      contentPadding: EdgeInsets.symmetric(
-                          horizontal: ScreenUtil().setWidth(15),
-                          vertical: ScreenUtil().setHeight(15)),
-                    ),
-                    value: _value,
-                    items: const [
-                      DropdownMenuItem(
-                        child: Text("-Select Gender-"),
-                        value: "-1",
-                      ),
-                      DropdownMenuItem(
-                        child: Text("Male"),
-                        value: "1",
-                      ),
-                      DropdownMenuItem(
-                        child: Text("Female"),
-                        value: "2",
-                      ),
-                      DropdownMenuItem(
-                        child: Text("Other"),
-                        value: "3",
-                      ),
-                    ],
-                    onChanged: (v) {},
+                value: _value,
+                items: const [
+                  DropdownMenuItem(
+                    child: Text("-Select Gender-"),
+                    value: "-1",
                   ),
-                ),
-                SizedBox(
-                  height: ScreenUtil().setHeight(20),
-                ),
-                FullWidthTextWidget(
-                  text: "Email id*",
-                  fontSize: ScreenUtil().setSp(15),
-                  fontWeight: FontWeight.w500,
-                  textAlign: TextAlign.left,
-                  textColor: Pallete.geryColor,
-                  horizontalPadding: ScreenUtil().setWidth(35),
-                ),
-                SizedBox(height: ScreenUtil().setHeight(10)),
-                Container(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: ScreenUtil().setWidth(30)),
-                  child: Column(
-                    children: [
-                      AuthField(
-                          controller: phoneNumber,
-                          hintText: 'ex - xyz@gmail.com'),
-                      SizedBox(
-                        height: ScreenUtil().setWidth(20),
-                      )
-                    ],
+                  DropdownMenuItem(
+                    child: Text("Male"),
+                    value: "1",
                   ),
-                ),
+                  DropdownMenuItem(
+                    child: Text("Female"),
+                    value: "2",
+                  ),
+                  DropdownMenuItem(
+                    child: Text("Other"),
+                    value: "3",
+                  ),
+                ],
+                onChanged: (v) {},
+              ),
+            ),
+            SizedBox(
+              height: ScreenUtil().setHeight(20),
+            ),
+            FullWidthTextWidget(
+              text: "Email id*",
+              fontSize: ScreenUtil().setSp(15),
+              fontWeight: FontWeight.w500,
+              textAlign: TextAlign.left,
+              textColor: Pallete.geryColor,
+              horizontalPadding: ScreenUtil().setWidth(35),
+            ),
+            SizedBox(height: ScreenUtil().setHeight(10)),
+            Container(
+              padding:
+                  EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(30)),
+              child: Column(
+                children: [
+                  AuthField(
+                      controller: phoneNumber, hintText: 'ex - xyz@gmail.com'),
+                  SizedBox(
+                    height: ScreenUtil().setWidth(20),
+                  )
+                ],
+              ),
+            ),
+          ],
+        )),
+        Container(
+            padding: EdgeInsets.symmetric(
+                horizontal: ScreenUtil().setWidth(15),
+                vertical: ScreenUtil().setHeight(20)),
+            child: CustomButton(
+              text: "Proceed",
+              onPressed: () {
+                Navigator.push(context, LoginView4.route());
+              },
+            ))
+      ]),
 
-
-
-              ],
-            )),
-                    Container(
-                        padding: EdgeInsets.symmetric(horizontal:ScreenUtil().setWidth(15),vertical:ScreenUtil().setHeight(20) ),
-                        child:CustomButton(
-                          text: "Proceed",
-                          onPressed: () {
-                            Navigator.push(context, LoginView4.route());
-                          },
-                        ))
-                  ]),
-
-
-              // Other Scaffold properties and widgets
-              );
-        });
+      // Other Scaffold properties and widgets
+    );
   }
 }

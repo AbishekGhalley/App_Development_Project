@@ -36,5 +36,8 @@ class MyApp extends StatelessWidget {
 _initializefirebase() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
-  ).then((value) => Get.put(Authentication()));
+  ).then((value) {
+    Get.put(Authentication());
+  }
+  );
 }

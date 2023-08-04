@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:myekigai/theme/theme.dart';
 class TopAppbar extends StatelessWidget implements PreferredSizeWidget{
   final String toptitle;
@@ -27,7 +28,7 @@ Size get preferredSize => const Size.fromHeight(kToolbarHeight);
         icon: const Icon(Icons.arrow_back_ios_new_sharp,
             color: Color(0xFF1C1C1C)),
         onPressed: () {
-          Navigator.pop(context);
+          Get.back();
         },
       ),);
   }

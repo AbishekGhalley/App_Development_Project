@@ -35,115 +35,111 @@ class _shareridemapState extends State<shareridemap> {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-        designSize: Size(420, 910),
-        builder: (context, child) {
-          return Scaffold(
-            drawer: Navbar(scaffoldKey: global_navbar.sharescaffoldKey),
-            key: global_navbar.sharescaffoldKey,
-            body: Stack(
+    return Scaffold(
+      drawer: Navbar(scaffoldKey: global_navbar.sharescaffoldKey),
+      key: global_navbar.sharescaffoldKey,
+      body: Stack(
+        children: [
+          Center(
+            child: Image.asset(
+              width: double.infinity,
+              height: MediaQuery.of(context).size.height,
+              GlobalAssets.imMap,
+              fit: BoxFit.cover,
+            ),
+          ),
+          Positioned(
+            top:
+                MediaQuery.of(context).padding.top + ScreenUtil().setHeight(15),
+            left: ScreenUtil().setWidth(20),
+            right: ScreenUtil().setWidth(20),
+            child: CustomSearchBar(scaffoldKey: global_navbar.sharescaffoldKey),
+          ),
+          Positioned(
+            bottom: ScreenUtil().setHeight(posbottom),
+            right: ScreenUtil().setWidth(16),
+            child: Column(
               children: [
-                Center(
-                  child: Image.asset(
-                    width: double.infinity,
-                    height: MediaQuery.of(context).size.height,
-                    GlobalAssets.imMap,
-                    fit: BoxFit.cover,
-                  ),
+                IconButton(
+                  icon: Image.asset(GlobalAssets.locate),
+                  onPressed: () {
+                    // Handle favorite icon press
+                  },
                 ),
-                Positioned(
-                  top: MediaQuery.of(context).padding.top + ScreenUtil().setHeight(15),
-                  left: ScreenUtil().setWidth(20),
-                  right: ScreenUtil().setWidth(20),
-                  child: CustomSearchBar(
-                      scaffoldKey: global_navbar.sharescaffoldKey),
+                IconButton(
+                  icon: Image.asset(GlobalAssets.ekizone),
+                  onPressed: () {
+                    // Handle share icon press
+                  },
                 ),
-                Positioned(
-                  bottom: ScreenUtil().setHeight(posbottom),
-                  right: ScreenUtil().setWidth(16),
-                  child: Column(
-                    children: [
-                      IconButton(
-                        icon: Image.asset(GlobalAssets.locate),
-                        onPressed: () {
-                          // Handle favorite icon press
-                        },
-                      ),
-                      IconButton(
-                        icon: Image.asset(GlobalAssets.ekizone),
-                        onPressed: () {
-                          // Handle share icon press
-                        },
-                      ),
-                      Visibility(
-                          visible: isvisible,
-                          child: IgnorePointer(
-                              ignoring: !isvisible,
-                              child: IconButton(
-                                  onPressed: () {},
-                                  icon: SvgPicture.asset(GlobalAssets.ansos))))
-                    ],
-                  ),
-                ),
-                if (!isdetails)
-                  Positioned(
-                      left: 0,
-                      bottom: 0,
-                      right: 0,
-                      child: Container(
-                          width: double.infinity,
-                          height: ScreenUtil().setHeight(165),
-                          padding: EdgeInsets.symmetric(vertical: ScreenUtil().setHeight(18),),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                          ),
-                          child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-
-                                Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(16),),
-                                  child: Row(
-                                    children: [
-                                      Icon(Icons.info_outline_rounded),
-                                      SizedBox(
-                                        width: ScreenUtil().setWidth(6),
-                                      ),
-                                      Text(
-                                        "Whom would you like to share your ride with?",
-                                        style: TextStyle(
-                                            fontFamily: "Sen",
-                                            color: Pallete.geryColor,
-                                            fontSize: ScreenUtil().setSp(15),
-                                            fontWeight: FontWeight.w400),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                                 SizedBox(
-                                  height:  ScreenUtil().setHeight(15),
-                                ),
-
-                                CustomButton(
-                                    text: "Continue",
-                                    onPressed: () {
-                                      showModalBottomSheet(
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(16)),
-                                        context: context,
-                                        builder: (BuildContext context) {
-                                          return bottommodalsheet(
-                                              updateisdetails);
-                                        },
-                                      );
-                                    })
-                              ]))),
-                if (isdetails) driverdetails()
+                Visibility(
+                    visible: isvisible,
+                    child: IgnorePointer(
+                        ignoring: !isvisible,
+                        child: IconButton(
+                            onPressed: () {},
+                            icon: SvgPicture.asset(GlobalAssets.ansos))))
               ],
             ),
-          );
-        });
+          ),
+          if (!isdetails)
+            Positioned(
+                left: 0,
+                bottom: 0,
+                right: 0,
+                child: Container(
+                    width: double.infinity,
+                    height: MediaQuery.of(context).size.height * 0.18,
+                    padding: EdgeInsets.symmetric(
+                      vertical: ScreenUtil().setHeight(18),
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                    ),
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: ScreenUtil().setWidth(16),
+                            ),
+                            child: Row(
+                              children: [
+                                Icon(Icons.info_outline_rounded),
+                                SizedBox(
+                                  width: ScreenUtil().setWidth(6),
+                                ),
+                                Text(
+                                  "Whom would you like to share your ride with?",
+                                  style: TextStyle(
+                                      fontFamily: "Sen",
+                                      color: Pallete.geryColor,
+                                      fontSize: ScreenUtil().setSp(15),
+                                      fontWeight: FontWeight.w400),
+                                )
+                              ],
+                            ),
+                          ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.018,
+                          ),
+                          CustomButton(
+                              text: "Continue",
+                              onPressed: () {
+                                showModalBottomSheet(
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(16)),
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return bottommodalsheet(updateisdetails);
+                                  },
+                                );
+                              })
+                        ]))),
+          if (isdetails) driverdetails()
+        ],
+      ),
+    );
   }
 }

@@ -48,103 +48,99 @@ class _OnboardingState extends State<Onboarding> {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-        designSize: Size(420, 910),
-        builder: (context, child) {
-          return Scaffold(
-            body: Column(
-              children: [
-                Expanded(
-                  child: PageView.builder(
-                    controller: _controller,
-                    itemCount: contents.length,
-                    onPageChanged: (int index) {
-                      setState(() {
-                        currentIndex = index;
-                      });
-                    },
-                    itemBuilder: (_, i) {
-                      return Padding(
-                        padding: EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(20),vertical: ScreenUtil().setHeight(20)),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            Expanded(
-                              child: SvgPicture.asset(
-                                contents[i].image,
-                                width: ScreenUtil().setWidth(380),
-                                height: ScreenUtil().setWidth(380),
-                              ),
-                            )
-                          ],
+    return Scaffold(
+      body: Column(
+        children: [
+          Expanded(
+            child: PageView.builder(
+              controller: _controller,
+              itemCount: contents.length,
+              onPageChanged: (int index) {
+                setState(() {
+                  currentIndex = index;
+                });
+              },
+              itemBuilder: (_, i) {
+                return Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: ScreenUtil().setWidth(20),
+                      vertical: ScreenUtil().setHeight(20)),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Expanded(
+                        child: SvgPicture.asset(
+                          contents[i].image,
+                          width: ScreenUtil().setWidth(380),
+                          height: ScreenUtil().setWidth(380),
                         ),
-                      );
-                    },
+                      )
+                    ],
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsets.all(ScreenUtil().setWidth(16)),
-                  child: Container(
-                    height: ScreenUtil().setHeight(80),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        if (currentIndex >= 0)
-                          TextButton(
-                            child:  Text(
-                              "Prev",
-                              style: TextStyle(
-                                 fontSize: ScreenUtil().setSp(16),
-                                fontFamily: "Montserrat",
-                                color: Pallete.textColor,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                            onPressed: () {
-                              _controller.previousPage(
-                                duration: const Duration(milliseconds: 300),
-                                curve: Curves.easeIn,
-                              );
-                            },
-                          ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: List.generate(
-                            contents.length,
-                            (index) => buildDot(index),
-                          ),
+                );
+              },
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(ScreenUtil().setWidth(16)),
+            child: Container(
+              height: ScreenUtil().setHeight(80),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  if (currentIndex >= 0)
+                    TextButton(
+                      child: Text(
+                        "Prev",
+                        style: TextStyle(
+                          fontSize: ScreenUtil().setSp(16),
+                          fontFamily: "Montserrat",
+                          color: Pallete.textColor,
+                          fontWeight: FontWeight.w500,
                         ),
-                        TextButton(
-                          child: Text(
-                            currentIndex == contents.length - 1
-                                ? "Done"
-                                : "Next",
-                            style:  TextStyle(
-                               fontSize: ScreenUtil().setSp(16),
-                              fontFamily: "Montserrat",
-                              color: Pallete.textColor,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                          onPressed: () {
-                            if (currentIndex == contents.length - 1) {
-                              Navigator.push(context, HomeScreen.route());
-                            } else {
-                              _controller.nextPage(
-                                duration: const Duration(milliseconds: 300),
-                                curve: Curves.easeIn,
-                              );
-                            }
-                          },
-                        ),
-                      ],
+                      ),
+                      onPressed: () {
+                        _controller.previousPage(
+                          duration: const Duration(milliseconds: 300),
+                          curve: Curves.easeIn,
+                        );
+                      },
+                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: List.generate(
+                      contents.length,
+                      (index) => buildDot(index),
                     ),
                   ),
-                ),
-              ],
+                  TextButton(
+                    child: Text(
+                      currentIndex == contents.length - 1 ? "Done" : "Next",
+                      style: TextStyle(
+                        fontSize: ScreenUtil().setSp(16),
+                        fontFamily: "Montserrat",
+                        color: Pallete.textColor,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    onPressed: () {
+                      if (currentIndex == contents.length - 1) {
+                        Navigator.push(context, HomeScreen.route());
+                      } else {
+                        _controller.nextPage(
+                          duration: const Duration(milliseconds: 300),
+                          curve: Curves.easeIn,
+                        );
+                      }
+                    },
+                  ),
+                ],
+              ),
             ),
-          );
-        });
+          ),
+        ],
+      ),
+    );
   }
 
   Container buildDot(int index) {

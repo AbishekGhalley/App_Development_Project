@@ -38,62 +38,59 @@ class _LoginView1State extends State<LoginView1> {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-        designSize: Size(410, 910),
-        builder: (context, child) {
-          return Scaffold(
-            body: SizedBox(
-              height: double.infinity,
-              child: Form(
-                  key: _formKey,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      SizedBox(height: ScreenUtil().setHeight(80)),
-                      FullWidthTextWidget(
-                        text: "Enter Phone Number for Verification",
-                        fontSize: ScreenUtil().setSp(20),
-                        textAlign: TextAlign.left,
-                        horizontalPadding: 30,
-                      ),
-                      SizedBox(height: ScreenUtil().setHeight(10)),
-                       FullWidthTextWidget(
-                        text:
-                            "This number will be used for all ride related communication. You shall receive an sms with code for verification.",
-                        fontSize: ScreenUtil().setSp(15),
-                        fontWeight: FontWeight.w500,
-                        textAlign: TextAlign.left,
-                        textColor: Pallete.geryColor,
-                        horizontalPadding:ScreenUtil().setWidth(30),
-                      ),
-                      SizedBox(height: ScreenUtil().setHeight(40)),
-                      Padding(
-                          padding: EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(30)),
-                          child: Column(
-                            children: [
-                              AuthField(
-                                controller: controller.phoneNumber,
-                              ),
-                            ],
-                          )),
-                      Spacer(),
-                      CustomButton(
-                        text: "Sent OTP",
-                        onPressed: () {
-                          if (_formKey.currentState!.validate()) {
-                            SignUpController.instance.phoneAuthentication(
-                                "+91" + controller.phoneNumber.text.trim());
-                            Get.to(() => LoginView2());
-                          }
-                        },
-                      ),
-                      SizedBox(height: ScreenUtil().setHeight(20)),
-                    ],
-                  )),
-            ),
+    return Scaffold(
+      body: SizedBox(
+        height: double.infinity,
+        child: Form(
+            key: _formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                SizedBox(height: ScreenUtil().setHeight(80)),
+                FullWidthTextWidget(
+                  text: "Enter Phone Number for Verification",
+                  fontSize: ScreenUtil().setSp(20),
+                  textAlign: TextAlign.left,
+                  horizontalPadding: 30,
+                ),
+                SizedBox(height: ScreenUtil().setHeight(10)),
+                FullWidthTextWidget(
+                  text:
+                      "This number will be used for all ride related communication. You shall receive an sms with code for verification.",
+                  fontSize: ScreenUtil().setSp(15),
+                  fontWeight: FontWeight.w500,
+                  textAlign: TextAlign.left,
+                  textColor: Pallete.geryColor,
+                  horizontalPadding: ScreenUtil().setWidth(30),
+                ),
+                SizedBox(height: ScreenUtil().setHeight(40)),
+                Padding(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: ScreenUtil().setWidth(30)),
+                    child: Column(
+                      children: [
+                        AuthField(
+                          controller: controller.phoneNumber,
+                        ),
+                      ],
+                    )),
+                Spacer(),
+                CustomButton(
+                  text: "Sent OTP",
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                      SignUpController.instance.phoneAuthentication(
+                          "+91" + controller.phoneNumber.text.trim());
+                      Get.to(() => LoginView2());
+                    }
+                  },
+                ),
+                SizedBox(height: ScreenUtil().setHeight(20)),
+              ],
+            )),
+      ),
 
-            // Other Scaffold properties and widgets
-          );
-        });
+      // Other Scaffold properties and widgets
+    );
   }
 }

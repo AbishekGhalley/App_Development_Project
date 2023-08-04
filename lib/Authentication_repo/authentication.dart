@@ -1,7 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:myekigai/features/auth/view/login_view.dart';
+import 'package:myekigai/features/auth/view/login_view1.dart';
+import 'package:myekigai/features/auth/view/login_view2.dart';
+import 'package:myekigai/features/auth/view/login_view3.dart';
+import 'package:myekigai/features/auth/view/login_view4.dart';
 import 'package:myekigai/features/homescreen/view/home_view.dart';
+import 'package:myekigai/features/onboarding/view/onboarding.dart';
+import 'package:myekigai/features/shareride/view/recentlocal.dart';
+import 'package:myekigai/features/shareride/view/shareridemap.dart';
 
 
 class Authentication extends GetxController {

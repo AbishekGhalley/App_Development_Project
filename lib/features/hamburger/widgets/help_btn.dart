@@ -12,7 +12,7 @@ class Helpbtn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         width: ScreenUtil().setWidth(175),
-        height: ScreenUtil().setHeight(145),
+        height: MediaQuery.of(context).size.height*0.16,
         alignment: Alignment.center,
         decoration: const BoxDecoration(boxShadow: [
           BoxShadow(
@@ -38,7 +38,7 @@ class Helpbtn extends StatelessWidget {
                       btnimage,
                       height: ScreenUtil().setWidth(55),
                       width: ScreenUtil().setWidth(55),
-                      fit: BoxFit.fitWidth,
+                      fit: BoxFit.contain,
                     ),
                     SizedBox(
                       height: ScreenUtil().setHeight(10),
