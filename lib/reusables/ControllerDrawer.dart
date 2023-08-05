@@ -17,4 +17,9 @@ class ControllerDrawer extends GetxController with StateMixin<bool> {
       change(!state!, status: RxStatus.success());
     }
   }
+  @override
+  void onClose(){
+    super.dispose();
+  }
+
 }
