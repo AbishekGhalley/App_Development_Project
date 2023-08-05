@@ -14,7 +14,7 @@ import 'package:myekigai/reusables/ControllerDrawer.dart';
 import 'package:myekigai/reusables/Navbar.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import '../../../theme/pallete.dart';
-import '../widget/searchbar.dart';
+import '../../../reusables/searchbar.dart';
 
 class HomeScreen extends StatefulWidget {
   static route() {

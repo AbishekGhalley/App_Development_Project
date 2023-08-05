@@ -7,7 +7,7 @@ import 'package:myekigai/features/reservevehicle/widgets/largeLocator.dart';
 import 'package:myekigai/features/reservevehicle/widgets/locator.dart';
 import 'package:myekigai/reusables/ControllerDrawer.dart';
 import 'package:myekigai/reusables/Navbar.dart';
-import '../widgets/searchbar.dart';
+import '../../../reusables/searchbar.dart';
 
 class ReserveVehicle extends StatefulWidget {
   const ReserveVehicle({super.key});

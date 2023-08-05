@@ -7,7 +7,7 @@ import 'package:myekigai/reusables/ControllerDrawer.dart';
 import 'package:myekigai/reusables/Navbar.dart';
 import 'package:myekigai/features/shareride/widget/bottommodalsheet.dart';
 import 'package:myekigai/features/shareride/widget/driverdetails.dart';
-import 'package:myekigai/features/shareride/widget/searchbar.dart';
+import 'package:myekigai/reusables/searchbar.dart';
 import 'package:myekigai/reusables/btn.dart';
 import 'package:myekigai/theme/pallete.dart';
 
