@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:myekigai/constants/constants.dart';
+import 'package:myekigai/reusables/ControllerDrawer.dart';
 import 'package:myekigai/reusables/Navbar.dart';
 import 'package:myekigai/features/shareride/widget/bottommodalsheet.dart';
 import 'package:myekigai/features/shareride/widget/driverdetails.dart';
 import 'package:myekigai/features/shareride/widget/searchbar.dart';
 import 'package:myekigai/reusables/btn.dart';
-import 'package:myekigai/reusables/key_navbar.dart';
 import 'package:myekigai/theme/pallete.dart';
 
 class shareridemap extends StatefulWidget {
@@ -35,9 +36,11 @@ class _shareridemapState extends State<shareridemap> {
 
   @override
   Widget build(BuildContext context) {
+    final ControllerDrawer drawercontroller =Get.put(ControllerDrawer());
+
     return Scaffold(
-      drawer: Navbar(scaffoldKey: global_navbar.sharescaffoldKey),
-      key: global_navbar.sharescaffoldKey,
+      drawer: Navbar(scaffoldKey: drawercontroller.scaffoldkey.value,),
+      key: drawercontroller.scaffoldkey.value,
       body: Stack(
         children: [
           Center(
@@ -53,7 +56,7 @@ class _shareridemapState extends State<shareridemap> {
                 MediaQuery.of(context).padding.top + ScreenUtil().setHeight(15),
             left: ScreenUtil().setWidth(20),
             right: ScreenUtil().setWidth(20),
-            child: CustomSearchBar(scaffoldKey: global_navbar.sharescaffoldKey),
+            child: CustomSearchBar(),
           ),
           Positioned(
             bottom: ScreenUtil().setHeight(posbottom),

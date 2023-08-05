@@ -10,9 +10,9 @@ import 'package:myekigai/features/reservevehicle/View/reserve_vehicle_view.dart'
 import 'package:myekigai/features/scanandgo/view/ScanQR.dart';
 import 'package:myekigai/features/shareride/view/shareridemap.dart';
 import 'package:myekigai/features/supercharge/view/vehicledetailssupercharge.dart';
+import 'package:myekigai/reusables/ControllerDrawer.dart';
 import 'package:myekigai/reusables/Navbar.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
-import 'package:myekigai/reusables/key_navbar.dart';
 import '../../../theme/pallete.dart';
 import '../widget/searchbar.dart';
 
@@ -40,13 +40,15 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final ControllerDrawer controllerDrawer=Get.put(ControllerDrawer());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: Navbar(
-        scaffoldKey: global_navbar.scaffoldKey,
+        scaffoldKey:controllerDrawer.scaffoldkey.value,
       ),
-      key: global_navbar.scaffoldKey,
+      key: controllerDrawer.scaffoldkey.value,
       backgroundColor: Colors.black,
       body: Align(
         alignment: Alignment.topCenter,
@@ -67,7 +69,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 left: ScreenUtil().setWidth(20),
                 right: ScreenUtil().setWidth(20),
                 child: CustomSearchBar(
-                  scaffoldKey: global_navbar.scaffoldKey,
                 ),
               ),
               Positioned(
@@ -159,6 +160,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         text: 'Scan & Go'),
                                     ServiceIconWithText(
                                         onPressed: () {
+                                          Get.delete<ControllerDrawer>();
                                           Get.to(() => ReserveVehicle());
                                         },
                                         icon: HomeAssets.imreserveVehicle,
@@ -188,6 +190,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         text: 'Supercharge'),
                                     ServiceIconWithText(
                                         onPressed: () {
+                                          Get.delete<ControllerDrawer>();
                                           Get.to(() => shareridemap());
                                         },
                                         icon: HomeAssets.imshareRide,

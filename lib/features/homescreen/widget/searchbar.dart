@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:myekigai/reusables/Navbar.dart';
-import 'package:myekigai/reusables/key_navbar.dart';
+import 'package:myekigai/reusables/ControllerDrawer.dart';
 import 'package:myekigai/theme/pallete.dart';
 
 
 
 class CustomSearchBar extends StatelessWidget {
-  final GlobalKey<ScaffoldState> scaffoldKey;
-  const CustomSearchBar({super.key,required this.scaffoldKey});
+  final ControllerDrawer drawercontroller =Get.find();
+
+  CustomSearchBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -42,10 +43,9 @@ class CustomSearchBar extends StatelessWidget {
           children: [
             IconButton(
               padding: const EdgeInsets.only(bottom: 1),
-              icon: const Icon(Icons.menu_rounded, size: 32),
+              icon: Icon(Icons.menu_rounded, size: 32),
               onPressed: () {
-                // Handle hamburger menu button press
-                global_navbar.scaffoldKey.currentState?.openDrawer();
+               drawercontroller.scaffoldkey.value.currentState!.openDrawer();
               },
             ),
             Expanded(

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:myekigai/constants/constants.dart';
 import 'package:myekigai/features/reservevehicle/widgets/bottomContainer.dart';
 import 'package:myekigai/features/reservevehicle/widgets/largeLocator.dart';
 import 'package:myekigai/features/reservevehicle/widgets/locator.dart';
+import 'package:myekigai/reusables/ControllerDrawer.dart';
 import 'package:myekigai/reusables/Navbar.dart';
-import 'package:myekigai/reusables/key_navbar.dart';
 import '../widgets/searchbar.dart';
 
 class ReserveVehicle extends StatefulWidget {
@@ -27,10 +28,11 @@ class _ReserveVehicleState extends State<ReserveVehicle> {
 
   @override
   Widget build(BuildContext context) {
+    final ControllerDrawer drawercontroller = Get.put(ControllerDrawer());
     return Scaffold(
       backgroundColor: Colors.black,
-      key: global_navbar.reservescaffoldKey,
-      drawer: Navbar(scaffoldKey: global_navbar.reservescaffoldKey),
+      key: drawercontroller.scaffoldkey.value,
+      drawer: Navbar(scaffoldKey: drawercontroller.scaffoldkey.value),
       body: Align(
         alignment: Alignment.topCenter,
         child: Container(
@@ -47,8 +49,7 @@ class _ReserveVehicleState extends State<ReserveVehicle> {
                 top: MediaQuery.of(context).padding.top + 8,
                 left: 20,
                 right: 20,
-                child: CustomSearchBar(
-                    scaffoldKey: global_navbar.reservescaffoldKey),
+                child: CustomSearchBar(),
               ),
               Positioned(
                 bottom: locatehieght,

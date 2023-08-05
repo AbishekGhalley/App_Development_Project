@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myekigai/constants/constants.dart';
 import 'package:myekigai/features/reservevehicle/View/vehicleListView.dart';
 import 'package:myekigai/features/reservevehicle/widgets/rowitem.dart';
+import 'package:myekigai/reusables/ControllerDrawer.dart';
 import 'package:myekigai/reusables/btn.dart';
 
 import '../../../theme/pallete.dart';
@@ -131,7 +133,7 @@ class BottomWidget2 extends StatelessWidget {
                       const SizedBox(
                         width: 20,
                       ),
-                      const Image(
+                      const Image(width: 180,height: 120,fit: BoxFit.contain,
                           image: AssetImage(ReserveVehicleAssets.stationImage)),
                       const SizedBox(
                         width: 20,
@@ -215,10 +217,8 @@ class BottomWidget2 extends StatelessWidget {
                   CustomButton(
                     text: "Continue",
                     onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const VehicleListView()));
+                      Get.delete<ControllerDrawer>();
+                      Get.to(()=>VehicleListView());
                     },
                   ),
                 ],
