@@ -15,7 +15,7 @@ class TextWithIcon extends StatelessWidget {
             height: 25,
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage(icon), fit: BoxFit.cover))),
+                    image: AssetImage(icon), fit: BoxFit.contain))),
         const SizedBox(
           width: 13,
         ),

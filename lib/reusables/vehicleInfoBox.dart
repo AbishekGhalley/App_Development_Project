@@ -37,10 +37,10 @@ class VehicleInfoBox extends StatelessWidget {
         children: [
           Container(
               width: 35,
-              height: 35,
+              height: 30,
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage(icon), fit: BoxFit.cover))),
+                      image: AssetImage(icon), fit: BoxFit.contain))),
           const SizedBox(height: 5),
           Text(
             midText,

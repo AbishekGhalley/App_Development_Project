@@ -1,10 +1,44 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myekigai/constants/constants.dart';
+import 'package:myekigai/features/scanandgo/controller/qr_controller.dart';
 import 'package:myekigai/features/scanandgo/view/ScanGoVehicleDetails.dart';
 import 'package:myekigai/theme/pallete.dart';
+import 'package:qrscan/qrscan.dart' as scanner;
+import 'package:permission_handler/permission_handler.dart';
 
-class ScanQR extends StatelessWidget {
+import '../controller/qrController.dart';
+
+class ScanQR extends StatefulWidget {
+  @override
+  State<ScanQR> createState() => _ScanQRState();
+}
+
+class _ScanQRState extends State<ScanQR> {
+  String? scannedData;
+  final QRController controller = Get.put(QRController());
+
+  Future<void> _scanQR(BuildContext context) async {
+    try {
+      String? result = await scanner.scan();
+      if (result != null && result.isNotEmpty) {
+        setState(() {
+          scannedData = result;
+        });
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => ScanGoVehicleDetails(
+                  code: controller.QrResult
+                      .value)), // Replace 'Test()' with the actual name of the Test page constructor
+        );
+      }
+    } catch (e) {
+      print("Error scanning QR code: $e");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,8 +103,9 @@ class ScanQR extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) =>
-                              const ScanGoVehicleDetails()), // Replace 'Test()' with the actual name of the Test page constructor
+                          builder: (context) => ScanGoVehicleDetails(
+                              code: controller.QrResult
+                                  .value)), // Replace 'Test()' with the actual name of the Test page constructor
                     );
                   },
                   child: Container(
@@ -82,14 +117,18 @@ class ScanQR extends StatelessWidget {
                         borderRadius: BorderRadius.circular(0),
                       ),
                     ),
-                    child: const Center(
-                      child: Text(
-                        'QR Scanner Placeholder',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xFF1C1C1C),
-                        ),
+                    child: Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ElevatedButton(
+                            onPressed: () => _scanQR(context),
+                            child: Text('Scan QR Code'),
+                          ),
+                          if (false)
+                            Text(
+                                'Scanned QR Code: ${controller.QrResult.value}')
+                        ],
                       ),
                     ),
                   ),
@@ -122,6 +161,7 @@ class ScanQR extends StatelessWidget {
                   ),
                 ],
               ),
+
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
