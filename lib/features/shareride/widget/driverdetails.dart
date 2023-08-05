@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:myekigai/constants/constants.dart';
+import 'package:myekigai/reusables/ControllerDrawer.dart';
 import 'package:myekigai/reusables/Navbar.dart';
 import 'package:myekigai/features/homescreen/view/home_view.dart';
 import 'package:myekigai/features/shareride/view/shareridemap.dart';
@@ -344,10 +346,8 @@ class _driverdetailsState extends State<driverdetails> {
                           style: const ButtonStyle(
                               splashFactory: NoSplash.splashFactory),
                           onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => HomeScreen()));
+                            Get.delete<ControllerDrawer>();
+                            Get.to(() => HomeScreen());
                           },
                           child: Text("Cancle",
                               style: TextStyle(

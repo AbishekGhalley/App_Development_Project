@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:myekigai/features/auth/view/login_view.dart';
-import 'package:myekigai/reusables/Navbar.dart';
 import 'package:myekigai/features/homescreen/view/home_view.dart';
-import 'package:myekigai/reusables/key_navbar.dart';
 import 'content_model.dart';
 import 'package:myekigai/theme/pallete.dart';
 
