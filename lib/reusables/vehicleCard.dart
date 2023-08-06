@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myekigai/theme/pallete.dart';
 
@@ -59,7 +60,10 @@ class _VehicleCardState extends State<VehicleCard> {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.only(top: 8.0, bottom: 8.0, left: 20),
+            padding: EdgeInsets.only(
+                top: ScreenUtil().setHeight(8),
+                bottom: ScreenUtil().setHeight(8),
+                left: ScreenUtil().setWidth(20)),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -69,8 +73,8 @@ class _VehicleCardState extends State<VehicleCard> {
                     Image(
                       image: AssetImage(widget.image),
                     ),
-                    const SizedBox(
-                      width: 10,
+                    SizedBox(
+                      width: ScreenUtil().setWidth(10),
                     ),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -78,24 +82,24 @@ class _VehicleCardState extends State<VehicleCard> {
                       children: [
                         Text(widget.name,
                             style: GoogleFonts.sen(
-                                fontSize: 21,
+                                fontSize:ScreenUtil().setSp(21),
                                 color: Pallete.textColor,
                                 fontWeight: FontWeight.w400)),
                         Text(widget.brand,
                             style: GoogleFonts.montserrat(
-                                fontSize: 16,
+                                fontSize: ScreenUtil().setSp(16),
                                 color: Pallete.geryColor,
                                 fontWeight: FontWeight.w500)),
                         Row(
                           children: [
                             Text(widget.stars,
                                 style: GoogleFonts.montserrat(
-                                    fontSize: 12,
+                                    fontSize: ScreenUtil().setSp(12),
                                     color: Pallete.geryColor,
                                     fontWeight: FontWeight.w500)),
                             Text(
                               ' ⭐',
-                              style: GoogleFonts.montserrat(fontSize: 12),
+                              style: GoogleFonts.montserrat(fontSize:ScreenUtil().setSp(12)),
                             )
                           ],
                         ),
@@ -104,18 +108,18 @@ class _VehicleCardState extends State<VehicleCard> {
                   ],
                 ),
                 Container(
-                    padding: const EdgeInsets.only(right: 20),
+                    padding: EdgeInsets.only(right: ScreenUtil().setWidth(20)),
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           Text('Reserved for',
                               style: GoogleFonts.montserrat(
-                                  fontSize: 12,
+                                  fontSize: ScreenUtil().setSp(12),
                                   color: Pallete.geryColor,
                                   fontWeight: FontWeight.w500)),
                           Text(widget.hours,
                               style: GoogleFonts.sen(
-                                  fontSize: 16,
+                                  fontSize: ScreenUtil().setSp(16),
                                   color: Pallete.textColor,
                                   fontWeight: FontWeight.w400))
                         ])),

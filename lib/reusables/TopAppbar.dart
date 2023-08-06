@@ -28,7 +28,8 @@ Size get preferredSize => const Size.fromHeight(kToolbarHeight);
         icon: const Icon(Icons.arrow_back_ios_new_sharp,
             color: Color(0xFF1C1C1C)),
         onPressed: () {
-          Get.back();
+          Get.back(
+          );
         },
       ),);
   }

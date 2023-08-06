@@ -20,7 +20,7 @@ class HomeScreen extends StatefulWidget {
   static route() {
     return PageRouteBuilder(
       pageBuilder: (context, animation, secondaryAnimation) =>
-          const HomeScreen(),
+      const HomeScreen(),
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         return SlideTransition(
           position: Tween<Offset>(
@@ -154,14 +154,19 @@ class _HomeScreenState extends State<HomeScreen> {
                                   children: [
                                     ServiceIconWithText(
                                         onPressed: () {
-                                          Get.to(() => ScanQR());
+                                          Get.delete<ControllerDrawer>();
+                                          Get.to(() => ScanQR(),transition: Transition.rightToLeft,
+                                              duration: Duration(milliseconds: 500),
+                                              curve: Curves.linear);
                                         },
                                         icon: HomeAssets.imhomescango,
                                         text: 'Scan & Go'),
                                     ServiceIconWithText(
                                         onPressed: () {
                                           Get.delete<ControllerDrawer>();
-                                          Get.to(() => ReserveVehicle());
+                                          Get.to(() => ReserveVehicle(),transition: Transition.rightToLeft,
+                                              duration: Duration(milliseconds: 500),
+                                              curve: Curves.linear);
                                         },
                                         icon: HomeAssets.imreserveVehicle,
                                         text: 'Reservation'),
@@ -178,20 +183,28 @@ class _HomeScreenState extends State<HomeScreen> {
                                   children: [
                                     ServiceIconWithText(
                                         onPressed: () {
-                                          Get.to(() => swapbatteries());
+                                          Get.delete<ControllerDrawer>();
+                                          Get.to(() => swapbatteries(),transition: Transition.rightToLeft,
+                                              duration: Duration(milliseconds: 500),
+                                              curve: Curves.linear);
                                         },
                                         icon: HomeAssets.imswapbattery,
                                         text: 'Swap Battery'),
                                     ServiceIconWithText(
                                         onPressed: () {
-                                          Get.to(() => details_supercharge());
+                                          Get.delete<ControllerDrawer>();
+                                          Get.to(() => details_supercharge(),transition: Transition.rightToLeft,
+                                              duration: Duration(milliseconds: 500),
+                                              curve: Curves.linear);
                                         },
                                         icon: HomeAssets.imsupercharge,
                                         text: 'Supercharge'),
                                     ServiceIconWithText(
                                         onPressed: () {
                                           Get.delete<ControllerDrawer>();
-                                          Get.to(() => shareridemap());
+                                          Get.to(() => shareridemap(),transition: Transition.rightToLeft,
+                                              duration: Duration(milliseconds: 500),
+                                              curve: Curves.linear);
                                         },
                                         icon: HomeAssets.imshareRide,
                                         text: 'Share Ride')

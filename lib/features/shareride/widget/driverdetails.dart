@@ -347,9 +347,11 @@ class _driverdetailsState extends State<driverdetails> {
                               splashFactory: NoSplash.splashFactory),
                           onPressed: () {
                             Get.delete<ControllerDrawer>();
-                            Get.to(() => HomeScreen());
+                            Get.to(() => HomeScreen(),transition: Transition.rightToLeft,
+                                duration: Duration(milliseconds: 500),
+                                curve: Curves.linear);
                           },
-                          child: Text("Cancle",
+                          child: Text("Cancel",
                               style: TextStyle(
                                   color: Color.fromRGBO(229, 33, 68, 1),
                                   fontSize: ScreenUtil().setSp(21),

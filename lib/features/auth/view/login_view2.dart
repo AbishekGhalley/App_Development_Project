@@ -12,7 +12,7 @@ class LoginView2 extends StatefulWidget {
   static route() {
     return PageRouteBuilder(
       pageBuilder: (context, animation, secondaryAnimation) =>
-          const LoginView2(),
+      const LoginView2(),
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         return SlideTransition(
           position: Tween<Offset>(

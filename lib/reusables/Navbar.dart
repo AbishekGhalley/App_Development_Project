@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:myekigai/Authentication_repo/authentication.dart';
 import 'package:myekigai/constants/constants.dart';
+import 'package:myekigai/features/auth/view/login_view.dart';
 import 'package:myekigai/features/hamburger/view/Myvehicles.dart';
 import 'package:myekigai/features/hamburger/view/Notification.dart';
 import 'package:myekigai/features/hamburger/view/Profile.dart';
@@ -62,7 +63,9 @@ class Navbar extends StatelessWidget {
                             ),
                           ),
                           onTap: () {
-                         Get.to(()=>Profile());
+                         Get.to(()=>Profile(),transition: Transition.rightToLeft,
+                             duration: Duration(milliseconds: 500),
+                             curve: Curves.linear);
                           },
                         ),
                         Container(
@@ -105,7 +108,9 @@ class Navbar extends StatelessWidget {
                     ),
                   ),
                   onTap: () {
-                    Get.to(()=>Wallet());
+                    Get.to(()=>Wallet(),transition: Transition.rightToLeft,
+                        duration: Duration(milliseconds: 500),
+                        curve: Curves.linear);
                   },
                 ),
                 ListTile(
@@ -119,7 +124,9 @@ class Navbar extends StatelessWidget {
                     ),
                   ),
                   onTap: () {
-                    Get.to(()=>MyVehicles());
+                    Get.to(()=>MyVehicles(),transition: Transition.rightToLeft,
+                        duration: Duration(milliseconds: 500),
+                        curve: Curves.linear);
                   },
                 ),
                 ListTile(
@@ -133,7 +140,9 @@ class Navbar extends StatelessWidget {
                     ),
                   ),
                   onTap: () {
-                    Get.to(()=>RideHistory());
+                    Get.to(()=>RideHistory(),transition: Transition.rightToLeft,
+                        duration: Duration(milliseconds: 500),
+                        curve: Curves.linear);
                   },
                 ),
                 ListTile(
@@ -147,7 +156,9 @@ class Navbar extends StatelessWidget {
                       ),
                     ),
                     onTap: () {
-                      Get.to(()=>NotificationScreen());
+                      Get.to(()=>NotificationScreen(),transition: Transition.rightToLeft,
+                          duration: Duration(milliseconds: 500),
+                          curve: Curves.linear);
                     }),
                 ListTile(
                   leading: Image.asset(GlobalAssets.star),
@@ -160,7 +171,9 @@ class Navbar extends StatelessWidget {
                     ),
                   ),
                   onTap: () {
-                    Get.to(()=>ReferEarn());
+                    Get.to(()=>ReferEarn(),transition: Transition.rightToLeft,
+                        duration: Duration(milliseconds: 500),
+                        curve: Curves.linear);
                   },
                 ),
                 ListTile(
@@ -186,7 +199,9 @@ class Navbar extends StatelessWidget {
                       ),
                     ),
                     onTap: () {
-                      Get.to(()=>Help());
+                      Get.to(()=>Help(),transition: Transition.rightToLeft,
+                          duration: Duration(milliseconds: 500),
+                          curve: Curves.linear);
                     }),
                 ListTile(
                     leading: Image.asset(GlobalAssets.setting),
@@ -199,7 +214,9 @@ class Navbar extends StatelessWidget {
                       ),
                     ),
                     onTap: () {
-                      Get.to(()=>Settings());
+                      Get.to(()=>Settings(),transition: Transition.rightToLeft,
+                          duration: Duration(milliseconds: 500),
+                          curve: Curves.linear);
                     }),
                 const Divider(color: Color(0xFFE6E6E6), thickness: 1),
                 ListTile(

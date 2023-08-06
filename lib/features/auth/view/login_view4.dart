@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:myekigai/constants/constants.dart';
 import 'package:myekigai/features/onboarding/view/onboarding.dart';
 import 'package:myekigai/reusables/full_width_text.dart';
@@ -68,7 +69,9 @@ class _LoginView4State extends State<LoginView4> {
                 child: CustomButton(
                   text: "Allow Permission",
                   onPressed: () {
-                    Navigator.push(context, Onboarding.route());
+                   Get.to(()=>Onboarding(),transition: Transition.rightToLeft,
+                       duration: Duration(milliseconds: 500),
+                       curve: Curves.linear);
                   },
                 ),
               ),

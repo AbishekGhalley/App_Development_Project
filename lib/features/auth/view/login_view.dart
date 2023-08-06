@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:myekigai/constants/constants.dart';
 import 'package:myekigai/features/auth/view/login_view1.dart';
 import 'package:myekigai/reusables/full_width_text.dart';
@@ -93,7 +94,9 @@ class _LoginViewState extends State<LoginView> {
             CustomButton(
               text: "Continue with Phone number",
               onPressed: () {
-                Navigator.push(context, LoginView1.route());
+               Get.to(()=>LoginView1(),transition: Transition.rightToLeft,
+                   duration: Duration(milliseconds: 500),
+                   curve: Curves.linear);
               },
             ),
             SizedBox(height: ScreenUtil().setHeight(20)),
