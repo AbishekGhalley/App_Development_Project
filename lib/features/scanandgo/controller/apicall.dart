@@ -1,8 +1,6 @@
 import 'package:http/http.dart' as http;
-import 'package:myekigai/features/scanandgo/controller/qr_controller.dart';
 import 'dart:convert';
 import 'VehicleClass.dart';
-import 'package:get/get.dart'; // Import the Vehicle class
 
 class ApiService {
   static Future<Vehicle> fetchData(String code) async {
