@@ -179,7 +179,7 @@ class _driverdetailsState extends State<driverdetails> {
                                 height: ScreenUtil().setHeight(50),
                                 width: ScreenUtil().setWidth(260),
                                 padding:
-                                    const EdgeInsets.symmetric(horizontal: 16,vertical: 5),
+                                    EdgeInsets.symmetric(horizontal: 16,vertical: ScreenUtil().setHeight(10)),
                                 decoration: const BoxDecoration(boxShadow: [
                                   BoxShadow(
                                     color: Color.fromRGBO(171, 171, 171, 0.25),
@@ -202,7 +202,7 @@ class _driverdetailsState extends State<driverdetails> {
                                       hintStyle: TextStyle(
                                           fontFamily: "Montserrat",
                                           fontWeight: FontWeight.w500,
-                                          fontSize: ScreenUtil().setSp(12))),
+                                          fontSize: ScreenUtil().setSp(13))),
                                 )),
                             const Spacer(),
                             Container(
