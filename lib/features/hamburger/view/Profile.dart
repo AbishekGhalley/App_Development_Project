@@ -99,8 +99,8 @@ class _ProfileState extends State<Profile> {
                           const Spacer(),
                           Container(
                             padding: EdgeInsets.all(ScreenUtil().setWidth(20)),
-                            child: const CircleAvatar(
-                              radius: 50.0,
+                            child: CircleAvatar(
+                              radius: ScreenUtil().setWidth(50),
                               backgroundImage: AssetImage(HamAssets.db),
                             ),
                           ),

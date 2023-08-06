@@ -177,9 +177,9 @@ class _driverdetailsState extends State<driverdetails> {
                           children: [
                             Container(
                                 height: ScreenUtil().setHeight(50),
-                                width: ScreenUtil().setWidth(300),
+                                width: ScreenUtil().setWidth(260),
                                 padding:
-                                    const EdgeInsets.symmetric(horizontal: 16),
+                                    const EdgeInsets.symmetric(horizontal: 16,vertical: 5),
                                 decoration: const BoxDecoration(boxShadow: [
                                   BoxShadow(
                                     color: Color.fromRGBO(171, 171, 171, 0.25),
@@ -194,7 +194,7 @@ class _driverdetailsState extends State<driverdetails> {
                                     blurRadius: 0,
                                   ),
                                 ]),
-                                alignment: Alignment.center,
+                                alignment: Alignment.centerLeft,
                                 child: TextField(
                                   decoration: InputDecoration(
                                       border: InputBorder.none,
@@ -209,7 +209,7 @@ class _driverdetailsState extends State<driverdetails> {
                               height: ScreenUtil().setWidth(28),
                               width: ScreenUtil().setWidth(28),
                               decoration: const BoxDecoration(
-                                  image: DecorationImage(
+                                  image: DecorationImage(fit: BoxFit.fitWidth,
                                       image: AssetImage(
                                           ShareRideAssets.antelephone))),
                             )
