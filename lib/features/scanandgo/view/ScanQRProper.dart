@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:myekigai/features/scanandgo/view/ScanGoVehicleDetails.dart';
 import 'package:myekigai/theme/pallete.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
+import 'package:permission_handler/permission_handler.dart';
 import '../../../constants/constants.dart';
 
 class ScanQRProper extends StatefulWidget {
@@ -15,6 +16,14 @@ class ScanQRProper extends StatefulWidget {
 }
 
 class _ScanQRProperState extends State<ScanQRProper> {
+  Future<void> requestPermission() async {
+    final permission = Permission.location;
+
+    if (await permission.isDenied) {
+      await permission.request();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     bool isScanned = false;
@@ -128,6 +137,17 @@ class _ScanQRProperState extends State<ScanQRProper> {
                             child: Container(
                               width: double.infinity,
                               color: Colors.white,
+                              child: Center(
+                                child: Text(
+                                  'If QR Doesn\'t work Please go back ad scan again.',
+                                  textAlign: TextAlign.center,
+                                  style: GoogleFonts.sen(
+                                    color: Pallete.textColor,
+                                    fontSize: 21,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
                         ],

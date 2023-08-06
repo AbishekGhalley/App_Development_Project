@@ -7,7 +7,7 @@ import 'package:myekigai/constants/constants.dart';
 import 'package:myekigai/features/SwapBatteries/view/swapBatteries.dart';
 import 'package:myekigai/features/homescreen/widget/ServiceIconWithText.dart';
 import 'package:myekigai/features/reservevehicle/View/reserve_vehicle_view.dart';
-import 'package:myekigai/features/scanandgo/view/ScanQR.dart';
+import 'package:myekigai/features/scanandgo/view/ScanQRProper.dart';
 import 'package:myekigai/features/shareride/view/shareridemap.dart';
 import 'package:myekigai/features/supercharge/view/vehicledetailssupercharge.dart';
 import 'package:myekigai/reusables/ControllerDrawer.dart';
@@ -20,7 +20,7 @@ class HomeScreen extends StatefulWidget {
   static route() {
     return PageRouteBuilder(
       pageBuilder: (context, animation, secondaryAnimation) =>
-      const HomeScreen(),
+          const HomeScreen(),
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         return SlideTransition(
           position: Tween<Offset>(
@@ -40,13 +40,13 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final ControllerDrawer controllerDrawer=Get.put(ControllerDrawer());
+  final ControllerDrawer controllerDrawer = Get.put(ControllerDrawer());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: Navbar(
-        scaffoldKey:controllerDrawer.scaffoldkey.value,
+        scaffoldKey: controllerDrawer.scaffoldkey.value,
       ),
       key: controllerDrawer.scaffoldkey.value,
       backgroundColor: Colors.black,
@@ -68,8 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ScreenUtil().setHeight(15),
                 left: ScreenUtil().setWidth(20),
                 right: ScreenUtil().setWidth(20),
-                child: CustomSearchBar(
-                ),
+                child: CustomSearchBar(),
               ),
               Positioned(
                 bottom: 0,
@@ -155,8 +154,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ServiceIconWithText(
                                         onPressed: () {
                                           Get.delete<ControllerDrawer>();
-                                          Get.to(() => ScanQR(),transition: Transition.rightToLeft,
-                                              duration: Duration(milliseconds: 500),
+                                          Get.to(() => ScanQRProper(),
+                                              transition:
+                                                  Transition.rightToLeft,
+                                              duration:
+                                                  Duration(milliseconds: 500),
                                               curve: Curves.linear);
                                         },
                                         icon: HomeAssets.imhomescango,
@@ -164,8 +166,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ServiceIconWithText(
                                         onPressed: () {
                                           Get.delete<ControllerDrawer>();
-                                          Get.to(() => ReserveVehicle(),transition: Transition.rightToLeft,
-                                              duration: Duration(milliseconds: 500),
+                                          Get.to(() => ReserveVehicle(),
+                                              transition:
+                                                  Transition.rightToLeft,
+                                              duration:
+                                                  Duration(milliseconds: 500),
                                               curve: Curves.linear);
                                         },
                                         icon: HomeAssets.imreserveVehicle,
@@ -184,8 +189,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ServiceIconWithText(
                                         onPressed: () {
                                           Get.delete<ControllerDrawer>();
-                                          Get.to(() => swapbatteries(),transition: Transition.rightToLeft,
-                                              duration: Duration(milliseconds: 500),
+                                          Get.to(() => swapbatteries(),
+                                              transition:
+                                                  Transition.rightToLeft,
+                                              duration:
+                                                  Duration(milliseconds: 500),
                                               curve: Curves.linear);
                                         },
                                         icon: HomeAssets.imswapbattery,
@@ -193,8 +201,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ServiceIconWithText(
                                         onPressed: () {
                                           Get.delete<ControllerDrawer>();
-                                          Get.to(() => details_supercharge(),transition: Transition.rightToLeft,
-                                              duration: Duration(milliseconds: 500),
+                                          Get.to(() => details_supercharge(),
+                                              transition:
+                                                  Transition.rightToLeft,
+                                              duration:
+                                                  Duration(milliseconds: 500),
                                               curve: Curves.linear);
                                         },
                                         icon: HomeAssets.imsupercharge,
@@ -202,8 +213,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ServiceIconWithText(
                                         onPressed: () {
                                           Get.delete<ControllerDrawer>();
-                                          Get.to(() => shareridemap(),transition: Transition.rightToLeft,
-                                              duration: Duration(milliseconds: 500),
+                                          Get.to(() => shareridemap(),
+                                              transition:
+                                                  Transition.rightToLeft,
+                                              duration:
+                                                  Duration(milliseconds: 500),
                                               curve: Curves.linear);
                                         },
                                         icon: HomeAssets.imshareRide,
