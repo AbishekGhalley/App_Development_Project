@@ -17,8 +17,8 @@ class ReferEarn extends StatelessWidget {
             height: double.infinity,
             child: Padding(
               padding: EdgeInsets.only(
-                  left: ScreenUtil().setWidth(25),
-                  right: ScreenUtil().setWidth(25),
+                  left: ScreenUtil().setWidth(20),
+                  right: ScreenUtil().setWidth(20),
                   top: ScreenUtil().setHeight(25)),
               child: Column(
                 children: [
