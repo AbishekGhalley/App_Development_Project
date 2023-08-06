@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:myekigai/features/auth/view/login_view4.dart';
 import 'package:myekigai/features/auth/widgets/auth_field_phoneno.dart';
 import 'package:myekigai/reusables/full_width_text.dart';
@@ -172,7 +173,9 @@ class _LoginView3State extends State<LoginView3> {
             child: CustomButton(
               text: "Proceed",
               onPressed: () {
-                Navigator.push(context, LoginView4.route());
+              Get.to(()=>LoginView4(),transition: Transition.rightToLeft,
+                  duration: Duration(milliseconds: 500),
+                  curve: Curves.linear);
               },
             ))
       ]),

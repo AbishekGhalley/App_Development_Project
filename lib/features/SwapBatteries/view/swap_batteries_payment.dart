@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myekigai/constants/constants.dart';
 import 'package:myekigai/features/homescreen/view/home_view.dart';
 import 'package:myekigai/reusables/TopAppbar.dart';
@@ -23,18 +24,18 @@ class _PaymentScreenState extends State<PaymentScreen> {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 16),
-            const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
+            SizedBox(height: ScreenUtil().setHeight(16)),
+             Padding(
+                padding: EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(20)),
                 child: Text(
                   'Choose the mode of payment.',
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: ScreenUtil().setSp(16),
                     fontFamily: "Montserrat",
                     color: Pallete.geryColor,
                   ),
                 )),
-            SizedBox(height: 16),
+            SizedBox(height: ScreenUtil().setHeight(16)),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: Row(
@@ -44,7 +45,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   Text(
                     'eKI - wallet',
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize:  ScreenUtil().setSp(20),
                       fontWeight: FontWeight.w500,
                       fontFamily: "Montserrat",
                     ),
@@ -52,9 +53,9 @@ class _PaymentScreenState extends State<PaymentScreen> {
                 ],
               ),
             ),
-            SizedBox(height: 16),
+            SizedBox(height: ScreenUtil().setHeight(16)),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: EdgeInsets.symmetric(horizontal:  ScreenUtil().setWidth(20)),
               child: Divider(
                 height: 1,
                 thickness: 1,
@@ -62,7 +63,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
               ),
             ),
             Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10),
+                padding: EdgeInsets.symmetric(horizontal:ScreenUtil().setWidth(10)),
                 child: ListTile(
                   contentPadding: EdgeInsets.zero,
                   leading: Radio<int>(
@@ -78,22 +79,22 @@ class _PaymentScreenState extends State<PaymentScreen> {
                     children: [
                       Image.asset(
                         GlobalAssets.angooglepay,
-                        width: 25,
-                        height: 25,
+                        width: ScreenUtil().setWidth(25),
+                        height:  ScreenUtil().setWidth(25),
                       ),
-                      SizedBox(width: 10),
+                      SizedBox(width:  ScreenUtil().setWidth(10)),
                       Text(
                         'Google Play',
                         style: TextStyle(
                             fontFamily: "Montserrat",
                             fontWeight: FontWeight.w500,
-                            fontSize: 21),
+                            fontSize:  ScreenUtil().setSp(21)),
                       ),
                     ],
                   ),
                 )),
             Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10),
+                padding: EdgeInsets.symmetric(horizontal:  ScreenUtil().setWidth(10)),
                 child: ListTile(
                   contentPadding: EdgeInsets.zero,
                   leading: Radio<int>(
@@ -109,20 +110,20 @@ class _PaymentScreenState extends State<PaymentScreen> {
                     children: [
                       Image.asset(
                         GlobalAssets.anphonepay,
-                        width: 25,
-                        height: 25,
+                        width:  ScreenUtil().setWidth(25),
+                        height:  ScreenUtil().setWidth(25),
                       ),
-                      SizedBox(width: 10),
+                      SizedBox(width: ScreenUtil().setWidth(10)),
                       Text('Phone Pe',
                           style: TextStyle(
                               fontFamily: "Montserrat",
                               fontWeight: FontWeight.w500,
-                              fontSize: 21)),
+                              fontSize: ScreenUtil().setSp(21))),
                     ],
                   ),
                 )),
             Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10),
+                padding: EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(10)),
                 child: ListTile(
                   contentPadding: EdgeInsets.zero,
                   leading: Radio<int>(
@@ -138,15 +139,15 @@ class _PaymentScreenState extends State<PaymentScreen> {
                     children: [
                       Image.asset(
                         GlobalAssets.anupi,
-                        width: 25,
-                        height: 25,
+                        width:  ScreenUtil().setWidth(25),
+                        height:  ScreenUtil().setWidth(25),
                       ),
-                      SizedBox(width: 10),
+                      SizedBox(width: ScreenUtil().setWidth(10)),
                       Text('UPI',
                           style: TextStyle(
                               fontFamily: "Montserrat",
                               fontWeight: FontWeight.w500,
-                              fontSize: 21)),
+                              fontSize: ScreenUtil().setSp(21))),
                     ],
                   ),
                 )),
@@ -155,7 +156,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
               child: Column(
                 children: [
                   Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 16),
+                      padding: EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(16)),
                       child: Column(children: [
                         Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -166,7 +167,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                                     fontFamily: "Montserrat",
                                     color: Pallete.geryColor,
                                     fontWeight: FontWeight.w500,
-                                    fontSize: 16),
+                                    fontSize: ScreenUtil().setSp(16)),
                               ),
                               Text(
                                 '\₹10.00',
@@ -174,7 +175,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                                     fontFamily: "Sen",
                                     color: Color(0xFF494949),
                                     fontWeight: FontWeight.w400,
-                                    fontSize: 16),
+                                    fontSize: ScreenUtil().setSp(16)),
                               )
                             ]),
                         Row(
@@ -194,17 +195,17 @@ class _PaymentScreenState extends State<PaymentScreen> {
                                   fontFamily: "Sen",
                                   color: Color(0xFF494949),
                                   fontWeight: FontWeight.w400,
-                                  fontSize: 16),
+                                  fontSize: ScreenUtil().setSp(16)),
                             ),
                           ],
                         ),
-                        SizedBox(height: 10.0),
+                        SizedBox(height: ScreenUtil().setHeight(10)),
                         Divider(
                           height: 1,
                           thickness: 1,
                           color: Pallete.partitionlineColor,
                         ),
-                        SizedBox(height: 10.0),
+                        SizedBox(height: ScreenUtil().setHeight(10)),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -214,7 +215,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                                   fontFamily: "Montserrat",
                                   color: Pallete.geryColor,
                                   fontWeight: FontWeight.w500,
-                                  fontSize: 20),
+                                  fontSize:ScreenUtil().setSp(20)),
                             ),
                             Text(
                               '\₹11.00',
@@ -222,12 +223,12 @@ class _PaymentScreenState extends State<PaymentScreen> {
                                   fontFamily: "Sen",
                                   color: Pallete.textColor,
                                   fontWeight: FontWeight.w700,
-                                  fontSize: 21),
+                                  fontSize: ScreenUtil().setSp(21)),
                             ),
                           ],
                         )
                       ])),
-                  SizedBox(height: 10.0),
+                  SizedBox(height: ScreenUtil().setHeight(10)),
                   CustomButton(
                     text: "Continue",
                     onPressed: () {
@@ -237,7 +238,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                               builder: (context) => HomeScreen()));
                     },
                   ),
-                  SizedBox(height: 16.0),
+                  SizedBox(height: ScreenUtil().setHeight(16)),
                 ],
               ),
             ),

@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:myekigai/Authentication_repo/authentication.dart';
 import 'package:myekigai/features/auth/view/login_view.dart';
+import 'package:myekigai/features/splash/splashscreen.dart';
 import 'package:myekigai/firebase_options.dart';
 import 'package:myekigai/theme/theme.dart';
 
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',
           theme: AppTheme.theme,
-          home: LoginView(),
+          home: SplashScreen(),
         );
       },
     );

@@ -13,7 +13,7 @@ class LoginView1 extends StatefulWidget {
   static route() {
     return PageRouteBuilder(
       pageBuilder: (context, animation, secondaryAnimation) =>
-          const LoginView1(),
+      const LoginView1(),
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         return SlideTransition(
           position: Tween<Offset>(
@@ -36,7 +36,7 @@ class _LoginView1State extends State<LoginView1> {
   final controller = Get.put(SignUpController());
   final _formKey = GlobalKey<FormState>();
 
-  @override
+   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SizedBox(
@@ -81,7 +81,9 @@ class _LoginView1State extends State<LoginView1> {
                     if (_formKey.currentState!.validate()) {
                       SignUpController.instance.phoneAuthentication(
                           "+91" + controller.phoneNumber.text.trim());
-                      Get.to(() => LoginView2());
+                      Get.to(() => LoginView2(),transition: Transition.rightToLeft,
+                          duration: Duration(milliseconds: 500),
+                          curve: Curves.linear);
                     }
                   },
                 ),

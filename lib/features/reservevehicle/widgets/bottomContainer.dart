@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -29,7 +30,7 @@ class _BottomWidgetState extends State<BottomWidget> {
             bottom: 0,
             child: Container(
                 width: MediaQuery.of(context).size.width,
-                padding: const EdgeInsets.all(10),
+                padding: EdgeInsets.all(ScreenUtil().setWidth(10)),
                 decoration: const BoxDecoration(color: Colors.white),
                 child: Column(
                   children: [
@@ -64,7 +65,7 @@ class _BottomWidgetState extends State<BottomWidget> {
                     ),
                     // ignore: prefer_const_constructors
                     SizedBox(
-                      height: 16,
+                      height: ScreenUtil().setHeight(16),
                     )
                   ],
                 )),
@@ -90,7 +91,7 @@ class BottomWidget2 extends StatelessWidget {
           left: 0,
           right: 0,
           child: Container(
-              height: 260,
+              height: ScreenUtil().setHeight(320),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: const BorderRadius.only(
@@ -113,14 +114,14 @@ class BottomWidget2 extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      const SizedBox(
-                        width: 20,
+                      SizedBox(
+                        width: ScreenUtil().setWidth(20),
                       ),
                       Text('Station Details',
                           style: GoogleFonts.sen(
                             color: Pallete.textColor,
                             fontWeight: FontWeight.w400,
-                            fontSize: 20,
+                            fontSize: ScreenUtil().setSp(20),
                           )),
                       IconButton(
                           onPressed: () {},
@@ -130,13 +131,16 @@ class BottomWidget2 extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const SizedBox(
-                        width: 20,
+                      SizedBox(
+                        width: ScreenUtil().setWidth(20),
                       ),
-                      const Image(width: 180,height: 120,fit: BoxFit.contain,
+                      Image(
+                          width: ScreenUtil().setWidth(180),
+                          height: ScreenUtil().setHeight(120),
+                          fit: BoxFit.contain,
                           image: AssetImage(ReserveVehicleAssets.stationImage)),
-                      const SizedBox(
-                        width: 20,
+                      SizedBox(
+                        width: ScreenUtil().setWidth(20),
                       ),
                       Column(
                         //right column with texts starting sector 19
@@ -148,7 +152,7 @@ class BottomWidget2 extends StatelessWidget {
                               style: GoogleFonts.montserrat(
                                 color: Pallete.textColor,
                                 fontWeight: FontWeight.w500,
-                                fontSize: 20,
+                                fontSize: ScreenUtil().setSp(20),
                               )),
                           const SizedBox(
                             height: 4,
@@ -159,7 +163,7 @@ class BottomWidget2 extends StatelessWidget {
                             style: GoogleFonts.montserrat(
                               color: const Color.fromRGBO(9, 171, 229, 1),
                               fontWeight: FontWeight.w500,
-                              fontSize: 12,
+                              fontSize: ScreenUtil().setSp(12),
                             ),
                           ),
                           const SizedBox(
@@ -170,7 +174,7 @@ class BottomWidget2 extends StatelessWidget {
                               style: GoogleFonts.montserrat(
                                 color: Pallete.textColor,
                                 fontWeight: FontWeight.w500,
-                                fontSize: 16,
+                                fontSize: ScreenUtil().setSp(16),
                               )),
                           const SizedBox(
                             height: 2,
@@ -185,41 +189,47 @@ class BottomWidget2 extends StatelessWidget {
                                   SvgPicture.asset(
                                     ReserveVehicleAssets
                                         .imheart, // Replace with your SVG asset path
-                                    height: 22, // Set the height of the SVG
+                                    height: ScreenUtil().setHeight(
+                                        22), // Set the height of the SVG
                                     // Set the width of the SVG
                                   ),
                                 ],
                               ),
-                              const SizedBox(
-                                width: 10,
+                              SizedBox(
+                                width: ScreenUtil().setWidth(10),
                               ),
                               SvgPicture.asset(
                                 ReserveVehicleAssets
                                     .imshareInReserveVehicle, // Replace with your SVG asset path
-                                height: 24, // Set the height of the SVG
+                                height: ScreenUtil()
+                                    .setHeight(24), // Set the height of the SVG
                                 // Set the width of the SVG
                               ),
                             ],
                           ),
-                          const SizedBox(
-                            height: 30,
+                          SizedBox(
+                            height: ScreenUtil().setHeight(30),
                           ),
                         ],
                       ),
-                      const SizedBox(
-                        width: 20,
+                      SizedBox(
+                        width: ScreenUtil().setWidth(20),
                       ),
                     ],
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
+                  Spacer(),
                   CustomButton(
                     text: "Continue",
                     onPressed: () {
                       Get.delete<ControllerDrawer>();
-                      Get.to(()=>VehicleListView());
+                      Get.to(() => VehicleListView(),
+                          transition: Transition.rightToLeft,
+                          duration: Duration(milliseconds: 500),
+                          curve: Curves.linear);
                     },
+                  ),
+                  SizedBox(
+                    height: ScreenUtil().setHeight(10),
                   ),
                 ],
               )),

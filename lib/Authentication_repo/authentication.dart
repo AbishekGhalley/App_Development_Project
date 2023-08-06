@@ -1,15 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/animation.dart';
 import 'package:get/get.dart';
 import 'package:myekigai/features/auth/view/login_view.dart';
-import 'package:myekigai/features/auth/view/login_view1.dart';
-import 'package:myekigai/features/auth/view/login_view2.dart';
-import 'package:myekigai/features/auth/view/login_view3.dart';
-import 'package:myekigai/features/auth/view/login_view4.dart';
 import 'package:myekigai/features/homescreen/view/home_view.dart';
-import 'package:myekigai/features/onboarding/view/onboarding.dart';
-import 'package:myekigai/features/shareride/view/recentlocal.dart';
-import 'package:myekigai/features/shareride/view/shareridemap.dart';
-
+import 'package:myekigai/features/splash/splashscreen.dart';
 
 class Authentication extends GetxController {
   static Authentication get instance => Get.find();
@@ -24,9 +18,13 @@ class Authentication extends GetxController {
     ever(firebaseUser, _setInitialScreen);
   }
 
-  _setInitialScreen(User? user) {
+  _setInitialScreen(User? user) async {
+    await Future.delayed(Duration(milliseconds: 1500), () {});
     user == null
-        ? Get.offAll(() => LoginView())
+        ? Get.offAll(() => LoginView(),
+            transition: Transition.rightToLeft,
+            duration: Duration(milliseconds: 300),
+            curve: Curves.linear)
         : Get.offAll(() => HomeScreen());
   }
 
