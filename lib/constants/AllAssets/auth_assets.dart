@@ -6,7 +6,7 @@ class AuthAssets {
   //variables for auth assets
   //Svgs
   static const String signUpHome = "$_AuthSvgPath/scanAndGo.svg";
-  static const String permission = "$_AuthSvgPath/An_on_shareride.svg";
+  static const String permission = "$_AuthSvgPath/shareride.svg";
 
   //Pngs
 }

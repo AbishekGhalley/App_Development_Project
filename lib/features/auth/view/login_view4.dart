@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:myekigai/constants/constants.dart';
 import 'package:myekigai/features/onboarding/view/onboarding.dart';
 import 'package:myekigai/reusables/full_width_text.dart';
@@ -42,35 +44,39 @@ class _LoginView4State extends State<LoginView4> {
             Expanded(
               child: SvgPicture.asset(
                 AuthAssets.permission,
-                width: double.infinity,
-                fit: BoxFit.cover,
+                width: ScreenUtil().setWidth(310),
+                height: ScreenUtil().setHeight(265),
+                fit: BoxFit.fitWidth,
               ),
             ),
-            const SizedBox(height: 40),
-            const FullWidthTextWidget(
+            SizedBox(height: ScreenUtil().setHeight(40)),
+            FullWidthTextWidget(
               text: "Location permission not enabled",
+              fontSize: ScreenUtil().setSp(18),
+              horizontalPadding: ScreenUtil().setWidth(20),
             ),
-            const SizedBox(height: 20),
-            const FullWidthTextWidget(
-              text:
-                  "Sharing location helps us locate you nearest eKI-zones and enhance your ride experience.",
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
-              textColor: Pallete.geryColor,
-              horizontalPadding: 40,
-            ),
+            SizedBox(height: ScreenUtil().setHeight(20)),
+            FullWidthTextWidget(
+                text:
+                    "Sharing location helps us locate you nearest eKI-zones and enhance your ride experience.",
+                fontSize: ScreenUtil().setSp(16),
+                fontWeight: FontWeight.w500,
+                textColor: Pallete.geryColor,
+                horizontalPadding: ScreenUtil().setWidth(40)),
             Expanded(
               child: Align(
                 alignment: Alignment.bottomCenter,
                 child: CustomButton(
                   text: "Allow Permission",
                   onPressed: () {
-                    Navigator.push(context, Onboarding.route());
+                   Get.to(()=>Onboarding(),transition: Transition.rightToLeft,
+                       duration: Duration(milliseconds: 500),
+                       curve: Curves.linear);
                   },
                 ),
               ),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: ScreenUtil().setHeight(20)),
           ],
         ),
       ),

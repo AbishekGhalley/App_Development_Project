@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myekigai/constants/constants.dart';
 import 'package:myekigai/reusables/TopAppbar.dart';
 import 'package:myekigai/reusables/btn.dart';
@@ -15,7 +16,7 @@ class Wallet extends StatelessWidget {
           children: [
             Container(
               width: double.infinity,
-              height: 155,
+              height: ScreenUtil().setHeight(155),
               decoration: const BoxDecoration(
                 color: Color(0xFFD6FDCC),
                 boxShadow: [
@@ -27,7 +28,7 @@ class Wallet extends StatelessWidget {
                   )
                 ],
               ),
-              child: const Column(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -36,7 +37,7 @@ class Wallet extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Pallete.textColor,
-                      fontSize: 16,
+                      fontSize: ScreenUtil().setSp(16),
                       fontFamily: 'Montserrat',
                       fontWeight: FontWeight.w500,
                     ),
@@ -46,7 +47,7 @@ class Wallet extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Pallete.textColor,
-                      fontSize: 36,
+                      fontSize: ScreenUtil().setSp(36),
                       fontFamily: 'Sen',
                       fontWeight: FontWeight.w700,
                     ),
@@ -54,11 +55,12 @@ class Wallet extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(
-              height: 20,
+            SizedBox(
+              height: ScreenUtil().setHeight(20),
             ),
             Container(
-              margin: const EdgeInsets.symmetric(horizontal: 25),
+              margin:
+                  EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(25)),
               decoration: const BoxDecoration(boxShadow: [
                 BoxShadow(
                   color: Color.fromRGBO(171, 171, 171, 0.25),
@@ -75,13 +77,13 @@ class Wallet extends StatelessWidget {
               ]),
               child: ListTile(
                 leading: Image.asset(HamAssets.flash),
-                title: const Row(
+                title: Row(
                   children: [
                     Text(
                       '20 eKIbits  ',
                       style: TextStyle(
                         color: Color(0xFF1C1C1C),
-                        fontSize: 16,
+                        fontSize: ScreenUtil().setSp(16),
                         fontFamily: 'Sen',
                         fontWeight: FontWeight.w400,
                       ),
@@ -89,27 +91,28 @@ class Wallet extends StatelessWidget {
                     Icon(
                       Icons.info_outline,
                       color: Colors.grey,
-                      size: 20,
+                      size: ScreenUtil().setWidth(20),
                     ),
                   ],
                 ),
-                trailing: const Text(
+                trailing: Text(
                   'Convert',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Color(0xFF066AE0),
-                    fontSize: 16,
+                    fontSize: ScreenUtil().setSp(16),
                     fontFamily: 'Sen',
                     fontWeight: FontWeight.w400,
                   ),
                 ),
               ),
             ),
-            const SizedBox(
-              height: 20,
+            SizedBox(
+              height: ScreenUtil().setHeight(20),
             ),
             Container(
-              margin: const EdgeInsets.symmetric(horizontal: 25),
+              margin:
+                  EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(25)),
               decoration: const BoxDecoration(boxShadow: [
                 BoxShadow(
                   color: Color.fromRGBO(171, 171, 171, 0.25),
@@ -126,11 +129,11 @@ class Wallet extends StatelessWidget {
               ]),
               child: ListTile(
                 leading: Image.asset(HamAssets.transaction),
-                title: const Text(
+                title: Text(
                   'Transaction History',
                   style: TextStyle(
                     color: Color(0xFF1C1C1C),
-                    fontSize: 16,
+                    fontSize: ScreenUtil().setSp(16),
                     fontFamily: 'Sen',
                     fontWeight: FontWeight.w400,
                   ),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:myekigai/features/auth/view/login_view4.dart';
-import 'package:myekigai/features/auth/widgets/auth_field.dart';
+import 'package:myekigai/features/auth/widgets/auth_field_phoneno.dart';
 import 'package:myekigai/reusables/full_width_text.dart';
 import 'package:myekigai/reusables/btn.dart';
 import 'package:myekigai/theme/pallete.dart';
@@ -41,61 +43,62 @@ class _LoginView3State extends State<LoginView3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SizedBox(
-        height: double.infinity,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+      body: Column(mainAxisSize: MainAxisSize.max, children: [
+        Expanded(
+            child: ListView(
           children: [
-            const SizedBox(height: 80),
-            const FullWidthTextWidget(
+            SizedBox(height: ScreenUtil().setHeight(80)),
+            FullWidthTextWidget(
               text: "Let’s know you...",
-              fontSize: 20,
+              fontSize: ScreenUtil().setSp(20),
               textAlign: TextAlign.left,
-              horizontalPadding: 30,
+              horizontalPadding: ScreenUtil().setWidth(30),
             ),
-            const SizedBox(height: 10),
-            const FullWidthTextWidget(
+            SizedBox(height: ScreenUtil().setHeight(10)),
+            FullWidthTextWidget(
               text:
                   "Fill in your personal details to help us connect to you better",
-              fontSize: 15,
+              fontSize: ScreenUtil().setSp(15),
               fontWeight: FontWeight.w500,
               textAlign: TextAlign.left,
               textColor: Pallete.geryColor,
-              horizontalPadding: 30,
+              horizontalPadding: ScreenUtil().setWidth(30),
             ),
-            const SizedBox(height: 40),
-            const FullWidthTextWidget(
+            SizedBox(height: ScreenUtil().setHeight(40)),
+            FullWidthTextWidget(
               text: "Name*",
-              fontSize: 15,
+              fontSize: ScreenUtil().setSp(15),
               fontWeight: FontWeight.w500,
               textAlign: TextAlign.left,
               textColor: Pallete.geryColor,
-              horizontalPadding: 35,
+              horizontalPadding: ScreenUtil().setWidth(35),
             ),
-            const SizedBox(height: 10),
-            Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 30),
+            SizedBox(height: ScreenUtil().setHeight(10)),
+            Container(
+                padding:
+                    EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(30)),
                 child: Column(
                   children: [
                     AuthField(
                         controller: phoneNumber,
                         hintText: 'ex - Kshitij Singh'),
-                    const SizedBox(
-                      height: 20,
+                    SizedBox(
+                      height: ScreenUtil().setHeight(10),
                     )
                   ],
                 )),
-            const FullWidthTextWidget(
+            FullWidthTextWidget(
               text: "Gender*",
-              fontSize: 15,
+              fontSize: ScreenUtil().setSp(15),
               fontWeight: FontWeight.w500,
               textAlign: TextAlign.left,
               textColor: Pallete.geryColor,
-              horizontalPadding: 35,
+              horizontalPadding: ScreenUtil().setWidth(35),
             ),
-            const SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
+            SizedBox(height: ScreenUtil().setHeight(10)),
+            Container(
+              padding:
+                  EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(30)),
               child: DropdownButtonFormField(
                 decoration: InputDecoration(
                   focusedBorder: OutlineInputBorder(
@@ -110,7 +113,9 @@ class _LoginView3State extends State<LoginView3> {
                         color: Pallete.primaryColor,
                         width: 1,
                       )),
-                  contentPadding: const EdgeInsets.all(15),
+                  contentPadding: EdgeInsets.symmetric(
+                      horizontal: ScreenUtil().setWidth(15),
+                      vertical: ScreenUtil().setHeight(15)),
                 ),
                 value: _value,
                 items: const [
@@ -127,56 +132,53 @@ class _LoginView3State extends State<LoginView3> {
                     value: "2",
                   ),
                   DropdownMenuItem(
-                    child: Text("Transgender"),
+                    child: Text("Other"),
                     value: "3",
-                  ),
-                  DropdownMenuItem(
-                    child: Text("Bisexual"),
-                    value: "4",
                   ),
                 ],
                 onChanged: (v) {},
               ),
             ),
-            const SizedBox(
-              height: 20,
+            SizedBox(
+              height: ScreenUtil().setHeight(20),
             ),
-            const FullWidthTextWidget(
+            FullWidthTextWidget(
               text: "Email id*",
-              fontSize: 15,
+              fontSize: ScreenUtil().setSp(15),
               fontWeight: FontWeight.w500,
               textAlign: TextAlign.left,
               textColor: Pallete.geryColor,
-              horizontalPadding: 35,
+              horizontalPadding: ScreenUtil().setWidth(35),
             ),
-            const SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
+            SizedBox(height: ScreenUtil().setHeight(10)),
+            Container(
+              padding:
+                  EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(30)),
               child: Column(
                 children: [
                   AuthField(
                       controller: phoneNumber, hintText: 'ex - xyz@gmail.com'),
-                  const SizedBox(
-                    height: 20,
+                  SizedBox(
+                    height: ScreenUtil().setWidth(20),
                   )
                 ],
               ),
             ),
-            Expanded(
-              child: Align(
-                alignment: Alignment.bottomCenter,
-                child: CustomButton(
-                  text: "Proceed",
-                  onPressed: () {
-                    Navigator.push(context, LoginView4.route());
-                  },
-                ),
-              ),
-            ),
-            const SizedBox(height: 20),
           ],
-        ),
-      ),
+        )),
+        Container(
+            padding: EdgeInsets.symmetric(
+                horizontal: ScreenUtil().setWidth(15),
+                vertical: ScreenUtil().setHeight(20)),
+            child: CustomButton(
+              text: "Proceed",
+              onPressed: () {
+              Get.to(()=>LoginView4(),transition: Transition.rightToLeft,
+                  duration: Duration(milliseconds: 500),
+                  curve: Curves.linear);
+              },
+            ))
+      ]),
 
       // Other Scaffold properties and widgets
     );

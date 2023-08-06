@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myekigai/theme/pallete.dart';
+
 class Helpbtn extends StatelessWidget {
   final String btnimage;
   final String btntext;
@@ -9,8 +11,8 @@ class Helpbtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 165,
-      height: 110,
+        width: ScreenUtil().setWidth(175),
+        height: MediaQuery.of(context).size.height*0.16,
         alignment: Alignment.center,
         decoration: const BoxDecoration(boxShadow: [
           BoxShadow(
@@ -26,27 +28,30 @@ class Helpbtn extends StatelessWidget {
             blurRadius: 0,
           ),
         ]),
-        child: Expanded(child: TextButton(
-            onPressed: () {},
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  height: 55,
-                  width: 55,
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage(btnimage), fit: BoxFit.cover)),
-                ),
-                const SizedBox(height: 10,),
-                Text(btntext,
-                style:const TextStyle(
-                  color: Pallete.textColor,
-                  fontFamily:"Sen",
-                  fontSize: 21,
-                  fontWeight: FontWeight.w400
-                ),)
-              ],
-            ))));
+        child: Expanded(
+            child: TextButton(
+                onPressed: () {},
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      btnimage,
+                      height: ScreenUtil().setWidth(55),
+                      width: ScreenUtil().setWidth(55),
+                      fit: BoxFit.contain,
+                    ),
+                    SizedBox(
+                      height: ScreenUtil().setHeight(10),
+                    ),
+                    Text(
+                      btntext,
+                      style: TextStyle(
+                          color: Pallete.textColor,
+                          fontFamily: "Sen",
+                          fontSize: ScreenUtil().setSp(21),
+                          fontWeight: FontWeight.w400),
+                    )
+                  ],
+                ))));
   }
 }

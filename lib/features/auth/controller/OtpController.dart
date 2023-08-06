@@ -8,6 +8,6 @@ class OtpController extends GetxController{
 
   void verifyOtp(String otp)async{
   var isVerified= await Authentication.instance.verifyOtp(otp);
-  isVerified?Get.offAll(()=>HomeScreen()):Get.back();
+  if(isVerified==false){Get.back();};
   }
 }

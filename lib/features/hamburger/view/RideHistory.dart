@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myekigai/constants/constants.dart';
 import 'package:myekigai/features/hamburger/widgets/TwoDots.dart';
 import 'package:myekigai/reusables/TopAppbar.dart';
@@ -12,11 +13,11 @@ class RideHistory extends StatelessWidget {
     return Scaffold(
       appBar: TopAppbar(toptitle: "Ride History"),
       body: ListView(
-        padding: const EdgeInsets.all(20.0),
+        padding: EdgeInsets.all(ScreenUtil().setHeight(20)),
         children: [
           Container(
-            height: 100,
-            width: 400,
+            height: ScreenUtil().setHeight(100),
+            width: ScreenUtil().setWidth(400),
             decoration: const BoxDecoration(
               borderRadius: BorderRadius.only(
                   topRight: Radius.circular(10.0),
@@ -29,21 +30,21 @@ class RideHistory extends StatelessWidget {
           ),
           _buildRideHistoryEntry('Shared Ride', 'Rohini 19 Eki-Zone',
               'Connaught Place Eki-Zone', '₹80 | 27 July 2023, 10:45 am', true),
-          const SizedBox(height: 20.0),
+          SizedBox(height: ScreenUtil().setHeight(20)),
           _buildRideHistoryEntry(
               'Scan and Go',
               'Rohini 19 Eki-Zone',
               'Connaught Place Eki-Zone',
               '₹80 | 27 July 2023, 10:45 am',
               false),
-          const SizedBox(height: 20.0),
+          SizedBox(height: ScreenUtil().setHeight(20)),
           _buildRideHistoryEntry(
               'Buddy',
               'Rohini 19 Eki-Zone',
               'Connaught Place Eki-Zone',
               '₹80 | 27 July 2023, 10:45 am',
               false),
-          const SizedBox(height: 20.0),
+          SizedBox(height: ScreenUtil().setHeight(20)),
           _buildRideHistoryEntry(
               'Scan and Go',
               'Rohini 19 Eki-Zone',
@@ -77,8 +78,8 @@ class RideHistory extends StatelessWidget {
         children: [
           Container(
             padding: const EdgeInsets.only(left: 12.0),
-            width: 400,
-            height: 20,
+            width:  ScreenUtil().setWidth(400),
+            height:  ScreenUtil().setHeight(20),
             decoration: ShapeDecoration(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.only(
@@ -90,37 +91,37 @@ class RideHistory extends StatelessWidget {
             ),
             child: Text(
               title,
-              style: const TextStyle(
+              style:  TextStyle(
                 color: Color(0xFF1C1C1C),
-                fontSize: 12,
+                fontSize:  ScreenUtil().setSp(12),
                 fontFamily: 'Montserrat',
                 fontWeight: FontWeight.w500,
               ),
             ),
           ),
-          const SizedBox(height: 8.0),
+          SizedBox(height:  ScreenUtil().setHeight(8),),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(width: 8.0),
-              SizedBox(height: 42, width: 25, child: TwoDots()),
+              SizedBox(width:  ScreenUtil().setWidth(8)),
+              SizedBox(height: ScreenUtil().setHeight(42), width: ScreenUtil().setWidth(25), child: TwoDots()),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     origin,
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: Pallete.textColor,
-                      fontSize: 15,
+                      fontSize: ScreenUtil().setSp(15),
                       fontFamily: 'Montserrat',
                       fontWeight: FontWeight.w500,
                     ),
                   ),
                   Text(
                     destination,
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: Color(0xFF1C1C1C),
-                      fontSize: 15,
+                      fontSize: ScreenUtil().setSp(15),
                       fontFamily: 'Montserrat',
                       fontWeight: FontWeight.w500,
                     ),
@@ -129,22 +130,22 @@ class RideHistory extends StatelessWidget {
               )
             ],
           ),
-          const SizedBox(height: 8.0),
+           SizedBox(height: ScreenUtil().setHeight(8)),
           Row(
             children: [
-              const SizedBox(width: 15.0),
+               SizedBox(width: ScreenUtil().setWidth(15)),
               Text(
                 details,
-                style: const TextStyle(
+                style: TextStyle(
                   color: Color(0xFF9C9C9C),
-                  fontSize: 16,
+                  fontSize: ScreenUtil().setSp(16),
                   fontFamily: 'Montserrat',
                   fontWeight: FontWeight.w500,
                 ),
               ),
             ],
           ),
-          const SizedBox(height: 8.0),
+          SizedBox(height: ScreenUtil().setHeight(8)),
         ],
       ),
     );

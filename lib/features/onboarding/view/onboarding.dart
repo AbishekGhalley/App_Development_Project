@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:myekigai/features/auth/view/login_view.dart';
-import 'package:myekigai/reusables/Navbar.dart';
+import 'package:get/get.dart';
 import 'package:myekigai/features/homescreen/view/home_view.dart';
-import 'package:myekigai/reusables/key_navbar.dart';
 import 'content_model.dart';
 import 'package:myekigai/theme/pallete.dart';
 
@@ -61,12 +60,19 @@ class _OnboardingState extends State<Onboarding> {
               },
               itemBuilder: (_, i) {
                 return Padding(
-                  padding: const EdgeInsets.all(20),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: ScreenUtil().setWidth(20),
+                      vertical: ScreenUtil().setHeight(20)),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Expanded(
-                        child:SvgPicture.asset(contents[i].image),)
+                        child: SvgPicture.asset(
+                          contents[i].image,
+                          width: ScreenUtil().setWidth(380),
+                          height: ScreenUtil().setWidth(380),
+                        ),
+                      )
                     ],
                   ),
                 );
@@ -74,18 +80,18 @@ class _OnboardingState extends State<Onboarding> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: EdgeInsets.all(ScreenUtil().setWidth(16)),
             child: Container(
-              height: 80,
+              height: ScreenUtil().setHeight(80),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   if (currentIndex >= 0)
                     TextButton(
-                      child: const Text(
+                      child: Text(
                         "Prev",
                         style: TextStyle(
-                          fontSize: 16,
+                          fontSize: ScreenUtil().setSp(16),
                           fontFamily: "Montserrat",
                           color: Pallete.textColor,
                           fontWeight: FontWeight.w500,
@@ -108,8 +114,8 @@ class _OnboardingState extends State<Onboarding> {
                   TextButton(
                     child: Text(
                       currentIndex == contents.length - 1 ? "Done" : "Next",
-                      style: const TextStyle(
-                        fontSize: 16,
+                      style: TextStyle(
+                        fontSize: ScreenUtil().setSp(16),
                         fontFamily: "Montserrat",
                         color: Pallete.textColor,
                         fontWeight: FontWeight.w500,
@@ -117,7 +123,9 @@ class _OnboardingState extends State<Onboarding> {
                     ),
                     onPressed: () {
                       if (currentIndex == contents.length - 1) {
-                        Navigator.push(context, HomeScreen.route());
+                       Get.to(()=>HomeScreen(),transition: Transition.rightToLeft,
+                           duration: Duration(milliseconds: 500),
+                           curve: Curves.linear);
                       } else {
                         _controller.nextPage(
                           duration: const Duration(milliseconds: 300),

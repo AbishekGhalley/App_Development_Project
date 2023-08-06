@@ -1,28 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myekigai/theme/pallete.dart';
 
 class AuthField extends StatelessWidget {
   final TextEditingController controller;
   String? hintText;
 
-  AuthField({
-    Key? key,
-    required this.controller,
-    this.hintText=""
-  }) : super(key: key);
+  AuthField({Key? key, required this.controller, this.hintText = ""})
+      : super(key: key);
 
   String? _validatePhoneNumber(String? value) {
     if (value == null || value.isEmpty) {
       return 'Phone number is required.';
     }
-
-    // Modify the phone number validation logic as per your requirement
-    // Here, we are checking if the input contains only digits and has a length of 10.
     if (!RegExp(r'^\d{10}$').hasMatch(value)) {
       return 'Please enter a valid 10-digit phone number.';
     }
 
-    return null; // Return null if the input is valid.
+    return null;
   }
 
   @override
@@ -46,10 +41,12 @@ class AuthField extends StatelessWidget {
             width: 1,
           ),
         ),
-        contentPadding: const EdgeInsets.all(15),
+        contentPadding: EdgeInsets.symmetric(
+            horizontal: ScreenUtil().setWidth(15),
+            vertical: ScreenUtil().setWidth(15)),
         hintText: ' Enter your Phone Number',
-        hintStyle: const TextStyle(
-          fontSize: 16,
+        hintStyle: TextStyle(
+          fontSize: ScreenUtil().setSp(16),
         ),
         prefixText: "+91 |", // Display the prefix "+91" in the input field.
       ),
