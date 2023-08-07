@@ -87,25 +87,25 @@ flutter:
   assets:
     - assets/splash/svgs/
     - assets/auth/svgs/
-    - assets/auth/pngs/
-    - assets/home/svgs/
+    # - assets/auth/pngs/
+    #- assets/home/svgs/
     - assets/home/pngs/
     - assets/global/svgs/
     - assets/global/pngs/
-    - assets/hamburger/svgs/
+    # - assets/hamburger/svgs/
     - assets/hamburger/pngs/
     - assets/onboarding/svgs/
-    - assets/onboarding/pngs/
+    # - assets/onboarding/pngs/
     - assets/reserve/svgs/
     - assets/reserve/pngs/
-    - assets/scanandgo/svgs/
+    # - assets/scanandgo/svgs/
     - assets/scanandgo/pngs/
-    - assets/shareride/svgs/
+    # - assets/shareride/svgs/
     - assets/shareride/pngs/
-    - assets/supercharge/svgs/
+    # - assets/supercharge/svgs/
     - assets/supercharge/pngs/
-    - assets/swapbatteries/svgs/
-    - assets/swapbatteries/pngs/
+    # - assets/swapbatteries/svgs/
+    # - assets/swapbatteries/pngs/
     # - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

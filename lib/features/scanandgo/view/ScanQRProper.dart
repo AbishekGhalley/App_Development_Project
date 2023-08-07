@@ -1,6 +1,5 @@
-import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myekigai/features/scanandgo/view/ScanGoVehicleDetails.dart';
 import 'package:myekigai/theme/pallete.dart';
@@ -27,8 +26,27 @@ class _ScanQRProperState extends State<ScanQRProper> {
   @override
   Widget build(BuildContext context) {
     bool isScanned = false;
+    Widget getContainer() {
+      if (isScanned) {
+        return Center(
+          child: Text(
+            'If QR Doesn\'t work Please go back and scan again.',
+            textAlign: TextAlign.center,
+            style: GoogleFonts.sen(
+              color: Pallete.textColor,
+              fontSize: ScreenUtil().setSp(23),
+              fontWeight: FontWeight.w400,
+            ),
+          ),
+        );
+      } else {
+        return Container();
+      }
+    }
+
     return Scaffold(
       appBar: AppBar(
+        elevation: 2,
         centerTitle: false,
         backgroundColor: Colors.white,
         titleSpacing: 0,
@@ -36,7 +54,7 @@ class _ScanQRProperState extends State<ScanQRProper> {
           'Scan & Go',
           style: GoogleFonts.sen(
             color: Pallete.textColor,
-            fontSize: 21,
+            fontSize: ScreenUtil().setSp(23),
             fontWeight: FontWeight.w400,
           ),
         ),
@@ -59,8 +77,8 @@ class _ScanQRProperState extends State<ScanQRProper> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Container(
-                        height: 20,
-                        width: 20,
+                        height: ScreenUtil().setHeight(20),
+                        width: ScreenUtil().setWidth(20),
                         decoration: const BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage(ScanGoAssets.question),
@@ -75,13 +93,13 @@ class _ScanQRProperState extends State<ScanQRProper> {
             Expanded(
                 flex: 0,
                 child: Container(
-                  padding: EdgeInsets.only(bottom: 8),
+                  padding: EdgeInsets.only(bottom: ScreenUtil().setHeight(10)),
                   child: Text(
                     'Scan QR on Vehicle screen',
                     textAlign: TextAlign.center,
                     style: GoogleFonts.sen(
                       color: Pallete.textColor,
-                      fontSize: 21,
+                      fontSize: ScreenUtil().setSp(19),
                       fontWeight: FontWeight.w400,
                     ),
                   ),
@@ -135,20 +153,9 @@ class _ScanQRProperState extends State<ScanQRProper> {
                           Expanded(
                             flex: 2,
                             child: Container(
-                              width: double.infinity,
-                              color: Colors.white,
-                              child: Center(
-                                child: Text(
-                                  'If QR Doesn\'t work Please go back ad scan again.',
-                                  textAlign: TextAlign.center,
-                                  style: GoogleFonts.sen(
-                                    color: Pallete.textColor,
-                                    fontSize: 21,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ),
-                              ),
-                            ),
+                                width: double.infinity,
+                                color: Colors.white,
+                                child: getContainer()),
                           ),
                         ],
                       ),
@@ -172,7 +179,7 @@ class _ScanQRProperState extends State<ScanQRProper> {
                   shadows: [
                     BoxShadow(
                       color: Color(0x3FABABAB),
-                      blurRadius: 4,
+                      blurRadius: 2,
                       offset: Offset(0, -2),
                       spreadRadius: 0,
                     ),
@@ -182,33 +189,33 @@ class _ScanQRProperState extends State<ScanQRProper> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const SizedBox(height: 16),
+                    SizedBox(height: ScreenUtil().setHeight(16)),
                     Container(
-                      width: 66,
+                      width: ScreenUtil().setWidth(66),
                       height: 3,
                       decoration: BoxDecoration(
                         color: const Color(0xFF1C1C1C),
                         borderRadius: BorderRadius.circular(2),
                       ),
                     ),
-                    const SizedBox(height: 16),
+                    SizedBox(height: ScreenUtil().setHeight(16)),
                     Padding(
-                      padding: const EdgeInsets.only(
-                        left: 24,
-                        right: 24,
-                        bottom: 20,
+                      padding: EdgeInsets.only(
+                        left: ScreenUtil().setWidth(26),
+                        right: ScreenUtil().setWidth(26),
+                        bottom: ScreenUtil().setHeight(24),
                       ),
                       child: Text(
                         'Scan QR code on any vehicle on eKI-zone to start ride.',
                         textAlign: TextAlign.center,
                         style: GoogleFonts.montserrat(
                           color: Pallete.textColor,
-                          fontSize: 16,
+                          fontSize: ScreenUtil().setSp(16),
                           fontWeight: FontWeight.w500,
                         ),
                       ),
                     ),
-                    const SizedBox(height: 8),
+                    SizedBox(height: ScreenUtil().setHeight(8)),
                   ],
                 ),
               ),

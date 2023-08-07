@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myekigai/constants/constants.dart';
 import 'package:myekigai/reusables/popupWidget.dart';
@@ -33,7 +34,7 @@ class _ScanGoVehicleDetailsState extends State<ScanGoVehicleDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 4,
+        elevation: 2,
         centerTitle: false,
         backgroundColor: Colors.white,
         titleSpacing: 0,
@@ -41,7 +42,7 @@ class _ScanGoVehicleDetailsState extends State<ScanGoVehicleDetails> {
           'Vehicle details',
           style: GoogleFonts.sen(
             color: Pallete.textColor,
-            fontSize: 21,
+            fontSize: ScreenUtil().setSp(23),
             fontWeight: FontWeight.w400,
           ),
         ),
@@ -66,6 +67,7 @@ class _ScanGoVehicleDetailsState extends State<ScanGoVehicleDetails> {
                 name: snapshot.data!.vehicleName.toString(),
                 stars: '4.3 ⭐',
               ),
+              Spacer(),
               Container(
                 color: Colors.white,
                 width: double.infinity,
@@ -78,12 +80,12 @@ class _ScanGoVehicleDetailsState extends State<ScanGoVehicleDetails> {
                         Text(
                           "Specifications",
                           style: GoogleFonts.sen(
-                            fontSize: 21,
+                            fontSize: ScreenUtil().setSp(23),
                             fontWeight: FontWeight.w400,
                             color: Pallete.textColor,
                           ),
                         ),
-                        const SizedBox(height: 10),
+                        SizedBox(height: ScreenUtil().setHeight(10)),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -108,15 +110,11 @@ class _ScanGoVehicleDetailsState extends State<ScanGoVehicleDetails> {
                       ],
                     )),
               ),
-              Container(
-                color: Colors.white,
-                width: double.infinity,
-                height: MediaQuery.of(context).size.height * 0.015,
-              ),
+              Spacer(),
               Container(
                   color: Colors.white,
                   width: double.infinity,
-                  height: MediaQuery.of(context).size.height * 0.18,
+                  height: MediaQuery.of(context).size.height * 0.19,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 26),
                     child: Column(
@@ -125,12 +123,12 @@ class _ScanGoVehicleDetailsState extends State<ScanGoVehicleDetails> {
                         Text(
                           "Vehicle Features",
                           style: GoogleFonts.sen(
-                            fontSize: 21,
+                            fontSize: ScreenUtil().setSp(23),
                             fontWeight: FontWeight.w400,
                             color: Pallete.textColor,
                           ),
                         ),
-                        const SizedBox(height: 17),
+                        SizedBox(height: ScreenUtil().setHeight(14)),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
@@ -144,13 +142,13 @@ class _ScanGoVehicleDetailsState extends State<ScanGoVehicleDetails> {
                                           ' Passengers',
                                 ),
                                 SizedBox(
-                                  height: 14,
+                                  height: ScreenUtil().setHeight(14),
                                 ),
                                 TextWithIcon(
                                     icon: GlobalAssets.snowtires,
                                     text: 'Snow Tires'),
                                 SizedBox(
-                                  height: 14,
+                                  height: ScreenUtil().setHeight(14),
                                 ),
                                 TextWithIcon(
                                     icon: GlobalAssets.blutooth,
@@ -165,12 +163,12 @@ class _ScanGoVehicleDetailsState extends State<ScanGoVehicleDetails> {
                                       text: snapshot.data!.wheels.toString() +
                                           ' Wheels'),
                                   SizedBox(
-                                    height: 14,
+                                    height: ScreenUtil().setHeight(16),
                                   ),
                                   TextWithIcon(
                                       icon: GlobalAssets.gps, text: 'GPS'),
                                   SizedBox(
-                                    height: 14,
+                                    height: ScreenUtil().setHeight(16),
                                   ),
                                   TextWithIcon(
                                       icon: GlobalAssets.manual,
@@ -182,80 +180,84 @@ class _ScanGoVehicleDetailsState extends State<ScanGoVehicleDetails> {
                       ],
                     ),
                   )),
-              Container(
-                width: double.infinity,
-                color: Colors.white,
-                height: MediaQuery.of(context).size.height * 0.02,
-              ),
-              Container(
-                  color: Colors.white,
-                  width: double.infinity,
-                  height: MediaQuery.of(context).size.height * 0.11,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 20),
-                          // child: Row(
-                          //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          //     children: [
-                          //       Text("Rate",
-                          //           style: GoogleFonts.montserrat(
-                          //             color: Pallete.geryColor,
-                          //             fontSize: 21,
-                          //             fontWeight: FontWeight.w500,
-                          //           )),
-                          //       Text("₹70/hour",
-                          //           style: GoogleFonts.sen(
-                          //             color: Pallete.textColor,
-                          //             fontSize: 20,
-                          //             fontWeight: FontWeight.w400,
-                          //           )),
-                          //     ]),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 20),
-                          child: Text(
-                            'Your vehicle will be reserved for one hour.',
-                            style: GoogleFonts.sen(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w400,
-                              color: Pallete.textColor,
-                            ),
-                            textAlign: TextAlign.left,
+              Spacer(),
+              Expanded(
+                flex: 0,
+                child: Container(
+                    color: Colors.white,
+                    width: double.infinity,
+                    height: MediaQuery.of(context).size.height * 0.1,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 20),
+                            // child: Row(
+                            //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            //     children: [
+                            //       Text("Rate",
+                            //           style: GoogleFonts.montserrat(
+                            //             color: Pallete.geryColor,
+                            //             fontSize: 21,
+                            //             fontWeight: FontWeight.w500,
+                            //           )),
+                            //       Text("₹70/hour",
+                            //           style: GoogleFonts.sen(
+                            //             color: Pallete.textColor,
+                            //             fontSize: 20,
+                            //             fontWeight: FontWeight.w400,
+                            //           )),
+                            //     ]),
                           ),
-                        ),
-                        const SizedBox(height: 8),
-                        CustomButton(
-                            text: 'Start Ride',
-                            onPressed: () {
-                              showModalBottomSheet(
-                                shape: const RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.vertical(
-                                    top: Radius.circular(16.0),
+                          Expanded(
+                            flex: 0,
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 20),
+                              child: Text(
+                                'Your vehicle will be reserved for one hour.',
+                                style: GoogleFonts.sen(
+                                  fontSize: ScreenUtil().setSp(18),
+                                  fontWeight: FontWeight.w400,
+                                  color: Pallete.textColor,
+                                ),
+                                textAlign: TextAlign.left,
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: ScreenUtil().setHeight(9)),
+                          CustomButton(
+                              text: 'Start Ride',
+                              onPressed: () {
+                                showModalBottomSheet(
+                                  shape: const RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.vertical(
+                                      top: Radius.circular(16.0),
+                                    ),
                                   ),
-                                ),
-                                context: context,
-                                builder: (BuildContext context) => PopupWidget(
-                                  onReturnTap: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const ShowDriverLicense()));
-                                  },
-                                  btnText: 'Confirm',
-                                  returnText: 'No, Return',
-                                  titleText: 'Ready to begin?',
-                                ),
-                              );
-                            })
-                      ],
-                    ),
-                  ))
+                                  context: context,
+                                  builder: (BuildContext context) =>
+                                      PopupWidget(
+                                    onReturnTap: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const ShowDriverLicense()));
+                                    },
+                                    btnText: 'Confirm',
+                                    returnText: 'No, Return',
+                                    titleText: 'Ready to begin?',
+                                  ),
+                                );
+                              })
+                        ],
+                      ),
+                    )),
+              )
             ]);
           } else {
             return Center(child: Text('Failed to load data'));

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myekigai/theme/pallete.dart';
 
@@ -15,7 +16,7 @@ class VehicleInfoBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 106,
+      height: ScreenUtil().setHeight(106),
       decoration: const BoxDecoration(boxShadow: [
         BoxShadow(
           color: Color.fromRGBO(171, 171, 171, 0.25),
@@ -30,24 +31,24 @@ class VehicleInfoBox extends StatelessWidget {
           blurRadius: 0,
         ),
       ], borderRadius: BorderRadius.all(Radius.circular(8))),
-      width: 98,
+      width: ScreenUtil().setWidth(98),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-              width: 35,
-              height: 30,
+              width: ScreenUtil().setWidth(35),
+              height: ScreenUtil().setHeight(30),
               decoration: BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage(icon), fit: BoxFit.contain))),
-          const SizedBox(height: 5),
+          SizedBox(height: ScreenUtil().setHeight(5)),
           Text(
             midText,
             style: GoogleFonts.montserrat(
               color: Pallete.geryColor,
               fontWeight: FontWeight.w500,
-              fontSize: 12,
+              fontSize: ScreenUtil().setSp(14),
             ),
           ),
           Text(
@@ -55,7 +56,7 @@ class VehicleInfoBox extends StatelessWidget {
             style: GoogleFonts.montserrat(
               color: Pallete.textColor,
               fontWeight: FontWeight.w400,
-              fontSize: 16,
+              fontSize: ScreenUtil().setSp(18),
             ),
           )
         ],
