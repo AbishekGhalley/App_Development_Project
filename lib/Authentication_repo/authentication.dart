@@ -19,7 +19,7 @@ class Authentication extends GetxController {
   }
 
   _setInitialScreen(User? user) async {
-    await Future.delayed(Duration(milliseconds: 1500), () {});
+    await Future.delayed(Duration(milliseconds: 1000), () {});
     user == null
         ? Get.offAll(() => LoginView(),
             transition: Transition.rightToLeft,
