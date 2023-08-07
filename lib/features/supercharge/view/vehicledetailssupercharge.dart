@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:myekigai/constants/constants.dart';
 import 'package:myekigai/features/supercharge/view/supercharge_payment.dart';
 import 'package:myekigai/reusables/TopAppbar.dart';
@@ -191,10 +192,9 @@ class _details_superchargeState extends State<details_supercharge> {
                           CustomButton(
                               text: "Continue",
                               onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => PaymentScreen()));
+                                Get.to(()=>PaymentScreen(),transition: Transition.rightToLeft,
+                                    duration: Duration(milliseconds: 500),
+                                    curve: Curves.linear);
                               })
                         ],
                       )),

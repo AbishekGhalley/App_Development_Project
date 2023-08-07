@@ -347,7 +347,7 @@ class _driverdetailsState extends State<driverdetails> {
                               splashFactory: NoSplash.splashFactory),
                           onPressed: () {
                             Get.delete<ControllerDrawer>();
-                            Get.to(() => HomeScreen(),transition: Transition.rightToLeft,
+                            Get.offAll(() => HomeScreen(),transition: Transition.rightToLeft,
                                 duration: Duration(milliseconds: 500),
                                 curve: Curves.linear);
                           },
