@@ -42,79 +42,91 @@ class Help extends StatelessWidget {
                 ]),
                 child: Row(
                   children: [
-                    Image.asset(HamAssets.bubblechat,fit: BoxFit.fitWidth,),
-                    SizedBox(
-                      width: ScreenUtil().setWidth(16),
+                    Expanded(
+                      flex: 1,
+                      child: Image.asset(
+                        HamAssets.bubblechat,
+                        fit: BoxFit.contain,
+                      ),
                     ),
-                    Text("Having a problem?",
-                        style: TextStyle(
-                            fontSize: ScreenUtil().setSp(16),
-                            fontWeight: FontWeight.w500,
-                            fontFamily: "Sen")),
-                    const Spacer(),
-                    ElevatedButton(
-                        onPressed: () {},
-                        child: Text("Help",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: ScreenUtil().setSp(16),
-                                fontWeight: FontWeight.w400,
-                                fontFamily: "Sen")))
+                    Expanded(
+                      flex: 3,
+                      child: Text("Having a problem?",
+                          style: TextStyle(
+                              fontSize: ScreenUtil().setSp(16),
+                              fontWeight: FontWeight.w500,
+                              fontFamily: "Sen")),
+                    ),
+                    Expanded(
+                      flex: 0,
+                      child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text("Help",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: ScreenUtil().setSp(16),
+                                  fontWeight: FontWeight.w400,
+                                  fontFamily: "Sen"))),
+                    )
                   ],
                 )),
           ),
-          SizedBox(
-            height: ScreenUtil().setHeight(5),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(
-                vertical: ScreenUtil().setHeight(5),
-                horizontal: ScreenUtil().setWidth(20)),
-            child: const Row(
-              children: [
-                Helpbtn(
-                    btnimage: HamAssets.cashlesspayment, btntext: "Payment"),
-                Spacer(),
-                Helpbtn(btnimage: HamAssets.share, btntext: "Services")
-              ],
-            ),
-          ),
-          SizedBox(
-            height: ScreenUtil().setHeight(5),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(
-                vertical: ScreenUtil().setHeight(5),
-                horizontal: ScreenUtil().setWidth(20)),
-            child: const Row(
-              children: [
-                Helpbtn(btnimage: HamAssets.error, btntext: "Technical"),
-                Spacer(),
-                Helpbtn(btnimage: HamAssets.private, btntext: "Privacy")
-              ],
-            ),
-          ),
-          SizedBox(
-            height: ScreenUtil().setHeight(20),
-          ),
-          Container(
-            alignment: Alignment.centerLeft,
-            padding: EdgeInsets.symmetric(
-                vertical: ScreenUtil().setHeight(5),
-                horizontal: ScreenUtil().setWidth(20)),
-            child: Text(
-              'General Faqs',
-              style: TextStyle(
-                  fontSize: ScreenUtil().setSp(21),
-                  fontWeight: FontWeight.w400,
-                  fontFamily: "Sen"),
-              textAlign: TextAlign.start,
+          Expanded(
+            flex: 1,
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                  vertical: ScreenUtil().setHeight(5),
+                  horizontal: ScreenUtil().setWidth(20)),
+              child: const Row(
+                children: [
+                  Helpbtn(
+                      btnimage: HamAssets.cashlesspayment, btntext: "Payment"),
+                  Spacer(),
+                  Helpbtn(btnimage: HamAssets.share, btntext: "Services")
+                ],
+              ),
             ),
           ),
           Expanded(
+            flex: 1,
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                  vertical: ScreenUtil().setHeight(5),
+                  horizontal: ScreenUtil().setWidth(20)),
+              child: const Row(
+                children: [
+                  Helpbtn(btnimage: HamAssets.error, btntext: "Technical"),
+                  Spacer(),
+                  Helpbtn(btnimage: HamAssets.private, btntext: "Privacy")
+                ],
+              ),
+            ),
+          ),
+          Expanded(
+            flex: 0,
+            child: Container(
+              alignment: Alignment.centerLeft,
+              padding: EdgeInsets.symmetric(
+                  vertical: ScreenUtil().setHeight(5),
+                  horizontal: ScreenUtil().setWidth(20)),
+              child: Text(
+                'General Faqs',
+                style: TextStyle(
+                    fontSize: ScreenUtil().setSp(21),
+                    fontWeight: FontWeight.w400,
+                    fontFamily: "Sen"),
+                textAlign: TextAlign.start,
+              ),
+            ),
+          ),
+          Expanded(
+              flex: 3,
               child: ListView.builder(
-                  padding:
-                      EdgeInsets.only(left: 20, right: 20, top: 0, bottom: 25),
+                  padding: EdgeInsets.only(
+                      left: ScreenUtil().setWidth(20),
+                      right: ScreenUtil().setWidth(20),
+                      top: 0,
+                      bottom: ScreenUtil().setHeight(25)),
                   itemCount: faqs.length,
                   itemBuilder: (BuildContext context, int index) {
                     return Column(children: [
