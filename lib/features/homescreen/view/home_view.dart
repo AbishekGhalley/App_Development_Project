@@ -155,8 +155,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         onPressed: () {
                                           Get.delete<ControllerDrawer>();
                                           Get.to(() => ScanQRProper(),
-                                              transition:
-                                                  Transition.rightToLeft,
+                                              transition: Transition.native,
                                               duration:
                                                   Duration(milliseconds: 500),
                                               curve: Curves.linear);
@@ -167,8 +166,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         onPressed: () {
                                           Get.delete<ControllerDrawer>();
                                           Get.to(() => ReserveVehicle(),
-                                              transition:
-                                                  Transition.rightToLeft,
+                                              transition: Transition.native,
                                               duration:
                                                   Duration(milliseconds: 500),
                                               curve: Curves.linear);
@@ -190,8 +188,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         onPressed: () {
                                           Get.delete<ControllerDrawer>();
                                           Get.to(() => swapbatteries(),
-                                              transition:
-                                                  Transition.rightToLeft,
+                                              transition: Transition.native,
                                               duration:
                                                   Duration(milliseconds: 500),
                                               curve: Curves.linear);
@@ -202,8 +199,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         onPressed: () {
                                           Get.delete<ControllerDrawer>();
                                           Get.to(() => details_supercharge(),
-                                              transition:
-                                                  Transition.rightToLeft,
+                                              transition: Transition.native,
                                               duration:
                                                   Duration(milliseconds: 500),
                                               curve: Curves.linear);
@@ -214,8 +210,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         onPressed: () {
                                           Get.delete<ControllerDrawer>();
                                           Get.to(() => shareridemap(),
-                                              transition:
-                                                  Transition.rightToLeft,
+                                              transition: Transition.native,
                                               duration:
                                                   Duration(milliseconds: 500),
                                               curve: Curves.linear);
