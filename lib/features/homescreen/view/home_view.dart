@@ -129,11 +129,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                       top: ScreenUtil().setHeight(12),
                                     ),
                                     height: ScreenUtil().setHeight(4),
-                                    width: 66,
+                                    width: 60,
                                     decoration: const BoxDecoration(
                                       borderRadius:
                                           BorderRadius.all(Radius.circular(3)),
-                                      color: Pallete.textColor,
+                                      color: Color(0xFF1C1C1C),
                                     ),
                                   ),
                                 ),
@@ -157,7 +157,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           Get.to(() => ScanQRProper(),
                                               transition: Transition.native,
                                               duration:
-                                                  Duration(milliseconds: 500),
+                                                  Duration(milliseconds: 300),
                                               curve: Curves.linear);
                                         },
                                         icon: HomeAssets.imhomescango,
@@ -168,7 +168,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           Get.to(() => ReserveVehicle(),
                                               transition: Transition.native,
                                               duration:
-                                                  Duration(milliseconds: 500),
+                                                  Duration(milliseconds: 300),
                                               curve: Curves.linear);
                                         },
                                         icon: HomeAssets.imreserveVehicle,
@@ -190,7 +190,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           Get.to(() => swapbatteries(),
                                               transition: Transition.native,
                                               duration:
-                                                  Duration(milliseconds: 500),
+                                                  Duration(milliseconds: 300),
                                               curve: Curves.linear);
                                         },
                                         icon: HomeAssets.imswapbattery,
@@ -201,7 +201,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           Get.to(() => details_supercharge(),
                                               transition: Transition.native,
                                               duration:
-                                                  Duration(milliseconds: 500),
+                                                  Duration(milliseconds: 300),
                                               curve: Curves.linear);
                                         },
                                         icon: HomeAssets.imsupercharge,
@@ -212,13 +212,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                           Get.to(() => shareridemap(),
                                               transition: Transition.native,
                                               duration:
-                                                  Duration(milliseconds: 500),
+                                                  Duration(milliseconds: 300),
                                               curve: Curves.linear);
                                         },
                                         icon: HomeAssets.imshareRide,
                                         text: 'Share Ride')
                                   ],
                                 ),
+                                Spacer(),
                                 Spacer(),
                               ],
                             ),

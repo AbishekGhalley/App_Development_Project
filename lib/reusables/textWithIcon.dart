@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TextWithIcon extends StatelessWidget {
@@ -11,8 +12,8 @@ class TextWithIcon extends StatelessWidget {
     return Row(
       children: [
         Container(
-            width: 25,
-            height: 25,
+            width: ScreenUtil().setWidth(27),
+            height: ScreenUtil().setHeight(27),
             decoration: BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage(icon), fit: BoxFit.contain))),
@@ -21,8 +22,8 @@ class TextWithIcon extends StatelessWidget {
         ),
         Text(
           text,
-          style:
-              GoogleFonts.montserrat(fontWeight: FontWeight.w500, fontSize: 16),
+          style: GoogleFonts.montserrat(
+              fontWeight: FontWeight.w500, fontSize: ScreenUtil().setSp(18)),
         )
       ],
     );

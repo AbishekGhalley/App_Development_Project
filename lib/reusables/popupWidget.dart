@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myekigai/reusables/reusables.dart';
 import 'package:myekigai/theme/theme.dart';
@@ -37,13 +38,13 @@ class PopupWidget extends StatelessWidget {
             child: Text(
               'Reserve vehicle?',
               style: GoogleFonts.sen(
-                fontSize: 18,
+                fontSize: ScreenUtil().setSp(20),
                 fontWeight: FontWeight.w400,
                 color: Pallete.textColor,
               ),
             ),
           ),
-          SizedBox(height:20),
+          SizedBox(height: ScreenUtil().setHeight(22)),
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -64,14 +65,14 @@ class PopupWidget extends StatelessWidget {
                   returnText,
                   style: GoogleFonts.sen(
                       decoration: TextDecoration.underline,
-                      fontSize: 16,
+                      fontSize: ScreenUtil().setSp(18),
                       color: Pallete.primaryColor,
                       fontWeight: FontWeight.w700),
                 ),
               ),
             ],
           ),
-          SizedBox(height:10),
+          SizedBox(height: ScreenUtil().setHeight(14)),
         ],
       ),
     );

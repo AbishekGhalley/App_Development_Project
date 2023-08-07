@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myekigai/theme/pallete.dart';
 
@@ -20,11 +21,11 @@ class VehicleCardWithLargeImage extends StatelessWidget {
     return Container(
         color: Colors.white,
         width: double.infinity,
-        height: MediaQuery.of(context).size.height * 0.37,
+        height: MediaQuery.of(context).size.height * 0.32,
         child: Stack(children: [
           Positioned(
             left: 44,
-            top: 48,
+            top: ScreenUtil().setHeight(44),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -34,7 +35,7 @@ class VehicleCardWithLargeImage extends StatelessWidget {
                   style: GoogleFonts.sen(
                     color: Pallete.textColor,
                     fontWeight: FontWeight.w700,
-                    fontSize: 24,
+                    fontSize: ScreenUtil().setSp(28),
                   ),
                 ),
                 Text(
@@ -43,7 +44,7 @@ class VehicleCardWithLargeImage extends StatelessWidget {
                   style: GoogleFonts.montserrat(
                     color: Pallete.geryColor,
                     fontWeight: FontWeight.w500,
-                    fontSize: 16,
+                    fontSize: ScreenUtil().setSp(19),
                   ),
                 ),
                 Text(
@@ -52,18 +53,18 @@ class VehicleCardWithLargeImage extends StatelessWidget {
                   style: GoogleFonts.montserrat(
                     color: Pallete.textColor,
                     fontWeight: FontWeight.w500,
-                    fontSize: 12,
+                    fontSize: ScreenUtil().setSp(16),
                   ),
                 ),
               ],
             ),
           ),
           Positioned(
-            top: 25,
-            right: 20,
+            top: ScreenUtil().setHeight(26),
+            right: ScreenUtil().setWidth(28),
             child: Container(
-                width: 229,
-                height: 259,
+                width: ScreenUtil().setWidth(232),
+                height: ScreenUtil().setHeight(260),
                 decoration: BoxDecoration(
                     image: DecorationImage(
                         image: AssetImage(image), fit: BoxFit.scaleDown))),

@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myekigai/constants/constants.dart';
 import 'package:myekigai/reusables/btn.dart';
 import 'package:myekigai/reusables/popupWidget.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
+import '../../../reusables/ControllerDrawer.dart';
 import '../../../theme/pallete.dart';
 import 'RideFinished.dart';
 
@@ -17,6 +19,7 @@ class LiveRide extends StatefulWidget {
 }
 
 class _LiveRideState extends State<LiveRide> {
+  final ControllerDrawer controllerDrawer = Get.put(ControllerDrawer());
   bool isVisible = false;
   @override
   Widget build(BuildContext context) {
@@ -39,19 +42,22 @@ class _LiveRideState extends State<LiveRide> {
               Positioned(
                 top: MediaQuery.of(context).padding.top + 8,
                 left: 20,
-                child: Container(
-                  decoration: ShapeDecoration(
-                    color: const Color(0xFF363636),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8)),
+                child: GestureDetector(
+                  onTap: () {},
+                  child: Container(
+                    decoration: ShapeDecoration(
+                      color: const Color(0xFF363636),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8)),
+                    ),
+                    child: IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          Icons.menu_rounded,
+                          size: 32,
+                          color: Colors.white,
+                        )),
                   ),
-                  child: IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        Icons.menu_rounded,
-                        size: 32,
-                        color: Colors.white,
-                      )),
                 ),
               ),
               Positioned(
