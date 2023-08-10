@@ -9,23 +9,26 @@ class TextWithIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Container(
-            width: ScreenUtil().setWidth(27),
-            height: ScreenUtil().setHeight(27),
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage(icon), fit: BoxFit.contain))),
-        const SizedBox(
-          width: 13,
-        ),
-        Text(
-          text,
-          style: GoogleFonts.montserrat(
-              fontWeight: FontWeight.w500, fontSize: ScreenUtil().setSp(18)),
-        )
-      ],
+    return Padding(
+      padding: EdgeInsets.only(bottom: ScreenUtil().setHeight(0)),
+      child: Row(
+        children: [
+          Container(
+              width: ScreenUtil().setWidth(27),
+              height: ScreenUtil().setHeight(27),
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage(icon), fit: BoxFit.contain))),
+          const SizedBox(
+            width: 13,
+          ),
+          Text(
+            text,
+            style: GoogleFonts.montserrat(
+                fontWeight: FontWeight.w500, fontSize: ScreenUtil().setSp(18)),
+          )
+        ],
+      ),
     );
   }
 }

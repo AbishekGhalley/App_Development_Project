@@ -34,7 +34,7 @@ class VehicleCardWithLargeImage extends StatelessWidget {
                   textAlign: TextAlign.left,
                   style: GoogleFonts.sen(
                     color: Pallete.textColor,
-                    fontWeight: FontWeight.w700,
+                    fontWeight: FontWeight.w500,
                     fontSize: ScreenUtil().setSp(28),
                   ),
                 ),
@@ -44,7 +44,7 @@ class VehicleCardWithLargeImage extends StatelessWidget {
                   style: GoogleFonts.montserrat(
                     color: Pallete.geryColor,
                     fontWeight: FontWeight.w500,
-                    fontSize: ScreenUtil().setSp(19),
+                    fontSize: ScreenUtil().setSp(18),
                   ),
                 ),
                 Text(
@@ -53,7 +53,7 @@ class VehicleCardWithLargeImage extends StatelessWidget {
                   style: GoogleFonts.montserrat(
                     color: Pallete.textColor,
                     fontWeight: FontWeight.w500,
-                    fontSize: ScreenUtil().setSp(16),
+                    fontSize: ScreenUtil().setSp(15),
                   ),
                 ),
               ],

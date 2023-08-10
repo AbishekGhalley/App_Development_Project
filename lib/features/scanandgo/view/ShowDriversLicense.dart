@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myekigai/constants/constants.dart';
 import 'package:myekigai/reusables/btn.dart';
@@ -110,7 +111,7 @@ class _ShowDriverLicenseState extends State<ShowDriverLicense> {
                     child: Text(
                       'Looks Like You Need To Upload Your Driver’s License ',
                       style: GoogleFonts.sen(
-                          fontSize: 27,
+                          fontSize: ScreenUtil().setSp(27),
                           fontWeight: FontWeight.w400,
                           color: Pallete.textColor),
                     ),
@@ -121,7 +122,7 @@ class _ShowDriverLicenseState extends State<ShowDriverLicense> {
                     child: Text(
                       'Upload your driver’s license to proceed further and enjoy a ride with MYeKIGAI',
                       style: GoogleFonts.sen(
-                          fontSize: 16,
+                          fontSize: ScreenUtil().setSp(16),
                           fontWeight: FontWeight.w400,
                           color: Pallete.geryColor),
                     ),

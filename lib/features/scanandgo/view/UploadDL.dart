@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myekigai/features/scanandgo/view/LiveRide.dart';
 import 'package:myekigai/reusables/btn.dart';
@@ -16,7 +17,7 @@ class UploadDL extends StatelessWidget {
         title: Text(
           'Upload Driver’s License',
           style: GoogleFonts.sen(
-              fontSize: 20,
+              fontSize: ScreenUtil().setSp(20),
               fontWeight: FontWeight.w400,
               color: Pallete.textColor),
         ),
@@ -42,7 +43,7 @@ class UploadDL extends StatelessWidget {
                   child: Text(
                     'Driver’s License Details',
                     style: GoogleFonts.sen(
-                        fontSize: 16,
+                        fontSize: ScreenUtil().setSp(16),
                         fontWeight: FontWeight.w400,
                         color: Pallete.textColor),
                   ),
@@ -71,7 +72,7 @@ class UploadDL extends StatelessWidget {
                         decoration: InputDecoration(
                           hintText: 'Enter DL Number',
                           hintStyle: GoogleFonts.sen(
-                              fontSize: 16,
+                              fontSize: ScreenUtil().setSp(16),
                               fontWeight: FontWeight.w400,
                               color: Pallete.geryColor), // Placeholder text
                           //labelText: 'Label', // Label for the text field

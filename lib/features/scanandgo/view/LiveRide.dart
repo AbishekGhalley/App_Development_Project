@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -113,7 +114,8 @@ class _LiveRideState extends State<LiveRide> {
                                               'Need Help? Call Emergency',
                                               style: GoogleFonts.sen(
                                                 fontWeight: FontWeight.bold,
-                                                fontSize: 18,
+                                                fontSize:
+                                                    ScreenUtil().setSp(18),
                                               ),
                                             ),
                                           ),
@@ -124,7 +126,8 @@ class _LiveRideState extends State<LiveRide> {
                                             child: Text(
                                               'Contact emergency services to receive aid in case of danger.',
                                               style: GoogleFonts.sen(
-                                                fontSize: 16,
+                                                fontSize:
+                                                    ScreenUtil().setSp(16),
                                                 fontWeight: FontWeight.w400,
                                                 color: Pallete.geryColor,
                                               ),
@@ -159,14 +162,17 @@ class _LiveRideState extends State<LiveRide> {
                                               child: Text(
                                                 'Call Emergency',
                                                 style: GoogleFonts.sen(
-                                                  fontSize: 16,
+                                                  fontSize:
+                                                      ScreenUtil().setSp(16),
                                                   fontWeight: FontWeight.bold,
                                                   color: Pallete.btnTextColor,
                                                 ),
                                               ),
                                             ),
                                           ),
-                                          const SizedBox(height: 20),
+                                          SizedBox(
+                                              height:
+                                                  ScreenUtil().setHeight(20)),
                                         ],
                                       ),
                                     );
@@ -231,7 +237,7 @@ class _LiveRideState extends State<LiveRide> {
                                     style: GoogleFonts.sen(
                                       color: Pallete.textColor,
                                       fontWeight: FontWeight.w400,
-                                      fontSize: 20,
+                                      fontSize: ScreenUtil().setSp(20),
                                     ),
                                   ),
                                 ),
@@ -252,7 +258,7 @@ class _LiveRideState extends State<LiveRide> {
                                             style: GoogleFonts.sen(
                                               color: Pallete.textColor,
                                               fontWeight: FontWeight.w700,
-                                              fontSize: 20,
+                                              fontSize: ScreenUtil().setSp(20),
                                             ),
                                           ),
                                           Text(
@@ -260,7 +266,7 @@ class _LiveRideState extends State<LiveRide> {
                                             style: GoogleFonts.sen(
                                               color: Pallete.geryColor,
                                               fontWeight: FontWeight.w400,
-                                              fontSize: 12,
+                                              fontSize: ScreenUtil().setSp(14),
                                             ),
                                           )
                                         ],
@@ -270,7 +276,7 @@ class _LiveRideState extends State<LiveRide> {
                                         style: GoogleFonts.sen(
                                           color: Pallete.textColor,
                                           fontWeight: FontWeight.w400,
-                                          fontSize: 16,
+                                          fontSize: ScreenUtil().setSp(16),
                                         ),
                                       )
                                     ],
@@ -298,7 +304,7 @@ class _LiveRideState extends State<LiveRide> {
                                         style: GoogleFonts.sen(
                                           color: Pallete.textColor,
                                           fontWeight: FontWeight.w400,
-                                          fontSize: 16,
+                                          fontSize: ScreenUtil().setSp(16),
                                         ),
                                       ),
                                       Text(
@@ -306,7 +312,7 @@ class _LiveRideState extends State<LiveRide> {
                                         style: GoogleFonts.sen(
                                           color: Pallete.textColor,
                                           fontWeight: FontWeight.w400,
-                                          fontSize: 16,
+                                          fontSize: ScreenUtil().setSp(16),
                                         ),
                                       )
                                     ],
@@ -325,7 +331,7 @@ class _LiveRideState extends State<LiveRide> {
                                         style: GoogleFonts.sen(
                                           color: Pallete.textColor,
                                           fontWeight: FontWeight.w400,
-                                          fontSize: 16,
+                                          fontSize: ScreenUtil().setSp(16),
                                         ),
                                       ),
                                       Text(
@@ -333,7 +339,7 @@ class _LiveRideState extends State<LiveRide> {
                                         style: GoogleFonts.sen(
                                           color: Pallete.textColor,
                                           fontWeight: FontWeight.w400,
-                                          fontSize: 16,
+                                          fontSize: ScreenUtil().setSp(16),
                                         ),
                                       )
                                     ],
