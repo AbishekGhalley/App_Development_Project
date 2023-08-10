@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myekigai/constants/constants.dart';
 import 'package:myekigai/features/SwapBatteries/view/swapBatteries.dart';
+import 'package:myekigai/features/getabuddy/view/get_a_buddy.dart';
 import 'package:myekigai/features/homescreen/widget/ServiceIconWithText.dart';
 import 'package:myekigai/features/reservevehicle/View/reserve_vehicle_view.dart';
 import 'package:myekigai/features/scanandgo/view/ScanQRProper.dart';
@@ -174,7 +175,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                         icon: HomeAssets.imreserveVehicle,
                                         text: 'Reservation'),
                                     ServiceIconWithText(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          Get.delete<ControllerDrawer>();
+                                          Get.to(() => Buddy(),
+                                              transition: Transition.native,
+                                              duration:
+                                                  Duration(milliseconds: 300),
+                                              curve: Curves.linear);
+                                        },
                                         icon: HomeAssets.imbuddy,
                                         text: 'Get a Buddy')
                                   ],
