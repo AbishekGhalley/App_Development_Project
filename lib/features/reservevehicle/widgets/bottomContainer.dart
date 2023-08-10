@@ -91,7 +91,7 @@ class BottomWidget2 extends StatelessWidget {
           left: 0,
           right: 0,
           child: Container(
-              height: ScreenUtil().setHeight(320),
+              height: ScreenUtil().setHeight(300),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: const BorderRadius.only(
@@ -109,9 +109,6 @@ class BottomWidget2 extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  const SizedBox(
-                    height: 5,
-                  ),
                   Row(
                     children: [
                       SizedBox(
@@ -128,94 +125,75 @@ class BottomWidget2 extends StatelessWidget {
                           icon: Image.asset(ReserveVehicleAssets.iicon))
                     ],
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      SizedBox(
-                        width: ScreenUtil().setWidth(20),
-                      ),
-                      Image(
-                          width: ScreenUtil().setWidth(180),
-                          height: ScreenUtil().setHeight(120),
-                          fit: BoxFit.contain,
-                          image: AssetImage(ReserveVehicleAssets.stationImage)),
-                      SizedBox(
-                        width: ScreenUtil().setWidth(20),
-                      ),
-                      Column(
-                        //right column with texts starting sector 19
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Text('Sector 19',
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: ScreenUtil().setWidth(24)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Image(
+                            width: ScreenUtil().setWidth(180),
+                            height: ScreenUtil().setHeight(120),
+                            fit: BoxFit.contain,
+                            image:
+                                AssetImage(ReserveVehicleAssets.stationImage)),
+                        Column(
+                          //right column with texts starting sector 19
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Text('Sector 19',
+                                textAlign: TextAlign.right,
+                                style: GoogleFonts.montserrat(
+                                  color: Pallete.textColor,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: ScreenUtil().setSp(20),
+                                )),
+                            Text(
+                              'Open 24 hrs',
                               textAlign: TextAlign.right,
                               style: GoogleFonts.montserrat(
-                                color: Pallete.textColor,
+                                color: const Color.fromRGBO(9, 171, 229, 1),
                                 fontWeight: FontWeight.w500,
-                                fontSize: ScreenUtil().setSp(20),
-                              )),
-                          const SizedBox(
-                            height: 4,
-                          ),
-                          Text(
-                            'Open 24 hrs',
-                            textAlign: TextAlign.right,
-                            style: GoogleFonts.montserrat(
-                              color: const Color.fromRGBO(9, 171, 229, 1),
-                              fontWeight: FontWeight.w500,
-                              fontSize: ScreenUtil().setSp(12),
+                                fontSize: ScreenUtil().setSp(12),
+                              ),
                             ),
-                          ),
-                          const SizedBox(
-                            height: 4,
-                          ),
-                          Text('3 km',
-                              textAlign: TextAlign.right,
-                              style: GoogleFonts.montserrat(
-                                color: Pallete.textColor,
-                                fontWeight: FontWeight.w500,
-                                fontSize: ScreenUtil().setSp(16),
-                              )),
-                          const SizedBox(
-                            height: 2,
-                          ),
-                          Row(
-                            children: [
-                              Column(
-                                children: [
-                                  const SizedBox(
-                                    height: 4,
-                                  ),
-                                  SvgPicture.asset(
-                                    ReserveVehicleAssets
-                                        .imheart, // Replace with your SVG asset path
-                                    height: ScreenUtil().setHeight(
-                                        22), // Set the height of the SVG
-                                    // Set the width of the SVG
-                                  ),
-                                ],
-                              ),
-                              SizedBox(
-                                width: ScreenUtil().setWidth(10),
-                              ),
-                              SvgPicture.asset(
-                                ReserveVehicleAssets
-                                    .imshareInReserveVehicle, // Replace with your SVG asset path
-                                height: ScreenUtil()
-                                    .setHeight(24), // Set the height of the SVG
-                                // Set the width of the SVG
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: ScreenUtil().setHeight(30),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        width: ScreenUtil().setWidth(20),
-                      ),
-                    ],
+                            Text('3 km',
+                                textAlign: TextAlign.right,
+                                style: GoogleFonts.montserrat(
+                                  color: Pallete.textColor,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: ScreenUtil().setSp(16),
+                                )),
+                            Row(
+                              children: [
+                                Column(
+                                  children: [
+                                    SvgPicture.asset(
+                                      ReserveVehicleAssets
+                                          .imheart, // Replace with your SVG asset path
+                                      height: ScreenUtil().setHeight(
+                                          22), // Set the height of the SVG
+                                      // Set the width of the SVG
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(
+                                  width: ScreenUtil().setWidth(10),
+                                ),
+                                SvgPicture.asset(
+                                  ReserveVehicleAssets
+                                      .imshareInReserveVehicle, // Replace with your SVG asset path
+                                  height: ScreenUtil().setHeight(
+                                      24), // Set the height of the SVG
+                                  // Set the width of the SVG
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                   Spacer(),
                   CustomButton(
@@ -224,12 +202,12 @@ class BottomWidget2 extends StatelessWidget {
                       Get.delete<ControllerDrawer>();
                       Get.to(() => VehicleListView(),
                           transition: Transition.rightToLeft,
-                          duration: Duration(milliseconds: 500),
+                          duration: Duration(milliseconds: 300),
                           curve: Curves.linear);
                     },
                   ),
                   SizedBox(
-                    height: ScreenUtil().setHeight(10),
+                    height: ScreenUtil().setHeight(20),
                   ),
                 ],
               )),
