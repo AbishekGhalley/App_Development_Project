@@ -78,7 +78,8 @@ class _ScanGoVehicleDetailsState extends State<ScanGoVehicleDetails> {
                   color: Colors.white,
                   width: double.infinity,
                   child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 26),
+                      padding: EdgeInsets.symmetric(
+                          horizontal: ScreenUtil().setWidth(26)),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -130,7 +131,8 @@ class _ScanGoVehicleDetailsState extends State<ScanGoVehicleDetails> {
                     color: Colors.white,
                     width: double.infinity,
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 26),
+                      padding: EdgeInsets.symmetric(
+                          horizontal: ScreenUtil().setWidth(26)),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
