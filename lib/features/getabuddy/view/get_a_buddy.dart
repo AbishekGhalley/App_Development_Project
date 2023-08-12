@@ -20,8 +20,12 @@ class Buddy extends StatelessWidget {
                 right: ScreenUtil().setWidth(25)),
             child: SingleChildScrollView(
               child: Container(
+                /*
                 width: double.infinity,
                 height: (MediaQuery.of(context).size.height * 0.12),
+                */
+                width: double.infinity,
+                height: ScreenUtil().setHeight(100),
                 decoration: const BoxDecoration(boxShadow: [
                   BoxShadow(
                     color: Color.fromRGBO(171, 171, 171, 0.25),
@@ -124,5 +128,6 @@ class Buddy extends StatelessWidget {
         ],
       ),
     );
+    
   }
 }
