@@ -20,7 +20,7 @@ class PopupWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.012),
-      height: MediaQuery.of(context).size.height * 0.2,
+      height: MediaQuery.of(context).size.height * 0.19,
       decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
@@ -33,46 +33,53 @@ class PopupWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Text(
-              'Reserve vehicle?',
-              style: GoogleFonts.sen(
-                fontSize: ScreenUtil().setSp(20),
-                fontWeight: FontWeight.w400,
-                color: Pallete.textColor,
+          Expanded(
+            flex: 0,
+            child: Padding(
+              padding:
+                  EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(20)),
+              child: Text(
+                'Reserve vehicle?',
+                style: GoogleFonts.sen(
+                  fontSize: ScreenUtil().setSp(20),
+                  fontWeight: FontWeight.w400,
+                  color: Pallete.textColor,
+                ),
               ),
             ),
           ),
-          SizedBox(height: ScreenUtil().setHeight(22)),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              CustomButton(
-                onPressed: onReturnTap
-                // Handle the reservation logic here
-                // For example, you can show a confirmation message and navigate back to the previous screen.
+          Expanded(
+            flex: 3,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                CustomButton(
+                  onPressed: onReturnTap
+                  // Handle the reservation logic here
+                  // For example, you can show a confirmation message and navigate back to the previous screen.
 
-                ,
-                text: btnText,
-              ),
-              SizedBox(height: MediaQuery.of(context).size.height * 0.015),
-              GestureDetector(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                child: Text(
-                  returnText,
-                  style: GoogleFonts.sen(
-                      decoration: TextDecoration.underline,
-                      fontSize: ScreenUtil().setSp(18),
-                      color: Pallete.primaryColor,
-                      fontWeight: FontWeight.w700),
+                  ,
+                  text: btnText,
                 ),
-              ),
-            ],
+                Expanded(
+                  flex: 0,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Text(
+                      returnText,
+                      style: GoogleFonts.sen(
+                          decoration: TextDecoration.underline,
+                          fontSize: ScreenUtil().setSp(18),
+                          color: Pallete.primaryColor,
+                          fontWeight: FontWeight.w700),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
-          SizedBox(height: ScreenUtil().setHeight(14)),
         ],
       ),
     );

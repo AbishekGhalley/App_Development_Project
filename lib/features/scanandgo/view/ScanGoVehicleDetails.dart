@@ -61,174 +61,181 @@ class _ScanGoVehicleDetailsState extends State<ScanGoVehicleDetails> {
             return Center(child: CircularProgressIndicator());
           } else if (snapshot.hasData) {
             return Column(children: [
-              VehicleCardWithLargeImage(
-                brand: 'Solaire',
-                image: GlobalAssets.bike,
-                name: snapshot.data!.vehicleName.toString(),
-                stars: '4.3 ⭐',
+              Expanded(
+                //Expanded 1
+                flex: 4,
+                child: VehicleCardWithLargeImage(
+                  brand: 'Solaire',
+                  image: GlobalAssets.bike,
+                  name: snapshot.data!.vehicleName.toString(),
+                  stars: '4.3 ⭐',
+                ),
               ),
-              Spacer(),
-              Container(
-                color: Colors.white,
-                width: double.infinity,
-                height: MediaQuery.of(context).size.height * 0.18,
-                child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 26),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Specifications",
-                          style: GoogleFonts.sen(
-                            fontSize: ScreenUtil().setSp(23),
-                            fontWeight: FontWeight.w400,
-                            color: Pallete.textColor,
-                          ),
-                        ),
-                        SizedBox(height: ScreenUtil().setHeight(10)),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            VehicleInfoBox(
-                                icon: GlobalAssets.charging,
-                                midText: 'Charging',
-                                bottomText:
-                                    snapshot.data!.charging.toString() + '%'),
-                            VehicleInfoBox(
-                                icon: GlobalAssets.maxspeed,
-                                midText: 'Max Speed',
-                                bottomText: snapshot.data!.maxSpeed.toString() +
-                                    'kmph'),
-                            VehicleInfoBox(
-                                icon: GlobalAssets.range,
-                                midText: 'Range',
-                                bottomText:
-                                    snapshot.data!.range.toString() + 'km'),
-                          ],
-                        ),
-                      ],
-                    )),
-              ),
-              Spacer(),
-              Container(
+              Expanded(
+                //Expanded 2
+                flex: 2,
+                child: Container(
                   color: Colors.white,
                   width: double.infinity,
-                  height: MediaQuery.of(context).size.height * 0.19,
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 26),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Vehicle Features",
-                          style: GoogleFonts.sen(
-                            fontSize: ScreenUtil().setSp(23),
-                            fontWeight: FontWeight.w400,
-                            color: Pallete.textColor,
+                      padding: EdgeInsets.symmetric(
+                          horizontal: ScreenUtil().setWidth(26)),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(
+                            flex: 0,
+                            child: Text(
+                              "Specifications",
+                              style: GoogleFonts.sen(
+                                fontSize: ScreenUtil().setSp(23),
+                                fontWeight: FontWeight.w400,
+                                color: Pallete.textColor,
+                              ),
+                            ),
                           ),
-                        ),
-                        SizedBox(height: ScreenUtil().setHeight(14)),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                          Expanded(
+                            flex: 6,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                TextWithIcon(
-                                  icon: GlobalAssets.passengers,
-                                  text:
-                                      snapshot.data!.passengerCount.toString() +
-                                          ' Passengers',
-                                ),
-                                SizedBox(
-                                  height: ScreenUtil().setHeight(14),
-                                ),
-                                TextWithIcon(
-                                    icon: GlobalAssets.snowtires,
-                                    text: 'Snow Tires'),
-                                SizedBox(
-                                  height: ScreenUtil().setHeight(14),
-                                ),
-                                TextWithIcon(
-                                    icon: GlobalAssets.blutooth,
-                                    text: 'Blutooth')
+                                VehicleInfoBox(
+                                    icon: GlobalAssets.charging,
+                                    midText: 'Charging',
+                                    bottomText:
+                                        snapshot.data!.charging.toString() +
+                                            '%'),
+                                VehicleInfoBox(
+                                    icon: GlobalAssets.maxspeed,
+                                    midText: 'Max Speed',
+                                    bottomText:
+                                        snapshot.data!.maxSpeed.toString() +
+                                            'kmph'),
+                                VehicleInfoBox(
+                                    icon: GlobalAssets.range,
+                                    midText: 'Range',
+                                    bottomText:
+                                        snapshot.data!.range.toString() + 'km'),
                               ],
                             ),
-                            Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  TextWithIcon(
-                                      icon: GlobalAssets.wheels,
-                                      text: snapshot.data!.wheels.toString() +
-                                          ' Wheels'),
-                                  SizedBox(
-                                    height: ScreenUtil().setHeight(16),
-                                  ),
-                                  TextWithIcon(
-                                      icon: GlobalAssets.gps, text: 'GPS'),
-                                  SizedBox(
-                                    height: ScreenUtil().setHeight(16),
-                                  ),
-                                  TextWithIcon(
-                                      icon: GlobalAssets.manual,
-                                      text:
-                                          snapshot.data!.typeOfCar.toString()),
-                                ])
-                          ],
-                        ),
-                      ],
-                    ),
-                  )),
-              Spacer(),
+                          ),
+                        ],
+                      )),
+                ),
+              ),
               Expanded(
+                //Expanded 3
+                flex: 2,
+                child: Container(
+                    color: Colors.white,
+                    width: double.infinity,
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: ScreenUtil().setWidth(26)),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(
+                            flex: 0,
+                            child: Text(
+                              "Vehicle Features",
+                              style: GoogleFonts.sen(
+                                fontSize: ScreenUtil().setSp(23),
+                                fontWeight: FontWeight.w400,
+                                color: Pallete.textColor,
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            flex: 6,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    TextWithIcon(
+                                      icon: GlobalAssets.passengers,
+                                      text: snapshot.data!.passengerCount
+                                              .toString() +
+                                          ' Passengers',
+                                    ),
+                                    TextWithIcon(
+                                        icon: GlobalAssets.snowtires,
+                                        text: 'Snow Tires'),
+                                    TextWithIcon(
+                                        icon: GlobalAssets.blutooth,
+                                        text: 'Blutooth')
+                                  ],
+                                ),
+                                Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      TextWithIcon(
+                                          icon: GlobalAssets.wheels,
+                                          text:
+                                              snapshot.data!.wheels.toString() +
+                                                  ' Wheels'),
+                                      TextWithIcon(
+                                          icon: GlobalAssets.gps, text: 'GPS'),
+                                      TextWithIcon(
+                                          icon: GlobalAssets.manual,
+                                          text: snapshot.data!.typeOfCar
+                                              .toString()),
+                                    ])
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    )),
+              ),
+              Expanded(
+                //Expanded 4
                 flex: 0,
                 child: Container(
                     color: Colors.white,
                     width: double.infinity,
-                    height: MediaQuery.of(context).size.height * 0.1,
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 0),
+                      padding:
+                          EdgeInsets.only(bottom: ScreenUtil().setHeight(20)),
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 20),
-                            // child: Row(
-                            //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            //     children: [
-                            //       Text("Rate",
-                            //           style: GoogleFonts.montserrat(
-                            //             color: Pallete.geryColor,
-                            //             fontSize: 21,
-                            //             fontWeight: FontWeight.w500,
-                            //           )),
-                            //       Text("₹70/hour",
-                            //           style: GoogleFonts.sen(
-                            //             color: Pallete.textColor,
-                            //             fontSize: 20,
-                            //             fontWeight: FontWeight.w400,
-                            //           )),
-                            //     ]),
+                          Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: ScreenUtil().setWidth(20)),
+                            child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text("Rate",
+                                          style: GoogleFonts.montserrat(
+                                            color: Pallete.geryColor,
+                                            fontSize: ScreenUtil().setSp(21),
+                                            fontWeight: FontWeight.w500,
+                                          )),
+                                      IconButton(
+                                          onPressed: () {},
+                                          icon: Image.asset(
+                                              ReserveVehicleAssets.iicon)),
+                                    ],
+                                  ),
+                                  Text("₹70/hour",
+                                      style: GoogleFonts.sen(
+                                        color: Pallete.textColor,
+                                        fontSize: ScreenUtil().setSp(20),
+                                        fontWeight: FontWeight.w400,
+                                      )),
+                                ]),
                           ),
-                          Expanded(
-                            flex: 0,
-                            child: Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 20),
-                              child: Text(
-                                'Your vehicle will be reserved for one hour.',
-                                style: GoogleFonts.sen(
-                                  fontSize: ScreenUtil().setSp(18),
-                                  fontWeight: FontWeight.w400,
-                                  color: Pallete.textColor,
-                                ),
-                                textAlign: TextAlign.left,
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: ScreenUtil().setHeight(9)),
                           CustomButton(
                               text: 'Start Ride',
                               onPressed: () {

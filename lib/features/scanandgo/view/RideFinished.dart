@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myekigai/constants/constants.dart';
@@ -120,7 +121,7 @@ class RideFinished extends StatelessWidget {
                                     style: GoogleFonts.sen(
                                       color: Pallete.textColor,
                                       fontWeight: FontWeight.w400,
-                                      fontSize: 20,
+                                      fontSize: ScreenUtil().setSp(20),
                                     ),
                                   ),
                                 ),
@@ -133,7 +134,7 @@ class RideFinished extends StatelessWidget {
                                     style: GoogleFonts.sen(
                                       color: Pallete.geryColor,
                                       fontWeight: FontWeight.w400,
-                                      fontSize: 16,
+                                      fontSize: ScreenUtil().setSp(16),
                                     ),
                                   ),
                                 ),
@@ -154,7 +155,7 @@ class RideFinished extends StatelessWidget {
                                             style: GoogleFonts.sen(
                                               color: Pallete.textColor,
                                               fontWeight: FontWeight.w700,
-                                              fontSize: 20,
+                                              fontSize: ScreenUtil().setSp(20),
                                             ),
                                           ),
                                           Text(
@@ -162,7 +163,7 @@ class RideFinished extends StatelessWidget {
                                             style: GoogleFonts.sen(
                                               color: Pallete.geryColor,
                                               fontWeight: FontWeight.w400,
-                                              fontSize: 12,
+                                              fontSize: ScreenUtil().setSp(12),
                                             ),
                                           )
                                         ],
@@ -172,7 +173,7 @@ class RideFinished extends StatelessWidget {
                                         style: GoogleFonts.sen(
                                           color: Pallete.textColor,
                                           fontWeight: FontWeight.w400,
-                                          fontSize: 16,
+                                          fontSize: ScreenUtil().setSp(16),
                                         ),
                                       )
                                     ],
@@ -204,7 +205,7 @@ class RideFinished extends StatelessWidget {
                                             style: GoogleFonts.montserrat(
                                               color: Pallete.textColor,
                                               fontWeight: FontWeight.w500,
-                                              fontSize: 16,
+                                              fontSize: ScreenUtil().setSp(16),
                                             ),
                                           ),
                                           Text(
@@ -212,7 +213,7 @@ class RideFinished extends StatelessWidget {
                                             style: GoogleFonts.montserrat(
                                               color: Pallete.geryColor,
                                               fontWeight: FontWeight.w500,
-                                              fontSize: 16,
+                                              fontSize: ScreenUtil().setSp(16),
                                             ),
                                           )
                                         ],
@@ -222,7 +223,7 @@ class RideFinished extends StatelessWidget {
                                         style: GoogleFonts.sen(
                                           color: Pallete.textColor,
                                           fontWeight: FontWeight.w400,
-                                          fontSize: 16,
+                                          fontSize: ScreenUtil().setSp(16),
                                         ),
                                       )
                                     ],
@@ -245,7 +246,7 @@ class RideFinished extends StatelessWidget {
                                             style: GoogleFonts.montserrat(
                                               color: Pallete.textColor,
                                               fontWeight: FontWeight.w500,
-                                              fontSize: 16,
+                                              fontSize: ScreenUtil().setSp(16),
                                             ),
                                           ),
                                           Text(
@@ -253,7 +254,7 @@ class RideFinished extends StatelessWidget {
                                             style: GoogleFonts.montserrat(
                                               color: Pallete.geryColor,
                                               fontWeight: FontWeight.w500,
-                                              fontSize: 16,
+                                              fontSize: ScreenUtil().setSp(16),
                                             ),
                                           )
                                         ],
@@ -263,7 +264,7 @@ class RideFinished extends StatelessWidget {
                                         style: GoogleFonts.sen(
                                           color: Pallete.textColor,
                                           fontWeight: FontWeight.w400,
-                                          fontSize: 16,
+                                          fontSize: ScreenUtil().setSp(16),
                                         ),
                                       )
                                     ],
@@ -282,7 +283,7 @@ class RideFinished extends StatelessWidget {
                                         style: GoogleFonts.montserrat(
                                           color: Pallete.textColor,
                                           fontWeight: FontWeight.w500,
-                                          fontSize: 16,
+                                          fontSize: ScreenUtil().setSp(16),
                                         ),
                                       ),
                                       Text(
@@ -290,7 +291,7 @@ class RideFinished extends StatelessWidget {
                                         style: GoogleFonts.sen(
                                           color: Pallete.textColor,
                                           fontWeight: FontWeight.w400,
-                                          fontSize: 16,
+                                          fontSize: ScreenUtil().setSp(16),
                                         ),
                                       )
                                     ],
@@ -318,7 +319,7 @@ class RideFinished extends StatelessWidget {
                                         style: GoogleFonts.montserrat(
                                           color: Pallete.textColor,
                                           fontWeight: FontWeight.w500,
-                                          fontSize: 16,
+                                          fontSize: ScreenUtil().setSp(16),
                                         ),
                                       ),
                                       Text(
@@ -326,7 +327,7 @@ class RideFinished extends StatelessWidget {
                                         style: GoogleFonts.sen(
                                           color: Pallete.textColor,
                                           fontWeight: FontWeight.w700,
-                                          fontSize: 24,
+                                          fontSize: ScreenUtil().setSp(24),
                                         ),
                                       )
                                     ],
@@ -345,7 +346,7 @@ class RideFinished extends StatelessWidget {
                                         child: Text(
                                           'The amount has been deducted from your eKI- Wallet.',
                                           style: GoogleFonts.sen(
-                                              fontSize: 18,
+                                              fontSize: ScreenUtil().setSp(18),
                                               fontWeight: FontWeight.w400),
                                           maxLines: 2,
                                           softWrap: true,
