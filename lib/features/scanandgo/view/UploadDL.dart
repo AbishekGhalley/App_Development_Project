@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myekigai/features/scanandgo/view/LiveRide.dart';
+import 'package:myekigai/reusables/TopAppbar.dart';
 import 'package:myekigai/reusables/btn.dart';
 
 import '../../../theme/pallete.dart';
@@ -13,23 +14,7 @@ class UploadDL extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenHight = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Upload Driver’s License',
-          style: GoogleFonts.sen(
-              fontSize: ScreenUtil().setSp(20),
-              fontWeight: FontWeight.w400,
-              color: Pallete.textColor),
-        ),
-        centerTitle: false,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new_sharp,
-              color: Color(0xFF1C1C1C)),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-      ),
+      appBar: TopAppbar(toptitle: "Upload Driver’s License"),
       body: Padding(
         padding: EdgeInsets.symmetric(vertical: screenHight * 0.02),
         child: Column(
